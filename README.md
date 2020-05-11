@@ -15,15 +15,14 @@ npm install --save ui-neumorphism
 ```jsx
 import React, { Component } from 'react'
 
-import MyComponent from 'ui-neumorphism'
+import { Button } from 'ui-neumorphism'
 import 'ui-neumorphism/dist/index.css'
 
 class Example extends Component {
   render() {
-    return <MyComponent />
+    return <Button />
   }
 }
-```
 
 ## License
 

@@ -14,6 +14,7 @@ class Button extends React.Component {
     width: PropTypes.number,
     height: PropTypes.number,
     bordered: PropTypes.bool,
+    hoverable: PropTypes.bool,
     mouseOver: PropTypes.func,
     mouseOut: PropTypes.func,
     onClick: PropTypes.func
@@ -27,7 +28,6 @@ class Button extends React.Component {
           styles,
           `
             nu-button
-            abc
             cursor-pointer
             nu-button--${hoverable ? '' : 'un'}hoverable
             nu-button--${bordered ? '' : 'un'}bordered
@@ -57,7 +57,7 @@ class Button extends React.Component {
         onMouseOut={mouseOut}
         onMouseOver={mouseOver}
         style={{
-          width: `${width || 150}px`,
+          minWidth: `${width ? width || '150px' : 'auto'}`,
           height: `${height && height >= 32 ? height : 48}px`
         }}
         className={this.getClasses('container')}
