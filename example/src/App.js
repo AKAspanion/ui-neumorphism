@@ -1,10 +1,14 @@
 import React from 'react'
 
-import { ExampleComponent } from 'ui-neumorphism'
+import { Button, Card } from 'ui-neumorphism'
 import 'ui-neumorphism/dist/index.css'
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  return (
+    <Card style={{ margin: '100px', padding: '32px' }}>
+      <Button hoverable text='NuButton 😄' />
+    </Card>
+  )
 }
 
 export default App

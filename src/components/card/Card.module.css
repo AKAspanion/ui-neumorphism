@@ -1,0 +1,27 @@
+.nu-card {
+  width: auto;
+  font-size: 16px;
+  border-radius: 8px;
+}
+
+.nu-card.nu-card--rounded {
+  border-radius: 48px;
+}
+
+.nu-card--light {
+  color: rgba(0, 0, 0, 0.86);
+  background-color: var(--light-bg);
+}
+
+.nu-card--dark {
+  color: rgba(255, 255, 255, 1);
+  background-color: var(--dark-bg);
+}
+
+.nu-card.elevation-1 {
+  box-shadow: 3px 3px 5px var(--light-bg-dark-shadow), -3px -3px 5px var(--light-bg-light-shadow);
+}
+
+.nu-card--dark.elevation-1 {
+  box-shadow: 3px 3px 5px var(--dark-bg-dark-shadow), -3px -3px 5px var(--dark-bg-light-shadow);
+}
