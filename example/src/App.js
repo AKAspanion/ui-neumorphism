@@ -6,7 +6,7 @@ import 'ui-neumorphism/dist/index.css'
 const App = () => {
   return (
     <div style={{ display: 'flex' }}>
-      <div style={{ width: '50%', background: '#E4EBF5', padding: '32px' }}>
+      <div style={{ width: '50%', background: 'var(--light-bg)', padding: '32px' }}>
         <Card style={{ width: '50%' }}>Simple Card</Card>
         <div className='d-dummy'></div>
         <Card outlined style={{ width: '50%' }}>
@@ -23,7 +23,7 @@ const App = () => {
         <div className='d-dummy'></div>
         <Button rounded/>
       </div>
-      <div style={{ width: '50%', background: '#444444', padding: '32px' }}>
+      <div style={{ width: '50%', background: 'var(--dark-bg)', padding: '32px' }}>
         <Card dark style={{ width: '50%' }}>
           Simple dark theme Card
         </Card>

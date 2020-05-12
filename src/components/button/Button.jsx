@@ -7,35 +7,41 @@ import { getModuleClasses } from '../../util'
 class Button extends React.Component {
   static displayName = 'NuButton'
 
+  static defaultProps = {
+    size: 'medium'
+  }
+
   static propTypes = {
-    name: PropTypes.string,
     text: PropTypes.bool,
     dark: PropTypes.bool,
+    block: PropTypes.bool,
     active: PropTypes.bool,
     rounded: PropTypes.bool,
     outlined: PropTypes.bool,
     depressed: PropTypes.bool,
     mouseOver: PropTypes.func,
     mouseOut: PropTypes.func,
-    onClick: PropTypes.func
+    onClick: PropTypes.func,
+    size: PropTypes.oneOf(['small', 'medium', 'large'])
   }
 
-  getClasses(name) {
-    const { dark, text, active, outlined, depressed, rounded, disabled } = this.props
-    switch (name) {
+  getClasses(type) {
+    switch (type) {
       case 'container':
         return getModuleClasses(
           styles,
           `
             nu-button
             cursor-pointer
-            ${text ? 'nu-button--text' : ''}
-            ${active ? 'nu-button--active' : ''}
-            nu-button--${dark ? 'dark' : 'light'}
-            ${rounded ? 'nu-button--rounded' : ''}
-            ${disabled ? 'nu-button--disabled' : ''}
-            ${outlined ? 'nu-button--outlined' : ''}
-            ${depressed ? 'nu-button--depressed' : ''}
+            nu-button--${this.props.size}
+            ${this.props.text ? 'nu-button--text' : ''}
+            ${this.props.block ? 'nu-button--block' : ''}
+            ${this.props.active ? 'nu-button--active' : ''}
+            nu-button--${this.props.dark ? 'dark' : 'light'}
+            ${this.props.rounded ? 'nu-button--rounded' : ''}
+            ${this.props.disabled ? 'nu-button--disabled' : ''}
+            ${this.props.outlined ? 'nu-button--outlined' : ''}
+            ${this.props.depressed ? 'nu-button--depressed' : ''}
           `
         )
       case 'input':
@@ -46,15 +52,19 @@ class Button extends React.Component {
   }
 
   render() {
-    const { name, onClick, mouseOver, mouseOut } = this.props
+    const { color, bgColor, disabled, children } = this.props
+    const { onClick, mouseOver, mouseOut } = this.props
     return (
       <div
         onClick={onClick}
         onMouseOut={mouseOut}
         onMouseOver={mouseOver}
         className={this.getClasses('container')}
+        style={{ backgroundColor: bgColor, color: disabled ? null : color }}
       >
-        <button className={this.getClasses('input')}>{name || 'button'}</button>
+        <button className={this.getClasses('input')}>
+          {children || 'button'}
+        </button>
       </div>
     )
   }

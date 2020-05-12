@@ -1,8 +1,8 @@
 .nu-button {
   outline: none;
-  height: 36px;
   min-width: 64px;
   padding: 0 16px;
+  user-select: none;
   border-radius: 4px;
   align-items: center;
   display: inline-flex;
@@ -40,6 +40,22 @@
     -2px -2px 5px var(--dark-bg-light-shadow);
   --box-shadow-inset: inset -1px -1px 3px var(--dark-bg-light-shadow),
     inset 1px 1px 3px var(--dark-bg-dark-shadow);
+}
+
+.nu-button.nu-button--small {
+  height: 30px;
+}
+
+.nu-button.nu-button--medium {
+  height: 36px;
+}
+
+.nu-button.nu-button--large {
+  height: 42px;
+}
+
+.nu-button.nu-button--block {
+  display: flex;
 }
 
 .nu-button.nu-button--rounded {
@@ -100,6 +116,7 @@
   cursor: inherit;
   max-width: inherit;
   box-sizing: inherit;
+  user-select: inherit;
   text-shadow: inherit;
   display: inline-table;
   border-radius: inherit;
