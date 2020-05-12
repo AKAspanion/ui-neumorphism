@@ -16,6 +16,12 @@
 
   --g-text-color-light: rgba(0, 0, 0, 0.86);
   --g-text-color-dark: var(--white);
+
+
+  --g-bg-color-disabled-light: #dee5e8;
+  --g-text-color-disabled-light: #b2b5b9;
+  --g-bg-color-disabled-dark: #727272;
+  --g-text-color-disabled-dark: #555555;
 }
 
 body {

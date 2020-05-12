@@ -8,20 +8,20 @@ class Button extends React.Component {
   static displayName = 'NuButton'
 
   static propTypes = {
-    text: PropTypes.string,
+    name: PropTypes.string,
+    text: PropTypes.bool,
     dark: PropTypes.bool,
     active: PropTypes.bool,
-    width: PropTypes.number,
-    height: PropTypes.number,
-    bordered: PropTypes.bool,
-    hoverable: PropTypes.bool,
+    rounded: PropTypes.bool,
+    outlined: PropTypes.bool,
+    depressed: PropTypes.bool,
     mouseOver: PropTypes.func,
     mouseOut: PropTypes.func,
     onClick: PropTypes.func
   }
 
   getClasses(name) {
-    const { dark, active, bordered, hoverable } = this.props
+    const { dark, text, active, outlined, depressed, rounded, disabled } = this.props
     switch (name) {
       case 'container':
         return getModuleClasses(
@@ -29,40 +29,32 @@ class Button extends React.Component {
           `
             nu-button
             cursor-pointer
-            nu-button--${hoverable ? '' : 'un'}hoverable
-            nu-button--${bordered ? '' : 'un'}bordered
-            nu-button--${dark ? 'dark' : 'light'}
+            ${text ? 'nu-button--text' : ''}
             ${active ? 'nu-button--active' : ''}
+            nu-button--${dark ? 'dark' : 'light'}
+            ${rounded ? 'nu-button--rounded' : ''}
+            ${disabled ? 'nu-button--disabled' : ''}
+            ${outlined ? 'nu-button--outlined' : ''}
+            ${depressed ? 'nu-button--depressed' : ''}
           `
         )
-
       case 'input':
-        return getModuleClasses(
-          styles,
-          `
-            nu-button-inner
-            ${bordered ? 'nu-button-inner--bordered' : ''}
-            nu-button--${dark ? 'dark' : 'light'}`
-        )
+        return getModuleClasses(styles, 'nu-button-inner')
       default:
         break
     }
   }
 
   render() {
-    const { text, width, height, onClick, mouseOver, mouseOut } = this.props
+    const { name, onClick, mouseOver, mouseOut } = this.props
     return (
       <div
         onClick={onClick}
         onMouseOut={mouseOut}
         onMouseOver={mouseOver}
-        style={{
-          minWidth: `${width ? width || '150px' : 'auto'}`,
-          height: `${height && height >= 32 ? height : 48}px`
-        }}
         className={this.getClasses('container')}
       >
-        <button className={this.getClasses('input')}>{text || 'BUTTON'}</button>
+        <button className={this.getClasses('input')}>{name || 'button'}</button>
       </div>
     )
   }

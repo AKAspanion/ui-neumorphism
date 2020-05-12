@@ -6,19 +6,41 @@ import 'ui-neumorphism/dist/index.css'
 const App = () => {
   return (
     <div style={{ display: 'flex' }}>
-      <div style={{ width: '50%', background: '#E4EBF5' }}>
-        <Card style={{ margin: '32px', width: '50%' }}>Simple Card</Card>
-        <Card outlined style={{ margin: '32px', width: '50%' }}>
+      <div style={{ width: '50%', background: '#E4EBF5', padding: '32px' }}>
+        <Card style={{ width: '50%' }}>Simple Card</Card>
+        <div className='d-dummy'></div>
+        <Card outlined style={{ width: '50%' }}>
           Outlined Card
         </Card>
+        <div className='d-dummy'></div>
+        <Button text />
+        <div className='d-dummy'></div>
+        <Button outlined />
+        <div className='d-dummy'></div>
+        <Button depressed />
+        <div className='d-dummy'></div>
+        <Button />
+        <div className='d-dummy'></div>
+        <Button rounded/>
       </div>
-      <div style={{ width: '50%', background: '#444444' }}>
-        <Card dark style={{ margin: '32px', width: '50%' }}>
+      <div style={{ width: '50%', background: '#444444', padding: '32px' }}>
+        <Card dark style={{ width: '50%' }}>
           Simple dark theme Card
         </Card>
-        <Card dark outlined style={{ margin: '32px', width: '50%' }}>
+        <div className='d-dummy'></div>
+        <Card dark outlined style={{ width: '50%' }}>
           Outlined dark theme Card
         </Card>
+        <div className='d-dummy'></div>
+        <Button dark text />
+        <div className='d-dummy'></div>
+        <Button dark outlined />
+        <div className='d-dummy'></div>
+        <Button dark depressed />
+        <div className='d-dummy'></div>
+        <Button dark />
+        <div className='d-dummy'></div>
+        <Button dark rounded/>
       </div>
     </div>
   )
