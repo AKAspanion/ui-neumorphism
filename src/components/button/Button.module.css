@@ -18,7 +18,6 @@
   --bg-color: var(--light-bg);
   --text-color: var(--g-text-color-light);
   --border-color: var(--light-bg-dark-shadow);
-  --bg-color-disabled: var(--g-bg-color-disabled-light);
   --text-color-disabled: var(--g-text-color-disabled-light);
   --box-shadow: 6px 6px 15px var(--light-bg-dark-shadow),
     -3px -3px 10px var(--light-bg-light-shadow);
@@ -26,13 +25,14 @@
     -2px -2px 5px var(--light-bg-light-shadow);
   --box-shadow-inset: inset -1px -1px 3px var(--light-bg-light-shadow),
     inset 1px 1px 3px var(--light-bg-dark-shadow);
+  --box-shadow-fab: 10px 10px 20px var(--light-bg-dark-shadow),
+    -7px -7px 16px var(--light-bg-light-shadow);
 }
 
 .nu-button.nu-button--dark {
   --bg-color: var(--dark-bg);
   --text-color: var(--g-text-color-dark);
   --border-color: var(--dark-bg-dark-shadow);
-  --bg-color-disabled: var(--g-bg-color-disabled-dark);
   --text-color-disabled: var(--g-text-color-disabled-dark);
   --box-shadow: 6px 6px 15px var(--dark-bg-dark-shadow),
     -3px -3px 10px var(--dark-bg-light-shadow);
@@ -40,6 +40,28 @@
     -2px -2px 5px var(--dark-bg-light-shadow);
   --box-shadow-inset: inset -1px -1px 3px var(--dark-bg-light-shadow),
     inset 1px 1px 3px var(--dark-bg-dark-shadow);
+  --box-shadow-fab: 10px 10px 20px var(--dark-bg-dark-shadow),
+    -7px -7px 16px var(--dark-bg-light-shadow);
+}
+
+.nu-button.nu-button--fab {
+  padding: 0;
+  height: var(--fab-size);
+  min-width: var(--fab-size);
+  min-height: var(--fab-size);
+  box-shadow: var(--box-shadow-fab) !important;
+}
+
+.nu-button--fab.nu-button--small {
+  --fab-size: 40px;
+}
+
+.nu-button--fab.nu-button--medium {
+  --fab-size: 48px;
+}
+
+.nu-button--fab.nu-button--large {
+  --fab-size: 56px;
 }
 
 .nu-button.nu-button--small {
@@ -59,13 +81,12 @@
 }
 
 .nu-button.nu-button--rounded {
-  border-radius: 36px !important;
+  border-radius: 56px !important;
 }
 
 .nu-button.nu-button--disabled {
   pointer-events: none;
-  --border-color: var(--bg-color-disabled);
-  --bg-color: var(--bg-color-disabled);
+  --border-color: var(--text-color-disabled);
   --text-color: var(--text-color-disabled);
 }
 

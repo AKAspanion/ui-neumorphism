@@ -1,0 +1,27 @@
+.nu-fab {
+  display: inline-flex;
+}
+
+.nu-fab--fixed {
+  position: fixed;
+}
+
+.nu-fab--absolute {
+  position: absolute;
+}
+
+.nu-fab.nu-fab--top {
+  top: 16px;
+}
+
+.nu-fab.nu-fab--right {
+  right: 16px;
+}
+
+.nu-fab.nu-fab--bottom {
+  bottom: 16px;
+}
+
+.nu-fab.nu-fab--left {
+  left: 16px;
+}

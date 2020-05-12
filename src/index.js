@@ -1,4 +1,5 @@
 export {
   Button,
-  Card
+  Card,
+  Fab
 } from './components/'

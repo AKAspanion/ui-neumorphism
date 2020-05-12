@@ -1,8 +1,8 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
 import styles from './Button.module.css'
 import { getModuleClasses } from '../../util'
+import { SIZE_PROP, G_FUNC, G_BOOL } from '../../assets/index'
 
 class Button extends React.Component {
   static displayName = 'NuButton'
@@ -12,20 +12,23 @@ class Button extends React.Component {
   }
 
   static propTypes = {
-    text: PropTypes.bool,
-    dark: PropTypes.bool,
-    block: PropTypes.bool,
-    active: PropTypes.bool,
-    rounded: PropTypes.bool,
-    outlined: PropTypes.bool,
-    depressed: PropTypes.bool,
-    mouseOver: PropTypes.func,
-    mouseOut: PropTypes.func,
-    onClick: PropTypes.func,
-    size: PropTypes.oneOf(['small', 'medium', 'large'])
+    fab: G_BOOL,
+    text: G_BOOL,
+    dark: G_BOOL,
+    block: G_BOOL,
+    active: G_BOOL,
+    rounded: G_BOOL,
+    outlined: G_BOOL,
+    depressed: G_BOOL,
+    mouseOver: G_FUNC,
+    mouseOut: G_FUNC,
+    onClick: G_FUNC,
+    size: SIZE_PROP
   }
 
   getClasses(type) {
+    const { fab, rounded } = this.props
+    const isRounded = fab || rounded
     switch (type) {
       case 'container':
         return getModuleClasses(
@@ -34,11 +37,12 @@ class Button extends React.Component {
             nu-button
             cursor-pointer
             nu-button--${this.props.size}
+            ${isRounded ? 'nu-button--rounded' : ''}
+            ${this.props.fab ? 'nu-button--fab' : ''}
             ${this.props.text ? 'nu-button--text' : ''}
             ${this.props.block ? 'nu-button--block' : ''}
             ${this.props.active ? 'nu-button--active' : ''}
             nu-button--${this.props.dark ? 'dark' : 'light'}
-            ${this.props.rounded ? 'nu-button--rounded' : ''}
             ${this.props.disabled ? 'nu-button--disabled' : ''}
             ${this.props.outlined ? 'nu-button--outlined' : ''}
             ${this.props.depressed ? 'nu-button--depressed' : ''}
@@ -52,7 +56,7 @@ class Button extends React.Component {
   }
 
   render() {
-    const { color, bgColor, disabled, children } = this.props
+    const { fab, color, bgColor, disabled, children } = this.props
     const { onClick, mouseOver, mouseOut } = this.props
     return (
       <div
@@ -63,7 +67,7 @@ class Button extends React.Component {
         style={{ backgroundColor: bgColor, color: disabled ? null : color }}
       >
         <button className={this.getClasses('input')}>
-          {children || 'button'}
+          {fab ? children : children || 'button'}
         </button>
       </div>
     )
