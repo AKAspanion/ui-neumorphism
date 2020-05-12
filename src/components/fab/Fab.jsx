@@ -3,7 +3,7 @@ import React from 'react'
 import { Button } from '../index'
 
 import styles from './Fab.module.css'
-import { getModuleClasses } from '../../util'
+import { getModuleClasses, passDownProp } from '../../util'
 import { SIZE_PROP, G_BOOL, G_STRING } from '../../assets/index'
 
 class Fab extends React.Component {
@@ -45,6 +45,7 @@ class Fab extends React.Component {
   render() {
     const { dark, size, color, disabled, children } = this.props
     const { onClick, mouseOver, mouseOut } = this.props
+    const fabChildren = passDownProp(children, this.props, 'dark')
     return (
       <div className={this.getClasses()}>
         <Button
@@ -57,7 +58,7 @@ class Fab extends React.Component {
           onMouseOut={mouseOut}
           onMouseOver={mouseOver}
         >
-          {children}
+          {fabChildren}
         </Button>
       </div>
     )

@@ -9,56 +9,47 @@ const App = () => {
       <div
         style={{ width: '50%', background: 'var(--light-bg)', padding: '32px' }}
       >
-        <Card style={{ width: '50%' }}>Simple Card</Card>
+        <Card style={{ width: '50%' }}>
+          Simple Card
+          <div className='d-dummy'></div>
+          <Button text />
+          <div className='d-dummy'></div>
+          <Button outlined />
+        </Card>
         <div className='d-dummy'></div>
         <Card outlined style={{ width: '50%' }}>
           Outlined Card
+          <div className='d-dummy'></div>
+          <Button depressed />
+          <div className='d-dummy'></div>
+          <Button />
+          <div className='d-dummy'></div>
+          <Button rounded />
         </Card>
-        <div className='d-dummy'></div>
-        <Button text />
-        <div className='d-dummy'></div>
-        <Button outlined />
-        <div className='d-dummy'></div>
-        <Button depressed />
-        <div className='d-dummy'></div>
-        <Button />
-        <div className='d-dummy'></div>
-        <Button rounded />
-        <div className='d-dummy'></div>
-        <Fab size='small' fixed top left>A</Fab>
-        <div className='d-dummy' ></div>
-        <Fab color='red' fixed bottom left>
-          A
-        </Fab>
       </div>
       <div
         style={{ width: '50%', background: 'var(--dark-bg)', padding: '32px' }}
       >
-        <Card dark style={{ width: '50%' }}>
-          Simple dark theme Card
+        <Card dark  style={{ width: '50%' }}>
+          Simple Card
+          <div className='d-dummy'></div>
+          <Button text />
+          <div className='d-dummy'></div>
+          <Button outlined />
+          <Fab color='red' absolute right top>
+            A
+          </Fab>
         </Card>
         <div className='d-dummy'></div>
         <Card dark outlined style={{ width: '50%' }}>
-          Outlined dark theme Card
+          Outlined Card
+          <div className='d-dummy'></div>
+          <Button depressed />
+          <div className='d-dummy'></div>
+          <Button />
+          <div className='d-dummy'></div>
+          <Button rounded />
         </Card>
-        <div className='d-dummy'></div>
-        <Button dark text />
-        <div className='d-dummy'></div>
-        <Button dark outlined />
-        <div className='d-dummy'></div>
-        <Button dark depressed />
-        <div className='d-dummy'></div>
-        <Button dark />
-        <div className='d-dummy'></div>
-        <Button dark rounded />
-        <div className='d-dummy'></div>
-        <Fab dark size='small' absolute right top>
-          A
-        </Fab>
-        <div className='d-dummy'></div>
-        <Fab dark color='red' absolute right bottom>
-          A
-        </Fab>
       </div>
     </div>
   )

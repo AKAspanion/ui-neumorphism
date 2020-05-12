@@ -1,7 +1,7 @@
 import React from 'react'
 
 import styles from './Button.module.css'
-import { getModuleClasses } from '../../util'
+import { getModuleClasses, passDownProp } from '../../util'
 import { SIZE_PROP, G_FUNC, G_BOOL } from '../../assets/index'
 
 class Button extends React.Component {
@@ -58,6 +58,7 @@ class Button extends React.Component {
   render() {
     const { fab, color, bgColor, disabled, children } = this.props
     const { onClick, mouseOver, mouseOut } = this.props
+    const btnChildren = passDownProp(children, this.props, 'dark')
     return (
       <div
         onClick={onClick}
@@ -67,7 +68,7 @@ class Button extends React.Component {
         style={{ backgroundColor: bgColor, color: disabled ? null : color }}
       >
         <button className={this.getClasses('input')}>
-          {fab ? children : children || 'button'}
+          {fab ? btnChildren : btnChildren || 'button'}
         </button>
       </div>
     )
