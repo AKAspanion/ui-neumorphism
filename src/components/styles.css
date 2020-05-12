@@ -13,6 +13,9 @@
   --primary: #f71b94;
   --primary-dark: #aa0660;
   --primary-light: #fa7ac0;
+
+  --g-text-color-light: rgba(0, 0, 0, 0.86);
+  --g-text-color-dark: var(--white);
 }
 
 body {

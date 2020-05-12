@@ -7,13 +7,13 @@ class Card extends React.Component {
   static displayName = 'NuCard'
   static propTypes = {
     dark: PropTypes.bool,
-    bordered: PropTypes.bool,
-    radius: PropTypes.number,
+    outlined: PropTypes.bool,
+    rounded: PropTypes.number,
     elevation: PropTypes.string
   }
 
   getClass() {
-    const { dark, elevation, rounded } = this.props
+    const { dark, elevation, rounded, outlined } = this.props
     return getModuleClasses(
       styles,
       `
@@ -21,6 +21,7 @@ class Card extends React.Component {
         elevation-${elevation || 1}
         nu-card--${dark ? 'dark' : 'light'}
         ${rounded ? 'nu-card--rounded' : ''}
+        ${outlined ? 'nu-card--outlined' : ''}
       `
     )
   }
