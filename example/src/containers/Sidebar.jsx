@@ -44,6 +44,11 @@ export default function Sidebar() {
         </ul>
       </div>
       <div className='sidebar-menu-title'>
+        <NavLink to='/typography' exact activeClassName='sidebar-link-active'>
+          Typography
+        </NavLink>
+      </div>
+      <div className='sidebar-menu-title'>
         <NavLink to='/examples' exact activeClassName='sidebar-link-active'>
           Examples
         </NavLink>

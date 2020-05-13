@@ -3,7 +3,8 @@ import {
   Example,
   FabView,
   CardView,
-  ButtonView
+  ButtonView,
+  TypographyView
 } from '../pages/index.js';
 
 const routes = [{
@@ -59,6 +60,12 @@ const routes = [{
     path: "/input",
     name: "Input",
     component: FabView,
+  },
+  {
+    id: 9,
+    path: "/typography",
+    name: "",
+    component: TypographyView,
   },
   {
     id: 100,

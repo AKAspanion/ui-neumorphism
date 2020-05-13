@@ -1,8 +1,20 @@
 export {
+  Typography,
+  Subtitle2,
+  Subtitle1,
+  Overline,
+  Caption,
+  Body2,
+  Body1,
+  H6,
+  H5,
+  H4,
+  H3,
+  H2,
+  H1,
   CardContent,
   CardAction,
-  Button,
   Card,
-  Fab,
-  H1
+  Button,
+  Fab
 } from './components/'

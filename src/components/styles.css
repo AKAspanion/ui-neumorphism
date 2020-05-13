@@ -40,6 +40,10 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+    border-radius: 4px;
+    padding: 0px 4px;
+    background: #ccc;
+    color: var(--primary)
 }
 
 .cursor-pointer {

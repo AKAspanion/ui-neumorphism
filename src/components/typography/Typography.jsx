@@ -19,8 +19,8 @@ class Typography extends React.Component {
     return getModuleClasses(
       styles,
       `
-        nu-${type}
         nu-typography
+        nu-${type || 'body-1'}
         nu-typography--${this.getTypographyType()}
         nu-typography--${dark ? 'dark' : 'light'}
       `
@@ -28,7 +28,11 @@ class Typography extends React.Component {
   }
 
   render() {
-    return <div className={this.getClass()}>{this.props.children}</div>
+    return (
+      <div style={this.props.style} className={this.getClass()}>
+        {this.props.children}
+      </div>
+    )
   }
 }
 

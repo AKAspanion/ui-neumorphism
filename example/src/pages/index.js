@@ -1,3 +1,4 @@
+export { default as TypographyView } from './TypographyView.jsx'
 export { default as ButtonView } from './ButtonView.jsx'
 export { default as CardView } from './CardView.jsx'
 export { default as FabView } from './FabView.jsx'
