@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "529563f4d97e6f44a05674442cac16e7",
+    "revision": "a7074f8dc39d8067647c150183c7d928",
     "url": "/ui-neumorphism/index.html"
   },
   {
-    "revision": "69973967d98558ef19ac",
-    "url": "/ui-neumorphism/static/css/main.7a434201.chunk.css"
+    "revision": "f9e789c17fe702425182",
+    "url": "/ui-neumorphism/static/css/main.175d801e.chunk.css"
   },
   {
     "revision": "758a9d4fd14244e8d9d6",
@@ -16,12 +16,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ui-neumorphism/static/js/2.77ff70ef.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "69973967d98558ef19ac",
-    "url": "/ui-neumorphism/static/js/main.36f4104f.chunk.js"
+    "revision": "f9e789c17fe702425182",
+    "url": "/ui-neumorphism/static/js/main.31251dd7.chunk.js"
   },
   {
     "revision": "6fce53c7c7713ebf61712cc2929746fa",
-    "url": "/ui-neumorphism/static/js/main.36f4104f.chunk.js.LICENSE.txt"
+    "url": "/ui-neumorphism/static/js/main.31251dd7.chunk.js.LICENSE.txt"
   },
   {
     "revision": "0c81a19ae06151500a64",

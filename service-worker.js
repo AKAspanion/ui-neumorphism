@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/ui-neumorphism/precache-manifest.b19b95d19aad39adb0cbba783e5ac229.js"
+  "/ui-neumorphism/precache-manifest.95717990081e7b5960aefd10bb7e303e.js"
 );
 
 self.addEventListener('message', (event) => {
