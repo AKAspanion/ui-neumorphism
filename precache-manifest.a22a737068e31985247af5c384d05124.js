@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c71cfdead1b4c1d9542e1d219739f2c4",
+    "revision": "76132e43ef3a4dfd7577fc33f8f08477",
     "url": "/ui-neumorphism/index.html"
   },
   {
-    "revision": "d3cf6b8c0b89e74b15d0",
+    "revision": "31142e40ae4488e91d52",
     "url": "/ui-neumorphism/static/css/main.6eed0d32.chunk.css"
   },
   {
@@ -16,12 +16,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ui-neumorphism/static/js/2.186f842f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "d3cf6b8c0b89e74b15d0",
-    "url": "/ui-neumorphism/static/js/main.8efbdb46.chunk.js"
+    "revision": "31142e40ae4488e91d52",
+    "url": "/ui-neumorphism/static/js/main.16a94e2f.chunk.js"
   },
   {
     "revision": "6fce53c7c7713ebf61712cc2929746fa",
-    "url": "/ui-neumorphism/static/js/main.8efbdb46.chunk.js.LICENSE.txt"
+    "url": "/ui-neumorphism/static/js/main.16a94e2f.chunk.js.LICENSE.txt"
   },
   {
     "revision": "0c81a19ae06151500a64",

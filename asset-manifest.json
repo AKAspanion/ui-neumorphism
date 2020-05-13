@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/ui-neumorphism/static/css/main.6eed0d32.chunk.css",
-    "main.js": "/ui-neumorphism/static/js/main.8efbdb46.chunk.js",
-    "main.js.map": "/ui-neumorphism/static/js/main.8efbdb46.chunk.js.map",
+    "main.js": "/ui-neumorphism/static/js/main.16a94e2f.chunk.js",
+    "main.js.map": "/ui-neumorphism/static/js/main.16a94e2f.chunk.js.map",
     "runtime-main.js": "/ui-neumorphism/static/js/runtime-main.a04be4ad.js",
     "runtime-main.js.map": "/ui-neumorphism/static/js/runtime-main.a04be4ad.js.map",
     "static/js/2.186f842f.chunk.js": "/ui-neumorphism/static/js/2.186f842f.chunk.js",
     "static/js/2.186f842f.chunk.js.map": "/ui-neumorphism/static/js/2.186f842f.chunk.js.map",
     "index.html": "/ui-neumorphism/index.html",
-    "precache-manifest.36485883b221ed8eea7ac1853969d6ce.js": "/ui-neumorphism/precache-manifest.36485883b221ed8eea7ac1853969d6ce.js",
+    "precache-manifest.a22a737068e31985247af5c384d05124.js": "/ui-neumorphism/precache-manifest.a22a737068e31985247af5c384d05124.js",
     "service-worker.js": "/ui-neumorphism/service-worker.js",
     "static/css/main.6eed0d32.chunk.css.map": "/ui-neumorphism/static/css/main.6eed0d32.chunk.css.map",
     "static/js/2.186f842f.chunk.js.LICENSE.txt": "/ui-neumorphism/static/js/2.186f842f.chunk.js.LICENSE.txt",
-    "static/js/main.8efbdb46.chunk.js.LICENSE.txt": "/ui-neumorphism/static/js/main.8efbdb46.chunk.js.LICENSE.txt"
+    "static/js/main.16a94e2f.chunk.js.LICENSE.txt": "/ui-neumorphism/static/js/main.16a94e2f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.a04be4ad.js",
     "static/js/2.186f842f.chunk.js",
     "static/css/main.6eed0d32.chunk.css",
-    "static/js/main.8efbdb46.chunk.js"
+    "static/js/main.16a94e2f.chunk.js"
   ]
 }
