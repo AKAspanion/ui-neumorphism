@@ -46,8 +46,12 @@
   border-radius: 24px;
 }
 
-.nu-card.nu-card--outlined {
+.nu-card.nu-card--outlined,
+.nu-card.nu-card--flat {
   box-shadow: none !important;
+}
+
+.nu-card.nu-card--outlined {
   border: 1px solid var(--border-color);
 }
 

@@ -32,6 +32,12 @@ const routes = [{
     component: ButtonView,
   },
   {
+    id: 4,
+    path: "/fab",
+    name: "Floating Action Button",
+    component: FabView,
+  },
+  {
     id: 5,
     path: "/radio",
     name: "Radio",

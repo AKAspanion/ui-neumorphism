@@ -9,18 +9,20 @@ class Card extends React.Component {
 
   static propTypes = {
     dark: G_BOOL,
+    flat: G_BOOL,
     rounded: G_BOOL,
     outlined: G_BOOL,
     elevation: G_STRING
   }
 
   getClass() {
-    const { dark, elevation, rounded, outlined } = this.props
+    const { dark, flat, elevation, rounded, outlined } = this.props
     return getModuleClasses(
       styles,
       `
         nu-card
         elevation-${elevation || 1}
+        ${flat ? 'nu-card--flat' : ''}
         nu-card--${dark ? 'dark' : 'light'}
         ${rounded ? 'nu-card--rounded' : ''}
         ${outlined ? 'nu-card--outlined' : ''}

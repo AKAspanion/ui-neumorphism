@@ -48,20 +48,20 @@ class CardView extends React.Component {
       </CardAction>
     )
 
+    const { dark } = this.props
     return (
-      <div>
+      <Card flat dark={dark}>
         <H3>Cards</H3>
         <H6>Cards contain content and actions about a single subject.</H6>
         <br />
         <H5 style={{ marginTop: '24px' }}>Simple Card</H5>
         <Subtitle1>
-          Although cards can support multiple actions, UI controls, and an
-          overflow menu, use restraint and remember that cards are entry points
+          Although cards can support multiple actions, remember that cards are entry points
           to more complex and detailed information.
         </Subtitle1>
         <div className='flex-container'>
           <div style={{ width: '275px', margin: '32px' }}>
-            <Card>
+            <Card dark={dark}>
               {cardContent}
               {cardAction}
             </Card>
@@ -73,7 +73,7 @@ class CardView extends React.Component {
         </Subtitle1>
         <div className='flex-container'>
           <div style={{ width: '275px', margin: '32px' }}>
-            <Card outlined>
+            <Card outlined dark={dark}>
               {cardContent}
               {cardAction}
             </Card>
@@ -85,13 +85,13 @@ class CardView extends React.Component {
         </Subtitle1>
         <div className='flex-container'>
           <div style={{ width: '275px', margin: '32px' }}>
-            <Card rounded>
+            <Card rounded dark={dark}>
               {cardContent}
               {cardAction}
             </Card>
           </div>
         </div>
-      </div>
+      </Card>
     )
   }
 }
