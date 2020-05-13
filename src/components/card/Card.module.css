@@ -4,10 +4,12 @@
   font-size: 16px;
   border-radius: 8px;
   color: var(--text-color);
+  background: var(--bg-color);
   background-color: var(--bg-color);
 }
 
 .nu-card.nu-card--light {
+  --bg-color: var(--light-bg);
   --text-color: var(--g-text-color-light);
   --border-color: var(--light-bg-dark-shadow);
   --box-shadow: 3px 3px 5px var(--light-bg-dark-shadow),
@@ -15,6 +17,7 @@
 }
 
 .nu-card.nu-card--dark {
+  --bg-color: var(--dark-bg);
   --text-color: var(--g-text-color-dark);
   --border-color: var(--dark-bg-dark-shadow);
   --box-shadow: 3px 3px 5px var(--dark-bg-dark-shadow),

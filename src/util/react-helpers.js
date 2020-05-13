@@ -12,7 +12,7 @@ export const isMyReactComponent = (component) => {
   if (component && component.type && typeof component.type !== 'string') {
     componentName = component.type.displayName
   }
-  return componentName.includes('Nu')
+  return componentName && componentName.includes('Nu')
 }
 
 /**

@@ -1,10 +1,20 @@
 {
   "name": "ui-neumorphism",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": " React components library for neumorphism UI/UX trend.",
   "author": "AKAspanion",
   "license": "MIT",
   "repository": "AKAspanion/ui-neumorphism",
+  "keywords": [
+    "ui",
+    "react",
+    "reactjs",
+    "react-js",
+    "neumorphic",
+    "neumorphism",
+    "skeuomorphism",
+    "ui-neumorphism"
+  ],
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.js",

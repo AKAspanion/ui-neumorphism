@@ -23,6 +23,29 @@ class Example extends Component {
     return <Button />
   }
 }
+```
+## Getting Started
+
+### Setting background color
+In neumorphism UI, background color of all components and pages should match.
+
+You need to set the background color of all your pages to match the component library's color.
+
+One way to do this is to put the following inside your `html` or `body` css definition.
+```css
+/* For light theme */
+background: var(--light-bg);
+
+/* or */
+
+/* For dark theme */
+background: var(--dark-bg);
+```
+Here `--light-bg` and `--dark-bg` are css variables that hold the value of light and dark background color respectively.
+
+A list of css variable definitions is present in root tag of `ui-neumorphism/dist/index.css`.
+
+These variables are used to theme the library and its available to you.
 
 ## License
 

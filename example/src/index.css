@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  background: var(--bg-color);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -13,8 +14,99 @@ code {
     monospace;
 }
 
+.theme--light {
+  --bg-color: var(--light-bg);
+  --text-shadow: var(--light-bg-light-shadow);
+  --menu-text-color: var(--g-text-color-light);
+  --menu-text-hover-color: var(--primary-dark);
+}
+
+.theme--dark {
+  --bg-color: var(--dark-bg);
+  --text-shadow: var(--dark-bg-light-shadow);
+  --menu-text-color: var(--g-text-color-dark);
+  --menu-text-hover-color: var(--primary-light);
+}
+
+main {
+  min-height: 100vh;
+  min-width: 100vw;
+  background: var(--bg-color);
+}
+
 .d-dummy {
   width: 100px;
   height: 24px;
 }
 
+.sidebar {
+  width: 200px;
+  user-select: none;
+  transition: all .2s ease-in-out;
+}
+
+.sidebar ul {
+  padding: 4px 0px 0px 0px;
+  list-style: none;
+  margin: 0;
+}
+
+.sidebar ul li {
+  padding: 4px 12px;
+  list-style: none;
+  width: 160px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.sidebar ul li a,
+.sidebar-menu-title a {
+  text-decoration: none;
+  color: var(--menu-text-color);
+}
+
+.sidebar-link-active,
+.sidebar ul li a:hover,
+.sidebar-menu-title:hover,
+.sidebar-menu-title a:hover {
+  color: var(--menu-text-hover-color) !important;
+}
+
+.sidebar-link-active {
+  text-shadow: 1px 1px 1px var(--text-shadow);
+}
+
+.sidebar-menu-title {
+  padding: 8px 0px;
+  text-decoration: none;
+}
+
+.sidebar-menu {
+  padding-top: 4px;
+}
+
+.sidebar-menu input[type="checkbox"] {
+  appearance: none;
+  position: absolute;
+  left: -9999;
+}
+
+.sidebar-menu input[type="checkbox"]~ul,
+.sidebar-menu input[type="checkbox"]:checked~ul {
+  overflow: hidden;
+  transition: all .25s;
+}
+
+.sidebar-menu input[type="checkbox"]~ul {
+  max-height: 0;
+}
+
+.sidebar-menu input[type="checkbox"]:checked~ul {
+  max-height: 100vh;
+  transition: all 1s;
+}
+
+.sidebar-menu label {
+  cursor: pointer;
+}

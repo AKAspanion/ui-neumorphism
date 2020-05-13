@@ -65,7 +65,11 @@ class Button extends React.Component {
         onMouseOut={mouseOut}
         onMouseOver={mouseOver}
         className={this.getClasses('container')}
-        style={{ backgroundColor: bgColor, color: disabled ? null : color }}
+        style={{
+          backgroundColor: bgColor,
+          color: disabled ? null : color,
+          border: disabled ? null : `1px solid ${color}`
+        }}
       >
         <button className={this.getClasses('input')}>
           {fab ? btnChildren : btnChildren || 'button'}
