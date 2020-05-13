@@ -14,9 +14,12 @@
   --primary-dark: #aa0660;
   --primary-light: #fa7ac0;
 
-  --g-text-color-light: rgba(0, 0, 0, 0.86);
+  --g-text-color-light: rgba(0, 0, 0, 0.87);
+  --g-text-color-disabled-light: rgba(0, 0, 0, 0.38);
   --g-text-color-secondary-light: rgba(0, 0, 0, 0.60);
-  --g-text-color-dark: var(--white);
+  --g-text-color-dark: rgba(255, 255, 255, 0.87);
+  --g-text-color-disabled-dark: rgba(255, 255, 255, 0.38);
+  --g-text-color-secondary-dark: rgba(255, 255, 255, 0.60);
 
 
   --g-bg-color-disabled-light: #dee5e8;

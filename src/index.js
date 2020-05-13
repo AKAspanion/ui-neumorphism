@@ -3,5 +3,6 @@ export {
   CardAction,
   Button,
   Card,
-  Fab
+  Fab,
+  H1
 } from './components/'

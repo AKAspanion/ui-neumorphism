@@ -18,33 +18,39 @@ export default function MainContainer() {
           padding: '100px'
         }}
       >
-        <Card dark={dark}>
-          <div style={{ margin: '32px' }}>
-            <div
-              style={{
-                display: 'flex'
-              }}
-            >
-              <Sidebar />
+        <div
+          style={{
+            margin: '32px'
+          }}
+        >
+          <Card dark={dark}>
+            <div style={{ padding: '32px' }}>
               <div
                 style={{
-                  width: 'calc(100% - 200px)'
+                  display: 'flex'
                 }}
               >
-                <Switch>
-                  {routes.map((route) => (
-                    <Route
-                      exact
-                      key={route.id}
-                      path={route.path}
-                      component={route.component}
-                    />
-                  ))}
-                </Switch>
+                <Sidebar />
+                <div
+                  style={{
+                    width: 'calc(100% - 200px)'
+                  }}
+                >
+                  <Switch>
+                    {routes.map((route) => (
+                      <Route
+                        exact
+                        key={route.id}
+                        path={route.path}
+                        component={route.component}
+                      />
+                    ))}
+                  </Switch>
+                </div>
               </div>
             </div>
-          </div>
-        </Card>
+          </Card>
+        </div>
       </div>
     </main>
   )
