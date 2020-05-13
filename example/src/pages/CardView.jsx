@@ -10,7 +10,7 @@ import {
   Body2,
   H6,
   H5,
-  H3
+  H4
 } from 'ui-neumorphism'
 class CardView extends React.Component {
   render() {
@@ -44,20 +44,22 @@ class CardView extends React.Component {
     )
     const cardAction = (
       <CardAction>
-        <Button text>Learn More</Button>
+        <Button text color='var(--primary)'>
+          Learn More
+        </Button>
       </CardAction>
     )
 
     const { dark } = this.props
     return (
       <Card flat dark={dark}>
-        <H3>Cards</H3>
+        <H4>Cards</H4>
         <H6>Cards contain content and actions about a single subject.</H6>
         <br />
         <H5 style={{ marginTop: '24px' }}>Simple Card</H5>
         <Subtitle1>
-          Although cards can support multiple actions, remember that cards are entry points
-          to more complex and detailed information.
+          Although cards can support multiple actions, remember that cards are
+          entry points to more complex and detailed information.
         </Subtitle1>
         <div className='flex-container'>
           <div style={{ width: '275px', margin: '32px' }}>
@@ -91,6 +93,10 @@ class CardView extends React.Component {
             </Card>
           </div>
         </div>
+        <br />
+        <br />
+        <H5>API</H5>
+        <Subtitle1>Coming soon..</Subtitle1>
       </Card>
     )
   }

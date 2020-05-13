@@ -28,13 +28,13 @@ const routes = [{
   {
     id: 4,
     path: "/button",
-    name: "Button",
+    name: "Buttons",
     component: ButtonView,
   },
   {
     id: 4,
     path: "/fab",
-    name: "Floating Action Button",
+    name: "Buttons: Floating Action Button",
     component: FabView,
   },
   {

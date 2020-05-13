@@ -4,7 +4,7 @@ class TypographyView extends React.Component {
   render() {
     return (
       <div>
-        TypographyView
+        Coming soon..
       </div>
     )
   }

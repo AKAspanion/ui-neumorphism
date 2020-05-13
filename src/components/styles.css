@@ -23,9 +23,7 @@
 
 
   --g-bg-color-disabled-light: #dee5e8;
-  --g-text-color-disabled-light: #b2b5b9;
   --g-bg-color-disabled-dark: #727272;
-  --g-text-color-disabled-dark: #555555;
 }
 
 body {
@@ -40,10 +38,10 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-    border-radius: 4px;
-    padding: 0px 4px;
-    background: #ccc;
-    color: var(--primary)
+  border-radius: 4px;
+  padding: 0px 4px;
+  background: #ccc;
+  color: var(--primary)
 }
 
 .cursor-pointer {

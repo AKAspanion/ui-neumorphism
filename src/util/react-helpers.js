@@ -28,10 +28,10 @@ export const passDownProp = (children, props, propName) => {
         ...child.props
       }
       if (typeof propName === 'string') {
-        newProps[propName] = props[propName] || child.props[propName]
+        newProps[propName] = child.props[propName] || props[propName]
       } else if (Array.isArray(propName)) {
         propName.forEach(prop => {
-          newProps[prop] = props[prop] || child.props[prop]
+          newProps[prop] = child.props[prop] || props[prop]
         })
       }
       return cloneElement(child, newProps)

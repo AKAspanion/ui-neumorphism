@@ -26,8 +26,13 @@ class Button extends React.Component {
     size: SIZE_PROP
   }
 
+  getValidSize(size) {
+    const sizes = ['small', 'medium', 'large']
+    return sizes.find((s) => s === size) || 'medium'
+  }
+
   getClasses(type) {
-    const { fab, rounded } = this.props
+    const { fab, size, rounded } = this.props
     const isRounded = fab || rounded
     switch (type) {
       case 'container':
@@ -36,7 +41,7 @@ class Button extends React.Component {
           `
             nu-button
             cursor-pointer
-            nu-button--${this.props.size}
+            nu-button--${this.getValidSize(size)}
             ${isRounded ? 'nu-button--rounded' : ''}
             ${this.props.fab ? 'nu-button--fab' : ''}
             ${this.props.text ? 'nu-button--text' : ''}
@@ -56,7 +61,7 @@ class Button extends React.Component {
   }
 
   render() {
-    const { fab, color, bgColor, disabled, children } = this.props
+    const { fab, color, bgColor, disabled, outlined, children } = this.props
     const { onClick, mouseOver, mouseOut } = this.props
     const btnChildren = passDownProp(children, this.props, 'dark')
     return (
@@ -68,7 +73,7 @@ class Button extends React.Component {
         style={{
           backgroundColor: bgColor,
           color: disabled ? null : color,
-          border: disabled ? null : `1px solid ${color}`
+          border: disabled ? null : outlined ? `1px solid ${color}` : null
         }}
       >
         <button className={this.getClasses('input')}>

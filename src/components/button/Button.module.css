@@ -127,10 +127,10 @@
 }
 
 .nu-button-inner {
-  margin: 0px;
-  font-size: 16px;
+  letter-spacing: 1.05px;
   font-weight: 500;
-  flex-shrink: 1;
+  font-size: 14px;
+  margin: 0px;
   border: none;
   outline: none;
   color: inherit;
