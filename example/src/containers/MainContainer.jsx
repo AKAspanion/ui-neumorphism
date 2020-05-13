@@ -50,7 +50,7 @@ class MainContainer extends React.Component {
                   <Sidebar />
                   <div
                     style={{
-                      width: 'calc(100% - 200px)'
+                      width: 'calc(100% - 300px)'
                     }}
                   >
                     <Switch>

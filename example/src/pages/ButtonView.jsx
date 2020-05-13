@@ -43,6 +43,22 @@ class ButtonView extends React.Component {
               </Button>
             </div>
             <div style={{ padding: '20px' }}>
+              <Button
+                disabled
+                color='#ccc'
+                dark={darkTheme}
+                bgColor='var(--primary)'
+              >
+                disabled
+              </Button>
+            </div>
+
+            <div style={{ padding: '20px' }}>
+              <Button dark={darkTheme} rounded>
+                rounded
+              </Button>
+            </div>
+            <div style={{ padding: '20px' }}>
               <Button dark={darkTheme} depressed>
                 depressed
               </Button>
@@ -55,11 +71,6 @@ class ButtonView extends React.Component {
             <div style={{ padding: '20px' }}>
               <Button dark={darkTheme} text>
                 text
-              </Button>
-            </div>
-            <div style={{ padding: '20px' }}>
-              <Button dark={darkTheme} rounded>
-                rounded
               </Button>
             </div>
           </div>
@@ -263,7 +274,7 @@ class ButtonView extends React.Component {
         <br />
         <H5 style={{ marginTop: '24px' }}>Sizes</H5>
         <Subtitle1 style={{ marginBottom: '4px' }}>
-          Use <code>size</code> property to change button size
+          Use <code>size</code> property to change button size.
         </Subtitle1>
         <br />
         <Card outlined>

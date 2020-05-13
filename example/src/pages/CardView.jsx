@@ -56,6 +56,7 @@ class CardView extends React.Component {
         <H4>Cards</H4>
         <H6>Cards contain content and actions about a single subject.</H6>
         <br />
+        <br />
         <H5 style={{ marginTop: '24px' }}>Simple Card</H5>
         <Subtitle1>
           Although cards can support multiple actions, remember that cards are
@@ -69,6 +70,9 @@ class CardView extends React.Component {
             </Card>
           </div>
         </div>
+        <br />
+        <br />
+        <br />
         <H5>Outlined Card</H5>
         <Subtitle1>
           Set <code>outlined</code> flag to render an outlined card.
@@ -81,6 +85,9 @@ class CardView extends React.Component {
             </Card>
           </div>
         </div>
+        <br />
+        <br />
+        <br />
         <H5>Rounded Card</H5>
         <Subtitle1>
           Set <code>rounded</code> flag to render an rounded card.
@@ -93,6 +100,7 @@ class CardView extends React.Component {
             </Card>
           </div>
         </div>
+        <br />
         <br />
         <br />
         <H5>API</H5>

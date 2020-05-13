@@ -5,15 +5,12 @@ import routes from '../routes/index.js'
 
 export default function Sidebar() {
   useEffect(() => {
-    const checkbox = document.getElementById('list-item-1')
-    if (!document.URL.includes('/home') && !document.URL.includes('/example')) {
-      checkbox.checked = true
-    }
+    document.getElementById('list-item-1').checked = true
   })
   return (
     <div className='sidebar'>
       <div className='sidebar-menu-title'>
-        <NavLink to='/home' exact activeClassName='sidebar-link-active'>
+        <NavLink exact to='/' activeClassName='sidebar-link-active'>
           Home
         </NavLink>
       </div>

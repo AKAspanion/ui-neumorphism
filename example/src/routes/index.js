@@ -3,6 +3,7 @@ import {
   Example,
   FabView,
   CardView,
+  InputView,
   ButtonView,
   TypographyView
 } from '../pages/index.js';
@@ -12,12 +13,6 @@ const routes = [{
     path: "/",
     name: "",
     component: Home
-  },
-  {
-    id: 2,
-    path: "/home",
-    name: "Home",
-    component: Home,
   },
   {
     id: 3,
@@ -41,31 +36,31 @@ const routes = [{
     id: 5,
     path: "/radio",
     name: "Radio",
-    component: FabView,
+    component: InputView,
   },
   {
     id: 6,
     path: "/radio-group",
     name: "Radio Group",
-    component: FabView,
+    component: InputView,
   },
   {
     id: 7,
     path: "/switch",
     name: "Switch",
-    component: FabView,
+    component: InputView,
   },
   {
     id: 8,
     path: "/checkbox",
     name: "Checkbox",
-    component: FabView,
+    component: InputView,
   },
   {
     id: 9,
     path: "/input",
     name: "Input",
-    component: FabView,
+    component: InputView,
   },
   {
     id: 9,

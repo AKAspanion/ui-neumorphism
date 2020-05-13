@@ -143,7 +143,7 @@
   border-radius: inherit;
   text-transform: uppercase;
   background-color: inherit;
-  font-family: -apple-system,
-    BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+  font-family: 'Roboto', -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', 'Oxygen', 'Ubuntu',
     'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 }

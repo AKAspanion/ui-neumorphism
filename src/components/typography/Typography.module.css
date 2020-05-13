@@ -1,6 +1,6 @@
 .nu-h1 {
   letter-spacing: -1.5px;
-  font-weight: 200;
+  font-weight: 300;
   font-size: 96px;
 }
 
@@ -12,62 +12,62 @@
 
 .nu-h3 {
   letter-spacing: 0px;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 48px;
 }
 
 .nu-h4 {
   letter-spacing: 0.25px;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 34px;
 }
 
 .nu-h5 {
   letter-spacing: 0px;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 24px;
 }
 
 .nu-h6 {
   letter-spacing: 0.15px;
-  font-weight: medium;
+  font-weight: 500;
   font-size: 20px;
 }
 
 .nu-subtitle-1 {
   letter-spacing: 0.15px;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 16px;
 }
 
 .nu-subtitle-2 {
   letter-spacing: 0.1px;
-  font-weight: normal;
+  font-weight: 500;
   font-size: 14px;
 }
 
 .nu-body-1 {
   letter-spacing: 0.5px;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 16px;
 }
 
 .nu-body-2 {
   letter-spacing: 0.26px;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 14px;
 }
 
 .nu-caption {
   letter-spacing: 0.4px;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 12px;
 }
 
 .nu-overline {
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 10px;
 }
 

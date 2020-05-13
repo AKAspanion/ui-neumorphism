@@ -71,8 +71,8 @@ class Button extends React.Component {
         onMouseOver={mouseOver}
         className={this.getClasses('container')}
         style={{
-          backgroundColor: bgColor,
           color: disabled ? null : color,
+          backgroundColor: disabled ? null : bgColor,
           border: disabled ? null : outlined ? `1px solid ${color}` : null
         }}
       >
