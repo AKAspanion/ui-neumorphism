@@ -1,0 +1,70 @@
+.nu-input-container {
+    display: flex;
+    margin: 4px 12px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.nu-input {
+    outline: none;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: var(--text-color);
+    background: var(--bg-color);
+    box-shadow: var(--box-shadow-inset);
+    transition: all 0.2s ease-in-out;
+}
+
+.nu-input--disabled .nu-input {
+    opacity: 0.6;
+    pointer-events: none;
+    box-shadow: var(--box-shadow-inset-thin);
+}
+
+.nu-input--rounded .nu-input {
+    padding: 12px 16px;
+    border-radius: 16px;
+}
+
+
+.nu-input:focus {
+    box-shadow: var(--box-shadow);
+}
+
+.nu-input.nu-input--light {
+    --bg-color: var(--light-bg);
+    --text-color: rgba(0, 0, 0, .54);
+    --box-shadow: 3px 3px 8px var(--light-bg-dark-shadow),
+        -3px -3px 8px var(--light-bg-light-shadow);
+    --box-shadow-inset: inset 2px 2px 6px var(--light-bg-dark-shadow),
+        inset -3px -3px 8px var(--light-bg-light-shadow);
+    --box-shadow-inset-thin: inset 1px 1px 2px var(--light-bg-dark-shadow),
+        inset -1px -1px 2px var(--light-bg-light-shadow);
+}
+
+.nu-input.nu-input--dark {
+    --bg-color: var(--dark-bg);
+    --text-color: rgba(255, 255, 255, 1);
+    --box-shadow: 3px 3px 8px var(--dark-bg-dark-shadow),
+        -3px -3px 8px var(--dark-bg-light-shadow);
+    --box-shadow-inset: inset 2px 2px 6px var(--dark-bg-dark-shadow),
+        inset -2px -2px 6px var(--dark-bg-light-shadow);
+    --box-shadow-inset-thin: inset 1px 1px 2px var(--dark-bg-dark-shadow),
+        inset -1px -1px 2px var(--dark-bg-light-shadow);
+}
+
+.nu-input-label {
+    opacity: 0.8;
+    font-size: 13px;
+    line-height: 20px;
+    padding: 4px 12px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.nu-input--rounded .nu-input-label {
+    padding: 4px 16px;
+}

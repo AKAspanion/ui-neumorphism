@@ -29,7 +29,10 @@ class Card extends React.Component {
   }
 
   render() {
-    const cardChildren = passDownProp(this.props.children, this.props, 'dark')
+    const cardChildren = passDownProp(this.props.children, this.props, [
+      'dark',
+      'rounded'
+    ])
     return <div className={this.getClass()}>{cardChildren || 'card'}</div>
   }
 }

@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -109,4 +114,10 @@ main {
 
 .sidebar-menu label {
   cursor: pointer;
+}
+
+.flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

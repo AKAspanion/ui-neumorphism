@@ -24,10 +24,17 @@ export const isMyReactComponent = (component) => {
 export const passDownProp = (children, props, propName) => {
   return Children.map(children, (child) => {
     if (isMyReactComponent(child)) {
-      return cloneElement(child, {
-        ...child.props,
-        [propName]: props[propName] || child.props[propName]
-      })
+      const newProps = {
+        ...child.props
+      }
+      if (typeof propName === 'string') {
+        newProps[propName] = props[propName] || child.props[propName]
+      } else if (Array.isArray(propName)) {
+        propName.forEach(prop => {
+          newProps[prop] = props[prop] || child.props[prop]
+        })
+      }
+      return cloneElement(child, newProps)
     } else {
       return child
     }

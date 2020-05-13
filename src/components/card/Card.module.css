@@ -1,6 +1,18 @@
 .nu-card {
   width: auto;
+}
+
+.nu-card-action {
+  padding: 8px;
+}
+
+.nu-card-content {
   padding: 16px;
+}
+
+.nu-card,
+.nu-card-action,
+.nu-card-content {
   font-size: 16px;
   border-radius: 8px;
   color: var(--text-color);
@@ -8,7 +20,9 @@
   background-color: var(--bg-color);
 }
 
-.nu-card.nu-card--light {
+.nu-card.nu-card--light,
+.nu-card-action.nu-card-action--light,
+.nu-card-content.nu-card-content--light {
   --bg-color: var(--light-bg);
   --text-color: var(--g-text-color-light);
   --border-color: var(--light-bg-dark-shadow);
@@ -16,7 +30,9 @@
     -3px -3px 5px var(--light-bg-light-shadow);
 }
 
-.nu-card.nu-card--dark {
+.nu-card.nu-card--dark,
+.nu-card-action.nu-card-action--dark,
+.nu-card-content.nu-card-content--dark {
   --bg-color: var(--dark-bg);
   --text-color: var(--g-text-color-dark);
   --border-color: var(--dark-bg-dark-shadow);
@@ -24,8 +40,10 @@
     -3px -3px 5px var(--dark-bg-light-shadow);
 }
 
-.nu-card.nu-card--rounded {
-  border-radius: 48px;
+.nu-card.nu-card--rounded,
+.nu-card-action.nu-card-action--rounded,
+.nu-card-content.nu-card-content--rounded {
+  border-radius: 24px;
 }
 
 .nu-card.nu-card--outlined {
@@ -40,4 +58,3 @@
 .nu-card.elevation-0 {
   box-shadow: var(--box-shadow);
 }
-

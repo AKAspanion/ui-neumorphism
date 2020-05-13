@@ -1,0 +1,10 @@
+.nu-radio-group {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.nu-radio-group--vertical {
+    flex-direction: column;
+}

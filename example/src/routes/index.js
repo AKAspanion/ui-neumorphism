@@ -32,8 +32,32 @@ const routes = [{
   },
   {
     id: 5,
-    path: "/fab",
-    name: "Floating Action Buttons",
+    path: "/radio",
+    name: "Radio",
+    component: FabView,
+  },
+  {
+    id: 6,
+    path: "/radio-group",
+    name: "Radio Group",
+    component: FabView,
+  },
+  {
+    id: 7,
+    path: "/switch",
+    name: "Switch",
+    component: FabView,
+  },
+  {
+    id: 8,
+    path: "/checkbox",
+    name: "Checkbox",
+    component: FabView,
+  },
+  {
+    id: 9,
+    path: "/input",
+    name: "Input",
     component: FabView,
   },
   {

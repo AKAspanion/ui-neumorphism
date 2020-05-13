@@ -1,4 +1,6 @@
 export {
+  CardContent,
+  CardAction,
   Button,
   Card,
   Fab
