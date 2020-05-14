@@ -4,6 +4,7 @@ import { Body1 } from '../../index'
 
 import radioStyles from '../radio/Radio.module.css'
 import checkboxStyles from '../checkbox/Checkbox.module.css'
+import switchStyles from '../switch/Switch.module.css'
 
 import { uid, getModuleClasses, setCSSVariable } from '../../util'
 import {
@@ -27,9 +28,16 @@ class SelectionControl extends React.Component {
       type: props.type,
       styles: {
         radioStyles,
-        checkboxStyles,
-        switchStyles: checkboxStyles
+        switchStyles,
+        checkboxStyles
       }
+    }
+  }
+
+  componentDidMount() {
+    const { id, color, disabled } = this.props
+    if (!disabled) {
+      setCSSVariable(id || this.state.id, '--selector-bg', color)
     }
   }
 
@@ -43,17 +51,14 @@ class SelectionControl extends React.Component {
     }
   }
 
-  componentDidMount() {
-    const { id, color, disabled } = this.props
-    if (!disabled) {
-      setCSSVariable(id || this.state.id, '--selector-bg', color)
-    }
+  getInputType(type) {
+    return ['radio', 'checkbox', 'switch'].find((i) => i === type) || 'checkbox'
   }
 
   getClasses(elem) {
     const { dark, disabled } = this.props
-    const { type, styles } = this.state
-
+    const { type: inputType, styles } = this.state
+    const type = this.getInputType(inputType)
     const style = styles[`${type}Styles`]
     const disabledInputClass = disabled ? `nu-${type}--disabled` : ''
     const disabledLabelClass = disabled
@@ -98,8 +103,7 @@ class SelectionControl extends React.Component {
       onClick
     } = this.props
     const { id: stateId, type, isChecked } = this.state
-    const inputType =
-      ['radio', 'checkbox', 'switch'].find((i) => i === type) || 'checkbox'
+    const inputType = this.getInputType(type)
     return (
       <div className={this.getClasses('container')} style={{ ...style }}>
         <input

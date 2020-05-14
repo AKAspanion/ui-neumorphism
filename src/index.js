@@ -17,8 +17,9 @@ export {
   Card,
   Button,
   Fab,
-  Radio,
   Divider,
+  Radio,
+  Switch,
   Checkbox,
   SelectionControl
 } from './components/'

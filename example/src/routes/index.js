@@ -54,12 +54,6 @@ const routes = [{
     component: RadioView,
   },
   {
-    id: 6,
-    path: "/radio-group",
-    name: "Radio Group",
-    component: InputView,
-  },
-  {
     id: 7,
     path: "/switch",
     name: "Switch",

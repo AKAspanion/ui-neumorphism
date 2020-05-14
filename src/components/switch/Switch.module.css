@@ -1,0 +1,83 @@
+.nu-switch {
+  width: 26px;
+  height: 26px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  border-radius: 4px;
+  display: inline-block;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  transition: all 200ms ease-in-out;
+}
+
+.nu-switch.nu-switch--light {
+  --bg-color: var(--light-bg);
+  --selector-bg: var(--text-color);
+  --text-color: var(--g-text-color-light);
+  --text-disabled: var(--g-text-color-disabled-light);
+  --box-shadow-small: 1px 1px 2px var(--light-bg-dark-shadow),
+    -1px -1px 2px var(--light-bg-light-shadow);
+  --box-shadow-inset: inset -2px -2px 3px var(--light-bg-light-shadow),
+    inset 2px 2px 3px var(--light-bg-dark-shadow);
+}
+
+.nu-switch.nu-switch--dark {
+  --bg-color: var(--dark-bg);
+  --selector-bg: var(--text-color);
+  --text-color: var(--g-text-color-dark);
+  --text-disabled: var(--g-text-color-disabled-dark);
+  --box-shadow-small: 1px 1px 2px var(--dark-bg-dark-shadow),
+    -1px -1px 2px var(--dark-bg-light-shadow);
+  --box-shadow-inset: inset -2px -2px 3px var(--dark-bg-light-shadow),
+    inset 2px 2px 3px var(--dark-bg-dark-shadow);
+}
+
+.nu-switch:before,
+.nu-switch:after {
+  content: "";
+  overflow: hidden;
+  position: absolute;
+  border-radius: 32px;
+  background-color: var(--bg-color);
+}
+
+.nu-switch:before {
+  z-index: 2;
+  top: 4px;
+  left: 4px;
+  width: 20px;
+  height: 20px;
+  transform: translate3d(0%, 0, 0);
+  box-shadow: var(--box-shadow-small);
+  transition: all 0.3s cubic-bezier(0.85, 0.05, 0.18, 1.35);
+}
+
+.nu-switch:after {
+  z-index: 1;
+  width: 48px;
+  height: 28px;
+  isolation: isolate;
+  box-shadow: var(--box-shadow-inset);
+}
+
+.nu-switch:checked:before {
+  transform: translate3d(100%, 0, 0);
+  background-color: var(--selector-bg);
+}
+
+.nu-switch.nu-switch--disabled:before {
+  background-color: var(--text-disabled) !important;
+}
+
+.nu-switch.nu-switch--disabled {
+  opacity: 0.75;
+}
+
+.nu-switch-label {
+  font-size: 16px;
+  margin-left: 28px;
+  margin-top: -2px;
+  color: var(--text-color);
+}
