@@ -4,6 +4,7 @@ import {
   FabView,
   CardView,
   InputView,
+  RadioView,
   ButtonView,
   TypographyView
 } from '../pages/index.js';
@@ -36,7 +37,7 @@ const routes = [{
     id: 5,
     path: "/radio",
     name: "Radio",
-    component: InputView,
+    component: RadioView,
   },
   {
     id: 6,

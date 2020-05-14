@@ -2,7 +2,7 @@ import React, { createElement } from 'react'
 
 import styles from './Typography.module.css'
 import { getModuleClasses } from '../../util'
-import { TYPOGRAPHY_PROP_TYPES } from '../../assets/index'
+import { TYPOGRAPHY_PROP_TYPES, G_STRING } from '../../assets/index'
 
 class Typography extends React.Component {
   static displayName = 'NuTypography'
@@ -22,7 +22,10 @@ class Typography extends React.Component {
     'body-2': 'p'
   }
 
-  static propTypes = TYPOGRAPHY_PROP_TYPES
+  static propTypes = {
+    type: G_STRING,
+    ...TYPOGRAPHY_PROP_TYPES
+  }
 
   getTypographyType() {
     const { disabled, secondary } = this.props

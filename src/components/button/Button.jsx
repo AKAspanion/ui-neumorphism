@@ -32,7 +32,7 @@ class Button extends React.Component {
   }
 
   getClasses(type) {
-    const { fab, size, rounded } = this.props
+    const { fab, dark, size, rounded } = this.props
     const isRounded = fab || rounded
     switch (type) {
       case 'container':
@@ -42,12 +42,12 @@ class Button extends React.Component {
             nu-button
             cursor-pointer
             nu-button--${this.getValidSize(size)}
+            nu-button--${dark ? 'dark' : 'light'}
             ${isRounded ? 'nu-button--rounded' : ''}
             ${this.props.fab ? 'nu-button--fab' : ''}
             ${this.props.text ? 'nu-button--text' : ''}
             ${this.props.block ? 'nu-button--block' : ''}
             ${this.props.active ? 'nu-button--active' : ''}
-            nu-button--${this.props.dark ? 'dark' : 'light'}
             ${this.props.disabled ? 'nu-button--disabled' : ''}
             ${this.props.outlined ? 'nu-button--outlined' : ''}
             ${this.props.depressed ? 'nu-button--depressed' : ''}

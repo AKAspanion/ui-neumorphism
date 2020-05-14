@@ -9,7 +9,6 @@ export const POSITION_PROP = PropTypes.oneOf(['top', 'right', 'bottom', 'left'])
 
 export const TYPOGRAPHY_PROP_TYPES = {
   dark: G_BOOL,
-  type: G_STRING,
   disabled: G_BOOL,
   secondary: G_BOOL
 }

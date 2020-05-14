@@ -8,3 +8,7 @@ export const getModuleClasses = (localModule, classNames) => {
   return classNames.replace(/^\s+|\s+$/g, '').split(/\s+/)
     .map((cl) => styles[cl.trim()]).join(' ').trim()
 }
+
+export const uid = () => {
+  return `_${(((1 + Math.random()) * 0x10000) | 0).toString(8).substring(1)}_`
+}

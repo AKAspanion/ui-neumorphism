@@ -16,5 +16,6 @@ export {
   CardAction,
   Card,
   Button,
-  Fab
+  Fab,
+  Radio
 } from './components/'
