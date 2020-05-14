@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { H1, Button } from 'ui-neumorphism'
+import { H2, Button } from 'ui-neumorphism'
 
 export default function Topbar(props) {
   const { dark, onClick } = props
@@ -13,7 +13,7 @@ export default function Topbar(props) {
         justifyContent: 'space-between'
       }}
     >
-      <H1 dark={dark}>UI-Neumorphism</H1>
+      <H2 dark={dark}>UI-Neumorphism</H2>
       <Button text dark={dark} onClick={onClick}>
         {dark ? 'LIGHT' : 'DARK'}
       </Button>

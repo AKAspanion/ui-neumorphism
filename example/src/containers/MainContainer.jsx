@@ -1,7 +1,7 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 
-import { Card } from 'ui-neumorphism'
+import { Card, Divider } from 'ui-neumorphism'
 import 'ui-neumorphism/dist/index.css'
 
 import Topbar from '../containers/Topbar.jsx'
@@ -41,7 +41,10 @@ class MainContainer extends React.Component {
                   onClick={this.toggleTheme.bind(this)}
                 />
               </div>
-              <div style={{ padding: '32px' }}>
+              <div style={{ padding: '16px 28px 8px 28px' }}>
+                <Divider dense dark={this.state.dark} />
+              </div>
+              <div style={{ padding: '16px 32px 32px 32px' }}>
                 <div
                   style={{
                     display: 'flex'

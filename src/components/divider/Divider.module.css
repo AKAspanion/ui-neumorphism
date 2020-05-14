@@ -1,0 +1,28 @@
+.nu-divider {
+  border: 0;
+  height: 7px;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow-inset);
+  background: var(--bg-color);
+}
+
+.nu-divider.nu-divider--light {
+  --bg-color: var(--light-bg);
+  --box-shadow-inset: inset -3px -3px 5px var(--light-bg-light-shadow),
+    inset 3px 3px 5px var(--light-bg-dark-shadow);
+  --box-shadow-inset-dense: inset -1px -1px 3px var(--light-bg-light-shadow),
+    inset 1px 1px 3px var(--light-bg-dark-shadow);
+}
+
+.nu-divider.nu-divider--dark {
+  --bg-color: var(--dark-bg);
+  --box-shadow-inset: inset -3px -3px 5px var(--dark-bg-light-shadow),
+    inset 3px 3px 5px var(--dark-bg-dark-shadow);
+  --box-shadow-inset-dense: inset -1px -1px 3px var(--dark-bg-light-shadow),
+    inset 1px 1px 3px var(--dark-bg-dark-shadow);
+}
+
+.nu-divider.nu-divider--dense {
+  height: 5px;
+  box-shadow: var(--box-shadow-inset-dense);
+}

@@ -17,5 +17,6 @@ export {
   Card,
   Button,
   Fab,
-  Radio
+  Radio,
+  Divider
 } from './components/'
