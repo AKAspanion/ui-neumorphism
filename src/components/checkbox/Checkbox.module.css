@@ -39,8 +39,8 @@
 .nu-checkbox:before,
 .nu-checkbox:after {
   content: "";
-  top: 8.5px;
-  left: 5px;
+  top: 9px;
+  left: 4.5px;
   position: absolute;
   pointer-events: none;
   transform-origin: 0% 100%;
@@ -58,7 +58,7 @@
 .nu-checkbox:after {
   width: 3px;
   height: 8px;
-  opacity: 0.60;
+  opacity: 0.75;
   border-right: 2px solid var(--selector-bg);
   border-bottom: 2px solid var(--selector-bg);
   transform: translate3d(0, -8px, 0) rotate(45deg);
@@ -85,7 +85,7 @@
 
 .nu-checkbox.nu-checkbox--disabled:checked:before,
 .nu-checkbox.nu-checkbox--disabled:checked:after {
-  opacity: 0.60;
+  opacity: 0.75;
   left: 4.5px !important;
   border-right: 2px solid transparent;
   border-bottom: 2px solid transparent;
