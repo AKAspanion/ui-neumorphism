@@ -18,5 +18,6 @@ export {
   Button,
   Fab,
   Radio,
-  Divider
+  Divider,
+  Checkbox
 } from './components/'

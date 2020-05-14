@@ -53,6 +53,7 @@ code {
   align-items: center;
   justify-content: center;
   margin: 4px 8px !important;
+  padding: 4px !important;
 }
 
 .d-dummy {

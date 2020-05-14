@@ -7,6 +7,7 @@ import {
   RadioView,
   ButtonView,
   DividerView,
+  CheckboxView,
   TypographyView
 } from '../pages/index.js';
 
@@ -38,7 +39,7 @@ const routes = [{
     id: 8,
     path: "/checkbox",
     name: "Checkbox",
-    component: InputView,
+    component: CheckboxView,
   },
   {
     id: 12,
