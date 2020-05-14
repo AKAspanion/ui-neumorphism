@@ -6,6 +6,7 @@ import {
   InputView,
   RadioView,
   ButtonView,
+  DividerView,
   TypographyView
 } from '../pages/index.js';
 
@@ -16,22 +17,34 @@ const routes = [{
     component: Home
   },
   {
-    id: 3,
-    path: "/card",
-    name: "Card",
-    component: CardView,
-  },
-  {
     id: 4,
     path: "/button",
     name: "Buttons",
     component: ButtonView,
   },
   {
-    id: 4,
+    id: 11,
     path: "/fab",
     name: "Buttons: Floating Action Button",
     component: FabView,
+  },
+  {
+    id: 3,
+    path: "/card",
+    name: "Card",
+    component: CardView,
+  },
+  {
+    id: 8,
+    path: "/checkbox",
+    name: "Checkbox",
+    component: InputView,
+  },
+  {
+    id: 12,
+    path: "/divider",
+    name: "Divider",
+    component: DividerView,
   },
   {
     id: 5,
@@ -52,19 +65,13 @@ const routes = [{
     component: InputView,
   },
   {
-    id: 8,
-    path: "/checkbox",
-    name: "Checkbox",
-    component: InputView,
-  },
-  {
     id: 9,
     path: "/input",
     name: "Input",
     component: InputView,
   },
   {
-    id: 9,
+    id: 10,
     path: "/typography",
     name: "",
     component: TypographyView,

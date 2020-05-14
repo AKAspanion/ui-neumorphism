@@ -1,4 +1,5 @@
 export { default as TypographyView } from './TypographyView.jsx'
+export { default as DividerView } from './DividerView.jsx'
 export { default as ButtonView } from './ButtonView.jsx'
 export { default as RadioView } from './RadioView.jsx'
 export { default as InputView } from './InputView.jsx'

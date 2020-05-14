@@ -9,17 +9,19 @@ class Divider extends React.Component {
 
   static propTypes = {
     dark: G_BOOL,
-    dense: G_BOOL
+    dense: G_BOOL,
+    elevated: G_BOOL
   }
 
   getClasses() {
-    const { dark, dense } = this.props
+    const { dark, dense, elevated } = this.props
     return getModuleClasses(
       styles,
       `
         nu-divider
         ${dense ? 'nu-divider--dense' : ''}
         nu-divider--${dark ? 'dark' : 'light'}
+        ${elevated ? 'nu-divider--elevated' : ''}
       `
     )
   }

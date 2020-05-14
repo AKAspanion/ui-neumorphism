@@ -12,7 +12,6 @@ class FabView extends React.Component {
           action on a screen..
         </H6>
         <br />
-        <br />
         <Subtitle1 style={{ marginBottom: '4px' }}>
           A floating action button appears in front of all screen content,
           typically as a circular shape with an icon in its center.
@@ -25,7 +24,6 @@ class FabView extends React.Component {
           Only one floating action button is recommended per screen to represent
           the most common action.
         </Subtitle1>
-        <br />
         <br />
         <Card outlined dark={darkTheme}>
           <div

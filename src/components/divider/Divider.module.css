@@ -12,6 +12,10 @@
     inset 3px 3px 5px var(--light-bg-dark-shadow);
   --box-shadow-inset-dense: inset -1px -1px 3px var(--light-bg-light-shadow),
     inset 1px 1px 3px var(--light-bg-dark-shadow);
+  --box-shadow: -2px -2px 5px var(--light-bg-light-shadow),
+    2px 2px 5px var(--light-bg-dark-shadow);
+  --box-shadow-dense: -1px -1px 3px var(--light-bg-light-shadow),
+    1px 1px 3px var(--light-bg-dark-shadow);
 }
 
 .nu-divider.nu-divider--dark {
@@ -20,9 +24,23 @@
     inset 3px 3px 5px var(--dark-bg-dark-shadow);
   --box-shadow-inset-dense: inset -1px -1px 3px var(--dark-bg-light-shadow),
     inset 1px 1px 3px var(--dark-bg-dark-shadow);
+  --box-shadow: -2px -2px 5px var(--dark-bg-light-shadow),
+    2px 2px 5px var(--dark-bg-dark-shadow);
+  --box-shadow-dense: -1px -1px 3px var(--dark-bg-light-shadow),
+    1px 1px 3px var(--dark-bg-dark-shadow);
 }
 
 .nu-divider.nu-divider--dense {
   height: 5px;
   box-shadow: var(--box-shadow-inset-dense);
+}
+
+.nu-divider.nu-divider--elevated {
+  height: 5px;
+  box-shadow: var(--box-shadow);
+}
+
+.nu-divider.nu-divider--dense.nu-divider--elevated {
+  height: 3px;
+  box-shadow: var(--box-shadow-dense);
 }

@@ -21,7 +21,7 @@ class Card extends React.Component {
       styles,
       `
         nu-card
-        elevation-${elevation || 1}
+        elevation-${elevation || '1'}
         ${flat ? 'nu-card--flat' : ''}
         nu-card--${dark ? 'dark' : 'light'}
         ${rounded ? 'nu-card--rounded' : ''}
