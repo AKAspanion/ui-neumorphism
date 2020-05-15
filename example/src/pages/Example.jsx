@@ -1,11 +1,12 @@
 import React from 'react'
 
-import { Switch } from 'ui-neumorphism'
+import { Switch, ButtonToggle } from 'ui-neumorphism'
 class Example extends React.Component {
   render() {
     const dark = false
     return (
       <div>
+        <ButtonToggle>H</ButtonToggle>
         {/* Examples coming soon... */}
         <div style={{ padding: '20px' }}>
           <Switch color='var(--primary)' dark={dark} checked />

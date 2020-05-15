@@ -269,6 +269,30 @@ class ButtonView extends React.Component {
             </div>
           </div>
         </Card>
+        <br/>
+        <br/>
+        <br/>
+        <H5 style={{ marginTop: '24px' }}>Block Buttons</H5>
+        <Subtitle1 style={{ marginBottom: '4px' }}>
+          Block buttons take up entire available space.
+        </Subtitle1>
+        <Subtitle1>
+          Set <code>block</code> flag to render block button.
+        </Subtitle1>
+        <br />
+        <Card outlined>
+          <div
+            style={{
+              padding: '32px',
+            }}
+          >
+            <div style={{ padding: '20px' }}>
+              <Button dark={darkTheme} block>
+                default
+              </Button>
+            </div>
+          </div>
+        </Card>
         <br />
         <br />
         <br />

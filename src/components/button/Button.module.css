@@ -9,6 +9,7 @@
   box-sizing: border-box;
   justify-content: center;
   color: var(--text-color);
+  height: var(--btn-height);
   box-shadow: var(--box-shadow);
   background-color: var(--bg-color);
   transition: box-shadow 200ms ease-in-out;
@@ -19,11 +20,13 @@
   --text-color: var(--g-text-color-light);
   --border-color: var(--light-bg-dark-shadow);
   --text-color-disabled: var(--g-text-color-disabled-light);
-  --box-shadow: 6px 6px 15px var(--light-bg-dark-shadow),
-    -3px -3px 10px var(--light-bg-light-shadow);
+  --box-shadow: 5px 5px 12px var(--light-bg-dark-shadow),
+    -4px -4px 10px var(--light-bg-light-shadow);
   --box-shadow-hover: 2px 2px 5px var(--light-bg-dark-shadow),
     -2px -2px 5px var(--light-bg-light-shadow);
-  --box-shadow-inset: inset -1px -1px 3px var(--light-bg-light-shadow),
+  --box-shadow-inset: inset -2px -2px 5px var(--light-bg-light-shadow),
+    inset 2px 2px 5px var(--light-bg-dark-shadow);
+  --box-shadow-inset-low: inset -1px -1px 3px var(--light-bg-light-shadow),
     inset 1px 1px 3px var(--light-bg-dark-shadow);
   --box-shadow-fab: 10px 10px 20px var(--light-bg-dark-shadow),
     -7px -7px 16px var(--light-bg-light-shadow);
@@ -34,11 +37,13 @@
   --text-color: var(--g-text-color-dark);
   --border-color: var(--dark-bg-dark-shadow);
   --text-color-disabled: var(--g-text-color-disabled-dark);
-  --box-shadow: 6px 6px 15px var(--dark-bg-dark-shadow),
-    -3px -3px 10px var(--dark-bg-light-shadow);
+  --box-shadow: 5px 5px 12px var(--dark-bg-dark-shadow),
+    -4px -4px 10px var(--dark-bg-light-shadow);
   --box-shadow-hover: 2px 2px 5px var(--dark-bg-dark-shadow),
     -2px -2px 5px var(--dark-bg-light-shadow);
-  --box-shadow-inset: inset -1px -1px 3px var(--dark-bg-light-shadow),
+  --box-shadow-inset: inset -2px -2px 5px var(--dark-bg-light-shadow),
+    inset 2px 2px 5px var(--dark-bg-dark-shadow);
+  --box-shadow-inset-low: inset -1px -1px 3px var(--dark-bg-light-shadow),
     inset 1px 1px 3px var(--dark-bg-dark-shadow);
   --box-shadow-fab: 10px 10px 20px var(--dark-bg-dark-shadow),
     -7px -7px 16px var(--dark-bg-light-shadow);
@@ -50,6 +55,13 @@
   min-width: var(--fab-size);
   min-height: var(--fab-size);
   box-shadow: var(--box-shadow-fab) !important;
+}
+
+.nu-button.nu-button--toggle {
+  padding: 0;
+  min-width: var(--btn-height);
+  min-height: var(--btn-height);
+  box-shadow: var(--box-shadow-hover) !important;
 }
 
 .nu-button--fab.nu-button--small {
@@ -65,15 +77,15 @@
 }
 
 .nu-button.nu-button--small {
-  height: 30px;
+  --btn-height: 30px;
 }
 
 .nu-button.nu-button--medium {
-  height: 36px;
+  --btn-height: 36px;
 }
 
 .nu-button.nu-button--large {
-  height: 42px;
+  --btn-height: 42px;
 }
 
 .nu-button.nu-button--block {
@@ -112,9 +124,18 @@
   box-shadow: var(--box-shadow-hover);
 }
 
-.nu-button:active {
+.nu-button:active,
+.nu-button.nu-button--active {
   transition: none !important;
+}
+
+.nu-button:active,
+.nu-button.nu-button--active:active {
   box-shadow: var(--box-shadow-inset) !important;
+}
+
+.nu-button.nu-button--active {
+  box-shadow: var(--box-shadow-inset-low) !important;
 }
 
 .nu-button:focus {

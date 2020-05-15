@@ -16,6 +16,8 @@ class Button extends React.Component {
     text: G_BOOL,
     dark: G_BOOL,
     block: G_BOOL,
+    stamp: G_BOOL, // TODO
+    toggle: G_BOOL,
     active: G_BOOL,
     rounded: G_BOOL,
     outlined: G_BOOL,
@@ -32,7 +34,19 @@ class Button extends React.Component {
   }
 
   getClasses(type) {
-    const { fab, dark, size, rounded } = this.props
+    const {
+      fab,
+      dark,
+      size,
+      text,
+      block,
+      toggle,
+      active,
+      rounded,
+      disabled,
+      outlined,
+      depressed
+    } = this.props
     const isRounded = fab || rounded
     switch (type) {
       case 'container':
@@ -41,16 +55,17 @@ class Button extends React.Component {
           `
             nu-button
             cursor-pointer
+            ${fab ? 'nu-button--fab' : ''}
+            ${text ? 'nu-button--text' : ''}
+            ${block ? 'nu-button--block' : ''}
+            ${toggle ? 'nu-button--toggle' : ''}
+            ${active ? 'nu-button--active' : ''}
             nu-button--${this.getValidSize(size)}
             nu-button--${dark ? 'dark' : 'light'}
             ${isRounded ? 'nu-button--rounded' : ''}
-            ${this.props.fab ? 'nu-button--fab' : ''}
-            ${this.props.text ? 'nu-button--text' : ''}
-            ${this.props.block ? 'nu-button--block' : ''}
-            ${this.props.active ? 'nu-button--active' : ''}
-            ${this.props.disabled ? 'nu-button--disabled' : ''}
-            ${this.props.outlined ? 'nu-button--outlined' : ''}
-            ${this.props.depressed ? 'nu-button--depressed' : ''}
+            ${outlined ? 'nu-button--outlined' : ''}
+            ${disabled ? 'nu-button--disabled' : ''}
+            ${depressed ? 'nu-button--depressed' : ''}
           `
         )
       case 'input':

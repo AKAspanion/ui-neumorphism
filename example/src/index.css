@@ -58,7 +58,7 @@ main {
 }
 
 .sidebar ul li {
-  padding: 4px 12px;
+  padding: 6px 12px;
   list-style: none;
   width: 260px;
   text-overflow: ellipsis;

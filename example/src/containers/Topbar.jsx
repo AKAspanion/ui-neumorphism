@@ -8,12 +8,15 @@ export default function Topbar(props) {
     <div
       style={{
         display: 'flex',
+        paddingTop: '16px',
         cursor: 'pointer',
         alignItems: 'center',
         justifyContent: 'space-between'
       }}
     >
-      <H2 dark={dark}>UI-Neumorphism</H2>
+      <H2 style={{ color: 'var(--primary)' }} dark={dark}>
+        UI-Neumorphism
+      </H2>
       <Button text dark={dark} onClick={onClick}>
         {dark ? 'LIGHT' : 'DARK'}
       </Button>
