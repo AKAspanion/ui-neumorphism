@@ -1,5 +1,6 @@
 .nu-card {
   width: auto;
+  box-sizing: border-box;
 }
 
 .nu-card-action {

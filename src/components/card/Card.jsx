@@ -36,7 +36,11 @@ class Card extends React.Component {
       'rounded',
       'outlined'
     ])
-    return <div className={this.getClass()}>{cardChildren || 'card'}</div>
+    return (
+      <div style={{ ...this.props.style }} className={this.getClass()}>
+        {cardChildren}
+      </div>
+    )
   }
 }
 

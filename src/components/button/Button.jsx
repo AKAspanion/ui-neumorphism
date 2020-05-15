@@ -76,7 +76,15 @@ class Button extends React.Component {
   }
 
   render() {
-    const { fab, color, bgColor, disabled, outlined, children } = this.props
+    const {
+      fab,
+      style,
+      color,
+      bgColor,
+      disabled,
+      outlined,
+      children
+    } = this.props
     const { onClick, mouseOver, mouseOut } = this.props
     const btnChildren = passDownProp(children, this.props, 'dark')
     return (
@@ -86,6 +94,7 @@ class Button extends React.Component {
         onMouseOver={mouseOver}
         className={this.getClasses('container')}
         style={{
+          ...style,
           color: disabled ? null : color,
           backgroundColor: disabled ? null : bgColor,
           border: disabled ? null : outlined ? `1px solid ${color}` : null

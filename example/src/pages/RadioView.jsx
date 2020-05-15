@@ -28,7 +28,7 @@ class RadioView extends React.Component {
         <Radio
           label='Radio 2'
           value='2'
-          color="#42aaee"
+          color='#42aaee'
           onChange={this.onSelect}
           checked={selectedValue === '2'}
         />
@@ -44,6 +44,13 @@ class RadioView extends React.Component {
           disabled
           onChange={this.onSelect}
           checked={selectedValue === '4'}
+        />
+        <Radio
+          label='Radio 2'
+          value='4'
+          disabled
+          onChange={this.onSelect}
+          checked
         />
       </Card>
     )

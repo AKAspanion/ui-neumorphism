@@ -16,6 +16,7 @@ class ButtonToggle extends React.Component {
     active: G_BOOL,
     size: SIZE_PROP,
     color: G_STRING,
+    rounded: G_BOOL,
     disabled: G_BOOL
   }
 
@@ -37,17 +38,11 @@ class ButtonToggle extends React.Component {
   }
 
   render() {
-    const { dark, size, color, disabled, children } = this.props
-    const { mouseOver, mouseOut } = this.props
+    const { children } = this.props
     return (
       <Button
         toggle
-        dark={dark}
-        size={size}
-        color={color}
-        disabled={disabled}
-        onMouseOut={mouseOut}
-        onMouseOver={mouseOver}
+        {...this.props}
         active={this.state.isActive}
         onClick={(e) => this.handleClick(e)}
       >
