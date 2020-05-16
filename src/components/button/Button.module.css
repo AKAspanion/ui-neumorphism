@@ -101,6 +101,7 @@
 }
 
 .nu-button.nu-button--disabled {
+  opacity: 0.6;
   pointer-events: none;
   --border-color: var(--text-color-disabled);
   --text-color: var(--text-color-disabled);
@@ -164,7 +165,7 @@
   box-sizing: inherit;
   user-select: inherit;
   text-shadow: inherit;
-  display: inline-table;
+  display: contents;
   border-radius: inherit;
   text-transform: uppercase;
   background-color: inherit;

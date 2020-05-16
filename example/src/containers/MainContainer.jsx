@@ -35,13 +35,13 @@ class MainContainer extends React.Component {
             }}
           >
             <Card dark={this.state.dark}>
-              <div style={{ padding: '0px 24px' }}>
+              <div style={{ padding: '0px 28px' }}>
                 <Topbar
                   dark={this.state.dark}
                   onClick={this.toggleTheme.bind(this)}
                 />
               </div>
-              <div style={{ padding: '16px 28px 8px 28px' }}>
+              <div style={{ padding: '16px 24px 8px 28px' }}>
                 <Divider dense dark={this.state.dark} />
               </div>
               <div style={{ padding: '16px 32px 32px 32px' }}>

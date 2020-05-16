@@ -13,7 +13,6 @@ export default function Topbar(props) {
       style={{
         display: 'flex',
         paddingTop: '16px',
-        cursor: 'pointer',
         alignItems: 'center',
         justifyContent: 'space-between'
       }}
@@ -27,6 +26,7 @@ export default function Topbar(props) {
         style={{
           width: '92px',
           display: 'flex',
+          paddingRight: '4px',
           alignItems: 'center',
           justifyContent: 'space-between'
         }}

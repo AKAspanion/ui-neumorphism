@@ -4,12 +4,13 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
+    "@mdi/js": "^5.2.45",
+    "@mdi/react": "^1.4.0",
     "react": "file:../node_modules/react",
     "react-dom": "file:../node_modules/react-dom",
     "react-router-dom": "^5.2.0",
     "react-scripts": "file:../node_modules/react-scripts",
-    "@mdi/react": "^1.4.0",
-    "@mdi/js": "^5.2.45",
+    "react-syntax-highlighter": "^12.2.1",
     "ui-neumorphism": "file:.."
   },
   "scripts": {
