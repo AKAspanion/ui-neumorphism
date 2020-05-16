@@ -31,9 +31,9 @@ class ButtonToggle extends React.Component {
     const isActive = !this.state.isActive
     this.setState({ isActive })
 
-    const { onCLick } = this.props
-    if (onCLick) {
-      this.onCLick({ event, active: isActive })
+    const { onClick } = this.props
+    if (onClick) {
+      onClick({ event, active: isActive })
     }
   }
 

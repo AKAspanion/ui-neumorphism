@@ -2,14 +2,14 @@ import React from 'react'
 
 import Icon from '@mdi/react'
 import {
-  mdiArmFlex,
-  mdiDumbbell,
   mdiRun,
   mdiYoga,
   mdiHome,
   mdiBell,
   mdiTicket,
   mdiAccount,
+  mdiArmFlex,
+  mdiDumbbell,
   mdiChartLine,
   mdiChevronRight
 } from '@mdi/js'
@@ -18,7 +18,6 @@ import { Subtitle2, H4, H6, Caption, Card, ButtonToggle } from 'ui-neumorphism'
 class Example extends React.Component {
   render() {
     const { dark } = this.props
-    console.log(dark)
     return (
       <Card
         rounded
@@ -145,7 +144,7 @@ class Example extends React.Component {
               <Subtitle2 style={{ margin: '0px 0px' }}>
                 Courses I attended
               </Subtitle2>
-              <Caption secondary>
+              <Caption secondary component="span">
                 11 courses in total
                 <ButtonToggle
                   style={{ marginLeft: '24px' }}

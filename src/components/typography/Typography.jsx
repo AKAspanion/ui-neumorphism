@@ -32,6 +32,11 @@ class Typography extends React.Component {
     return disabled ? 'disabled' : secondary ? 'secondary' : 'primary'
   }
 
+  getMapping() {
+    const { type, component } = this.props
+    return component || this.mapping[type || 'body-1']
+  }
+
   getClass() {
     const { dark, type } = this.props
     return getModuleClasses(
@@ -47,7 +52,7 @@ class Typography extends React.Component {
 
   render() {
     return createElement(
-      this.mapping[this.props.type || 'body-1'],
+      this.getMapping(),
       { style: this.props.style, className: this.getClass() },
       this.props.children
     )

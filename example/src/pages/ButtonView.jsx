@@ -29,20 +29,20 @@ class ButtonView extends React.Component {
               justifyContent: 'space-around'
             }}
           >
-            <div style={{ padding: '20px' }}>
+            <div style={{ padding: '32px' }}>
               <Button dark={darkTheme}>default</Button>
             </div>
-            <div style={{ padding: '20px' }}>
+            <div style={{ padding: '32px' }}>
               <Button dark={darkTheme} color='var(--primary)'>
                 colored
               </Button>
             </div>
-            <div style={{ padding: '20px' }}>
+            <div style={{ padding: '32px' }}>
               <Button dark={darkTheme} color='#ccc' bgColor='var(--primary)'>
                 colored
               </Button>
             </div>
-            <div style={{ padding: '20px' }}>
+            <div style={{ padding: '32px' }}>
               <Button
                 disabled
                 color='#ccc'
@@ -53,22 +53,22 @@ class ButtonView extends React.Component {
               </Button>
             </div>
 
-            <div style={{ padding: '20px' }}>
+            <div style={{ padding: '32px' }}>
               <Button dark={darkTheme} rounded>
                 rounded
               </Button>
             </div>
-            <div style={{ padding: '20px' }}>
+            <div style={{ padding: '32px' }}>
               <Button dark={darkTheme} depressed>
                 depressed
               </Button>
             </div>
-            <div style={{ padding: '20px' }}>
+            <div style={{ padding: '32px' }}>
               <Button dark={darkTheme} outlined>
                 outlined
               </Button>
             </div>
-            <div style={{ padding: '20px' }}>
+            <div style={{ padding: '32px' }}>
               <Button dark={darkTheme} text>
                 text
               </Button>

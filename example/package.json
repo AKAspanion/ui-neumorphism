@@ -8,7 +8,8 @@
     "react-dom": "file:../node_modules/react-dom",
     "react-router-dom": "^5.2.0",
     "react-scripts": "file:../node_modules/react-scripts",
-    "react-syntax-highlighter": "^12.2.1",
+    "@mdi/react": "^1.4.0",
+    "@mdi/js": "^5.2.45",
     "ui-neumorphism": "file:.."
   },
   "scripts": {

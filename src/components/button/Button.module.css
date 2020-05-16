@@ -49,8 +49,13 @@
     -7px -7px 16px var(--dark-bg-light-shadow);
 }
 
-.nu-button.nu-button--fab {
+.nu-button.nu-button--fab,
+.nu-button.nu-button--toggle {
   padding: 0;
+  transition: none;
+}
+
+.nu-button.nu-button--fab {
   height: var(--fab-size);
   min-width: var(--fab-size);
   min-height: var(--fab-size);
@@ -58,7 +63,6 @@
 }
 
 .nu-button.nu-button--toggle {
-  padding: 0;
   min-width: var(--btn-height);
   min-height: var(--btn-height);
   box-shadow: var(--box-shadow-hover) !important;

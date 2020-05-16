@@ -12,7 +12,8 @@ export const SELECTION_CONTROL_TYPES = PropTypes.oneOf(['radio', 'checkbox', 'sw
 export const TYPOGRAPHY_PROP_TYPES = {
   dark: G_BOOL,
   disabled: G_BOOL,
-  secondary: G_BOOL
+  secondary: G_BOOL,
+  component: G_STRING
 }
 
 export const SELECTION_CONTROL_PROP_TYPES = {
