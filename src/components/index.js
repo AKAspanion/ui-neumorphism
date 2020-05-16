@@ -1,4 +1,4 @@
-export { default as ButtonToggle } from './button-toggle/ButtonToggle.jsx'
+export { default as ToggleButton } from './button-toggle/ToggleButton.jsx'
 export { default as Button } from './button/Button.jsx'
 export { default as Fab } from './fab/Fab.jsx'
 export { default as CardContent } from './card/CardContent.jsx'

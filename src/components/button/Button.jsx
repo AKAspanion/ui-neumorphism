@@ -2,7 +2,7 @@ import React from 'react'
 
 import styles from './Button.module.css'
 import { getModuleClasses, passDownProp } from '../../util'
-import { SIZE_PROP, G_FUNC, G_BOOL } from '../../assets/index'
+import { BUTTON_PROP_TYPES } from '../../assets/index'
 
 class Button extends React.Component {
   static displayName = 'NuButton'
@@ -11,54 +11,37 @@ class Button extends React.Component {
     size: 'medium'
   }
 
-  static propTypes = {
-    fab: G_BOOL,
-    text: G_BOOL,
-    dark: G_BOOL,
-    block: G_BOOL,
-    stamp: G_BOOL, // TODO
-    toggle: G_BOOL,
-    active: G_BOOL,
-    rounded: G_BOOL,
-    outlined: G_BOOL,
-    depressed: G_BOOL,
-    mouseOver: G_FUNC,
-    mouseOut: G_FUNC,
-    onClick: G_FUNC,
-    size: SIZE_PROP
-  }
+  static propTypes = BUTTON_PROP_TYPES
 
   getValidSize(size) {
     const sizes = ['small', 'medium', 'large']
     return sizes.find((s) => s === size) || 'medium'
   }
 
-  getClasses(type) {
+  getClasses(classType) {
     const {
-      fab,
+      type,
       dark,
       size,
       text,
       block,
-      toggle,
       active,
       rounded,
       disabled,
       outlined,
       depressed
     } = this.props
-    const isRounded = fab || rounded
-    switch (type) {
+    const isRounded = type === 'fab' || rounded
+    switch (classType) {
       case 'container':
         return getModuleClasses(
           styles,
           `
             nu-button
             cursor-pointer
-            ${fab ? 'nu-button--fab' : ''}
+            nu-button--${type}
             ${text ? 'nu-button--text' : ''}
             ${block ? 'nu-button--block' : ''}
-            ${toggle ? 'nu-button--toggle' : ''}
             ${active ? 'nu-button--active' : ''}
             nu-button--${this.getValidSize(size)}
             nu-button--${dark ? 'dark' : 'light'}
@@ -77,7 +60,7 @@ class Button extends React.Component {
 
   render() {
     const {
-      fab,
+      type,
       style,
       color,
       bgColor,
@@ -101,7 +84,7 @@ class Button extends React.Component {
         }}
       >
         <button className={this.getClasses('input')}>
-          {fab ? btnChildren : btnChildren || 'button'}
+          {type === 'fab' ? btnChildren : btnChildren || 'button'}
         </button>
       </div>
     )

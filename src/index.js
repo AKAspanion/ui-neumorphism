@@ -15,7 +15,7 @@ export {
   CardContent,
   CardAction,
   Card,
-  ButtonToggle,
+  ToggleButton,
   Button,
   Fab,
   Divider,

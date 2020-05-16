@@ -27,3 +27,21 @@ export const SELECTION_CONTROL_PROP_TYPES = {
   onClick: G_FUNC,
   onChange: G_FUNC
 }
+
+const BUTTON_ALTERNATE = PropTypes.oneOf(['fab', 'toggle'])
+export const BUTTON_PROP_TYPES = {
+  dark: G_BOOL,
+  text: G_BOOL,
+  block: G_BOOL,
+  active: G_BOOL,
+  rounded: G_BOOL,
+  size: SIZE_PROP,
+  color: G_STRING,
+  outlined: G_BOOL,
+  disabled: G_BOOL,
+  depressed: G_BOOL,
+  onClick: G_FUNC,
+  mouseOut: G_FUNC,
+  mouseOver: G_FUNC,
+  type: BUTTON_ALTERNATE
+}

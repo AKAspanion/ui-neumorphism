@@ -8,7 +8,8 @@ import {
   ButtonView,
   DividerView,
   CheckboxView,
-  TypographyView
+  TypographyView,
+  ToggleButtonView
 } from '../pages/index.js';
 
 const routes = [{
@@ -28,6 +29,18 @@ const routes = [{
     path: "/fab",
     name: "Buttons: Floating Action Button",
     component: FabView,
+  },
+  {
+    id: 12,
+    path: "/button-icon",
+    name: "Buttons: Icon Button",
+    component: ToggleButtonView,
+  },
+  {
+    id: 12,
+    path: "/button-toggle",
+    name: "Buttons: Toggle Button",
+    component: ToggleButtonView,
   },
   {
     id: 3,

@@ -14,7 +14,7 @@ import {
   mdiChevronRight
 } from '@mdi/js'
 
-import { Subtitle2, H4, H6, Caption, Card, ButtonToggle } from 'ui-neumorphism'
+import { Subtitle2, H4, H6, Caption, Card, ToggleButton } from 'ui-neumorphism'
 class FitnessApp extends React.Component {
   render() {
     const { dark } = this.props
@@ -146,7 +146,7 @@ class FitnessApp extends React.Component {
               </Subtitle2>
               <Caption secondary component="span">
                 11 courses in total
-                <ButtonToggle
+                <ToggleButton
                   style={{ marginLeft: '24px' }}
                   rounded={true}
                   dark={dark}
@@ -157,7 +157,7 @@ class FitnessApp extends React.Component {
                     size={0.7}
                     color='var(--primary)'
                   />
-                </ButtonToggle>
+                </ToggleButton>
               </Caption>
             </Card>
           </div>
@@ -174,30 +174,30 @@ class FitnessApp extends React.Component {
             justifyContent: 'space-between'
           }}
         >
-          <ButtonToggle active dark={dark}>
+          <ToggleButton selected dark={dark}>
             <Icon path={mdiHome} size={0.9} color='var(--primary)' />
-          </ButtonToggle>
-          <ButtonToggle dark={dark}>
+          </ToggleButton>
+          <ToggleButton dark={dark}>
             <Icon
               path={mdiChartLine}
               size={0.8}
               color={dark ? 'var(--white)' : 'var(--black)'}
             />
-          </ButtonToggle>
-          <ButtonToggle dark={dark}>
+          </ToggleButton>
+          <ToggleButton dark={dark}>
             <Icon
               path={mdiBell}
               size={0.8}
               color={dark ? 'var(--white)' : 'var(--black)'}
             />
-          </ButtonToggle>
-          <ButtonToggle dark={dark}>
+          </ToggleButton>
+          <ToggleButton dark={dark}>
             <Icon
               path={mdiAccount}
               size={0.9}
               color={dark ? 'var(--white)' : 'var(--black)'}
             />
-          </ButtonToggle>
+          </ToggleButton>
         </div>
       </Card>
     )
