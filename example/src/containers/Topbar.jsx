@@ -34,7 +34,7 @@ export default function Topbar(props) {
         <IconButton onClick={() => window.open(githubUrl, '_blank')}>
           <Icon path={mdiGithub} size={1} />
         </IconButton>
-        <ToggleButton onClick={onClick}>
+        <ToggleButton onChange={onClick}>
           <Icon path={dark ? mdiLightbulbOutline : mdiLightbulb} size={1} />
         </ToggleButton>
       </Card>

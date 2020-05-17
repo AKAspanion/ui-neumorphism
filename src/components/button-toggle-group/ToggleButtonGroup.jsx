@@ -33,18 +33,17 @@ class ToggleButtonGroup extends React.Component {
   handleClick(event) {
     let active = ''
     const { selected, value } = event
-    const { multiple, mandatory } = this.props
     const { key, active: stateActive } = this.state
-
+    const { multiple, mandatory, onChange } = this.props
     if (selected) {
       if (multiple) {
-        active = [...stateActive, value]
+        active = [...(stateActive || []), value]
       } else {
         active = value
       }
     } else {
       if (multiple) {
-        active = stateActive.filter((a) => a !== value)
+        active = (stateActive || []).filter((a) => a !== value)
         if (mandatory && !active.length) {
           active = [value]
         }
@@ -58,11 +57,18 @@ class ToggleButtonGroup extends React.Component {
     this.setState({ active })
     this.setState({ key: key + 1 })
 
-    callCallback(this.props.onClick, { event, active })
+    callCallback(onChange, { event, active })
   }
 
   render() {
-    const { children, dark: parentDark, multiple } = this.props
+    const {
+      style,
+      size,
+      children,
+      multiple,
+      className,
+      dark: parentDark
+    } = this.props
     const buttons = Children.map(children, (child) => {
       if (child.type === ToggleButton) {
         let selected = false
@@ -79,14 +85,19 @@ class ToggleButtonGroup extends React.Component {
         }
 
         return cloneElement(child, {
+          size,
           selected,
           key: this.state.key,
           dark: dark || parentDark,
-          onClick: (e) => this.handleClick(e, child)
+          onChange: (e) => this.handleClick(e, child)
         })
       }
     })
-    return <div>{buttons}</div>
+    return (
+      <div style={style} className={className}>
+        {buttons}
+      </div>
+    )
   }
 }
 

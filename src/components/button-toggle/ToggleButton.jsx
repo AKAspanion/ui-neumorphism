@@ -29,13 +29,13 @@ class ToggleButton extends React.Component {
   }
 
   handleClick(event) {
-    const { value, color } = this.props
+    const { value, color, onChange } = this.props
     const isActive = !this.state.isActive
     this.setState({ isActive })
     this.setState({ color: isActive ? color : '' })
     this.setState({ key: this.state.key + 1 })
 
-    callCallback(this.props.onClick, { event, selected: isActive, value })
+    callCallback(onChange, { event, selected: isActive, value })
   }
 
   handleMouseOut(e) {
