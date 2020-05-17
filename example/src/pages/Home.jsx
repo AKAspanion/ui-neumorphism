@@ -195,6 +195,7 @@ class Home extends React.Component {
           {[1, 2, 3, 4].map((i) => {
             return (
               <ToggleButton
+                key={i}
                 text={false}
                 value={`${dark ? 'dark' : 'light'}-${i}`}
                 style={{
