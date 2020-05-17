@@ -163,20 +163,19 @@ class Home extends React.Component {
         </SyntaxHighlighter>
         <br />
         <br />
-        <H4>Development</H4>
+        <H4>Theming</H4>
         <Divider dense style={{ margin: '4px 0px 16px 0px' }} />
-        <H6 style={{ marginBottom: '12px' }}>Theming</H6>
         <Body1 style={{ marginBottom: '8px' }}>
           In neumorphism UI, theming is dead simple.
         </Body1>
         <Body1 style={{ marginBottom: '16px' }}>
-          It is accomplished by using and modifying root css variables for used
+          It is accomplished by using and modifying root css variables for
           colors.
         </Body1>
         <Body1 style={{ marginBottom: '16px' }}>
-          To change the theme, you modify the root css variables as per your
-          liking or with the help of <code>overrideThemeVariables()</code>
-          function, like this.
+          To change the theme, you modify the root css variables directly or
+          with the help of <code>overrideThemeVariables()</code>
+          function, like this:
         </Body1>
         <SyntaxHighlighter language={`javascript`} style={okaidia}>
           {themeUtilCode}

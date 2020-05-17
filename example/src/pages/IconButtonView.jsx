@@ -10,7 +10,7 @@ class ToggleButtonView extends React.Component {
     const { dark } = this.props
     return (
       <Card flat dark={dark}>
-        <IconButton></IconButton>
+        <IconButton>a</IconButton>
       </Card>
     )
   }

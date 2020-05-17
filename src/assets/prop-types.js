@@ -28,7 +28,7 @@ export const SELECTION_CONTROL_PROP_TYPES = {
   onChange: G_FUNC
 }
 
-const BUTTON_ALTERNATE = PropTypes.oneOf(['fab', 'toggle'])
+const BUTTON_ALTERNATE = PropTypes.oneOf(['fab', 'icon', 'toggle'])
 export const BUTTON_PROP_TYPES = {
   dark: G_BOOL,
   text: G_BOOL,
