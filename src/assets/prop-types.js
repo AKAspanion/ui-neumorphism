@@ -45,3 +45,5 @@ export const BUTTON_PROP_TYPES = {
   mouseOver: G_FUNC,
   type: BUTTON_ALTERNATE
 }
+
+export const BUTTON_GROUP_VALUE = PropTypes.oneOfType([PropTypes.string, PropTypes.array])

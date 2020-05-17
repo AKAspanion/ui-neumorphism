@@ -3,7 +3,7 @@ import React from 'react'
 import { Button } from '../index'
 
 import { callCallback } from '../../util'
-import { BUTTON_PROP_TYPES } from '../../assets/index'
+import { BUTTON_PROP_TYPES, G_STRING, G_BOOL } from '../../assets/index'
 
 class ToggleButton extends React.Component {
   static displayName = 'NuToggleButton'
@@ -12,22 +12,30 @@ class ToggleButton extends React.Component {
     text: true
   }
 
-  static propTypes = BUTTON_PROP_TYPES
+  static propTypes = {
+    value: G_STRING,
+    selected: G_BOOL,
+    ...BUTTON_PROP_TYPES
+  }
 
   constructor(props) {
     super(props)
+    const { selected, color } = this.props
     this.state = {
-      isActive: this.props.selected || false,
-      color: ''
+      isActive: selected || false,
+      color: selected ? color : '',
+      key: 1
     }
   }
 
   handleClick(event) {
+    const { value, color } = this.props
     const isActive = !this.state.isActive
     this.setState({ isActive })
-    this.setState({ color: isActive ? this.props.color : '' })
+    this.setState({ color: isActive ? color : '' })
+    this.setState({ key: this.state.key + 1 })
 
-    callCallback(this.props.onClick, { event, selected: isActive })
+    callCallback(this.props.onClick, { event, selected: isActive, value })
   }
 
   handleMouseOut(e) {
@@ -50,6 +58,7 @@ class ToggleButton extends React.Component {
         type='toggle'
         block={false}
         depressed={false}
+        key={this.state.key}
         color={this.state.color}
         active={this.state.isActive}
         onClick={(e) => this.handleClick(e)}

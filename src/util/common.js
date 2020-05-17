@@ -10,7 +10,7 @@ export const getModuleClasses = (localModule, classNames) => {
 }
 
 export const callCallback = (callback, data) => {
-  if (callback) {
+  if (callback && typeof callback === 'function') {
     callback(data)
   }
 }

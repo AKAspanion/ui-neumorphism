@@ -15,6 +15,7 @@ export {
   CardContent,
   CardAction,
   Card,
+  ToggleButtonGroup,
   ToggleButton,
   Button,
   Fab,

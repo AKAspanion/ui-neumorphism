@@ -1,3 +1,4 @@
+export { default as ToggleButtonGroup } from './button-toggle-group/ToggleButtonGroup.jsx'
 export { default as ToggleButton } from './button-toggle/ToggleButton.jsx'
 export { default as Button } from './button/Button.jsx'
 export { default as Fab } from './fab/Fab.jsx'
