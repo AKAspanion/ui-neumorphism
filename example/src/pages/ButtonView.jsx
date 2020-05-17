@@ -78,7 +78,6 @@ class ButtonView extends React.Component {
         <br />
         <br />
         <br />
-        <br />
         <H5 style={{ marginTop: '24px' }}>Contained Buttons</H5>
         <Subtitle1>
           Contained buttons are high-emphasis, distinguished by their use of
@@ -110,7 +109,6 @@ class ButtonView extends React.Component {
             </div>
           </div>
         </Card>
-        <br />
         <br />
         <br />
         <H5 style={{ marginTop: '24px' }}>Text Buttons</H5>
@@ -154,7 +152,6 @@ class ButtonView extends React.Component {
         </Card>
         <br />
         <br />
-        <br />
         <H5 style={{ marginTop: '24px' }}>Outlined Buttons</H5>
         <Subtitle1 style={{ marginBottom: '4px' }}>
           Outlined buttons are medium-emphasis buttons. They contain actions
@@ -191,7 +188,6 @@ class ButtonView extends React.Component {
             </div>
           </div>
         </Card>
-        <br />
         <br />
         <br />
         <H5 style={{ marginTop: '24px' }}>Rounded Buttons</H5>
@@ -232,7 +228,6 @@ class ButtonView extends React.Component {
         </Card>
         <br />
         <br />
-        <br />
         <H5 style={{ marginTop: '24px' }}>Depressed Buttons</H5>
         <Subtitle1 style={{ marginBottom: '4px' }}>
           Depressed buttons are alternate buttons with higher elevation removed
@@ -271,7 +266,6 @@ class ButtonView extends React.Component {
         </Card>
         <br/>
         <br/>
-        <br/>
         <H5 style={{ marginTop: '24px' }}>Block Buttons</H5>
         <Subtitle1 style={{ marginBottom: '4px' }}>
           Block buttons take up entire available space.
@@ -293,7 +287,6 @@ class ButtonView extends React.Component {
             </div>
           </div>
         </Card>
-        <br />
         <br />
         <br />
         <H5 style={{ marginTop: '24px' }}>Sizes</H5>
@@ -328,7 +321,6 @@ class ButtonView extends React.Component {
             </div>
           </div>
         </Card>
-        <br />
         <br />
         <br />
         <H5>API</H5>

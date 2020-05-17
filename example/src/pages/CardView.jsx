@@ -60,6 +60,7 @@ class CardView extends React.Component {
           Although cards can support multiple actions, remember that cards are
           entry points to more complex and detailed information.
         </Subtitle1>
+        <br />
         <H5 style={{ marginTop: '24px' }}>Simple Card</H5>
         <div className='flex-container'>
           <div style={{ width: '275px', margin: '32px' }}>
@@ -69,7 +70,6 @@ class CardView extends React.Component {
             </Card>
           </div>
         </div>
-        <br />
         <br />
         <br />
         <H5>Outlined Card</H5>
@@ -86,7 +86,6 @@ class CardView extends React.Component {
         </div>
         <br />
         <br />
-        <br />
         <H5>Rounded Card</H5>
         <Subtitle1>
           Set <code>rounded</code> flag to render an rounded card.
@@ -99,7 +98,6 @@ class CardView extends React.Component {
             </Card>
           </div>
         </div>
-        <br />
         <br />
         <br />
         <H5>API</H5>

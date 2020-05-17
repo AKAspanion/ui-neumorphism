@@ -98,7 +98,6 @@ class FabView extends React.Component {
         </Card>
         <br />
         <br />
-        <br />
         <H5>API</H5>
         <Subtitle1>Coming soon..</Subtitle1>
       </Card>
