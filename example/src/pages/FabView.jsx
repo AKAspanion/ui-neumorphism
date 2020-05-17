@@ -49,7 +49,8 @@ class FabView extends React.Component {
             </div>
             <div style={{ padding: '32px' }}>
               <Fab dark={darkTheme} color='#42aaee'>
-                <span style={{ fontSize: '24px' }}>&#9729;</span>
+                &nbsp;<span style={{ fontSize: '24px' }}>&#9729;</span>&nbsp;
+                Extended&nbsp;
               </Fab>
             </div>
 

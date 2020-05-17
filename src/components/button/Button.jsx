@@ -31,7 +31,6 @@ class Button extends React.Component {
       outlined,
       depressed
     } = this.props
-    const isRounded = type === 'fab' || rounded
     switch (classType) {
       case 'container':
         return getModuleClasses(
@@ -45,7 +44,7 @@ class Button extends React.Component {
             ${active ? 'nu-button--active' : ''}
             nu-button--${this.getValidSize(size)}
             nu-button--${dark ? 'dark' : 'light'}
-            ${isRounded ? 'nu-button--rounded' : ''}
+            ${rounded ? 'nu-button--rounded' : ''}
             ${outlined ? 'nu-button--outlined' : ''}
             ${disabled ? 'nu-button--disabled' : ''}
             ${depressed ? 'nu-button--depressed' : ''}
@@ -66,7 +65,8 @@ class Button extends React.Component {
       bgColor,
       disabled,
       outlined,
-      children
+      children,
+      className
     } = this.props
     const { onClick, mouseOver, mouseOut } = this.props
     const btnChildren = passDownProp(children, this.props, 'dark')
@@ -75,7 +75,7 @@ class Button extends React.Component {
         onClick={onClick}
         onMouseOut={mouseOut}
         onMouseOver={mouseOver}
-        className={this.getClasses('container')}
+        className={`${this.getClasses('container')} ${className}`}
         style={{
           ...style,
           color: disabled ? null : color,
@@ -84,7 +84,7 @@ class Button extends React.Component {
         }}
       >
         <button className={this.getClasses('input')}>
-          {type === 'fab' ? btnChildren : btnChildren || 'button'}
+          {type ? btnChildren : btnChildren || 'button'}
         </button>
       </div>
     )

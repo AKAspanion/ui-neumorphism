@@ -52,8 +52,12 @@
 .nu-button.nu-button--fab,
 .nu-button.nu-button--icon,
 .nu-button.nu-button--toggle {
-  padding: 0;
   transition: none;
+}
+
+.nu-button.nu-button--icon,
+.nu-button.nu-button--toggle {
+  padding: 0;
 }
 
 .nu-button.nu-button--fab {

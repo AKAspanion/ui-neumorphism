@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 export const G_FUNC = PropTypes.func
 export const G_BOOL = PropTypes.bool
 export const G_NUM = PropTypes.number
+export const G_OBJ = PropTypes.object
 export const G_STRING = PropTypes.string
 
 export const SIZE_PROP = PropTypes.oneOf(['small', 'medium', 'large'])
@@ -30,6 +31,7 @@ export const SELECTION_CONTROL_PROP_TYPES = {
 
 const BUTTON_ALTERNATE = PropTypes.oneOf(['fab', 'icon', 'toggle'])
 export const BUTTON_PROP_TYPES = {
+  style: G_OBJ,
   dark: G_BOOL,
   text: G_BOOL,
   block: G_BOOL,
@@ -43,6 +45,7 @@ export const BUTTON_PROP_TYPES = {
   onClick: G_FUNC,
   mouseOut: G_FUNC,
   mouseOver: G_FUNC,
+  className: G_STRING,
   type: BUTTON_ALTERNATE
 }
 
