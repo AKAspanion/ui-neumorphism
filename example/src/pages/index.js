@@ -1,5 +1,6 @@
 export { default as ToggleButtonView } from './ToggleButtonView.jsx'
 export { default as TypographyView } from './TypographyView.jsx'
+export { default as IconButtonView } from './IconButtonView.jsx'
 export { default as CheckboxView } from './CheckboxView.jsx'
 export { default as DividerView } from './DividerView.jsx'
 export { default as ButtonView } from './ButtonView.jsx'

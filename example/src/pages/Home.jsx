@@ -3,7 +3,7 @@ import React from 'react'
 import { Card, H1, Subtitle1, Divider, H4, H6, Body1 } from 'ui-neumorphism'
 
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { prism, okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism'
+import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 import FitnessApp from '../examples/FitnessApp.jsx'
 
@@ -35,14 +35,14 @@ class Home extends React.Component {
         <H1 style={{ marginLeft: '-6px' }}>UI-Neumorphism</H1>
         <Subtitle1>
           <code>ui-neumorphism</code> is a react component library designed on
-          the "neumorphism" UI/UX trend.
+          the "new skeuomorphism" UI/UX trend.
         </Subtitle1>
         <br />
         <br />
         <br />
         <H4>Installation</H4>
         <Divider dense style={{ margin: '4px 0px 16px 0px' }} />
-        <SyntaxHighlighter language={`bash`} style={dark ? okaidia : prism}>
+        <SyntaxHighlighter language={`bash`} style={okaidia}>
           {`npm install --save ui-neumorphism`}
         </SyntaxHighlighter>
         <br />
@@ -53,18 +53,12 @@ class Home extends React.Component {
           Components in this package can be imported as individual React
           component.
         </Body1>
-        <SyntaxHighlighter
-          language={`javascript`}
-          style={dark ? okaidia : prism}
-        >
+        <SyntaxHighlighter language={`javascript`} style={okaidia}>
           {`import { Card, Button } from 'neumorphic-ui';`}
         </SyntaxHighlighter>
         <br />
         <Body1>Quick usage example to get you started:</Body1>
-        <SyntaxHighlighter
-          language={`javascript`}
-          style={dark ? okaidia : prism}
-        >
+        <SyntaxHighlighter language={`javascript`} style={okaidia}>
           {importCode}
         </SyntaxHighlighter>
         <br />
@@ -84,7 +78,7 @@ class Home extends React.Component {
           One way to do this is to put the following inside your{' '}
           <code>html</code> or <code>body</code>&nbsp;css definition.
         </Body1>
-        <SyntaxHighlighter language={`css`} style={dark ? okaidia : prism}>
+        <SyntaxHighlighter language={`css`} style={okaidia}>
           {colorCode}
         </SyntaxHighlighter>
         <Body1 style={{ marginBottom: '8px' }}>

@@ -17,6 +17,7 @@ export {
   Card,
   ToggleButtonGroup,
   ToggleButton,
+  IconButton,
   Button,
   Fab,
   Divider,

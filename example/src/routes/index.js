@@ -8,6 +8,7 @@ import {
   ButtonView,
   DividerView,
   CheckboxView,
+  IconButtonView,
   TypographyView,
   ToggleButtonView
 } from '../pages/index.js';
@@ -34,10 +35,10 @@ const routes = [{
     id: 12,
     path: "/button-icon",
     name: "Buttons: Icon Button",
-    component: ToggleButtonView,
+    component: IconButtonView,
   },
   {
-    id: 12,
+    id: 13,
     path: "/button-toggle",
     name: "Buttons: Toggle Button",
     component: ToggleButtonView,
