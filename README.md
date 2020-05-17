@@ -1,10 +1,10 @@
 # ui-neumorphism
 
->  React components library for neumorphism UI/UX trend.
+>  React component library designed on the "new skeuomorphism" UI/UX trend.
 
 [![NPM](https://img.shields.io/npm/v/ui-neumorphism.svg)](https://www.npmjs.com/package/ui-neumorphism) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-Live Demo and documentation at https://akaspanion.github.io/ui-neumorphism/
+Live demo and documentation at https://akaspanion.github.io/ui-neumorphism/
 
 ## Install
 
@@ -26,28 +26,45 @@ class Example extends Component {
   }
 }
 ```
-## Getting Started
+## Theming
 
-### Setting background color
-In neumorphism UI, background color of all components and pages should match.
+In neumorphism UI, theming is dead simple.
 
-You need to set the background color of all your pages to match the component library's color.
+It is accomplished by using and modifying root css variables for colors.
 
-One way to do this is to put the following inside your `html` or `body` css definition.
-```css
-/* For light theme */
-background: var(--light-bg);
+To change the theme, you modify the root css variables directly or with the help of `overrideThemeVariables()` function, like this.
+```javascript
+import React, { Component } from 'react
 
-/* or */
+import { overrideThemeVariables } from 'ui-neumorphism
+import 'ui-neumorphism/dist/index.css'
 
-/* For dark theme */
-background: var(--dark-bg);
+class App extends Component {
+  componentDidMount() {
+    // takes an object of css variable key-value pairs
+    overrideThemeVariables({
+      '--light-bg': '#E9B7B9',
+      '--light-bg-dark-shadow': '#ba9294',
+      '--light-bg-light-shadow': '#ffdcde',
+      '--dark-bg': '#292E35',
+      '--dark-bg-dark-shadow': '#21252a',
+      '--dark-bg-light-shadow': '#313740',
+      '--primary': '#8672FB',
+      '--primary-dark': '#4526f9',
+      '--primary-light': '#c7befd'
+    })
+  }
+
+  ...
+}
 ```
-Here `--light-bg` and `--dark-bg` are css variables that hold the value of light and dark background color respectively.
+Here `--light-bg` and `--dark-bg` are css variables that hold specific values of color.
 
-A list of css variable definitions is present in root tag of `ui-neumorphism/dist/index.css`.
+Using this power of CSS variables, you can change the app theme from anywhere in the entire application.
 
-These variables are used to theme the library and its available to you.
+All the css variable definition is present in root tag of [index.css](/src/components/styles.css).
+
+These variables are used to theme the library and its available for you to modify.
 
 ## License
 

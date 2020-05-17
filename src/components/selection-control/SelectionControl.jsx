@@ -36,8 +36,9 @@ class SelectionControl extends React.Component {
 
   componentDidMount() {
     const { id, color, disabled } = this.props
+    const elem = document.getElementById(id || this.state.id)
     if (!disabled) {
-      setCSSVariable(id || this.state.id, '--selector-bg', color)
+      setCSSVariable(elem, '--selector-bg', color)
     }
   }
 

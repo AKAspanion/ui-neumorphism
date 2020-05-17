@@ -1,3 +1,5 @@
+export { overrideThemeVariables } from './util/'
+
 export {
   Typography,
   Subtitle2,
