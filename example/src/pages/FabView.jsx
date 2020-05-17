@@ -9,7 +9,7 @@ class FabView extends React.Component {
         <H4>Floating action button</H4>
         <H6>
           A floating action button (FAB) performs the primary, or most common,
-          action on a screen..
+          action on a screen.
         </H6>
         <br />
         <Subtitle1 style={{ marginBottom: '4px' }}>

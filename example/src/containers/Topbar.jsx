@@ -2,7 +2,7 @@ import React from 'react'
 import Icon from '@mdi/react'
 import { mdiGithub, mdiLightbulbOutline, mdiLightbulb } from '@mdi/js'
 
-import { H2, Card, ToggleButton } from 'ui-neumorphism'
+import { H2, Card, ToggleButton, IconButton } from 'ui-neumorphism'
 
 const githubUrl = 'https://github.com/AKAspanion/ui-neumorphism'
 
@@ -31,9 +31,9 @@ export default function Topbar(props) {
           justifyContent: 'space-between'
         }}
       >
-        <ToggleButton onClick={() => window.open(githubUrl, '_blank')}>
+        <IconButton onClick={() => window.open(githubUrl, '_blank')}>
           <Icon path={mdiGithub} size={1} />
-        </ToggleButton>
+        </IconButton>
         <ToggleButton onClick={onClick}>
           <Icon path={dark ? mdiLightbulbOutline : mdiLightbulb} size={1} />
         </ToggleButton>

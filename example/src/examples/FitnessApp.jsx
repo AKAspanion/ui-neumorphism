@@ -14,7 +14,7 @@ import {
   mdiChevronRight
 } from '@mdi/js'
 
-import { Subtitle2, H4, H6, Caption, Card, ToggleButton } from 'ui-neumorphism'
+import { Subtitle2, H4, H6, Caption, Card, ToggleButton, IconButton } from 'ui-neumorphism'
 class FitnessApp extends React.Component {
   render() {
     const { dark } = this.props
@@ -146,18 +146,19 @@ class FitnessApp extends React.Component {
               </Subtitle2>
               <Caption secondary component="span">
                 11 courses in total
-                <ToggleButton
+                <IconButton
                   style={{ marginLeft: '24px' }}
-                  rounded={true}
+                  text={false}
                   dark={dark}
                   size='small'
+                  rounded
                 >
                   <Icon
                     path={mdiChevronRight}
                     size={0.7}
                     color='var(--primary)'
                   />
-                </ToggleButton>
+                </IconButton>
               </Caption>
             </Card>
           </div>

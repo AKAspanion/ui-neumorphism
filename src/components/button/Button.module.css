@@ -60,6 +60,11 @@
   padding: 0;
 }
 
+.nu-button.nu-button--icon {
+  width: var(--btn-height);
+  max-width: var(--btn-height);
+}
+
 .nu-button.nu-button--fab {
   height: var(--fab-size);
   min-width: var(--fab-size);
