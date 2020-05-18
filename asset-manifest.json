@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/ui-neumorphism/static/css/main.aab57479.chunk.css",
-    "main.js": "/ui-neumorphism/static/js/main.9b11baec.chunk.js",
-    "main.js.map": "/ui-neumorphism/static/js/main.9b11baec.chunk.js.map",
-    "runtime-main.js": "/ui-neumorphism/static/js/runtime-main.a04be4ad.js",
-    "runtime-main.js.map": "/ui-neumorphism/static/js/runtime-main.a04be4ad.js.map",
-    "static/js/2.08d72323.chunk.js": "/ui-neumorphism/static/js/2.08d72323.chunk.js",
-    "static/js/2.08d72323.chunk.js.map": "/ui-neumorphism/static/js/2.08d72323.chunk.js.map",
+    "main.css": "/ui-neumorphism/static/css/main.1bd8715c.chunk.css",
+    "main.js": "/ui-neumorphism/static/js/main.53b94eff.chunk.js",
+    "main.js.map": "/ui-neumorphism/static/js/main.53b94eff.chunk.js.map",
+    "runtime-main.js": "/ui-neumorphism/static/js/runtime-main.9d87f52e.js",
+    "runtime-main.js.map": "/ui-neumorphism/static/js/runtime-main.9d87f52e.js.map",
+    "static/js/2.560a9a02.chunk.js": "/ui-neumorphism/static/js/2.560a9a02.chunk.js",
+    "static/js/2.560a9a02.chunk.js.map": "/ui-neumorphism/static/js/2.560a9a02.chunk.js.map",
     "index.html": "/ui-neumorphism/index.html",
-    "precache-manifest.27f4c967d26a66b9cb60b3a5c0193fb8.js": "/ui-neumorphism/precache-manifest.27f4c967d26a66b9cb60b3a5c0193fb8.js",
+    "precache-manifest.c06f21c18a8b343c4b1509de07fa680c.js": "/ui-neumorphism/precache-manifest.c06f21c18a8b343c4b1509de07fa680c.js",
     "service-worker.js": "/ui-neumorphism/service-worker.js",
-    "static/css/main.aab57479.chunk.css.map": "/ui-neumorphism/static/css/main.aab57479.chunk.css.map",
-    "static/js/2.08d72323.chunk.js.LICENSE.txt": "/ui-neumorphism/static/js/2.08d72323.chunk.js.LICENSE.txt",
-    "static/js/main.9b11baec.chunk.js.LICENSE.txt": "/ui-neumorphism/static/js/main.9b11baec.chunk.js.LICENSE.txt"
+    "static/css/main.1bd8715c.chunk.css.map": "/ui-neumorphism/static/css/main.1bd8715c.chunk.css.map",
+    "static/js/2.560a9a02.chunk.js.LICENSE.txt": "/ui-neumorphism/static/js/2.560a9a02.chunk.js.LICENSE.txt",
+    "static/js/main.53b94eff.chunk.js.LICENSE.txt": "/ui-neumorphism/static/js/main.53b94eff.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.a04be4ad.js",
-    "static/js/2.08d72323.chunk.js",
-    "static/css/main.aab57479.chunk.css",
-    "static/js/main.9b11baec.chunk.js"
+    "static/js/runtime-main.9d87f52e.js",
+    "static/js/2.560a9a02.chunk.js",
+    "static/css/main.1bd8715c.chunk.css",
+    "static/js/main.53b94eff.chunk.js"
   ]
 }
