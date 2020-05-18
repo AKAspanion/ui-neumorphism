@@ -24,6 +24,7 @@ export {
   Fab,
   Divider,
   Radio,
+  RadioGroup,
   Switch,
   Checkbox,
   SelectionControl

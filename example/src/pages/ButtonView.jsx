@@ -15,7 +15,7 @@ class ButtonView extends React.Component {
         <Subtitle1>
           Buttons communicate actions that users can take.
           <br />
-          They are typically placed throughout your UI, in places like:{' '}
+          They are typically placed throughout your UI, in places like:
           <code>dialog</code>, <code>forms</code>, <code>cards</code>,etc.
         </Subtitle1>
         <br />
@@ -264,8 +264,8 @@ class ButtonView extends React.Component {
             </div>
           </div>
         </Card>
-        <br/>
-        <br/>
+        <br />
+        <br />
         <H5 style={{ marginTop: '24px' }}>Block Buttons</H5>
         <Subtitle1 style={{ marginBottom: '4px' }}>
           Block buttons take up entire available space.
@@ -277,7 +277,7 @@ class ButtonView extends React.Component {
         <Card outlined>
           <div
             style={{
-              padding: '32px',
+              padding: '32px'
             }}
           >
             <div style={{ padding: '20px' }}>

@@ -154,7 +154,7 @@ class Home extends React.Component {
           component.
         </Body1>
         <SyntaxHighlighter language={`javascript`} style={okaidia}>
-          {`import { Card, Button } from 'neumorphic-ui'`}
+          {`import { Card, Button } from 'ui-neumorphism'`}
         </SyntaxHighlighter>
         <br />
         <Body1>Quick usage example to get you started:</Body1>

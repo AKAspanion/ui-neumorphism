@@ -10,8 +10,6 @@
   --disabled-bg: var(--g-text-color-disabled-light);
   --box-shadow: 2px 2px 4px var(--light-bg-dark-shadow),
     -2px -2px 4px var(--light-bg-light-shadow);
-  --box-shadow-small: 1px 1px 2px var(--light-bg-dark-shadow),
-    -1px -1px 2px var(--light-bg-light-shadow);
   --box-shadow-inset: inset -1px -1px 2px var(--light-bg-light-shadow),
     inset 1px 1px 2px var(--light-bg-dark-shadow);
 }
@@ -23,8 +21,6 @@
   --disabled-bg: var(--g-text-color-disabled-dark);
   --box-shadow: 2px 2px 4px var(--dark-bg-dark-shadow),
     -2px -2px 4px var(--dark-bg-light-shadow);
-  --box-shadow-small: 1px 1px 2px var(--dark-bg-dark-shadow),
-    -1px -1px 2px var(--dark-bg-light-shadow);
   --box-shadow-inset: inset -1px -1px 2px var(--dark-bg-light-shadow),
     inset 1px 1px 2px var(--dark-bg-dark-shadow);
 }
@@ -64,8 +60,7 @@
 }
 
 .nu-radio:after {
-  background-color: var(--bg-color);
-  box-shadow: var(--box-shadow-small);
+  background-color: var(--text-color);
 }
 
 .nu-radio:checked:before {
@@ -77,6 +72,7 @@
   box-shadow: none;
 }
 
+.nu-radio.nu-radio--disabled:after,
 .nu-radio:checked.nu-radio--disabled:after {
   background-color: var(--disabled-bg);
   box-shadow: none;
@@ -93,5 +89,16 @@
 }
 
 .nu-radio-label {
-  margin-left: 12px;
+  padding-left: 12px;
+}
+
+.nu-radio-group {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: center;
+}
+
+.nu-radio-group--vertical {
+  flex-direction: column;
 }

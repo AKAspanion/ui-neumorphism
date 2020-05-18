@@ -6,7 +6,7 @@ import radioStyles from '../radio/Radio.module.css'
 import checkboxStyles from '../checkbox/Checkbox.module.css'
 import switchStyles from '../switch/Switch.module.css'
 
-import { uid, getModuleClasses, setCSSVariable } from '../../util'
+import { uid, getModuleClasses, callCallback, setCSSVariable } from '../../util'
 import {
   SELECTION_CONTROL_TYPES,
   SELECTION_CONTROL_PROP_TYPES
@@ -47,9 +47,7 @@ class SelectionControl extends React.Component {
     this.setState({ isChecked })
 
     const { onChange } = this.props
-    if (onChange) {
-      onChange({ event, checked: isChecked })
-    }
+    callCallback(onChange, { event, checked: isChecked })
   }
 
   getInputType(type) {

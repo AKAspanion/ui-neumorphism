@@ -2,11 +2,13 @@ import PropTypes from 'prop-types'
 
 export const G_FUNC = PropTypes.func
 export const G_BOOL = PropTypes.bool
+export const G_NODE = PropTypes.node
 export const G_NUM = PropTypes.number
 export const G_OBJ = PropTypes.object
 export const G_STRING = PropTypes.string
 
 export const DEFAULT_PROPS = {
+  dark: G_BOOL,
   style: G_OBJ,
   className: G_STRING
 }
