@@ -34,9 +34,9 @@ It is accomplished by using and modifying root css variables for colors.
 
 To change the theme, you modify the root css variables directly or with the help of `overrideThemeVariables()` function, like this.
 ```javascript
-import React, { Component } from 'react
+import React, { Component } from 'react'
 
-import { overrideThemeVariables } from 'ui-neumorphism
+import { overrideThemeVariables } from 'ui-neumorphism'
 import 'ui-neumorphism/dist/index.css'
 
 class App extends Component {

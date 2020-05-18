@@ -2,7 +2,7 @@ import React from 'react'
 
 import styles from './Divider.module.css'
 import { getModuleClasses } from '../../util'
-import { G_BOOL } from '../../assets/index'
+import { G_BOOL, DEFAULT_PROPS } from '../../assets/index'
 
 class Divider extends React.Component {
   static displayName = 'NuDivider'
@@ -10,7 +10,8 @@ class Divider extends React.Component {
   static propTypes = {
     dark: G_BOOL,
     dense: G_BOOL,
-    elevated: G_BOOL
+    elevated: G_BOOL,
+    ...DEFAULT_PROPS
   }
 
   getClasses() {
@@ -27,7 +28,8 @@ class Divider extends React.Component {
   }
 
   render() {
-    return <hr style={{ ...this.props.style }} className={this.getClasses()} />
+    const { style, className } = this.props
+    return <hr style={style} className={`${this.getClasses()} ${className}`} />
   }
 }
 

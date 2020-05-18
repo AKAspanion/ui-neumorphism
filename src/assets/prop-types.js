@@ -6,6 +6,11 @@ export const G_NUM = PropTypes.number
 export const G_OBJ = PropTypes.object
 export const G_STRING = PropTypes.string
 
+export const DEFAULT_PROPS = {
+  style: G_OBJ,
+  className: G_STRING
+}
+
 export const SIZE_PROP = PropTypes.oneOf(['small', 'medium', 'large'])
 export const POSITION_PROP = PropTypes.oneOf(['top', 'right', 'bottom', 'left'])
 export const SELECTION_CONTROL_TYPES = PropTypes.oneOf(['radio', 'checkbox', 'switch'])
@@ -26,7 +31,8 @@ export const SELECTION_CONTROL_PROP_TYPES = {
   disabled: G_BOOL,
   color: G_STRING,
   onClick: G_FUNC,
-  onChange: G_FUNC
+  onChange: G_FUNC,
+  ...DEFAULT_PROPS
 }
 
 const BUTTON_ALTERNATE = PropTypes.oneOf(['fab', 'icon', 'toggle'])

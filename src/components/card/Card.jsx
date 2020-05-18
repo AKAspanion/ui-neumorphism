@@ -2,7 +2,7 @@ import React from 'react'
 
 import styles from './Card.module.css'
 import { getModuleClasses, passDownProp } from '../../util'
-import { G_STRING, G_BOOL } from '../../assets/index'
+import { G_STRING, G_BOOL, DEFAULT_PROPS } from '../../assets/index'
 
 class Card extends React.Component {
   static displayName = 'NuCard'
@@ -12,7 +12,8 @@ class Card extends React.Component {
     flat: G_BOOL,
     rounded: G_BOOL,
     outlined: G_BOOL,
-    elevation: G_STRING
+    elevation: G_STRING,
+    ...DEFAULT_PROPS
   }
 
   getClass() {
@@ -31,13 +32,14 @@ class Card extends React.Component {
   }
 
   render() {
-    const cardChildren = passDownProp(this.props.children, this.props, [
+    const { style, className, children } = this.props
+    const cardChildren = passDownProp(children, this.props, [
       'dark',
       'rounded',
       'outlined'
     ])
     return (
-      <div style={{ ...this.props.style }} className={this.getClass()}>
+      <div style={style} className={`${this.getClass()} ${className}`}>
         {cardChildren}
       </div>
     )

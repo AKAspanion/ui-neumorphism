@@ -29,9 +29,9 @@ class Example extends Component {
   }
 }
 `
-const themeUtilCode = `import React, { Component } from 'react
+const themeUtilCode = `import React, { Component } from 'react'
 
-import { overrideThemeVariables } from 'ui-neumorphism
+import { overrideThemeVariables } from 'ui-neumorphism'
 import 'ui-neumorphism/dist/index.css'
 
 class App extends Component {
@@ -154,7 +154,7 @@ class Home extends React.Component {
           component.
         </Body1>
         <SyntaxHighlighter language={`javascript`} style={okaidia}>
-          {`import { Card, Button } from 'neumorphic-ui';`}
+          {`import { Card, Button } from 'neumorphic-ui'`}
         </SyntaxHighlighter>
         <br />
         <Body1>Quick usage example to get you started:</Body1>
