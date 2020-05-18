@@ -58,9 +58,8 @@
 .nu-checkbox:after {
   width: 3px;
   height: 8px;
-  opacity: 0.75;
-  border-right: 2px solid var(--selector-bg);
-  border-bottom: 2px solid var(--selector-bg);
+  border-right: 2px solid var(--text-color);
+  border-bottom: 2px solid var(--text-color);
   transform: translate3d(0, -8px, 0) rotate(45deg);
 }
 
@@ -81,11 +80,11 @@
 .nu-checkbox-label.nu-checkbox-label--disabled {
   pointer-events: none !important;
   --selector-bg: var(--text-disabled) !important;
+  --text-color: var(--text-disabled) !important;
 }
 
 .nu-checkbox.nu-checkbox--disabled:checked:before,
 .nu-checkbox.nu-checkbox--disabled:checked:after {
-  opacity: 0.75;
   left: 4.5px !important;
   border-right: 2px solid transparent;
   border-bottom: 2px solid transparent;

@@ -23,25 +23,14 @@ class CheckboxView extends React.Component {
               justifyContent: 'space-around'
             }}
           >
-            <div style={{ padding: '32px' }}>
-              <Checkbox color='var(--primary)' dark={dark} checked />
-            </div>
-            <div style={{ padding: '32px' }}>
-              <Checkbox dark={dark} color='#42aaee' />
-            </div>
-            <div style={{ padding: '32px' }}>
-              <Checkbox dark={dark} />
-            </div>
-            <div style={{ padding: '32px' }}>
-              <Checkbox dark={dark} disabled />
-            </div>
-
-            <div style={{ padding: '32px' }}>
-              <Checkbox dark={dark} disabled checked />
-            </div>
-            <div style={{ padding: '32px' }}>
-              <Checkbox dark={dark} checked />
-            </div>
+            <Card flat dark={dark}>
+              <Checkbox color='var(--primary)' checked />
+              <Checkbox color='#42aaee' />
+              <Checkbox />
+              <Checkbox disabled />
+              <Checkbox disabled checked />
+              <Checkbox checked />
+            </Card>
           </div>
         </Card>
         <br />
@@ -60,35 +49,14 @@ class CheckboxView extends React.Component {
               justifyContent: 'space-around'
             }}
           >
-            <div style={{ padding: '32px' }}>
-              <Checkbox
-                color='var(--primary)'
-                dark={dark}
-                label='Primary'
-                checked
-              />
-            </div>
-            <div style={{ padding: '32px' }}>
-              <Checkbox dark={dark} label='Blue' color='#42aaee' />
-            </div>
-            <div style={{ padding: '32px' }}>
-              <Checkbox dark={dark} label='Default' />
-            </div>
-            <div style={{ padding: '32px' }}>
-              <Checkbox dark={dark} disabled label='Disabled' />
-            </div>
-
-            <div style={{ padding: '32px' }}>
-              <Checkbox
-                dark={dark}
-                disabled
-                checked
-                label='Checked & Disabled'
-              />
-            </div>
-            <div style={{ padding: '32px' }}>
-              <Checkbox dark={dark} checked label='Checked' />
-            </div>
+            <Card flat dark={dark}>
+              <Checkbox color='var(--primary)' label='Primary' checked />
+              <Checkbox label='Blue' color='#42aaee' />
+              <Checkbox label='Default' />
+              <Checkbox disabled label='Disabled' />
+              <Checkbox disabled checked label='Checked & Disabled' />
+              <Checkbox checked label='Checked' />
+            </Card>
           </div>
         </Card>
         <br />
