@@ -138,6 +138,11 @@ class Home extends React.Component {
           the "new skeuomorphism" UI/UX trend.
         </Subtitle1>
         <br />
+        <div
+          style={{ justifyContent: 'center', padding: '32px', display: 'flex' }}
+        >
+          <FitnessApp dark={dark} />
+        </div>
         <br />
         <br />
         <H4>Installation</H4>
@@ -210,19 +215,6 @@ class Home extends React.Component {
           })}
         </ToggleButtonGroup>
         <br />
-        <br />
-        <br />
-        <H4>Examples</H4>
-        <Divider dense style={{ margin: '4px 0px 8px 0px' }} />
-        <Body1 style={{ marginBottom: '12px' }}>
-          Example UIs created using this library.
-        </Body1>
-        <H6 style={{ marginBottom: '12px' }}>Fitness App</H6>
-        <div
-          style={{ justifyContent: 'center', padding: '32px', display: 'flex' }}
-        >
-          <FitnessApp dark={dark} />
-        </div>
         <br />
         <br />
         <H4>Author</H4>

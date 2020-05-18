@@ -4,6 +4,7 @@ import Icon from '@mdi/react'
 import {
   mdiRun,
   mdiYoga,
+  mdiPlus,
   mdiHome,
   mdiBell,
   mdiTicket,
@@ -14,192 +15,379 @@ import {
   mdiChevronRight
 } from '@mdi/js'
 
-import { Subtitle2, H4, H6, Caption, Card, ToggleButton, IconButton } from 'ui-neumorphism'
+import {
+  Subtitle2,
+  H4,
+  H5,
+  H6,
+  Card,
+  Body2,
+  Caption,
+  Overline,
+  IconButton,
+  ToggleButton
+} from 'ui-neumorphism'
 class FitnessApp extends React.Component {
   render() {
     const { dark } = this.props
     return (
       <Card
-        rounded
+        flat
         dark={dark}
         style={{
-          overflow: 'hidden',
-          width: '300px',
-          height: '600px',
-          padding: '24px'
+          width: '100%'
         }}
       >
-        <H4 style={{ fontWeight: '500', marginTop: '8px' }}>Program</H4>
-        <div
+        <Card
+          flat
           style={{
             display: 'flex',
-            marginTop: '8px',
-            justifyContent: 'space-between'
+            justifyContent: 'space-around'
           }}
         >
           <Card
-            elevation='2'
-            dark={dark}
-            style={{ padding: '16px', width: '116px', margin: '16px 0px' }}
-          >
-            <Card
-              flat
-              style={{
-                width: '32px',
-                height: '32px',
-                marginBottom: '8px',
-                paddingTop: '4px'
-              }}
-            >
-              <Icon path={mdiArmFlex} size={1} color='var(--primary)' />
-            </Card>
-            <Subtitle2>Arm</Subtitle2>
-            <Subtitle2 style={{ marginBottom: '8px' }}>training</Subtitle2>
-            <Caption secondary>In progress..</Caption>
-          </Card>
-          <Card
-            elevation='2'
-            dark={dark}
-            style={{ padding: '16px', width: '116px', margin: '16px 0px' }}
-          >
-            <Card
-              flat
-              style={{
-                width: '32px',
-                height: '32px',
-                marginBottom: '8px',
-                paddingTop: '4px'
-              }}
-            >
-              <Icon path={mdiDumbbell} size={1} color='var(--primary)' />
-            </Card>
-            <Subtitle2>Weight</Subtitle2>
-            <Subtitle2 style={{ marginBottom: '8px' }}>training</Subtitle2>
-            <Caption secondary>Have finished</Caption>
-          </Card>
-        </div>
-        <div
-          style={{
-            display: 'flex',
-            marginTop: '4px',
-            justifyContent: 'space-between'
-          }}
-        >
-          <Card
-            elevation='2'
-            dark={dark}
-            style={{ padding: '16px', width: '116px', margin: '0px' }}
-          >
-            <Card
-              flat
-              style={{
-                width: '32px',
-                height: '32px',
-                marginBottom: '8px',
-                paddingTop: '4px'
-              }}
-            >
-              <Icon path={mdiRun} size={1} color='var(--primary)' />
-            </Card>
-            <Subtitle2>Run</Subtitle2>
-            <Subtitle2 style={{ marginBottom: '8px' }}>training</Subtitle2>
-            <Caption secondary>In progress..</Caption>
-          </Card>
-          <Card
-            elevation='2'
-            dark={dark}
-            style={{ padding: '16px', width: '116px', margin: '0px' }}
-          >
-            <Card
-              flat
-              style={{
-                width: '32px',
-                height: '32px',
-                marginBottom: '8px',
-                paddingTop: '4px'
-              }}
-            >
-              <Icon path={mdiYoga} size={1} color='var(--primary)' />
-            </Card>
-            <Subtitle2>Yoga</Subtitle2>
-            <Subtitle2 style={{ marginBottom: '8px' }}>training</Subtitle2>
-            <Caption secondary>No task</Caption>
-          </Card>
-        </div>
-        <H6 style={{ margin: '32px 0px 16px 0px' }}>Courses Collection</H6>
-        <Card rounded={false} elevation='2' style={{ padding: '16px' }}>
-          <div
+            rounded
             style={{
-              display: 'flex'
+              overflow: 'hidden',
+              width: '300px',
+              height: '600px',
+              padding: '24px'
             }}
           >
-            <Card
-              outlined
-              dark={dark}
-              style={{ padding: '4px', width: '46px', height: '46px' }}
+            <H4 style={{ fontWeight: '500', marginTop: '8px' }}>Program</H4>
+            <div
+              style={{
+                display: 'flex',
+                marginTop: '8px',
+                justifyContent: 'space-between'
+              }}
             >
-              <Icon path={mdiTicket} size={1.5} color='var(--primary)' />
-            </Card>
-            <Card dark={dark} flat style={{ marginLeft: '12px' }}>
-              <Subtitle2 style={{ margin: '0px 0px' }}>
-                Courses I attended
-              </Subtitle2>
-              <Caption secondary component="span">
-                11 courses in total
-                <IconButton
-                  style={{ marginLeft: '24px' }}
-                  text={false}
-                  dark={dark}
-                  size='small'
-                  rounded
+              <Card
+                elevation='2'
+                dark={dark}
+                style={{ padding: '16px', width: '116px', margin: '16px 0px' }}
+              >
+                <Card
+                  flat
+                  style={{
+                    width: '32px',
+                    height: '32px',
+                    marginBottom: '8px',
+                    paddingTop: '4px'
+                  }}
                 >
-                  <Icon
-                    path={mdiChevronRight}
-                    size={0.7}
-                    color='var(--primary)'
-                  />
-                </IconButton>
-              </Caption>
+                  <Icon path={mdiArmFlex} size={1} color='var(--primary)' />
+                </Card>
+                <Subtitle2>Arm</Subtitle2>
+                <Subtitle2 style={{ marginBottom: '8px' }}>training</Subtitle2>
+                <Caption secondary>In progress..</Caption>
+              </Card>
+              <Card
+                elevation='2'
+                dark={dark}
+                style={{ padding: '16px', width: '116px', margin: '16px 0px' }}
+              >
+                <Card
+                  flat
+                  style={{
+                    width: '32px',
+                    height: '32px',
+                    marginBottom: '8px',
+                    paddingTop: '4px'
+                  }}
+                >
+                  <Icon path={mdiDumbbell} size={1} color='var(--primary)' />
+                </Card>
+                <Subtitle2>Weight</Subtitle2>
+                <Subtitle2 style={{ marginBottom: '8px' }}>training</Subtitle2>
+                <Caption secondary>Have finished</Caption>
+              </Card>
+            </div>
+            <div
+              style={{
+                display: 'flex',
+                marginTop: '4px',
+                justifyContent: 'space-between'
+              }}
+            >
+              <Card
+                elevation='2'
+                dark={dark}
+                style={{ padding: '16px', width: '116px', margin: '0px' }}
+              >
+                <Card
+                  flat
+                  style={{
+                    width: '32px',
+                    height: '32px',
+                    marginBottom: '8px',
+                    paddingTop: '4px'
+                  }}
+                >
+                  <Icon path={mdiRun} size={1} color='var(--primary)' />
+                </Card>
+                <Subtitle2>Run</Subtitle2>
+                <Subtitle2 style={{ marginBottom: '8px' }}>training</Subtitle2>
+                <Caption secondary>In progress..</Caption>
+              </Card>
+              <Card
+                elevation='2'
+                dark={dark}
+                style={{ padding: '16px', width: '116px', margin: '0px' }}
+              >
+                <Card
+                  flat
+                  style={{
+                    width: '32px',
+                    height: '32px',
+                    marginBottom: '8px',
+                    paddingTop: '4px'
+                  }}
+                >
+                  <Icon path={mdiYoga} size={1} color='var(--primary)' />
+                </Card>
+                <Subtitle2>Yoga</Subtitle2>
+                <Subtitle2 style={{ marginBottom: '8px' }}>training</Subtitle2>
+                <Caption secondary>No task</Caption>
+              </Card>
+            </div>
+            <H6 style={{ margin: '32px 0px 16px 0px' }}>Courses Collection</H6>
+            <Card rounded={false} elevation='2' style={{ padding: '16px' }}>
+              <div
+                style={{
+                  display: 'flex'
+                }}
+              >
+                <Card
+                  outlined
+                  dark={dark}
+                  style={{ padding: '4px', width: '46px', height: '46px' }}
+                >
+                  <Icon path={mdiTicket} size={1.5} color='var(--primary)' />
+                </Card>
+                <Card dark={dark} flat style={{ marginLeft: '12px' }}>
+                  <Subtitle2 style={{ margin: '0px 0px' }}>
+                    Courses I attended
+                  </Subtitle2>
+                  <Caption secondary component='span'>
+                    11 courses in total
+                    <IconButton
+                      style={{ marginLeft: '24px' }}
+                      text={false}
+                      dark={dark}
+                      size='small'
+                      rounded
+                    >
+                      <Icon
+                        path={mdiChevronRight}
+                        size={0.7}
+                        color='var(--primary)'
+                      />
+                    </IconButton>
+                  </Caption>
+                </Card>
+              </div>
             </Card>
-          </div>
+            <div
+              style={{
+                display: 'flex',
+                width: '300px',
+                padding: '16px 24px',
+                margin: '8px 0px',
+                position: 'relative',
+                left: '-24px',
+                boxShadow: 'var(--box-shadow)',
+                background: 'var(--bg-color)',
+                justifyContent: 'space-between'
+              }}
+            >
+              <ToggleButton selected dark={dark}>
+                <Icon path={mdiHome} size={0.9} color='var(--primary)' />
+              </ToggleButton>
+              <ToggleButton dark={dark}>
+                <Icon
+                  path={mdiChartLine}
+                  size={0.8}
+                  color={dark ? 'var(--white)' : 'var(--black)'}
+                />
+              </ToggleButton>
+              <ToggleButton dark={dark}>
+                <Icon
+                  path={mdiBell}
+                  size={0.8}
+                  color={dark ? 'var(--white)' : 'var(--black)'}
+                />
+              </ToggleButton>
+              <ToggleButton dark={dark}>
+                <Icon
+                  path={mdiAccount}
+                  size={0.9}
+                  color={dark ? 'var(--white)' : 'var(--black)'}
+                />
+              </ToggleButton>
+            </div>
+          </Card>
+
+          <Card
+            rounded
+            style={{
+              overflow: 'hidden',
+              width: '300px',
+              height: '600px',
+              padding: '24px'
+            }}
+          >
+            <div
+              style={{
+                display: 'flex',
+                marginTop: '8px',
+                alignItems: 'center',
+                justifyContent: 'space-between'
+              }}
+            >
+              <H4 dark={dark} style={{ fontWeight: '500' }}>
+                Plan list
+              </H4>
+              <IconButton
+                size='small'
+                rounded
+                text={false}
+                color='var(--primary)'
+                dark={dark}
+              >
+                <Icon path={mdiPlus} size={0.8} />
+              </IconButton>
+            </div>
+            <div
+              style={{
+                display: 'flex',
+                width: '252px',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}
+            >
+              <Card
+                dark={dark}
+                elevation='3'
+                style={{
+                  display: 'flex',
+                  marginTop: '32px',
+                  width: '194px',
+                  height: '194px',
+                  borderRadius: '150px',
+                  alignItems: 'center',
+                  justifyContent: 'center'
+                }}
+              >
+                <Card flat>
+                  <Icon path={mdiRun} size={2.5} color='var(--primary)' />
+                  <H5 style={{ padding: '4px 0px' }}>8,690</H5>
+
+                  <Caption style={{ padding: '4px 0px' }} secondary>
+                    Goal: 12k
+                  </Caption>
+                </Card>
+              </Card>
+            </div>
+            <Card
+              rounded={false}
+              elevation='2'
+              style={{
+                display: 'flex',
+                padding: '16px',
+                marginTop: '48px',
+                alignItems: 'center',
+                justifyContent: 'space-between'
+              }}
+            >
+              <Card
+                flat
+                style={{
+                  display: 'flex',
+                  alignItems: 'center'
+                }}
+              >
+                <Icon path={mdiArmFlex} size={1} color='var(--primary)' />
+                <Card flat style={{ marginLeft: '12px' }}>
+                  <Subtitle2 style={{ margin: '0px 0px' }}>
+                    Completed: 3 group
+                  </Subtitle2>
+                  <Caption secondary component='span'>
+                    Goal: 4 group
+                  </Caption>
+                </Card>
+              </Card>
+              <Overline>75%</Overline>
+            </Card>
+            <Card
+              rounded={false}
+              elevation='2'
+              style={{
+                display: 'flex',
+                padding: '16px',
+                marginTop: '24px',
+                alignItems: 'center',
+                justifyContent: 'space-between'
+              }}
+            >
+              <Card
+                flat
+                style={{
+                  display: 'flex',
+                  alignItems: 'center'
+                }}
+              >
+                <Icon path={mdiDumbbell} size={1} color='var(--primary)' />
+                <Card flat style={{ marginLeft: '12px' }}>
+                  <Subtitle2 style={{ margin: '0px 0px' }}>
+                    Completed: 6 group
+                  </Subtitle2>
+                  <Caption secondary component='span'>
+                    Goal: 6 group
+                  </Caption>
+                </Card>
+              </Card>
+              <Overline>100%</Overline>
+            </Card>
+            <div
+              style={{
+                display: 'flex',
+                width: '300px',
+                padding: '16px 24px',
+                margin: '24px 0px',
+                position: 'relative',
+                left: '-24px',
+                boxShadow: 'var(--box-shadow)',
+                background: 'var(--bg-color)',
+                justifyContent: 'space-between'
+              }}
+            >
+              <ToggleButton dark={dark}>
+                <Icon path={mdiHome} size={0.9} />
+              </ToggleButton>
+              <ToggleButton selected dark={dark} color='var(--primary)'>
+                <Icon path={mdiChartLine} size={0.8} />
+              </ToggleButton>
+              <ToggleButton dark={dark}>
+                <Icon path={mdiBell} size={0.8} />
+              </ToggleButton>
+              <ToggleButton dark={dark}>
+                <Icon path={mdiAccount} size={0.9} />
+              </ToggleButton>
+            </div>
+          </Card>
         </Card>
-        <div
-          style={{
-            display: 'flex',
-            width: '300px',
-            padding: '16px 24px',
-            margin: '8px 0px',
-            position: 'relative',
-            left: '-24px',
-            background: 'var(--bg-color)',
-            justifyContent: 'space-between'
-          }}
-        >
-          <ToggleButton selected dark={dark}>
-            <Icon path={mdiHome} size={0.9} color='var(--primary)' />
-          </ToggleButton>
-          <ToggleButton dark={dark}>
-            <Icon
-              path={mdiChartLine}
-              size={0.8}
-              color={dark ? 'var(--white)' : 'var(--black)'}
-            />
-          </ToggleButton>
-          <ToggleButton dark={dark}>
-            <Icon
-              path={mdiBell}
-              size={0.8}
-              color={dark ? 'var(--white)' : 'var(--black)'}
-            />
-          </ToggleButton>
-          <ToggleButton dark={dark}>
-            <Icon
-              path={mdiAccount}
-              size={0.9}
-              color={dark ? 'var(--white)' : 'var(--black)'}
-            />
-          </ToggleButton>
-        </div>
+        <Body2 style={{ marginTop: '48px', textAlign: 'center' }}>
+          <span>Fitness App by </span>
+          <a
+            target='_blank'
+            rel='noopener noreferrer'
+            href='https://dribbble.com/shots/9330583-Fitness-App?utm_source=Clipboard_Shot&utm_campaign=Jray&utm_content=Fitness%20App&utm_medium=Social_Share'
+          >
+            Jray
+          </a>
+          <span>. UI Created using components from this library.</span>
+        </Body2>
       </Card>
     )
   }
