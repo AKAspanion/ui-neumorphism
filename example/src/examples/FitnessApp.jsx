@@ -169,8 +169,10 @@ class FitnessApp extends React.Component {
                   <Subtitle2 style={{ margin: '0px 0px' }}>
                     Courses I attended
                   </Subtitle2>
-                  <Caption secondary component='span'>
-                    11 courses in total
+                  <Card flat style={{ display: 'flex', alignItems: 'center' }}>
+                    <Caption secondary component='span'>
+                      11 courses in total
+                    </Caption>
                     <IconButton
                       style={{ marginLeft: '24px' }}
                       text={false}
@@ -184,7 +186,7 @@ class FitnessApp extends React.Component {
                         color='var(--primary)'
                       />
                     </IconButton>
-                  </Caption>
+                  </Card>
                 </Card>
               </div>
             </Card>

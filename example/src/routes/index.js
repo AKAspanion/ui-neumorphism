@@ -6,6 +6,7 @@ import {
   InputView,
   RadioView,
   ButtonView,
+  SwitchView,
   DividerView,
   CheckboxView,
   IconButtonView,
@@ -71,7 +72,7 @@ const routes = [{
     id: 7,
     path: "/switch",
     name: "Switch",
-    component: InputView,
+    component: SwitchView,
   },
   {
     id: 9,
