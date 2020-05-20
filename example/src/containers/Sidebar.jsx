@@ -3,13 +3,22 @@ import { NavLink } from 'react-router-dom'
 
 import routes from '../routes/index.js'
 
-export default function Sidebar(props) {
+import { Card } from 'ui-neumorphism'
+
+export default function Sidebar({ open, size }) {
   useEffect(() => {
     document.getElementById('list-item-1').checked = true
   })
 
+  const isSmall = size === 'sm' || size === 'xs'
+
   return (
-    <div className={`sidebar ${props.open ? 'sidebar--open' : ''}`}>
+    <Card
+      flat={!isSmall}
+      className={`sidebar ${open ? 'sidebar--open' : ''} ${
+        !isSmall ? 'sidebar--always' : ''
+      }`}
+    >
       <div className='sidebar-menu-title'>
         <NavLink exact to='/' activeClassName='sidebar-link-active'>
           Home
@@ -51,6 +60,6 @@ export default function Sidebar(props) {
           Examples
         </NavLink>
       </div>
-    </div>
+    </Card>
   )
 }
