@@ -1,4 +1,5 @@
 export { overrideThemeVariables } from './util/'
+export { withWindowResize } from './hocs/'
 
 export {
   Typography,

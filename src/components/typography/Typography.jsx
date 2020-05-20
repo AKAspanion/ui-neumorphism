@@ -53,7 +53,10 @@ class Typography extends React.Component {
   render() {
     return createElement(
       this.getMapping(),
-      { style: this.props.style, className: this.getClass() },
+      {
+        style: this.props.style,
+        className: `${this.getClass()} ${this.props.className}`
+      },
       this.props.children
     )
   }

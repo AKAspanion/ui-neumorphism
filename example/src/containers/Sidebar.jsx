@@ -3,12 +3,13 @@ import { NavLink } from 'react-router-dom'
 
 import routes from '../routes/index.js'
 
-export default function Sidebar() {
+export default function Sidebar(props) {
   useEffect(() => {
     document.getElementById('list-item-1').checked = true
   })
+
   return (
-    <div className='sidebar'>
+    <div className={`sidebar ${props.open ? 'sidebar--open' : ''}`}>
       <div className='sidebar-menu-title'>
         <NavLink exact to='/' activeClassName='sidebar-link-active'>
           Home
