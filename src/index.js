@@ -25,6 +25,7 @@ export {
   IconButton,
   Button,
   Fab,
+  ProgressLinear,
   Divider,
   Spacer,
   Radio,

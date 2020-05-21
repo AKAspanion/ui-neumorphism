@@ -1,13 +1,23 @@
-.nu-divider {
-  border: 0;
-  height: 7px;
-  border-radius: 10px;
+.nu-progress-linear {
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: start;
+  box-sizing: border-box;
   background: var(--bg-color);
+  transition: all 0.2s ease-in-out;
   box-shadow: var(--box-shadow-inset);
 }
 
-.nu-divider.nu-divider--light {
+.nu-progress-linear.nu-progress-linear--bordered {
+  border: 1px solid var(--border-color);
+}
+
+.nu-progress-linear.nu-progress-linear--light {
   --bg-color: var(--light-bg);
+  --selector-bg: var(--g-text-color-light);
+  --border-color: var(--light-bg-dark-shadow);
   --box-shadow-inset: inset -3px -3px 5px var(--light-bg-light-shadow),
     inset 3px 3px 5px var(--light-bg-dark-shadow);
   --box-shadow-inset-dense: inset -1px -1px 3px var(--light-bg-light-shadow),
@@ -18,8 +28,10 @@
     1px 1px 3px var(--light-bg-dark-shadow);
 }
 
-.nu-divider.nu-divider--dark {
+.nu-progress-linear.nu-progress-linear--dark {
   --bg-color: var(--dark-bg);
+  --selector-bg: var(--g-text-color-dark);
+  --border-color: var(--dark-bg-dark-shadow);
   --box-shadow-inset: inset -3px -3px 5px var(--dark-bg-light-shadow),
     inset 3px 3px 5px var(--dark-bg-dark-shadow);
   --box-shadow-inset-dense: inset -1px -1px 3px var(--dark-bg-light-shadow),
@@ -30,17 +42,29 @@
     1px 1px 3px var(--dark-bg-dark-shadow);
 }
 
-.nu-divider.nu-divider--dense {
-  height: 5px;
-  box-shadow: var(--box-shadow-inset-dense);
+.nu-progress-linear--bg {
+  margin: 0px 2px;
+  max-width: calc(100% - 4px);
+  background: var(--selector-bg);
+  transition: all 0.2s ease-in-out;
 }
 
-.nu-divider.nu-divider--elevated {
-  height: 4px;
-  box-shadow: var(--box-shadow);
+.nu-progress-linear--bg-filled {
+  margin: 0px;
+  max-width: 100%;
 }
 
-.nu-divider.nu-divider--dense.nu-divider--elevated {
-  height: 3px;
-  box-shadow: var(--box-shadow-dense);
+.nu-progress-linear--indeterminate {
+  animation: indeterminate-progress 1.25s ease infinite;
+}
+
+@keyframes indeterminate-progress {
+  0% {
+    transform: translateX(-200%);
+  }
+
+  100% {
+    width: 100%;
+    transform: translateX(100%);
+  }
 }

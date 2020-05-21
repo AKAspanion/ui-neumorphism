@@ -11,7 +11,8 @@ import {
   CheckboxView,
   IconButtonView,
   TypographyView,
-  ToggleButtonView
+  ToggleButtonView,
+  ProgressLinearView
 } from '../pages/index.js';
 
 const routes = [{
@@ -61,6 +62,12 @@ const routes = [{
     path: "/divider",
     name: "Divider",
     component: DividerView,
+  },
+  {
+    id: 13,
+    path: "/progress",
+    name: "Progress: Linear",
+    component: ProgressLinearView,
   },
   {
     id: 5,
