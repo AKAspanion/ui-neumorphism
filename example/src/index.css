@@ -16,6 +16,10 @@ body {
 }
 
 code {
+  padding: 0 4px;
+  border-radius: 4px;
+  background: #ccc;
+  color: var(--primary);
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
@@ -153,12 +157,15 @@ main {
 }
 
 .main-container {
-  padding: 100px;
+  padding: var(--padding);
   overflow: hidden;
+  --padding: 48px;
+  --topbar-height: 96px;
 }
 
 .main-container-sm {
-  padding: 24px;
+  --padding: 24px;
+  --topbar-height: 48px;
 }
 
 .main-content {
@@ -169,9 +176,11 @@ main {
 }
 
 .main-view {
+  flex-grow: 1;
   padding: 16px;
   will-change: transform;
   transition: transform .2s ease-in-out;
+  min-height: calc(100vh - var(--padding) * 2 - var(--topbar-height));
 }
 
 .main-view--open {

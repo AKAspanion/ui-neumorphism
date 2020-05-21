@@ -1,16 +1,15 @@
 import React from 'react'
 
 import {
-  Card,
-  H1,
-  Subtitle1,
-  Divider,
   H4,
   H6,
+  Card,
   Body1,
-  overrideThemeVariables,
+  Divider,
+  Subtitle1,
   ToggleButton,
-  ToggleButtonGroup
+  ToggleButtonGroup,
+  overrideThemeVariables,
 } from 'ui-neumorphism'
 
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
@@ -131,8 +130,7 @@ class Home extends React.Component {
   render() {
     const { dark } = this.props
     return (
-      <Card flat dark={dark}>
-        <H1 style={{ marginLeft: '-6px' }}>UI-Neumorphism</H1>
+      <Card flat dark={dark} style={{ padding: '8px 0px' }}>
         <Subtitle1>
           <code>ui-neumorphism</code> is a react component library designed on
           the "new skeuomorphism" UI/UX trend.
