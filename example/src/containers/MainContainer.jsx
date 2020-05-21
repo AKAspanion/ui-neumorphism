@@ -46,8 +46,11 @@ class MainContainer extends React.Component {
             />
             <Divider dense dark={dark} />
             <Card flat className='main-content'>
-              <Sidebar open={open} size={size} />
-              <Card flat>
+              <Sidebar dark={dark} open={open} size={size} />
+              <Card
+                flat
+                className={`main-view ${open ? 'main-view--open' : ''}`}
+              >
                 <Switch>
                   {routes.map((route) => (
                     <Route

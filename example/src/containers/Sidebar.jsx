@@ -5,7 +5,7 @@ import routes from '../routes/index.js'
 
 import { Card } from 'ui-neumorphism'
 
-export default function Sidebar({ open, size }) {
+export default function Sidebar({ dark, open, size }) {
   useEffect(() => {
     document.getElementById('list-item-1').checked = true
   })
@@ -14,6 +14,7 @@ export default function Sidebar({ open, size }) {
 
   return (
     <Card
+      dark={dark}
       flat={!isSmall}
       className={`sidebar ${open ? 'sidebar--open' : ''} ${
         !isSmall ? 'sidebar--always' : ''

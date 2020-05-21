@@ -13,6 +13,7 @@
   box-shadow: var(--box-shadow);
   background-color: var(--bg-color);
   transition: box-shadow 200ms ease-in-out;
+  -webkit-tap-highlight-color: transparent !important;
 }
 
 .nu-button.nu-button--light {
@@ -155,6 +156,7 @@
 }
 
 .nu-button:focus {
+  outline: none;
   padding: 0 10px;
   border: 2px solid var(--border-color);
 }
@@ -172,14 +174,14 @@
   outline: none;
   color: inherit;
   cursor: inherit;
+  display: contents;
   max-width: inherit;
   box-sizing: inherit;
-  user-select: inherit;
   text-shadow: inherit;
-  display: contents;
   border-radius: inherit;
   text-transform: uppercase;
   background-color: inherit;
+  -webkit-tap-highlight-color: transparent !important;
   font-family: 'Roboto', -apple-system,
     BlinkMacSystemFont, 'Segoe UI', 'Oxygen', 'Ubuntu',
     'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
