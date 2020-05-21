@@ -1,6 +1,6 @@
 .nu-progress-linear {
-  width: 100%;
   display: flex;
+  width: inherit;
   overflow: hidden;
   align-items: center;
   justify-content: start;

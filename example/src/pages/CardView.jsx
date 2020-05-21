@@ -124,6 +124,18 @@ class CardView extends React.Component {
         </Card>
         <br />
         <br />
+        <H5>Loading Card</H5>
+        <Subtitle1>
+          Set <code>loading</code> flag to show a loading progress bar on top.
+        </Subtitle1>
+        <Card flat className='main-flex-card'>
+          <Card loading width={275}>
+            {cardContent}
+            {cardAction}
+          </Card>
+        </Card>
+        <br />
+        <br />
         <H5>Media with text</H5>
         <Subtitle1>You can add media inside a card.</Subtitle1>
         <Card flat className='main-flex-card'>

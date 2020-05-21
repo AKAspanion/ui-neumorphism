@@ -23,7 +23,7 @@ class ProgressLinearView extends React.Component {
         </Subtitle1>
         <br />
         <Card outlined style={{ padding: '32px' }}>
-          <ProgressLinear color='red' indeterminate />
+          <ProgressLinear active fillHeight height={5} color='red' indeterminate />
           <br />
           <ProgressLinear color='green' indeterminate value={23} />
           <br />

@@ -70,9 +70,10 @@ class ProgressLinear extends React.Component {
   }
 
   getHeightStyle(height) {
+    const { active } = this.props
     return {
-      height: `${height}px`,
-      borderRadius: `${height}px`
+      height: `${active ? height : 0}px`,
+      borderRadius: `${height * 2}px`
     }
   }
 

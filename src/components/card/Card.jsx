@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { ProgressLinear } from '../../index'
+
 import styles from './Card.module.css'
 import { getModuleClasses, passDownProp } from '../../util'
 import {
@@ -47,7 +49,7 @@ class Card extends React.Component {
 
   render() {
     const sizeStyles = {}
-    const { style, width, height, className, children } = this.props
+    const { style, width, height, loading, className, children } = this.props
     const cardChildren = passDownProp(children, this.props, [
       'dark',
       'rounded',
@@ -61,6 +63,15 @@ class Card extends React.Component {
         style={{ ...style, ...sizeStyles }}
         className={`${this.getClass()} ${className}`}
       >
+        {loading ? (
+          <ProgressLinear
+            active
+            fillHeight
+            height={4}
+            indeterminate
+            color='var(--primary)'
+          />
+        ) : null}
         {cardChildren}
       </div>
     )
