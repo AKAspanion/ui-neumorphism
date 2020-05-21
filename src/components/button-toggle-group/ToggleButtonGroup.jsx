@@ -3,10 +3,17 @@ import React, { Children, cloneElement } from 'react'
 import { ToggleButton } from '../index'
 
 import { callCallback } from '../../util'
-import { BUTTON_PROP_TYPES, BUTTON_GROUP_VALUE, G_BOOL } from '../../assets'
+import {
+  G_BOOL,
+  DEFAULT_PROPS,
+  BUTTON_PROP_TYPES,
+  BUTTON_GROUP_VALUE
+} from '../../assets'
 
 class ToggleButtonGroup extends React.Component {
   static displayName = 'NuToggleButtonGroup'
+
+  static defaultProps = DEFAULT_PROPS
 
   static propTypes = {
     multiple: G_BOOL,

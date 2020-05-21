@@ -8,6 +8,11 @@ export const G_OBJ = PropTypes.object
 export const G_STRING = PropTypes.string
 
 export const DEFAULT_PROPS = {
+  className: '',
+  style: {}
+}
+
+export const DEFAULT_PROPS_TYPE = {
   dark: G_BOOL,
   style: G_OBJ,
   className: G_STRING
@@ -16,12 +21,14 @@ export const DEFAULT_PROPS = {
 export const SIZE_PROP = PropTypes.oneOf(['small', 'medium', 'large'])
 export const POSITION_PROP = PropTypes.oneOf(['top', 'right', 'bottom', 'left'])
 export const SELECTION_CONTROL_TYPES = PropTypes.oneOf(['radio', 'checkbox', 'switch'])
+export const BUTTON_ALTERNATE_TYPES = PropTypes.oneOf(['fab', 'icon', 'toggle'])
 
 export const TYPOGRAPHY_PROP_TYPES = {
   dark: G_BOOL,
   disabled: G_BOOL,
   secondary: G_BOOL,
-  component: G_STRING
+  component: G_STRING,
+  ...DEFAULT_PROPS_TYPE
 }
 
 export const SELECTION_CONTROL_PROP_TYPES = {
@@ -34,10 +41,9 @@ export const SELECTION_CONTROL_PROP_TYPES = {
   color: G_STRING,
   onClick: G_FUNC,
   onChange: G_FUNC,
-  ...DEFAULT_PROPS
+  ...DEFAULT_PROPS_TYPE
 }
 
-const BUTTON_ALTERNATE = PropTypes.oneOf(['fab', 'icon', 'toggle'])
 export const BUTTON_PROP_TYPES = {
   style: G_OBJ,
   dark: G_BOOL,
@@ -54,7 +60,8 @@ export const BUTTON_PROP_TYPES = {
   mouseOut: G_FUNC,
   mouseOver: G_FUNC,
   className: G_STRING,
-  type: BUTTON_ALTERNATE
+  type: BUTTON_ALTERNATE_TYPES,
+  ...DEFAULT_PROPS_TYPE
 }
 
 export const BUTTON_GROUP_VALUE = PropTypes.oneOfType([PropTypes.string, PropTypes.array])

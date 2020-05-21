@@ -2,13 +2,14 @@ import React from 'react'
 
 import styles from './Button.module.css'
 import { getModuleClasses, passDownProp } from '../../util'
-import { BUTTON_PROP_TYPES } from '../../assets/index'
+import { BUTTON_PROP_TYPES, DEFAULT_PROPS } from '../../assets/index'
 
 class Button extends React.Component {
   static displayName = 'NuButton'
 
   static defaultProps = {
-    size: 'medium'
+    size: 'medium',
+    ...DEFAULT_PROPS
   }
 
   static propTypes = BUTTON_PROP_TYPES

@@ -3,13 +3,19 @@ import React from 'react'
 import { Button } from '../index'
 
 import { callCallback } from '../../util'
-import { BUTTON_PROP_TYPES, G_STRING, G_BOOL } from '../../assets/index'
+import {
+  G_BOOL,
+  G_STRING,
+  DEFAULT_PROPS,
+  BUTTON_PROP_TYPES
+} from '../../assets/index'
 
 class ToggleButton extends React.Component {
   static displayName = 'NuToggleButton'
 
   static defaultProps = {
-    text: true
+    text: true,
+    ...DEFAULT_PROPS
   }
 
   static propTypes = {

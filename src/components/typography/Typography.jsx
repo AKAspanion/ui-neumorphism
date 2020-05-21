@@ -2,10 +2,16 @@ import React, { createElement } from 'react'
 
 import styles from './Typography.module.css'
 import { getModuleClasses } from '../../util'
-import { TYPOGRAPHY_PROP_TYPES, G_STRING } from '../../assets/index'
+import {
+  G_STRING,
+  DEFAULT_PROPS,
+  TYPOGRAPHY_PROP_TYPES
+} from '../../assets/index'
 
 class Typography extends React.Component {
   static displayName = 'NuTypography'
+
+  static defaultProps = DEFAULT_PROPS
 
   mapping = {
     h1: 'h1',
@@ -51,11 +57,12 @@ class Typography extends React.Component {
   }
 
   render() {
+    const { style, className } = this.props
     return createElement(
       this.getMapping(),
       {
-        style: this.props.style,
-        className: `${this.getClass()} ${this.props.className}`
+        style,
+        className: `${this.getClass()} ${className}`
       },
       this.props.children
     )

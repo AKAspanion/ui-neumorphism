@@ -5,6 +5,7 @@ import { Radio } from '../index/'
 import radioStyles from '../radio/Radio.module.css'
 import { callCallback, getModuleClasses } from '../../util'
 import {
+  DEFAULT_PROPS_TYPE,
   DEFAULT_PROPS,
   G_STRING,
   G_BOOL,
@@ -15,7 +16,8 @@ class RadioGroup extends React.Component {
   static displayName = 'NuRadioGroup'
 
   static defaultProps = {
-    vertical: false
+    vertical: false,
+    ...DEFAULT_PROPS
   }
 
   static propTypes = {
@@ -26,7 +28,7 @@ class RadioGroup extends React.Component {
     vertical: G_BOOL,
     onChange: G_FUNC,
     children: G_NODE.isRequired,
-    ...DEFAULT_PROPS
+    ...DEFAULT_PROPS_TYPE
   }
 
   constructor(props) {
@@ -81,7 +83,7 @@ class RadioGroup extends React.Component {
       <div
         style={style}
         key={this.state.key}
-        className={`${this.getClasses()} ${className || ''}`}
+        className={`${this.getClasses()} ${className}`}
       >
         {radios}
       </div>

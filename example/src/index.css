@@ -54,7 +54,7 @@ main {
   height: calc(100% + 6px);
   width: 300px !important;
   transform: translate3d(-324px, 0, 0);
-  transition: all .2s ease-in-out;
+  transition: transform .2s ease-in-out;
 }
 
 
@@ -167,7 +167,8 @@ main {
 
 .main-view {
   padding: 16px;
-  transition: all .2s ease-in-out;
+  will-change: transform;
+  transition: transform .2s ease-in-out;
 }
 
 .main-view--open {

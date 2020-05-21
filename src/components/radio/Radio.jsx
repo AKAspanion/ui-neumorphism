@@ -3,9 +3,11 @@ import React from 'react'
 import { SelectionControl } from '../../index'
 
 import { callCallback } from '../../util'
-import { SELECTION_CONTROL_PROP_TYPES } from '../../assets/index'
+import { DEFAULT_PROPS, SELECTION_CONTROL_PROP_TYPES } from '../../assets/index'
 class Radio extends React.Component {
   static displayName = 'NuRadio'
+
+  static defaultProps = DEFAULT_PROPS
 
   static propTypes = SELECTION_CONTROL_PROP_TYPES
 

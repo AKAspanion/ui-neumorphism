@@ -84,6 +84,7 @@
 .nu-subtitle-1,
 .nu-subtitle-2 {
   color: var(--text-color);
+  -webkit-tap-highlight-color: transparent !important;
 }
 
 .nu-typography.nu-typography--primary.nu-typography--light {

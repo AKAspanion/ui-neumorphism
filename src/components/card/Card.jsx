@@ -2,10 +2,17 @@ import React from 'react'
 
 import styles from './Card.module.css'
 import { getModuleClasses, passDownProp } from '../../util'
-import { G_STRING, G_BOOL, DEFAULT_PROPS } from '../../assets/index'
+import {
+  G_BOOL,
+  G_STRING,
+  DEFAULT_PROPS,
+  DEFAULT_PROPS_TYPE
+} from '../../assets/index'
 
 class Card extends React.Component {
   static displayName = 'NuCard'
+
+  static defaultProps = DEFAULT_PROPS
 
   static propTypes = {
     dark: G_BOOL,
@@ -13,7 +20,7 @@ class Card extends React.Component {
     rounded: G_BOOL,
     outlined: G_BOOL,
     elevation: G_STRING,
-    ...DEFAULT_PROPS
+    ...DEFAULT_PROPS_TYPE
   }
 
   getClass() {

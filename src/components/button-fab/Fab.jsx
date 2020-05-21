@@ -4,13 +4,14 @@ import { Button } from '../index'
 
 import styles from './Fab.module.css'
 import { getModuleClasses } from '../../util'
-import { G_BOOL, BUTTON_PROP_TYPES } from '../../assets/index'
+import { G_BOOL, BUTTON_PROP_TYPES, DEFAULT_PROPS } from '../../assets/index'
 
 class Fab extends React.Component {
   static displayName = 'NuFab'
 
   static defaultProps = {
-    animation: true
+    animation: true,
+    ...DEFAULT_PROPS
   }
 
   static propTypes = {

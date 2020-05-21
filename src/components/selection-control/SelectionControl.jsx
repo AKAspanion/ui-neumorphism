@@ -8,12 +8,15 @@ import switchStyles from '../switch/Switch.module.css'
 
 import { uid, getModuleClasses, callCallback, setCSSVariable } from '../../util'
 import {
+  DEFAULT_PROPS,
   SELECTION_CONTROL_TYPES,
   SELECTION_CONTROL_PROP_TYPES
 } from '../../assets/index'
 
 class SelectionControl extends React.Component {
   static displayName = 'NuSelectionControl'
+
+  static defaultProps = DEFAULT_PROPS
 
   static propTypes = {
     ...SELECTION_CONTROL_PROP_TYPES,
@@ -99,12 +102,16 @@ class SelectionControl extends React.Component {
       label,
       disabled,
       required,
+      className,
       onClick
     } = this.props
     const { id: stateId, type, isChecked } = this.state
     const inputType = this.getInputType(type)
     return (
-      <div className={this.getClasses('container')} style={{ ...style }}>
+      <div
+        style={style}
+        className={`${this.getClasses('container')} ${className}`}
+      >
         <input
           name={name}
           value={value}

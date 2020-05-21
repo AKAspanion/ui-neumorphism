@@ -1,10 +1,12 @@
 import React from 'react'
 
 import { Typography } from '../../index'
-import { TYPOGRAPHY_PROP_TYPES } from '../../../assets/index'
+import { DEFAULT_PROPS, TYPOGRAPHY_PROP_TYPES } from '../../../assets/index'
 
 class Subtitle1 extends React.Component {
   static displayName = 'NuSubtitle1'
+
+  static defaultProps = DEFAULT_PROPS
 
   static propTypes = TYPOGRAPHY_PROP_TYPES
 

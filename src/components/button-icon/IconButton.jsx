@@ -2,12 +2,13 @@ import React from 'react'
 
 import { Button } from '../index'
 
-import { BUTTON_PROP_TYPES } from '../../assets/index'
+import { BUTTON_PROP_TYPES, DEFAULT_PROPS } from '../../assets/index'
 class IconButton extends React.Component {
   static displayName = 'NuIconButton'
 
   static defaultProps = {
-    text: true
+    text: true,
+    ...DEFAULT_PROPS
   }
 
   static propTypes = BUTTON_PROP_TYPES

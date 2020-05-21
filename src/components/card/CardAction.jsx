@@ -2,14 +2,16 @@ import React from 'react'
 
 import styles from './Card.module.css'
 import { getModuleClasses, passDownProp } from '../../util'
-import { G_BOOL } from '../../assets/index'
+import { G_BOOL, DEFAULT_PROPS, DEFAULT_PROPS_TYPE } from '../../assets/index'
 
 class CardAction extends React.Component {
   static displayName = 'NuCardAction'
 
+  static defaultProps = DEFAULT_PROPS
+
   static propTypes = {
-    dark: G_BOOL,
-    rounded: G_BOOL
+    rounded: G_BOOL,
+    ...DEFAULT_PROPS_TYPE
   }
 
   getClass() {
@@ -25,12 +27,15 @@ class CardAction extends React.Component {
   }
 
   render() {
+    const { style, className } = this.props
     const cardChildren = passDownProp(this.props.children, this.props, [
       'dark',
       'rounded'
     ])
     return (
-      <div className={this.getClass()}>{cardChildren || 'card-action'}</div>
+      <div style={style} className={`${this.getClass()} ${className}`}>
+        {cardChildren}
+      </div>
     )
   }
 }

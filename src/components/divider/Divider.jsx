@@ -2,16 +2,17 @@ import React from 'react'
 
 import styles from './Divider.module.css'
 import { getModuleClasses } from '../../util'
-import { G_BOOL, DEFAULT_PROPS } from '../../assets/index'
+import { G_BOOL, DEFAULT_PROPS, DEFAULT_PROPS_TYPE } from '../../assets/index'
 
 class Divider extends React.Component {
   static displayName = 'NuDivider'
 
+  static defaultProps = DEFAULT_PROPS
+
   static propTypes = {
-    dark: G_BOOL,
     dense: G_BOOL,
     elevated: G_BOOL,
-    ...DEFAULT_PROPS
+    ...DEFAULT_PROPS_TYPE
   }
 
   getClasses() {
