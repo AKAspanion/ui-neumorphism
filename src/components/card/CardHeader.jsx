@@ -20,6 +20,7 @@ class CardHeader extends React.Component {
     action: G_NODE,
     rounded: G_BOOL,
     subtitle: G_NODE,
+    disabled: G_BOOL,
     ...DEFAULT_PROPS_TYPE
   }
 
@@ -57,11 +58,18 @@ class CardHeader extends React.Component {
       subtitle,
       className
     } = this.props
-    const cardTitle = passDownProp(title, this.props, ['dark'])
-    const cardAvatar = passDownProp(avatar, this.props, ['dark'])
-    const cardAction = passDownProp(action, this.props, ['dark'])
-    const cardSubTitle = passDownProp(subtitle, this.props, ['dark'])
-    const cardChildren = passDownProp(children, this.props, ['dark', 'rounded'])
+    const cardTitle = passDownProp(title, this.props, ['dark', 'disabled'])
+    const cardAvatar = passDownProp(avatar, this.props, ['dark', 'disabled'])
+    const cardAction = passDownProp(action, this.props, ['dark', 'disabled'])
+    const cardSubTitle = passDownProp(subtitle, this.props, [
+      'dark',
+      'disabled'
+    ])
+    const cardChildren = passDownProp(children, this.props, [
+      'dark',
+      'rounded',
+      'disabled'
+    ])
     return (
       <div style={style} className={`${this.getClass('wrapper')} ${className}`}>
         {cardAvatar || cardTitle || cardSubTitle || cardAction ? (

@@ -15,7 +15,7 @@ class CardMedia extends React.Component {
   static displayName = 'NuCardMedia'
 
   static defaultProps = {
-    height: 150,
+    height: 160,
     ...DEFAULT_PROPS
   }
 
@@ -24,11 +24,12 @@ class CardMedia extends React.Component {
     src: G_STRING,
     title: G_STRING,
     rounded: G_BOOL,
+    disabled: G_BOOL,
     ...DEFAULT_PROPS_TYPE
   }
 
   getClass(classType) {
-    const { dark, rounded } = this.props
+    const { dark, rounded, disabled } = this.props
     switch (classType) {
       case 'media':
         return getModuleClasses(
@@ -37,6 +38,7 @@ class CardMedia extends React.Component {
             nu-card-media
             nu-card-media--${dark ? 'dark' : 'light'}
             ${rounded ? 'nu-card-media--rounded' : ''}
+            ${disabled ? 'nu-card-media--disabled' : ''}
           `
         )
       case 'title':

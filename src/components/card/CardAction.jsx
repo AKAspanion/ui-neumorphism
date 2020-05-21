@@ -11,6 +11,7 @@ class CardAction extends React.Component {
 
   static propTypes = {
     rounded: G_BOOL,
+    disabled: G_BOOL,
     ...DEFAULT_PROPS_TYPE
   }
 
@@ -27,10 +28,11 @@ class CardAction extends React.Component {
   }
 
   render() {
-    const { style, className } = this.props
-    const cardChildren = passDownProp(this.props.children, this.props, [
+    const { style, className, children } = this.props
+    const cardChildren = passDownProp(children, this.props, [
       'dark',
-      'rounded'
+      'rounded',
+      'disabled'
     ])
     return (
       <div style={style} className={`${this.getClass()} ${className}`}>

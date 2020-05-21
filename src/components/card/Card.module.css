@@ -1,11 +1,13 @@
 .nu-card {
   width: auto;
+  overflow: hidden;
   box-sizing: border-box;
 }
 
 .nu-card-action {
   padding: 4px;
 }
+
 .nu-card-media-title,
 .nu-card-content,
 .nu-card-header {
@@ -28,13 +30,17 @@
   font-size: 24px;
 }
 
+.nu-card-action {
+  display: flex;
+  align-items: center;
+}
+
 .nu-card-media {
   position: relative;
   background-size: cover;
-  background-repeat: no-repeat;
   background-position: center;
-  border-bottom-left-radius: 0px !important;
-  border-bottom-right-radius: 0px !important;
+  background-repeat: no-repeat;
+  border-radius: 0px !important;
 }
 
 .nu-card.nu-card--light,
@@ -135,4 +141,10 @@
 .nu-card-media-title {
   position: absolute;
   bottom: 0px;
+}
+
+.nu-card-media.nu-card-media--disabled {
+  opacity: 0.38;
+  user-select: none;
+  pointer-events: none;
 }

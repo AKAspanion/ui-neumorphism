@@ -26,6 +26,7 @@ export {
   Button,
   Fab,
   Divider,
+  Spacer,
   Radio,
   RadioGroup,
   Switch,

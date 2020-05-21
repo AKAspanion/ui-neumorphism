@@ -103,6 +103,11 @@
   --text-color: var(--g-text-color-secondary-dark);
 }
 
+.nu-typography.nu-typography--disabled {
+  user-select: none;
+  pointer-events: none;
+}
+
 .nu-typography.nu-typography--disabled.nu-typography--light {
   --text-color: var(--g-text-color-disabled-light);
 }
