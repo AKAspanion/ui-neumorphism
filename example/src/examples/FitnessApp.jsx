@@ -16,7 +16,6 @@ import {
 } from '@mdi/js'
 
 import {
-  Subtitle2,
   H4,
   H5,
   H6,
@@ -24,6 +23,7 @@ import {
   Body2,
   Caption,
   Overline,
+  Subtitle2,
   IconButton,
   ToggleButton
 } from 'ui-neumorphism'
@@ -31,29 +31,9 @@ class FitnessApp extends React.Component {
   render() {
     const { dark } = this.props
     return (
-      <Card
-        flat
-        dark={dark}
-        style={{
-          width: '100%'
-        }}
-      >
-        <Card
-          flat
-          style={{
-            display: 'flex',
-            justifyContent: 'space-around'
-          }}
-        >
-          <Card
-            rounded
-            style={{
-              overflow: 'hidden',
-              width: '300px',
-              height: '600px',
-              padding: '24px'
-            }}
-          >
+      <Card flat dark={dark} className='fitness-app-container'>
+        <Card flat className='fitness-app-wrapper'>
+          <Card rounded width={300} height={600} className='fitness-app'>
             <H4 style={{ fontWeight: '500', marginTop: '8px' }}>Program</H4>
             <div
               style={{
@@ -165,11 +145,22 @@ class FitnessApp extends React.Component {
                 >
                   <Icon path={mdiTicket} size={1.5} color='var(--primary)' />
                 </Card>
-                <Card dark={dark} flat style={{ marginLeft: '12px' }}>
+                <Card
+                  flat
+                  dark={dark}
+                  style={{ marginLeft: '12px', overflow: 'unset' }}
+                >
                   <Subtitle2 style={{ margin: '0px 0px' }}>
                     Courses I attended
                   </Subtitle2>
-                  <Card flat style={{ display: 'flex', alignItems: 'center' }}>
+                  <Card
+                    flat
+                    style={{
+                      display: 'flex',
+                      overflow: 'unset',
+                      alignItems: 'center'
+                    }}
+                  >
                     <Caption secondary component='span'>
                       11 courses in total
                     </Caption>
@@ -230,15 +221,7 @@ class FitnessApp extends React.Component {
             </div>
           </Card>
 
-          <Card
-            rounded
-            style={{
-              overflow: 'hidden',
-              width: '300px',
-              height: '600px',
-              padding: '24px'
-            }}
-          >
+          <Card rounded width={300} height={600} className='fitness-app'>
             <div
               style={{
                 display: 'flex',

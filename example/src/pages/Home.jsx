@@ -138,11 +138,7 @@ class Home extends React.Component {
           the "new skeuomorphism" UI/UX trend.
         </Subtitle1>
         <br />
-        <div
-          style={{ justifyContent: 'center', padding: '32px', display: 'flex' }}
-        >
-          <FitnessApp dark={dark} />
-        </div>
+        <FitnessApp dark={dark} />
         <br />
         <br />
         <H4>Installation</H4>

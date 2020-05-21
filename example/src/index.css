@@ -191,3 +191,22 @@ main {
 .topbar-title {
   margin-left: 4px;
 }
+
+/* Fitness app */
+
+.fitness-app-container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.fitness-app-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.fitness-app {
+  padding: 24px;
+  margin: 16px;
+}

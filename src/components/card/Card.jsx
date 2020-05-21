@@ -44,6 +44,7 @@ class Card extends React.Component {
   }
 
   render() {
+    const sizeStyles = {}
     const { style, width, height, className, children } = this.props
     const cardChildren = passDownProp(children, this.props, [
       'dark',
@@ -51,9 +52,11 @@ class Card extends React.Component {
       'disabled',
       'outlined'
     ])
+    if (width) sizeStyles.width = `${width}px`
+    if (height) sizeStyles.height = `${height}px`
     return (
       <div
-        style={{ ...style, width: `${width}px`, height: `${height}px` }}
+        style={{ ...style, ...sizeStyles }}
         className={`${this.getClass()} ${className}`}
       >
         {cardChildren}
