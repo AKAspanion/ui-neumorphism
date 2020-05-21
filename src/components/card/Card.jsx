@@ -18,7 +18,6 @@ class Card extends React.Component {
   static defaultProps = DEFAULT_PROPS
 
   static propTypes = {
-    dark: G_BOOL,
     flat: G_BOOL,
     width: G_NUM,
     height: G_NUM,
@@ -49,7 +48,15 @@ class Card extends React.Component {
 
   render() {
     const sizeStyles = {}
-    const { style, width, height, loading, className, children } = this.props
+    const {
+      dark,
+      style,
+      width,
+      height,
+      loading,
+      children,
+      className
+    } = this.props
     const cardChildren = passDownProp(children, this.props, [
       'dark',
       'rounded',
@@ -68,6 +75,7 @@ class Card extends React.Component {
             active
             fillHeight
             height={4}
+            dark={dark}
             indeterminate
             color='var(--primary)'
           />

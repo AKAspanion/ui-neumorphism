@@ -18,6 +18,9 @@ import {
   H5,
   H4
 } from 'ui-neumorphism'
+
+import CodeBlock from '../containers/CodeBlock.jsx'
+import { simpleCard, simpleCardCopy, mediaCard, complexCard } from '../assets/'
 class CardView extends React.Component {
   render() {
     const cardContent = (
@@ -74,6 +77,7 @@ class CardView extends React.Component {
             {cardAction}
           </Card>
         </Card>
+        <CodeBlock>{simpleCard(dark ? 'dark' : '')}</CodeBlock>
         <br />
         <br />
         <H5>Inset Card</H5>
@@ -86,6 +90,7 @@ class CardView extends React.Component {
             {cardAction}
           </Card>
         </Card>
+        <CodeBlock>{simpleCardCopy(dark ? 'dark inset' : 'dark')}</CodeBlock>
         <br />
         <br />
         <H5>Outlined Card</H5>
@@ -98,6 +103,7 @@ class CardView extends React.Component {
             {cardAction}
           </Card>
         </Card>
+        <CodeBlock>{simpleCardCopy(dark ? 'dark outlined' : 'dark')}</CodeBlock>
         <br />
         <br />
         <H5>Rounded Card</H5>
@@ -110,6 +116,7 @@ class CardView extends React.Component {
             {cardAction}
           </Card>
         </Card>
+        <CodeBlock>{simpleCardCopy(dark ? 'dark rounded' : 'dark')}</CodeBlock>
         <br />
         <br />
         <H5>Disabled Card</H5>
@@ -122,6 +129,7 @@ class CardView extends React.Component {
             {cardAction}
           </Card>
         </Card>
+        <CodeBlock>{simpleCardCopy(dark ? 'dark disabled' : 'dark')}</CodeBlock>
         <br />
         <br />
         <H5>Loading Card</H5>
@@ -134,6 +142,7 @@ class CardView extends React.Component {
             {cardAction}
           </Card>
         </Card>
+        <CodeBlock>{simpleCardCopy(dark ? 'dark loading' : 'dark')}</CodeBlock>
         <br />
         <br />
         <H5>Media with text</H5>
@@ -170,6 +179,7 @@ class CardView extends React.Component {
             </CardAction>
           </Card>
         </Card>
+        <CodeBlock>{mediaCard(dark ? 'dark' : '')}</CodeBlock>
         <br />
         <br />
         <H5>Advanced Card</H5>
@@ -215,6 +225,7 @@ class CardView extends React.Component {
             </CardAction>
           </Card>
         </Card>
+        <CodeBlock>{complexCard(dark ? 'dark' : '')}</CodeBlock>
         <br />
         <br />
         <H5>API</H5>

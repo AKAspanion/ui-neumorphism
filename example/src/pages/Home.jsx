@@ -9,11 +9,10 @@ import {
   Subtitle1,
   ToggleButton,
   ToggleButtonGroup,
-  overrideThemeVariables,
+  overrideThemeVariables
 } from 'ui-neumorphism'
 
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism'
+import CodeBlock from '../containers/CodeBlock.jsx'
 
 import FitnessApp from '../examples/FitnessApp.jsx'
 
@@ -141,9 +140,9 @@ class Home extends React.Component {
         <br />
         <H4>Installation</H4>
         <Divider dense style={{ margin: '4px 0px 16px 0px' }} />
-        <SyntaxHighlighter language={`bash`} style={okaidia}>
+        <CodeBlock lang={`bash`}>
           {`npm install --save ui-neumorphism`}
-        </SyntaxHighlighter>
+        </CodeBlock>
         <br />
         <br />
         <H4>Usage</H4>
@@ -152,14 +151,10 @@ class Home extends React.Component {
           Components in this package can be imported as individual React
           component.
         </Body1>
-        <SyntaxHighlighter language={`javascript`} style={okaidia}>
-          {`import { Card, Button } from 'ui-neumorphism'`}
-        </SyntaxHighlighter>
+        <CodeBlock>{`import { Card, Button } from 'ui-neumorphism'`}</CodeBlock>
         <br />
         <Body1>Quick usage example to get you started:</Body1>
-        <SyntaxHighlighter language={`javascript`} style={okaidia}>
-          {importCode}
-        </SyntaxHighlighter>
+        <CodeBlock>{importCode}</CodeBlock>
         <br />
         <br />
         <H4>Theming</H4>
@@ -176,9 +171,7 @@ class Home extends React.Component {
           with the help of <code>overrideThemeVariables()</code>
           function, like this:
         </Body1>
-        <SyntaxHighlighter language={`javascript`} style={okaidia}>
-          {themeUtilCode}
-        </SyntaxHighlighter>
+        <CodeBlock>{themeUtilCode}</CodeBlock>
         <br />
         <Body1>
           Using the power of CSS variables, you can change the theme anywhere in
