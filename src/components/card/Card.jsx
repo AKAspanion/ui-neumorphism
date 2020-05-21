@@ -20,6 +20,7 @@ class Card extends React.Component {
     flat: G_BOOL,
     width: G_NUM,
     height: G_NUM,
+    inset: G_BOOL,
     loading: G_BOOL,
     rounded: G_BOOL,
     disabled: G_BOOL,
@@ -29,13 +30,14 @@ class Card extends React.Component {
   }
 
   getClass() {
-    const { dark, flat, elevation, rounded, outlined } = this.props
+    const { dark, flat, inset, elevation, rounded, outlined } = this.props
     return getModuleClasses(
       styles,
       `
         nu-card
         elevation-${elevation || '1'}
         ${flat ? 'nu-card--flat' : ''}
+        ${inset ? 'nu-card--inset' : ''}
         nu-card--${dark ? 'dark' : 'light'}
         ${rounded ? 'nu-card--rounded' : ''}
         ${outlined ? 'nu-card--outlined' : ''}

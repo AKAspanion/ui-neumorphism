@@ -76,6 +76,18 @@ class CardView extends React.Component {
         </Card>
         <br />
         <br />
+        <H5>Inset Card</H5>
+        <Subtitle1>
+          Set <code>inset</code> flag to render an inset card.
+        </Subtitle1>
+        <Card flat className='main-flex-card'>
+          <Card inset width={275}>
+            {cardContent}
+            {cardAction}
+          </Card>
+        </Card>
+        <br />
+        <br />
         <H5>Outlined Card</H5>
         <Subtitle1>
           Set <code>outlined</code> flag to render an outlined card.
