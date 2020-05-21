@@ -18,6 +18,7 @@ export {
   CardContent,
   CardHeader,
   CardAction,
+  CardMedia,
   Card,
   ToggleButtonGroup,
   ToggleButton,

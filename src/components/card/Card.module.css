@@ -13,6 +13,7 @@
 }
 
 .nu-card,
+.nu-card-media,
 .nu-card-action,
 .nu-card-header,
 .nu-card-content {
@@ -27,7 +28,15 @@
   font-size: 24px;
 }
 
+.nu-card-media {
+  border-radius: 8px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .nu-card.nu-card--light,
+.nu-card-media.nu-card-media--light,
 .nu-card-action.nu-card-action--light,
 .nu-card-header.nu-card-header--light,
 .nu-card-content.nu-card-content--light {
@@ -47,6 +56,7 @@
 }
 
 .nu-card.nu-card--dark,
+.nu-card-media.nu-card-media--dark,
 .nu-card-action.nu-card-action--dark,
 .nu-card-header.nu-card-header--dark,
 .nu-card-content.nu-card-content--dark {
@@ -66,6 +76,7 @@
 }
 
 .nu-card.nu-card--rounded,
+.nu-card-media.nu-card-media--rounded,
 .nu-card-action.nu-card-action--rounded,
 .nu-card-header.nu-card-header--rounded,
 .nu-card-content.nu-card-content--rounded {
