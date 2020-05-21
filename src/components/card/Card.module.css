@@ -6,7 +6,7 @@
 .nu-card-action {
   padding: 4px;
 }
-
+.nu-card-media-title,
 .nu-card-content,
 .nu-card-header {
   padding: 16px;
@@ -29,10 +29,12 @@
 }
 
 .nu-card-media {
-  border-radius: 8px;
+  position: relative;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  border-bottom-left-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
 }
 
 .nu-card.nu-card--light,
@@ -128,4 +130,9 @@
 
 .nu-header-avatar {
   margin-right: 16px;
+}
+
+.nu-card-media-title {
+  position: absolute;
+  bottom: 0px;
 }

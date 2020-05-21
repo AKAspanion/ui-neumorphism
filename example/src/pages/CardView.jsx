@@ -1,16 +1,17 @@
 import React from 'react'
 
 import {
-  Card,
-  CardAction,
   CardContent,
-  Button,
+  CardAction,
+  CardMedia,
   Subtitle1,
   Subtitle2,
+  Button,
+  Card,
   Body2,
   H6,
   H5,
-  H4
+  H4,
 } from 'ui-neumorphism'
 class CardView extends React.Component {
   render() {
@@ -95,6 +96,45 @@ class CardView extends React.Component {
             <Card rounded dark={dark}>
               {cardContent}
               {cardAction}
+            </Card>
+          </div>
+        </div>
+        <br />
+        <br />
+        <H5>Media with text</H5>
+        <Subtitle1>
+          You can add media inside a card using <code>{'<CardMedia />'}</code>.
+        </Subtitle1>
+        <div className='flex-container'>
+          <div style={{ width: '275px', margin: '32px' }}>
+            <Card dark={dark}>
+              <CardMedia
+                dark
+                title='Top 10 Indian beaches'
+                src='images/beaches-2.jpg'
+              />
+              <CardContent>
+                <Subtitle2
+                  secondary
+                  style={{
+                    marginBottom: '4px'
+                  }}
+                >
+                  Number 1
+                </Subtitle2>
+                <Body2>
+                  Radhanagar Beach<br/>
+                  Havock Island, Andaman
+                </Body2>
+              </CardContent>
+              <CardAction>
+                <Button text color='var(--primary)'>
+                  Share
+                </Button>
+                <Button text color='var(--primary)'>
+                  Explore
+                </Button>
+              </CardAction>
             </Card>
           </div>
         </div>

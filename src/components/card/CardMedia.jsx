@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { H6 } from '../../index'
 import styles from './Card.module.css'
 import { getModuleClasses } from '../../util'
 import {
@@ -26,20 +27,25 @@ class CardMedia extends React.Component {
     ...DEFAULT_PROPS_TYPE
   }
 
-  getClass() {
+  getClass(classType) {
     const { dark, rounded } = this.props
-    return getModuleClasses(
-      styles,
-      `
-        nu-card-media
-        nu-card-media--${dark ? 'dark' : 'light'}
-        ${rounded ? 'nu-card-media--rounded' : ''}
-      `
-    )
+    switch (classType) {
+      case 'media':
+        return getModuleClasses(
+          styles,
+          `
+            nu-card-media
+            nu-card-media--${dark ? 'dark' : 'light'}
+            ${rounded ? 'nu-card-media--rounded' : ''}
+          `
+        )
+      case 'title':
+        return getModuleClasses(styles, 'nu-card-media-title')
+    }
   }
 
   render() {
-    const { src, title, height, style, className } = this.props
+    const { src, dark, title, height, style, className } = this.props
     return (
       <div
         title={title}
@@ -48,8 +54,14 @@ class CardMedia extends React.Component {
           height: `${height}px`,
           backgroundImage: `url(${src})`
         }}
-        className={`${this.getClass()} ${className}`}
-      />
+        className={`${this.getClass('media')} ${className}`}
+      >
+        {title ? (
+          <H6 dark={dark} className={`${this.getClass('title')}`}>
+            {title}
+          </H6>
+        ) : null}
+      </div>
     )
   }
 }
