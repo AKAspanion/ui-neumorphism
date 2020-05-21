@@ -7,12 +7,14 @@
   padding: 4px;
 }
 
-.nu-card-content {
+.nu-card-content,
+.nu-card-header {
   padding: 16px;
 }
 
 .nu-card,
 .nu-card-action,
+.nu-card-header,
 .nu-card-content {
   font-size: 16px;
   border-radius: 8px;
@@ -21,8 +23,13 @@
   background-color: var(--bg-color);
 }
 
+.nu-card-header {
+  font-size: 24px;
+}
+
 .nu-card.nu-card--light,
 .nu-card-action.nu-card-action--light,
+.nu-card-header.nu-card-header--light,
 .nu-card-content.nu-card-content--light {
   --bg-color: var(--light-bg);
   --text-color: var(--g-text-color-light);
@@ -41,6 +48,7 @@
 
 .nu-card.nu-card--dark,
 .nu-card-action.nu-card-action--dark,
+.nu-card-header.nu-card-header--dark,
 .nu-card-content.nu-card-content--dark {
   --bg-color: var(--dark-bg);
   --text-color: var(--g-text-color-dark);
@@ -59,6 +67,7 @@
 
 .nu-card.nu-card--rounded,
 .nu-card-action.nu-card-action--rounded,
+.nu-card-header.nu-card-header--rounded,
 .nu-card-content.nu-card-content--rounded {
   border-radius: 24px;
 }
@@ -94,4 +103,18 @@
 
 .nu-card.elevation-0 {
   box-shadow: none;
+}
+
+.nu-header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nu-header-content--left {
+  justify-content: flex-start;
+}
+
+.nu-header-avatar {
+  margin-right: 16px;
 }

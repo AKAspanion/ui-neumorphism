@@ -16,6 +16,7 @@ export {
   H2,
   H1,
   CardContent,
+  CardHeader,
   CardAction,
   Card,
   ToggleButtonGroup,
