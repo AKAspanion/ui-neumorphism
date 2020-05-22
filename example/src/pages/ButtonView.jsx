@@ -1,11 +1,14 @@
 import React from 'react'
 
 import { Card, Button, H4, H6, H5, Subtitle1 } from 'ui-neumorphism'
+import CodeBlock from '../containers/CodeBlock.jsx'
+
+import { allButtons, docButtons, blockButton, sizeButtons } from '../assets/'
 class ButtonView extends React.Component {
   render() {
-    const { dark: darkTheme } = this.props
+    const { dark } = this.props
     return (
-      <Card flat dark={darkTheme}>
+      <Card flat dark={dark}>
         <H4>Buttons</H4>
         <H6>
           Buttons allow users to take actions, and make choices, with a single
@@ -15,100 +18,57 @@ class ButtonView extends React.Component {
         <Subtitle1>
           Buttons communicate actions that users can take.
           <br />
-          They are typically placed throughout your UI, in places like:
+          They are typically placed throughout your UI, in places like:&nbsp;
           <code>dialog</code>, <code>forms</code>, <code>cards</code>,etc.
         </Subtitle1>
         <br />
         <Card outlined>
-          <div
-            style={{
-              padding: '64px 32px',
-              display: 'flex',
-              flexWrap: 'wrap',
-              alignItems: 'center',
-              justifyContent: 'space-around'
-            }}
-          >
-            <div style={{ padding: '32px' }}>
-              <Button dark={darkTheme}>default</Button>
-            </div>
-            <div style={{ padding: '32px' }}>
-              <Button dark={darkTheme} color='var(--primary)'>
-                colored
-              </Button>
-            </div>
-            <div style={{ padding: '32px' }}>
-              <Button dark={darkTheme} color='#ccc' bgColor='var(--primary)'>
-                colored
-              </Button>
-            </div>
-            <div style={{ padding: '32px' }}>
-              <Button
-                disabled
-                color='#ccc'
-                dark={darkTheme}
-                bgColor='var(--primary)'
-              >
-                disabled
-              </Button>
-            </div>
-
-            <div style={{ padding: '32px' }}>
-              <Button dark={darkTheme} rounded>
-                rounded
-              </Button>
-            </div>
-            <div style={{ padding: '32px' }}>
-              <Button dark={darkTheme} depressed>
-                depressed
-              </Button>
-            </div>
-            <div style={{ padding: '32px' }}>
-              <Button dark={darkTheme} outlined>
-                outlined
-              </Button>
-            </div>
-            <div style={{ padding: '32px' }}>
-              <Button dark={darkTheme} text>
-                text
-              </Button>
-            </div>
-          </div>
+          <Card flat outlined={false} className='btn-doc-card'>
+            <Button className='doc-btn'>default</Button>
+            <Button className='doc-btn' color='var(--primary)'>
+              colored
+            </Button>
+            <Button className='doc-btn' color='#ccc' bgColor='var(--primary)'>
+              colored
+            </Button>
+            <Button className='doc-btn' disabled>
+              disabled
+            </Button>
+            <Button className='doc-btn' rounded>
+              rounded
+            </Button>
+            <Button className='doc-btn' depressed>
+              depressed
+            </Button>
+            <Button className='doc-btn' outlined>
+              outlined
+            </Button>
+            <Button className='doc-btn' text>
+              text
+            </Button>
+          </Card>
         </Card>
-        <br />
+        <CodeBlock lang='html'>{allButtons(dark)}</CodeBlock>
         <br />
         <br />
         <H5 style={{ marginTop: '24px' }}>Contained Buttons</H5>
         <Subtitle1>
           Contained buttons are high-emphasis, distinguished by their use of
-          elevation and fill. They contain actions that are primary to your app.
+          elevation. They contain actions that are primary to your app.
         </Subtitle1>
         <br />
         <Card outlined>
-          <div
-            style={{
-              padding: '32px',
-              display: 'flex',
-              flexWrap: 'wrap',
-              alignItems: 'center',
-              justifyContent: 'space-around'
-            }}
-          >
-            <div style={{ padding: '20px' }}>
-              <Button dark={darkTheme}>default</Button>
-            </div>
-            <div style={{ padding: '20px' }}>
-              <Button dark={darkTheme} color='var(--primary)'>
-                colored
-              </Button>
-            </div>
-            <div style={{ padding: '20px' }}>
-              <Button dark={darkTheme} disabled>
-                disabled
-              </Button>
-            </div>
-          </div>
+          <Card flat outlined={false} className='btn-doc-card'>
+            <Button className='doc-btn'>default</Button>
+            <Button className='doc-btn' color='var(--primary)'>
+              colored
+            </Button>
+            <Button className='doc-btn' disabled>
+              disabled
+            </Button>
+          </Card>
         </Card>
+        <CodeBlock lang='html'>{docButtons(dark)}</CodeBlock>
         <br />
         <br />
         <H5 style={{ marginTop: '24px' }}>Text Buttons</H5>
@@ -119,208 +79,121 @@ class ButtonView extends React.Component {
         <Subtitle1 style={{ marginBottom: '16px' }}>
           For.eg. <code>dialog</code>, <code>cards</code>
         </Subtitle1>
-        <Subtitle1>
-          Set <code>text</code> flag to render text button.
-        </Subtitle1>
-        <br />
         <Card outlined>
-          <div
-            style={{
-              padding: '32px',
-              display: 'flex',
-              flexWrap: 'wrap',
-              alignItems: 'center',
-              justifyContent: 'space-around'
-            }}
-          >
-            <div style={{ padding: '20px' }}>
-              <Button dark={darkTheme} text>
-                default
-              </Button>
-            </div>
-            <div style={{ padding: '20px' }}>
-              <Button dark={darkTheme} text color='var(--primary)'>
-                colored
-              </Button>
-            </div>
-            <div style={{ padding: '20px' }}>
-              <Button dark={darkTheme} text disabled>
-                disabled
-              </Button>
-            </div>
-          </div>
+          <Card flat outlined={false} className='btn-doc-card'>
+            <Button className='doc-btn' text>
+              default
+            </Button>
+            <Button className='doc-btn' text color='var(--primary)'>
+              colored
+            </Button>
+            <Button className='doc-btn' text disabled>
+              disabled
+            </Button>
+          </Card>
         </Card>
+        <CodeBlock lang='html'>{docButtons(dark, 'text')}</CodeBlock>
         <br />
         <br />
         <H5 style={{ marginTop: '24px' }}>Outlined Buttons</H5>
-        <Subtitle1 style={{ marginBottom: '4px' }}>
+        <Subtitle1 style={{ marginBottom: '16px' }}>
           Outlined buttons are medium-emphasis buttons. They contain actions
           that are important, but aren’t the primary action in an app.
         </Subtitle1>
-        <Subtitle1>
-          Set <code>outlined</code> flag to render outlined button.
-        </Subtitle1>
-        <br />
         <Card outlined>
-          <div
-            style={{
-              padding: '32px',
-              display: 'flex',
-              flexWrap: 'wrap',
-              alignItems: 'center',
-              justifyContent: 'space-around'
-            }}
-          >
-            <div style={{ padding: '20px' }}>
-              <Button dark={darkTheme} outlined>
-                default
-              </Button>
-            </div>
-            <div style={{ padding: '20px' }}>
-              <Button dark={darkTheme} outlined color='var(--primary)'>
-                colored
-              </Button>
-            </div>
-            <div style={{ padding: '20px' }}>
-              <Button dark={darkTheme} outlined disabled>
-                disabled
-              </Button>
-            </div>
-          </div>
+          <Card flat outlined={false} className='btn-doc-card'>
+            <Button className='doc-btn' outlined>
+              default
+            </Button>
+            <Button className='doc-btn' outlined color='var(--primary)'>
+              colored
+            </Button>
+            <Button className='doc-btn' outlined disabled>
+              disabled
+            </Button>
+          </Card>
         </Card>
+        <CodeBlock lang='html'>{docButtons(dark, 'outlined')}</CodeBlock>
         <br />
         <br />
         <H5 style={{ marginTop: '24px' }}>Rounded Buttons</H5>
-        <Subtitle1 style={{ marginBottom: '4px' }}>
+        <Subtitle1 style={{ marginBottom: '16px' }}>
           Rounded buttons are alternate high emphasis buttons with rounded
           corners.
         </Subtitle1>
-        <Subtitle1>
-          Set <code>rounded</code> flag to render rounded button.
-        </Subtitle1>
-        <br />
         <Card outlined>
-          <div
-            style={{
-              padding: '32px',
-              display: 'flex',
-              flexWrap: 'wrap',
-              alignItems: 'center',
-              justifyContent: 'space-around'
-            }}
-          >
-            <div style={{ padding: '20px' }}>
-              <Button dark={darkTheme} rounded>
-                default
-              </Button>
-            </div>
-            <div style={{ padding: '20px' }}>
-              <Button dark={darkTheme} rounded color='var(--primary)'>
-                colored
-              </Button>
-            </div>
-            <div style={{ padding: '20px' }}>
-              <Button dark={darkTheme} rounded disabled>
-                disabled
-              </Button>
-            </div>
-          </div>
+          <Card flat outlined={false} className='btn-doc-card'>
+            <Button className='doc-btn' rounded>
+              default
+            </Button>
+            <Button className='doc-btn' rounded color='var(--primary)'>
+              colored
+            </Button>
+            <Button className='doc-btn' rounded disabled>
+              disabled
+            </Button>
+          </Card>
         </Card>
+        <CodeBlock lang='html'>{docButtons(dark, 'rounded')}</CodeBlock>
         <br />
         <br />
         <H5 style={{ marginTop: '24px' }}>Depressed Buttons</H5>
-        <Subtitle1 style={{ marginBottom: '4px' }}>
+        <Subtitle1 style={{ marginBottom: '16px' }}>
           Depressed buttons are alternate buttons with higher elevation removed
           for slightly lower emphasis.
         </Subtitle1>
-        <Subtitle1>
-          Set <code>depressed</code> flag to render depressed button.
-        </Subtitle1>
-        <br />
         <Card outlined>
-          <div
-            style={{
-              padding: '32px',
-              display: 'flex',
-              flexWrap: 'wrap',
-              alignItems: 'center',
-              justifyContent: 'space-around'
-            }}
-          >
-            <div style={{ padding: '20px' }}>
-              <Button dark={darkTheme} depressed>
-                default
-              </Button>
-            </div>
-            <div style={{ padding: '20px' }}>
-              <Button dark={darkTheme} depressed color='var(--primary)'>
-                colored
-              </Button>
-            </div>
-            <div style={{ padding: '20px' }}>
-              <Button dark={darkTheme} depressed disabled>
-                disabled
-              </Button>
-            </div>
-          </div>
+          <Card flat outlined={false} className='btn-doc-card'>
+            <Button className='doc-btn' depressed>
+              default
+            </Button>
+            <Button className='doc-btn' depressed color='var(--primary)'>
+              colored
+            </Button>
+            <Button className='doc-btn' depressed disabled>
+              disabled
+            </Button>
+          </Card>
         </Card>
+        <CodeBlock lang='html'>{docButtons(dark, 'depressed')}</CodeBlock>
         <br />
         <br />
         <H5 style={{ marginTop: '24px' }}>Block Buttons</H5>
-        <Subtitle1 style={{ marginBottom: '4px' }}>
+        <Subtitle1 style={{ marginBottom: '16px' }}>
           Block buttons take up entire available space.
         </Subtitle1>
-        <Subtitle1>
-          Set <code>block</code> flag to render block button.
-        </Subtitle1>
-        <br />
         <Card outlined>
           <div
             style={{
               padding: '32px'
             }}
           >
-            <div style={{ padding: '20px' }}>
-              <Button dark={darkTheme} block>
-                default
-              </Button>
-            </div>
+            <Button dark={dark} className='doc-btn' block>
+              block button
+            </Button>
           </div>
         </Card>
+        <CodeBlock lang='html'>{blockButton(dark)}</CodeBlock>
         <br />
         <br />
         <H5 style={{ marginTop: '24px' }}>Sizes</H5>
-        <Subtitle1 style={{ marginBottom: '4px' }}>
+        <Subtitle1 style={{ marginBottom: '16px' }}>
           Use <code>size</code> property to change button size.
         </Subtitle1>
-        <br />
         <Card outlined>
-          <div
-            style={{
-              padding: '32px',
-              display: 'flex',
-              flexWrap: 'wrap',
-              alignItems: 'center',
-              justifyContent: 'space-around'
-            }}
-          >
-            <div style={{ padding: '20px' }}>
-              <Button dark={darkTheme} size='small'>
-                small
-              </Button>
-            </div>
-            <div style={{ padding: '20px' }}>
-              <Button dark={darkTheme} size='medium'>
-                medium
-              </Button>
-            </div>
-            <div style={{ padding: '20px' }}>
-              <Button dark={darkTheme} size='large'>
-                large
-              </Button>
-            </div>
-          </div>
+          <Card flat outlined={false} className='btn-doc-card'>
+            <Button className='doc-btn' size='small'>
+              small
+            </Button>
+            <Button className='doc-btn' size='medium'>
+              medium
+            </Button>
+            <Button className='doc-btn' size='large'>
+              large
+            </Button>
+          </Card>
         </Card>
+        <CodeBlock lang='html'>{sizeButtons(dark)}</CodeBlock>
         <br />
         <br />
         <H5>API</H5>

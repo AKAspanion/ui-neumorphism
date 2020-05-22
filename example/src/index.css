@@ -219,3 +219,16 @@ main {
   padding: 24px;
   margin: 16px;
 }
+
+/* button doc */
+.btn-doc-card {
+  display: flex;
+  padding: 32px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.doc-btn {
+  margin: 32px;
+}

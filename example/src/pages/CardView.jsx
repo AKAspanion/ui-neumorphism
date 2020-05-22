@@ -77,7 +77,7 @@ class CardView extends React.Component {
             {cardAction}
           </Card>
         </Card>
-        <CodeBlock>{simpleCard(dark ? 'dark' : '')}</CodeBlock>
+        <CodeBlock lang='html'>{simpleCard(dark ? 'dark' : '')}</CodeBlock>
         <br />
         <br />
         <H5>Inset Card</H5>
@@ -90,7 +90,9 @@ class CardView extends React.Component {
             {cardAction}
           </Card>
         </Card>
-        <CodeBlock>{simpleCardCopy(dark ? 'dark inset' : 'dark')}</CodeBlock>
+        <CodeBlock lang='html'>
+          {simpleCardCopy(dark ? 'dark inset' : 'dark')}
+        </CodeBlock>
         <br />
         <br />
         <H5>Outlined Card</H5>
@@ -103,7 +105,9 @@ class CardView extends React.Component {
             {cardAction}
           </Card>
         </Card>
-        <CodeBlock>{simpleCardCopy(dark ? 'dark outlined' : 'dark')}</CodeBlock>
+        <CodeBlock lang='html'>
+          {simpleCardCopy(dark ? 'dark outlined' : 'dark')}
+        </CodeBlock>
         <br />
         <br />
         <H5>Rounded Card</H5>
@@ -116,7 +120,9 @@ class CardView extends React.Component {
             {cardAction}
           </Card>
         </Card>
-        <CodeBlock>{simpleCardCopy(dark ? 'dark rounded' : 'dark')}</CodeBlock>
+        <CodeBlock lang='html'>
+          {simpleCardCopy(dark ? 'dark rounded' : 'dark')}
+        </CodeBlock>
         <br />
         <br />
         <H5>Disabled Card</H5>
@@ -129,7 +135,9 @@ class CardView extends React.Component {
             {cardAction}
           </Card>
         </Card>
-        <CodeBlock>{simpleCardCopy(dark ? 'dark disabled' : 'dark')}</CodeBlock>
+        <CodeBlock lang='html'>
+          {simpleCardCopy(dark ? 'dark disabled' : 'dark')}
+        </CodeBlock>
         <br />
         <br />
         <H5>Loading Card</H5>
@@ -142,7 +150,9 @@ class CardView extends React.Component {
             {cardAction}
           </Card>
         </Card>
-        <CodeBlock>{simpleCardCopy(dark ? 'dark loading' : 'dark')}</CodeBlock>
+        <CodeBlock lang='html'>
+          {simpleCardCopy(dark ? 'dark loading' : 'dark')}
+        </CodeBlock>
         <br />
         <br />
         <H5>Media with text</H5>
@@ -179,7 +189,7 @@ class CardView extends React.Component {
             </CardAction>
           </Card>
         </Card>
-        <CodeBlock>{mediaCard(dark ? 'dark' : '')}</CodeBlock>
+        <CodeBlock lang='html'>{mediaCard(dark ? 'dark' : '')}</CodeBlock>
         <br />
         <br />
         <H5>Advanced Card</H5>
@@ -225,7 +235,7 @@ class CardView extends React.Component {
             </CardAction>
           </Card>
         </Card>
-        <CodeBlock>{complexCard(dark ? 'dark' : '')}</CodeBlock>
+        <CodeBlock lang='html'>{complexCard(dark ? 'dark' : '')}</CodeBlock>
         <br />
         <br />
         <H5>API</H5>
