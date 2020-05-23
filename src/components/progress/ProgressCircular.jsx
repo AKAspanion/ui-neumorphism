@@ -51,7 +51,7 @@ class ProgressCircular extends React.Component {
   }
 
   get strokeDashArrayOffset() {
-    return ((100 - this.props.value) / 100) * this.circumference
+    return this.calcStrokeDashArrayOffset(this.props.value)
   }
 
   get viewBox() {
@@ -67,7 +67,12 @@ class ProgressCircular extends React.Component {
 
   get normalizedValue() {
     const { value } = this.props
-    return value > 100 ? 100 : value < 0 ? 0 : value
+    return value ? (value > 100 ? 100 : value < 0 ? 0 : value) : 0
+  }
+
+  get normalizedRotation() {
+    const { rotate } = this.props
+    return rotate ? (rotate > 360 ? 360 : rotate < 0 ? 0 : rotate) : 0
   }
 
   componentDidMount() {
@@ -93,8 +98,19 @@ class ProgressCircular extends React.Component {
     }
   }
 
+  calcStrokeDashArrayOffset(value) {
+    return ((100 - value) / 100) * this.circumference
+  }
+
   render() {
-    const { size, width, style, className } = this.props
+    const {
+      size,
+      width,
+      style,
+      className,
+      indeterminate,
+      children
+    } = this.props
     return (
       <div
         id={this.state.id}
@@ -113,10 +129,17 @@ class ProgressCircular extends React.Component {
           className={`${this.getClasses('svg')}`}
           style={{
             width: `${size}px`,
-            height: `${size}px`
+            height: `${size}px`,
+            transform: `translate3d(-50%, -50%, 0) rotate(${this.normalizedRotation}deg)`
           }}
         >
-          <svg xmlns='http://www.w3.org/2000/svg' viewBox={this.viewBox}>
+          <svg
+            className={`${
+              indeterminate ? this.getClasses('indeterminate') : ''
+            }`}
+            xmlns='http://www.w3.org/2000/svg'
+            viewBox={this.viewBox}
+          >
             <circle
               r={this.radius}
               cx={2 * this.viewBoxSize}
@@ -125,7 +148,9 @@ class ProgressCircular extends React.Component {
               style={{
                 strokeWidth: `${width}`,
                 strokeDasharray: this.strokeDashArray,
-                strokeDashoffset: this.strokeDashArrayOffset
+                strokeDashoffset: indeterminate
+                  ? this.calcStrokeDashArrayOffset(0)
+                  : this.strokeDashArrayOffset
               }}
             />
           </svg>
@@ -146,9 +171,9 @@ class ProgressCircular extends React.Component {
         />
         <label
           className={`${this.getClasses('label')}`}
-          style={{ fontSize: `${this.radius * 0.6}px` }}
+          style={{ fontSize: `${this.radius * 0.5}px` }}
         >
-          {this.normalizedValue}
+          {children}
         </label>
       </div>
     )

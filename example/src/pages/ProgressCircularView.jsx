@@ -1,14 +1,6 @@
 import React from 'react'
 
-import {
-  ProgressCircular,
-  Card,
-  H4,
-  H5,
-  H6,
-  Subtitle1,
-  Button
-} from 'ui-neumorphism'
+import { ProgressCircular, Card, H4, H6, Subtitle1 } from 'ui-neumorphism'
 
 class ProgressCircularView extends React.Component {
   state = {
@@ -19,7 +11,7 @@ class ProgressCircularView extends React.Component {
     return (
       <Card flat dark={dark}>
         <H4>Progress Circular</H4>
-        <H6>Progress Circular displays a horizontal progress bar.</H6>
+        <H6>Progress Circular displays a circular progress bar.</H6>
         <br />
         <Subtitle1>
           The component is used to convey data visually to users. They can also
@@ -28,12 +20,6 @@ class ProgressCircularView extends React.Component {
         <br />
         <br />
         <br />
-        <H5 style={{ marginTop: '24px' }}>Indeterminate</H5>
-        <Subtitle1>
-          Using the indeterminate prop, ProgressCircular continuously animates.
-        </Subtitle1>
-        <br />
-        <Button onClick={(e) => this.setState({ val: 50 })}>increase</Button>
         <Card outlined style={{ padding: '32px' }} className='d-flex'>
           <ProgressCircular
             color='var(--primary)'
@@ -47,12 +33,13 @@ class ProgressCircularView extends React.Component {
             size={64}
             elevated
             className='doc-btn'
-          />
+          >
+            50
+          </ProgressCircular>
           <br />
           <ProgressCircular
             color='var(--primary)'
-            value={this.state.val}
-            size={64}
+            indeterminate
             className='doc-btn'
           />
         </Card>

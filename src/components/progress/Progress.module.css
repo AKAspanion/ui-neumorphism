@@ -110,6 +110,7 @@
 
 .nu-progress-circular--label {
   z-index: 3;
+  color: var(--selector-bg);
 }
 
 .nu-progress-circular--circle {
@@ -117,4 +118,41 @@
   fill: transparent;
   stroke: var(--selector-bg);
   transition: all 0.3s ease-in-out;
+}
+
+.nu-progress-circular--indeterminate {
+  animation: svg-animation 2s linear infinite;
+}
+
+.nu-progress-circular--indeterminate circle {
+  stroke-linecap: round;
+  transform-origin: bottom right;
+  animation: dash-animate 1.4s ease-in-out infinite both;
+}
+
+@keyframes svg-animation {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  100% {
+    transform: rotateZ(360deg)
+  }
+}
+
+@keyframes dash-animate {
+  0% {
+    stroke-dashoffset: none;
+    transform: rotate(0);
+  }
+
+  50% {
+    stroke-dashoffset: initial;
+    transform: rotate(45deg);
+  }
+
+  100% {
+    stroke-dashoffset: none;
+    transform: rotate(360deg);
+  }
 }

@@ -183,7 +183,10 @@ class Home extends React.Component {
         <Body1 style={{ marginBottom: '4px' }}>
           Toggle below buttons to see change in theme
         </Body1>
-        <ToggleButtonGroup onChange={(e) => this.handleThemeChange(e)}>
+        <ToggleButtonGroup
+          style={{ margin: '8px' }}
+          onChange={(e) => this.handleThemeChange(e)}
+        >
           {[1, 2, 3, 4].map((i) => {
             return (
               <ToggleButton
@@ -196,7 +199,7 @@ class Home extends React.Component {
                   marginRight: '24px'
                 }}
               >
-                {`${dark ? 'Dark' : 'Light'} Theme ${i}`}
+                {`${dark ? 'Dark' : 'Light'} ${i}`}
               </ToggleButton>
             )
           })}

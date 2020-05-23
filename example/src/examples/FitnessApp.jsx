@@ -25,7 +25,8 @@ import {
   Overline,
   Subtitle2,
   IconButton,
-  ToggleButton
+  ToggleButton,
+  ProgressCircular
 } from 'ui-neumorphism'
 class FitnessApp extends React.Component {
   render() {
@@ -302,7 +303,9 @@ class FitnessApp extends React.Component {
                   </Caption>
                 </Card>
               </Card>
-              <Overline>75%</Overline>
+              <ProgressCircular value={75} color='var(--primary)'>
+                75%
+              </ProgressCircular>
             </Card>
             <Card
               rounded={false}
@@ -332,7 +335,9 @@ class FitnessApp extends React.Component {
                   </Caption>
                 </Card>
               </Card>
-              <Overline>100%</Overline>
+              <ProgressCircular value={100} color='var(--primary)'>
+                100%
+              </ProgressCircular>
             </Card>
             <div
               style={{
