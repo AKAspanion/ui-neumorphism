@@ -1,3 +1,4 @@
+export { default as ProgressCircularView } from './ProgressCircularView.jsx'
 export { default as ProgressLinearView } from './ProgressLinearView.jsx'
 export { default as ToggleButtonView } from './ToggleButtonView.jsx'
 export { default as TypographyView } from './TypographyView.jsx'

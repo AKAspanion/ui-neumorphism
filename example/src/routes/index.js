@@ -12,7 +12,8 @@ import {
   IconButtonView,
   TypographyView,
   ToggleButtonView,
-  ProgressLinearView
+  ProgressLinearView,
+  ProgressCircularView
 } from '../pages/index.js';
 
 const routes = [{
@@ -65,9 +66,15 @@ const routes = [{
   },
   {
     id: 13,
-    path: "/progress",
+    path: "/progress-linear",
     name: "Progress: Linear",
     component: ProgressLinearView,
+  },
+  {
+    id: 14,
+    path: "/progress-circular",
+    name: "Progress: Circular",
+    component: ProgressCircularView,
   },
   {
     id: 5,
