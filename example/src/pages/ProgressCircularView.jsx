@@ -7,21 +7,20 @@ import { ProgressCircular, Card, H4, H5, H6, Subtitle1 } from 'ui-neumorphism'
 import CodeBlock from '../containers/CodeBlock.jsx'
 import { progressCircular } from '../assets/'
 
-const labelDoc = `<ProgressCircular value={10} color='var(--primary)'>
-  // Icon component is from '@mdi/react' and is not bundled with this library
-  <Icon path={mdiNumeric10} size={0.9} />
-</ProgressCircular>
-<ProgressCircular value={20} color='var(--info)' label="40" />
-<ProgressCircular value={40} color='var(--warning)'>60</ProgressCircular>
-<ProgressCircular value={80} color='var(--success)' label="80" />
-<ProgressCircular value={100} color='var(--error)'>100</ProgressCircular>`
-
 class ProgressCircularView extends React.Component {
   state = {
     val: 75
   }
   render() {
     const { dark } = this.props
+    const labelDoc = `<ProgressCircular${dark?' dark':''} value={10} color='var(--primary)'>
+  // Icon component is from '@mdi/react' and is not bundled with this library
+  <Icon path={mdiNumeric10} size={0.9} />
+</ProgressCircular>
+<ProgressCircular${dark?' dark':''} value={20} color='var(--info)' label="40" />
+<ProgressCircular${dark?' dark':''} value={40} color='var(--warning)'>60</ProgressCircular$>
+<ProgressCircular${dark?' dark':''} value={80} color='var(--success)' label="80" />
+<ProgressCircular${dark?' dark':''} value={100} color='var(--error)'>100</ProgressCircular$>`
     return (
       <Card flat dark={dark}>
         <H4>Progress Circular</H4>
@@ -187,7 +186,11 @@ class ProgressCircularView extends React.Component {
         </Subtitle1>
         <br />
         <Card outlined className='pa-8'>
-          <Card flat outlined={false} className='d-flex justify-center'>
+          <Card
+            flat
+            outlined={false}
+            className='d-flex align-center justify-center'
+          >
             {['primary', 'info', 'warning', 'success', 'error'].map(
               (color, i) => (
                 <ProgressCircular
@@ -217,8 +220,8 @@ class ProgressCircularView extends React.Component {
         <br />
         <H5 className='mt-6'>Label</H5>
         <Subtitle1 className='mb-1'>
-          To set data inside ProgressCircular use <code>label</code> prop for text or
-          provide data as children. <br />
+          To set data inside ProgressCircular use <code>label</code> prop for
+          text or provide data as children. <br />
         </Subtitle1>
         <Subtitle1>
           Note: any given children will override label prop.
