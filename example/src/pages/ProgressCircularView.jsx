@@ -24,13 +24,13 @@ class ProgressCircularView extends React.Component {
     } value={20} color='var(--info)' label="40" />
 <ProgressCircular${
       dark ? ' dark' : ''
-    } value={40} color='var(--warning)'>60</ProgressCircular$>
+    } value={40} color='var(--warning)'>60</ProgressCircular>
 <ProgressCircular${
       dark ? ' dark' : ''
     } value={80} color='var(--success)' label="80" />
 <ProgressCircular${
       dark ? ' dark' : ''
-    } value={100} color='var(--error)'>100</ProgressCircular$>`
+    } value={100} color='var(--error)'>100</ProgressCircular>`
     return (
       <Card flat dark={dark}>
         <H4>Progress Circular</H4>

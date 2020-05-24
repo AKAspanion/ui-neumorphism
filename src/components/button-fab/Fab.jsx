@@ -54,6 +54,7 @@ class Fab extends React.Component {
           className=''
           text={false}
           block={false}
+          outlined={false}
           depressed={false}
         >
           {children}
