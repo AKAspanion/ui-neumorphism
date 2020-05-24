@@ -1,14 +1,20 @@
 import React from 'react'
 
+import Icon from '@mdi/react'
+import { mdiNumeric10 } from '@mdi/js'
+
 import { ProgressCircular, Card, H4, H5, H6, Subtitle1 } from 'ui-neumorphism'
 import CodeBlock from '../containers/CodeBlock.jsx'
 import { progressCircular } from '../assets/'
 
-const labelDoc = `<ProgressCircular value={40} className='ma-8' color='var(--primary)'>20</ProgressCircular>
-<ProgressCircular value={20} className='ma-8' color='var(--info)' label="40" />
-<ProgressCircular value={60} className='ma-8' color='var(--warning)'>60</ProgressCircular>
-<ProgressCircular value={80} className='ma-8' color='var(--success)' label="80" />
-<ProgressCircular value={100} className='ma-8' color='var(--error)'>100</ProgressCircular>`
+const labelDoc = `<ProgressCircular value={20} color='var(--primary)'>
+  // Icon component is from '@mdi/react' and is not bundled with this library
+  <Icon path={mdiNumeric10} size={0.9} />
+</ProgressCircular>
+<ProgressCircular value={40} color='var(--info)' label="40" />
+<ProgressCircular value={60} color='var(--warning)'>60</ProgressCircular>
+<ProgressCircular value={80} color='var(--success)' label="80" />
+<ProgressCircular value={100} color='var(--error)'>100</ProgressCircular>`
 
 class ProgressCircularView extends React.Component {
   state = {
@@ -211,7 +217,7 @@ class ProgressCircularView extends React.Component {
         <br />
         <H5 className='mt-6'>Label</H5>
         <Subtitle1 className='mb-1'>
-          To set text inside ProgressCircular use <code>label</code> prop or
+          To set data inside ProgressCircular use <code>label</code> prop for text or
           provide data as children. <br />
         </Subtitle1>
         <Subtitle1>
@@ -221,14 +227,14 @@ class ProgressCircularView extends React.Component {
         <Card outlined className='pa-8'>
           <Card flat outlined={false} className='d-flex justify-center'>
             <ProgressCircular
-              value={40}
+              value={20}
               className='ma-8'
               color='var(--primary)'
             >
-              20
+              <Icon path={mdiNumeric10} size={0.9} />
             </ProgressCircular>
             <ProgressCircular
-              value={20}
+              value={40}
               className='ma-8'
               color='var(--info)'
               label='40'
