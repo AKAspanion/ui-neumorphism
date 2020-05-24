@@ -18,12 +18,39 @@ class ProgressLinearView extends React.Component {
         </Subtitle1>
         <br />
         <H5 style={{ marginTop: '24px' }}>Determinate</H5>
-        <Subtitle1>
+        <Subtitle1 className='mb-1'>
           ProgressLinear can a have determinate state by giving&nbsp;
           <code>value</code>.
+          <br />
+        </Subtitle1>
+        <Subtitle1>
+          By default, progress linear uses the secondary(
+          <code>--g-text-color-secondary-light</code>&nbsp;or&nbsp;
+          <code>--g-text-color-secondary-dark</code>) color.
         </Subtitle1>
         <br />
-        <Card outlined style={{ padding: '32px' }}>
+        <Card outlined style={{ padding: '64px' }}>
+          <ProgressLinear value={40} />
+          <br />
+          <ProgressLinear value={60} />
+          <br />
+          <ProgressLinear value={80} />
+        </Card>
+        <CodeBlock lang='html'>
+          {progressLinear(
+            dark,
+            [0, 1, 2].map((i) => `value={${i * 20 + 40}}`),
+            true
+          )}
+        </CodeBlock>
+        <br />
+        <br />
+        <H5 style={{ marginTop: '24px' }}>Custom colors</H5>
+        <Subtitle1>
+          You can set custom colors using the <code>color</code> prop.
+        </Subtitle1>
+        <br />
+        <Card outlined style={{ padding: '64px' }}>
           <ProgressLinear value={40} color='var(--primary)' />
           <br />
           <ProgressLinear value={40} color='var(--info)' />
@@ -33,7 +60,7 @@ class ProgressLinearView extends React.Component {
         <CodeBlock lang='html'>
           {progressLinear(
             dark,
-            [0, 1, 2].map((p) => 'value={40}')
+            [0, 1, 2].map((c) => `value={40}`)
           )}
         </CodeBlock>
         <br />
@@ -44,7 +71,7 @@ class ProgressLinearView extends React.Component {
           animates.
         </Subtitle1>
         <br />
-        <Card outlined style={{ padding: '32px' }}>
+        <Card outlined style={{ padding: '64px' }}>
           <ProgressLinear indeterminate color='var(--primary)' />
           <br />
           <ProgressLinear indeterminate color='var(--info)' />
@@ -65,7 +92,7 @@ class ProgressLinearView extends React.Component {
           prop.
         </Subtitle1>
         <br />
-        <Card outlined style={{ padding: '32px' }}>
+        <Card outlined style={{ padding: '64px' }}>
           <ProgressLinear height={10} value={40} color='var(--primary)' />
           <br />
           <ProgressLinear height={20} value={60} color='var(--info)' />
@@ -88,7 +115,7 @@ class ProgressLinearView extends React.Component {
           style.
         </Subtitle1>
         <br />
-        <Card outlined style={{ padding: '32px' }}>
+        <Card outlined style={{ padding: '64px' }}>
           <ProgressLinear striped value={40} color='var(--primary)' />
           <br />
           <ProgressLinear striped value={60} color='var(--info)' />
@@ -110,7 +137,7 @@ class ProgressLinearView extends React.Component {
           &nbsp;prop.
         </Subtitle1>
         <br />
-        <Card outlined style={{ padding: '32px' }}>
+        <Card outlined style={{ padding: '64px' }}>
           <ProgressLinear bordered value={40} color='var(--primary)' />
           <br />
           <ProgressLinear bordered value={40} color='var(--info)' />
@@ -131,7 +158,7 @@ class ProgressLinearView extends React.Component {
           height.
         </Subtitle1>
         <br />
-        <Card outlined style={{ padding: '32px' }}>
+        <Card outlined style={{ padding: '64px' }}>
           <ProgressLinear
             fillHeight
             height={4}
@@ -157,27 +184,6 @@ class ProgressLinearView extends React.Component {
           {progressLinear(
             dark,
             [1, 2, 3].map((i) => `fillHeight height={${4 * i}} value={40}`)
-          )}
-        </CodeBlock>
-        <br />
-        <br />
-        <H5 style={{ marginTop: '24px' }}>Custom colors</H5>
-        <Subtitle1>
-          You can set custom colors using the <code>color</code> prop.
-        </Subtitle1>
-        <br />
-        <Card outlined style={{ padding: '32px' }}>
-          <ProgressLinear value={40} color='red' />
-          <br />
-          <ProgressLinear value={40} color='green' />
-          <br />
-          <ProgressLinear value={40} color='blue' />
-        </Card>
-        <CodeBlock lang='html'>
-          {progressLinear(
-            dark,
-            ['red', 'green', 'blue'].map((c) => `value={40} color='${c}'`),
-            true
           )}
         </CodeBlock>
         <br />

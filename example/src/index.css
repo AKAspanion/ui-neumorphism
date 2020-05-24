@@ -24,6 +24,44 @@ code {
     monospace;
 }
 
+/* global */
+
+.d-flex {
+  display: flex;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-start {
+  align-items: flex-start;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-start {
+  justify-content: start;
+}
+
+.ma-8 {
+  margin: 32px !important;
+}
+
+.mb-1 {
+  margin-bottom: 4px !important;
+}
+
+.mt-6 {
+  margin-top: 24px !important;
+}
+
+.pa-8 {
+  padding: 32px !important;
+}
+
 .theme--light {
   --bg-color: var(--light-bg);
   --text-shadow: var(--light-bg-light-shadow);
@@ -146,14 +184,6 @@ main {
   padding: 32px 0px;
   align-items: center;
   justify-content: center;
-}
-
-.d-flex {
-  display: flex;
-}
-
-.align-center {
-  align-items: center;
 }
 
 .main-container {

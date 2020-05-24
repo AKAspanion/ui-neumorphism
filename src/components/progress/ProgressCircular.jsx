@@ -25,6 +25,7 @@ class ProgressCircular extends React.Component {
     size: G_NUM,
     width: G_NUM,
     color: G_STRING,
+    label: G_STRING,
     rotate: G_STRING,
     elevated: G_BOOL,
     indeterminate: G_BOOL,
@@ -107,6 +108,7 @@ class ProgressCircular extends React.Component {
       size,
       width,
       style,
+      label,
       className,
       indeterminate,
       children
@@ -171,9 +173,9 @@ class ProgressCircular extends React.Component {
         />
         <label
           className={`${this.getClasses('label')}`}
-          style={{ fontSize: `${this.radius * 0.5}px` }}
+          style={{ fontSize: `${this.radius * 0.6}px` }}
         >
-          {children}
+          {children || label}
         </label>
       </div>
     )
