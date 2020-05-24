@@ -1,6 +1,8 @@
 import React from 'react'
 
 import { ProgressLinear, Card, H4, H5, H6, Subtitle1 } from 'ui-neumorphism'
+import CodeBlock from '../containers/CodeBlock.jsx'
+import { progressLinear } from '../assets/'
 
 class ProgressLinearView extends React.Component {
   render() {
@@ -28,6 +30,12 @@ class ProgressLinearView extends React.Component {
           <br />
           <ProgressLinear value={40} color='var(--success)' />
         </Card>
+        <CodeBlock lang='html'>
+          {progressLinear(
+            dark,
+            [0, 1, 2].map((p) => 'value={40}')
+          )}
+        </CodeBlock>
         <br />
         <br />
         <H5 style={{ marginTop: '24px' }}>Indeterminate</H5>
@@ -43,6 +51,12 @@ class ProgressLinearView extends React.Component {
           <br />
           <ProgressLinear indeterminate color='var(--success)' />
         </Card>
+        <CodeBlock lang='html'>
+          {progressLinear(
+            dark,
+            [0, 1, 2].map((p) => 'indeterminate')
+          )}
+        </CodeBlock>
         <br />
         <br />
         <H5 style={{ marginTop: '24px' }}>Height</H5>
@@ -58,6 +72,14 @@ class ProgressLinearView extends React.Component {
           <br />
           <ProgressLinear height={30} value={80} color='var(--success)' />
         </Card>
+        <CodeBlock lang='html'>
+          {progressLinear(
+            dark,
+            [0, 1, 2].map(
+              (i) => `height={${i * 10 + 10}} value={${i * 20 + 40}}`
+            )
+          )}
+        </CodeBlock>
         <br />
         <br />
         <H5 style={{ marginTop: '24px' }}>Striped</H5>
@@ -73,6 +95,12 @@ class ProgressLinearView extends React.Component {
           <br />
           <ProgressLinear striped value={80} color='var(--success)' />
         </Card>
+        <CodeBlock lang='html'>
+          {progressLinear(
+            dark,
+            [0, 1, 2].map((i) => `striped value={${i * 20 + 40}}`)
+          )}
+        </CodeBlock>
         <br />
         <br />
         <H5 style={{ marginTop: '24px' }}>Bordered</H5>
@@ -86,7 +114,15 @@ class ProgressLinearView extends React.Component {
           <ProgressLinear bordered value={40} color='var(--primary)' />
           <br />
           <ProgressLinear bordered value={40} color='var(--info)' />
+          <br />
+          <ProgressLinear bordered value={40} color='var(--success)' />
         </Card>
+        <CodeBlock lang='html'>
+          {progressLinear(
+            dark,
+            [0, 1, 2].map((i) => `bordered value={40}`)
+          )}
+        </CodeBlock>
         <br />
         <br />
         <H5 style={{ marginTop: '24px' }}>Fill height</H5>
@@ -98,13 +134,31 @@ class ProgressLinearView extends React.Component {
         <Card outlined style={{ padding: '32px' }}>
           <ProgressLinear
             fillHeight
-            value={40}
             height={4}
+            value={40}
             color='var(--primary)'
           />
           <br />
-          <ProgressLinear fillHeight value={40} color='var(--info)' />
+          <ProgressLinear
+            fillHeight
+            height={8}
+            value={40}
+            color='var(--info)'
+          />
+          <br />
+          <ProgressLinear
+            fillHeight
+            height={12}
+            value={40}
+            color='var(--success)'
+          />
         </Card>
+        <CodeBlock lang='html'>
+          {progressLinear(
+            dark,
+            [1, 2, 3].map((i) => `fillHeight height={${4 * i}} value={40}`)
+          )}
+        </CodeBlock>
         <br />
         <br />
         <H5 style={{ marginTop: '24px' }}>Custom colors</H5>
@@ -119,6 +173,13 @@ class ProgressLinearView extends React.Component {
           <br />
           <ProgressLinear value={40} color='blue' />
         </Card>
+        <CodeBlock lang='html'>
+          {progressLinear(
+            dark,
+            ['red', 'green', 'blue'].map((c) => `value={40} color='${c}'`),
+            true
+          )}
+        </CodeBlock>
         <br />
         <br />
         <H5>API</H5>
