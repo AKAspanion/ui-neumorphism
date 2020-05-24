@@ -52,7 +52,7 @@ class ProgressCircular extends React.Component {
   }
 
   get strokeDashArrayOffset() {
-    return this.calcStrokeDashArrayOffset(this.props.value)
+    return this.calcStrokeDashArrayOffset(this.normalizedValue)
   }
 
   get viewBox() {

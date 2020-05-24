@@ -7,12 +7,12 @@ import { ProgressCircular, Card, H4, H5, H6, Subtitle1 } from 'ui-neumorphism'
 import CodeBlock from '../containers/CodeBlock.jsx'
 import { progressCircular } from '../assets/'
 
-const labelDoc = `<ProgressCircular value={20} color='var(--primary)'>
+const labelDoc = `<ProgressCircular value={10} color='var(--primary)'>
   // Icon component is from '@mdi/react' and is not bundled with this library
   <Icon path={mdiNumeric10} size={0.9} />
 </ProgressCircular>
-<ProgressCircular value={40} color='var(--info)' label="40" />
-<ProgressCircular value={60} color='var(--warning)'>60</ProgressCircular>
+<ProgressCircular value={20} color='var(--info)' label="40" />
+<ProgressCircular value={40} color='var(--warning)'>60</ProgressCircular>
 <ProgressCircular value={80} color='var(--success)' label="80" />
 <ProgressCircular value={100} color='var(--error)'>100</ProgressCircular>`
 
@@ -227,24 +227,24 @@ class ProgressCircularView extends React.Component {
         <Card outlined className='pa-8'>
           <Card flat outlined={false} className='d-flex justify-center'>
             <ProgressCircular
-              value={20}
+              value={10}
               className='ma-8'
               color='var(--primary)'
             >
               <Icon path={mdiNumeric10} size={0.9} />
             </ProgressCircular>
             <ProgressCircular
-              value={40}
+              value={20}
               className='ma-8'
               color='var(--info)'
-              label='40'
+              label='20'
             />
             <ProgressCircular
-              value={60}
+              value={40}
               className='ma-8'
               color='var(--warning)'
             >
-              60
+              40
             </ProgressCircular>
             <ProgressCircular
               value={80}
