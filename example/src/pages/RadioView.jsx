@@ -75,7 +75,7 @@ class RadioView extends React.Component {
             <Card flat dark={dark} key={this.state.key}>
               <Radio
                 value='1'
-                color='#42aaee'
+                color='#299ae6'
                 onChange={this.onSelect}
                 checked={selectedValue === '1'}
               />
@@ -99,7 +99,7 @@ class RadioView extends React.Component {
               <Radio
                 value='5'
                 disabled
-                color='#42aaee'
+                color='#299ae6'
                 onChange={this.onSelect}
                 checked={selectedValue === '5'}
               />

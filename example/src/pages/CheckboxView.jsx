@@ -25,7 +25,7 @@ class CheckboxView extends React.Component {
           >
             <Card flat dark={dark}>
               <Checkbox color='var(--primary)' checked />
-              <Checkbox color='#42aaee' />
+              <Checkbox color='#299ae6' />
               <Checkbox />
               <Checkbox disabled />
               <Checkbox disabled checked />
@@ -51,7 +51,7 @@ class CheckboxView extends React.Component {
           >
             <Card flat dark={dark}>
               <Checkbox color='var(--primary)' label='Primary' checked />
-              <Checkbox label='Blue' color='#42aaee' />
+              <Checkbox label='Blue' color='#299ae6' />
               <Checkbox label='Default' />
               <Checkbox disabled label='Disabled' />
               <Checkbox disabled checked label='Checked & Disabled' />

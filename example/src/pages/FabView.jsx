@@ -37,7 +37,7 @@ class FabView extends React.Component {
             <Fab className='pa-8' color='var(--primary)'>
               <span style={{ fontSize: '24px' }}>&#9733;</span>
             </Fab>
-            <Fab className='pa-8' color='#42aaee'>
+            <Fab className='pa-8' color='#299ae6'>
               &nbsp;<span style={{ fontSize: '24px' }}>&#9729;</span>&nbsp;
               Extended&nbsp;
             </Fab>

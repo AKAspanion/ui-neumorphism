@@ -27,7 +27,7 @@ class SwitchView extends React.Component {
           }}
         >
           <Switch color='var(--primary)' checked />
-          <Switch color='#42aaee' />
+          <Switch color='#299ae6' />
           <Switch />
           <Switch disabled />
           <Switch disabled checked />
@@ -50,7 +50,7 @@ class SwitchView extends React.Component {
           }}
         >
           <Switch color='var(--primary)' label='Primary' checked />
-          <Switch label='Blue' color='#42aaee' />
+          <Switch label='Blue' color='#299ae6' />
           <Switch label='Default' />
           <Switch disabled label='Disabled' />
           <Switch disabled checked label='Checked & Disabled' />
