@@ -4,6 +4,7 @@
 }
 
 pre {
+  margin: 0px !important;
   border-radius: 4px !important;
 }
 
@@ -1074,6 +1075,7 @@ code {
 }
 
 .theme--light {
+  --code-bg: #F5F2F0;
   --bg-color: var(--light-bg);
   --text-shadow: var(--light-bg-light-shadow);
   --menu-text-color: var(--g-text-color-light);
@@ -1081,6 +1083,7 @@ code {
 }
 
 .theme--dark {
+  --code-bg: #272822;
   --bg-color: var(--dark-bg);
   --text-shadow: var(--dark-bg-light-shadow);
   --menu-text-color: var(--g-text-color-dark);
@@ -1276,4 +1279,17 @@ main {
 
 .doc-btn {
   margin: 32px;
+}
+
+/* code block */
+.code-block {
+  overflow: auto;
+  height: inherit;
+  max-height: 300px;
+  transition: all 0.3s ease-in-out;
+}
+
+.code-block-closed {
+  max-height: 0px;
+  transition: all 0.3s ease-in-out;
 }
