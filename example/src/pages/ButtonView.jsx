@@ -47,8 +47,8 @@ class ButtonView extends React.Component {
               text
             </Button>
           </Card>
+          <CodeBlock lang='html'>{allButtons(dark)}</CodeBlock>
         </Card>
-        <CodeBlock lang='html'>{allButtons(dark)}</CodeBlock>
         <br />
         <br />
         <H5 style={{ marginTop: '24px' }}>Contained Buttons</H5>
@@ -67,8 +67,8 @@ class ButtonView extends React.Component {
               disabled
             </Button>
           </Card>
+          <CodeBlock lang='html'>{docButtons(dark)}</CodeBlock>
         </Card>
-        <CodeBlock lang='html'>{docButtons(dark)}</CodeBlock>
         <br />
         <br />
         <H5 style={{ marginTop: '24px' }}>Text Buttons</H5>
@@ -91,8 +91,8 @@ class ButtonView extends React.Component {
               disabled
             </Button>
           </Card>
+          <CodeBlock lang='html'>{docButtons(dark, 'text')}</CodeBlock>
         </Card>
-        <CodeBlock lang='html'>{docButtons(dark, 'text')}</CodeBlock>
         <br />
         <br />
         <H5 style={{ marginTop: '24px' }}>Outlined Buttons</H5>
@@ -112,8 +112,8 @@ class ButtonView extends React.Component {
               disabled
             </Button>
           </Card>
+          <CodeBlock lang='html'>{docButtons(dark, 'outlined')}</CodeBlock>
         </Card>
-        <CodeBlock lang='html'>{docButtons(dark, 'outlined')}</CodeBlock>
         <br />
         <br />
         <H5 style={{ marginTop: '24px' }}>Rounded Buttons</H5>
@@ -133,8 +133,8 @@ class ButtonView extends React.Component {
               disabled
             </Button>
           </Card>
+          <CodeBlock lang='html'>{docButtons(dark, 'rounded')}</CodeBlock>
         </Card>
-        <CodeBlock lang='html'>{docButtons(dark, 'rounded')}</CodeBlock>
         <br />
         <br />
         <H5 style={{ marginTop: '24px' }}>Depressed Buttons</H5>
@@ -154,8 +154,8 @@ class ButtonView extends React.Component {
               disabled
             </Button>
           </Card>
+          <CodeBlock lang='html'>{docButtons(dark, 'depressed')}</CodeBlock>
         </Card>
-        <CodeBlock lang='html'>{docButtons(dark, 'depressed')}</CodeBlock>
         <br />
         <br />
         <H5 style={{ marginTop: '24px' }}>Block Buttons</H5>
@@ -172,8 +172,8 @@ class ButtonView extends React.Component {
               block button
             </Button>
           </div>
+          <CodeBlock lang='html'>{blockButton(dark)}</CodeBlock>
         </Card>
-        <CodeBlock lang='html'>{blockButton(dark)}</CodeBlock>
         <br />
         <br />
         <H5 style={{ marginTop: '24px' }}>Sizes</H5>
@@ -192,8 +192,8 @@ class ButtonView extends React.Component {
               large
             </Button>
           </Card>
+          <CodeBlock lang='html'>{sizeButtons(dark)}</CodeBlock>
         </Card>
-        <CodeBlock lang='html'>{sizeButtons(dark)}</CodeBlock>
         <br />
         <br />
         <H5>API</H5>

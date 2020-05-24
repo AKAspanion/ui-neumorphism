@@ -25,26 +25,28 @@ class ToggleButtonView extends React.Component {
           selected or deselected, such as adding or removing a star to an item.
         </Subtitle1>
         <br />
-        <Card outlined className='d-flex justify-center'>
-          <Card flat outlined={false} className='py-12'>
-            <IconButton className='ma-12'>
-              <Icon path={mdiRun} size={1} />
-            </IconButton>
-            <IconButton color='#b1b100' className='ma-12'>
-              <Icon path={mdiStar} size={1} />
-            </IconButton>
-            <IconButton disabled className='ma-12'>
-              <Icon path={mdiTrashCanOutline} size={1} />
-            </IconButton>
-            <IconButton color='var(--primary)' className='ma-12'>
-              <Icon path={mdiSpeaker} size={1} />
-            </IconButton>
-            <IconButton color='#299ae6' className='ma-12'>
-              <Icon path={mdiBroom} size={1} />
-            </IconButton>
+        <Card outlined>
+          <Card outlined={false} className='d-flex justify-center'>
+            <Card flat outlined={false} className='py-12'>
+              <IconButton className='ma-12'>
+                <Icon path={mdiRun} size={1} />
+              </IconButton>
+              <IconButton color='#b1b100' className='ma-12'>
+                <Icon path={mdiStar} size={1} />
+              </IconButton>
+              <IconButton disabled className='ma-12'>
+                <Icon path={mdiTrashCanOutline} size={1} />
+              </IconButton>
+              <IconButton color='var(--primary)' className='ma-12'>
+                <Icon path={mdiSpeaker} size={1} />
+              </IconButton>
+              <IconButton color='#299ae6' className='ma-12'>
+                <Icon path={mdiBroom} size={1} />
+              </IconButton>
+            </Card>
           </Card>
+          <CodeBlock lang='html'>{iconButtons()}</CodeBlock>
         </Card>
-        <CodeBlock lang='html'>{iconButtons()}</CodeBlock>
         <br />
         <br />
         <H5>API</H5>

@@ -71,171 +71,187 @@ class CardView extends React.Component {
         </Subtitle1>
         <br />
         <H5 style={{ marginTop: '24px' }}>Simple Card</H5>
-        <Card flat className='main-flex-card'>
-          <Card width={275}>
-            {cardContent}
-            {cardAction}
+        <Card outlined className='mt-2'>
+          <Card flat outlined={false} className='d-flex justify-center py-12'>
+            <Card width={275}>
+              {cardContent}
+              {cardAction}
+            </Card>
           </Card>
+          <CodeBlock lang='html'>{simpleCard(dark ? 'dark' : '')}</CodeBlock>
         </Card>
-        <CodeBlock lang='html'>{simpleCard(dark ? 'dark' : '')}</CodeBlock>
         <br />
         <br />
         <H5>Inset Card</H5>
         <Subtitle1>
           Set <code>inset</code> flag to render an inset card.
         </Subtitle1>
-        <Card flat className='main-flex-card'>
-          <Card inset width={275}>
-            {cardContent}
-            {cardAction}
+        <Card outlined className='mt-2'>
+          <Card flat outlined={false} className='d-flex justify-center py-12'>
+            <Card inset width={275}>
+              {cardContent}
+              {cardAction}
+            </Card>
           </Card>
+          <CodeBlock lang='html'>
+            {simpleCardCopy(dark ? 'dark inset' : 'inset')}
+          </CodeBlock>
         </Card>
-        <CodeBlock lang='html'>
-          {simpleCardCopy(dark ? 'dark inset' : 'dark')}
-        </CodeBlock>
         <br />
         <br />
         <H5>Outlined Card</H5>
         <Subtitle1>
           Set <code>outlined</code> flag to render an outlined card.
         </Subtitle1>
-        <Card flat className='main-flex-card'>
-          <Card outlined width={275}>
-            {cardContent}
-            {cardAction}
+        <Card outlined className='mt-2'>
+          <Card flat outlined={false} className='d-flex justify-center py-12'>
+            <Card outlined width={275}>
+              {cardContent}
+              {cardAction}
+            </Card>
           </Card>
+          <CodeBlock lang='html'>
+            {simpleCardCopy(dark ? 'dark outlined' : 'outlined')}
+          </CodeBlock>
         </Card>
-        <CodeBlock lang='html'>
-          {simpleCardCopy(dark ? 'dark outlined' : 'dark')}
-        </CodeBlock>
         <br />
         <br />
         <H5>Rounded Card</H5>
         <Subtitle1>
           Set <code>rounded</code> flag to render a rounded card.
         </Subtitle1>
-        <Card flat className='main-flex-card'>
-          <Card rounded width={275}>
-            {cardContent}
-            {cardAction}
+        <Card outlined className='mt-2'>
+          <Card flat outlined={false} className='d-flex justify-center py-12'>
+            <Card rounded width={275}>
+              {cardContent}
+              {cardAction}
+            </Card>
           </Card>
+          <CodeBlock lang='html'>
+            {simpleCardCopy(dark ? 'dark rounded' : 'rounded')}
+          </CodeBlock>
         </Card>
-        <CodeBlock lang='html'>
-          {simpleCardCopy(dark ? 'dark rounded' : 'dark')}
-        </CodeBlock>
         <br />
         <br />
         <H5>Disabled Card</H5>
         <Subtitle1>
           Set <code>disabled</code> flag to render a disabled card.
         </Subtitle1>
-        <Card flat className='main-flex-card'>
-          <Card disabled width={275}>
-            {cardContent}
-            {cardAction}
+        <Card outlined className='mt-2'>
+          <Card flat outlined={false} className='d-flex justify-center py-12'>
+            <Card disabled width={275}>
+              {cardContent}
+              {cardAction}
+            </Card>
           </Card>
+          <CodeBlock lang='html'>
+            {simpleCardCopy(dark ? 'dark disabled' : 'disabled')}
+          </CodeBlock>
         </Card>
-        <CodeBlock lang='html'>
-          {simpleCardCopy(dark ? 'dark disabled' : 'dark')}
-        </CodeBlock>
         <br />
         <br />
         <H5>Loading Card</H5>
         <Subtitle1>
           Set <code>loading</code> flag to show a loading progress bar on top.
         </Subtitle1>
-        <Card flat className='main-flex-card'>
-          <Card loading width={275}>
-            {cardContent}
-            {cardAction}
+        <Card outlined className='mt-2'>
+          <Card flat outlined={false} className='d-flex justify-center py-12'>
+            <Card loading width={275}>
+              {cardContent}
+              {cardAction}
+            </Card>
           </Card>
+          <CodeBlock lang='html'>
+            {simpleCardCopy(dark ? 'dark loading' : 'loading')}
+          </CodeBlock>
         </Card>
-        <CodeBlock lang='html'>
-          {simpleCardCopy(dark ? 'dark loading' : 'dark')}
-        </CodeBlock>
         <br />
         <br />
         <H5>Media with text</H5>
         <Subtitle1>You can add media inside a card.</Subtitle1>
-        <Card flat className='main-flex-card'>
-          <Card width={300}>
-            <CardMedia
-              dark
-              title='Top 10 Indian beaches'
-              src='images/beaches-2.jpg'
-            />
-            <CardContent>
-              <Subtitle2
-                secondary
-                style={{
-                  marginBottom: '4px'
-                }}
-              >
-                Number 1
-              </Subtitle2>
-              <Body2>
-                Radhanagar Beach
-                <br />
-                Havock Island, Andaman
-              </Body2>
-            </CardContent>
-            <CardAction>
-              <Button text color='var(--primary)'>
-                Share
-              </Button>
-              <Button text color='var(--primary)'>
-                Explore
-              </Button>
-            </CardAction>
+        <Card outlined className='mt-2'>
+          <Card flat outlined={false} className='d-flex justify-center py-12'>
+            <Card width={300}>
+              <CardMedia
+                dark
+                title='Top 10 Indian beaches'
+                src='images/beaches-2.jpg'
+              />
+              <CardContent>
+                <Subtitle2
+                  secondary
+                  style={{
+                    marginBottom: '4px'
+                  }}
+                >
+                  Number 1
+                </Subtitle2>
+                <Body2>
+                  Radhanagar Beach
+                  <br />
+                  Havock Island, Andaman
+                </Body2>
+              </CardContent>
+              <CardAction>
+                <Button text color='var(--primary)'>
+                  Share
+                </Button>
+                <Button text color='var(--primary)'>
+                  Explore
+                </Button>
+              </CardAction>
+            </Card>
           </Card>
+          <CodeBlock lang='html'>{mediaCard(dark ? 'dark' : '')}</CodeBlock>
         </Card>
-        <CodeBlock lang='html'>{mediaCard(dark ? 'dark' : '')}</CodeBlock>
         <br />
         <br />
         <H5>Advanced Card</H5>
         <Subtitle1>
           You can create unique card layouts in an advanced setting.
         </Subtitle1>
-        <Card flat className='main-flex-card'>
-          <Card width={300}>
-            <CardHeader
-              title={<H6>Lorem ipsum</H6>}
-              subtitle={
-                <Subtitle2 secondary>Lorem ipsum dolor sit amet</Subtitle2>
-              }
-              action={
+        <Card outlined className='mt-2'>
+          <Card flat outlined={false} className='d-flex justify-center py-12'>
+            <Card width={300}>
+              <CardHeader
+                title={<H6>Lorem ipsum</H6>}
+                subtitle={
+                  <Subtitle2 secondary>Lorem ipsum dolor sit amet</Subtitle2>
+                }
+                action={
+                  <IconButton>
+                    <Icon path={mdiDotsVertical} size={1}></Icon>
+                  </IconButton>
+                }
+              />
+              <CardMedia dark src='images/beaches-2.jpg' />
+              <CardContent>
+                <Body2>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Atque architecto reprehenderit magnam esse est id ipsum ut
+                  delectus. Consequuntur suscipit hic eum ea adipisci, illum sed
+                  iure saepe aperiam quia!
+                </Body2>
+              </CardContent>
+              <CardAction>
+                <Button text color='var(--primary)'>
+                  Read
+                </Button>
+                <Button text color='var(--primary)'>
+                  Bookmark
+                </Button>
+                <Spacer />
                 <IconButton>
-                  <Icon path={mdiDotsVertical} size={1}></Icon>
+                  <Icon path={mdiHeart} size={1}></Icon>
                 </IconButton>
-              }
-            />
-            <CardMedia dark src='images/beaches-2.jpg' />
-            <CardContent>
-              <Body2>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque
-                architecto reprehenderit magnam esse est id ipsum ut delectus.
-                Consequuntur suscipit hic eum ea adipisci, illum sed iure saepe
-                aperiam quia!
-              </Body2>
-            </CardContent>
-            <CardAction>
-              <Button text color='var(--primary)'>
-                Read
-              </Button>
-              <Button text color='var(--primary)'>
-                Bookmark
-              </Button>
-              <Spacer />
-              <IconButton>
-                <Icon path={mdiHeart} size={1}></Icon>
-              </IconButton>
-              <IconButton>
-                <Icon path={mdiShareVariant} size={1}></Icon>
-              </IconButton>
-            </CardAction>
+                <IconButton>
+                  <Icon path={mdiShareVariant} size={1}></Icon>
+                </IconButton>
+              </CardAction>
+            </Card>
           </Card>
+          <CodeBlock lang='html'>{complexCard(dark ? 'dark' : '')}</CodeBlock>
         </Card>
-        <CodeBlock lang='html'>{complexCard(dark ? 'dark' : '')}</CodeBlock>
         <br />
         <br />
         <H5>API</H5>

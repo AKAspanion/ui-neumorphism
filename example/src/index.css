@@ -1286,6 +1286,7 @@ main {
   overflow: auto;
   height: inherit;
   max-height: 300px;
+  will-change: height, max-height;
   transition: all 0.3s ease-in-out;
 }
 

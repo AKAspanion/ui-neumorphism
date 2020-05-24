@@ -129,7 +129,7 @@ class Home extends React.Component {
   render() {
     const { dark } = this.props
     return (
-      <Card flat dark={dark} style={{ padding: '8px 0px' }}>
+      <Card flat dark={dark} className='py-2'>
         <Subtitle1>
           <code>ui-neumorphism</code> is a react component library designed on
           the "new skeuomorphism" UI/UX trend.
@@ -139,39 +139,41 @@ class Home extends React.Component {
         <br />
         <br />
         <H4>Installation</H4>
-        <Divider dense style={{ margin: '4px 0px 16px 0px' }} />
-        <CodeBlock lang={`bash`}>
+        <Divider dense className='mt-1 mb-3' />
+        <CodeBlock noCollapse lang='bash'>
           {`npm install --save ui-neumorphism`}
         </CodeBlock>
         <br />
         <br />
         <H4>Usage</H4>
-        <Divider dense style={{ margin: '4px 0px 16px 0px' }} />
-        <Body1>
+        <Divider dense className='mt-1 mb-3' />
+        <Body1 className='mb-2'>
           Components in this package can be imported as individual React
           component.
         </Body1>
-        <CodeBlock>{`import { Card, Button } from 'ui-neumorphism'`}</CodeBlock>
+        <CodeBlock noCollapse>
+          {`import { Card, Button } from 'ui-neumorphism'`}
+        </CodeBlock>
         <br />
-        <Body1>Quick usage example to get you started:</Body1>
-        <CodeBlock>{importCode}</CodeBlock>
+        <Body1 className='mb-2'>Quick usage example to get you started:</Body1>
+        <CodeBlock noCollapse>{importCode}</CodeBlock>
         <br />
         <br />
         <H4>Theming</H4>
-        <Divider dense style={{ margin: '4px 0px 16px 0px' }} />
-        <Body1 style={{ marginBottom: '8px' }}>
+        <Divider dense className='mt-1 mb-3' />
+        <Body1 className='mb-2'>
           In neumorphism UI, theming is dead simple.
         </Body1>
-        <Body1 style={{ marginBottom: '16px' }}>
+        <Body1 className='mb-4'>
           It is accomplished by using and modifying root css variables for
           colors.
         </Body1>
-        <Body1 style={{ marginBottom: '16px' }}>
+        <Body1 className='mb-4'>
           To change the theme, you modify the root css variables directly or
-          with the help of <code>overrideThemeVariables()</code>
-          function, like this:
+          with the help of <code>overrideThemeVariables()</code>&nbsp;function,
+          like this:
         </Body1>
-        <CodeBlock>{themeUtilCode}</CodeBlock>
+        <CodeBlock noCollapse>{themeUtilCode}</CodeBlock>
         <br />
         <Body1>
           Using the power of CSS variables, you can change the theme anywhere in
@@ -179,8 +181,8 @@ class Home extends React.Component {
         </Body1>
         <br />
         <br />
-        <H6 style={{ marginBottom: '4px' }}>Live theme example</H6>
-        <Body1 style={{ marginBottom: '4px' }}>
+        <H6 className='mb-1'>Live theme example</H6>
+        <Body1 className='mb-1'>
           Toggle below buttons to see change in theme
         </Body1>
         <ToggleButtonGroup
@@ -192,12 +194,8 @@ class Home extends React.Component {
               <ToggleButton
                 key={i}
                 text={false}
+                className='mt-3 px-3 mr-6'
                 value={`${dark ? 'dark' : 'light'}-${i}`}
-                style={{
-                  marginTop: '12px',
-                  padding: '0px 12px',
-                  marginRight: '24px'
-                }}
               >
                 {`${dark ? 'Dark' : 'Light'} ${i}`}
               </ToggleButton>
@@ -208,7 +206,7 @@ class Home extends React.Component {
         <br />
         <br />
         <H4>Author</H4>
-        <Divider dense style={{ margin: '4px 0px 16px 0px' }} />
+        <Divider dense className='mt-1 mb-3' />
         <Body1>Ankit Kumar Pandit</Body1>
         <br />
       </Card>

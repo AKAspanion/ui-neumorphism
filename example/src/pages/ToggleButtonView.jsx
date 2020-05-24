@@ -81,38 +81,40 @@ ${toggleButtons(dark, 'multiple', `value={active} size='large'`)}
           Mandatory <code>ToggleButtonGroup</code> always has a value.
         </Subtitle1>
         <br />
-        <Card outlined className='py-12'>
-          <Card
-            flat
-            outlined={false}
-            className='d-flex flex-wrap align-center justify-center'
-          >
-            <ToggleButtonGroup
-              value='1'
-              mandatory
-              onChange={this.mandatoryGroupChange.bind(this)}
+        <Card outlined>
+          <Card flat outlined={false} className='py-12'>
+            <Card
+              flat
+              outlined={false}
+              className='d-flex flex-wrap align-center justify-center'
             >
-              {[
-                mdiFormatAlignLeft,
-                mdiFormatAlignCenter,
-                mdiFormatAlignRight,
-                mdiFormatAlignJustify
-              ].map((icon, i) => (
-                <ToggleButton
-                  disabled={i === 3}
-                  value={`${i + 1}`}
-                  color='var(--primary)'
-                >
-                  <Icon path={icon} size={0.9} />
-                </ToggleButton>
-              ))}
-            </ToggleButtonGroup>
+              <ToggleButtonGroup
+                value='1'
+                mandatory
+                onChange={this.mandatoryGroupChange.bind(this)}
+              >
+                {[
+                  mdiFormatAlignLeft,
+                  mdiFormatAlignCenter,
+                  mdiFormatAlignRight,
+                  mdiFormatAlignJustify
+                ].map((icon, i) => (
+                  <ToggleButton
+                    disabled={i === 3}
+                    value={`${i + 1}`}
+                    color='var(--primary)'
+                  >
+                    <Icon path={icon} size={0.9} />
+                  </ToggleButton>
+                ))}
+              </ToggleButtonGroup>
+            </Card>
+            <div className='text-center mx-auto pt-6'>
+              {`{ active: ${JSON.stringify(this.state.mandatoryActive)} }`}
+            </div>
           </Card>
-          <div className='text-center mx-auto pt-6'>
-            {`{ active: ${JSON.stringify(this.state.mandatoryActive)} }`}
-          </div>
+          <CodeBlock lang='html'>{toggleButtons(dark, 'mandatory')}</CodeBlock>
         </Card>
-        <CodeBlock lang='html'>{toggleButtons(dark, 'mandatory')}</CodeBlock>
         <br />
         <br />
         <H5 className='mt-6'>Multiple selection</H5>
@@ -121,30 +123,32 @@ ${toggleButtons(dark, 'multiple', `value={active} size='large'`)}
           values and returns all value as an array.
         </Subtitle1>
         <br />
-        <Card outlined className='py-12'>
-          <Card
-            flat
-            outlined={false}
-            className='d-flex flex-wrap align-center justify-center'
-          >
-            <ToggleButtonGroup
-              multiple
-              onChange={this.multipleGroupChange.bind(this)}
+        <Card outlined>
+          <Card flat outlined={false} className='py-12'>
+            <Card
+              flat
+              outlined={false}
+              className='d-flex flex-wrap align-center justify-center'
             >
-              {[mdiFormatBold, mdiFormatItalic, mdiFormatUnderline].map(
-                (icon, i) => (
-                  <ToggleButton value={`${i + 1}`} color='var(--primary)'>
-                    <Icon path={icon} size={0.9} />
-                  </ToggleButton>
-                )
-              )}
-            </ToggleButtonGroup>
+              <ToggleButtonGroup
+                multiple
+                onChange={this.multipleGroupChange.bind(this)}
+              >
+                {[mdiFormatBold, mdiFormatItalic, mdiFormatUnderline].map(
+                  (icon, i) => (
+                    <ToggleButton value={`${i + 1}`} color='var(--primary)'>
+                      <Icon path={icon} size={0.9} />
+                    </ToggleButton>
+                  )
+                )}
+              </ToggleButtonGroup>
+            </Card>
+            <div className='text-center mx-auto pt-6'>
+              {`{ active: ${JSON.stringify(this.state.multipleActive)} }`}
+            </div>
           </Card>
-          <div className='text-center mx-auto pt-6'>
-            {`{ active: ${JSON.stringify(this.state.multipleActive)} }`}
-          </div>
+          <CodeBlock lang='html'>{toggleButtons(dark, 'multiple')}</CodeBlock>
         </Card>
-        <CodeBlock lang='html'>{toggleButtons(dark, 'multiple')}</CodeBlock>
         <br />
         <br />
         <H5 className='mt-6'>Sizes</H5>
@@ -152,39 +156,41 @@ ${toggleButtons(dark, 'multiple', `value={active} size='large'`)}
           Use <code>size</code> property to change button size.
         </Subtitle1>
         <br />
-        <Card outlined className='py-12'>
-          {['small', 'medium', 'large'].map((s, i) => {
-            return (
-              <Card
-                flat
-                outlined={false}
-                className='d-flex flex-wrap align-center justify-center'
-              >
-                <ToggleButtonGroup
-                  key={i}
-                  size={s}
-                  multiple
-                  dark={dark}
-                  value={active}
-                  className='mt-4'
-                  onChange={(e) => this.handleChange(e)}
+        <Card outlined>
+          <Card flat outlined={false} className='py-12'>
+            {['small', 'medium', 'large'].map((s, i) => {
+              return (
+                <Card
+                  flat
+                  outlined={false}
+                  className='d-flex flex-wrap align-center justify-center'
                 >
-                  {[mdiFormatBold, mdiFormatItalic, mdiFormatUnderline].map(
-                    (icon, i) => (
-                      <ToggleButton value={`${i + 1}`} color='var(--primary)'>
-                        <Icon path={icon} size={0.9} />
-                      </ToggleButton>
-                    )
-                  )}
-                </ToggleButtonGroup>
-              </Card>
-            )
-          })}
-          <div className='text-center mx-auto pt-6'>
-            {`{ active: ${JSON.stringify(this.state.active)} }`}
-          </div>
+                  <ToggleButtonGroup
+                    key={i}
+                    size={s}
+                    multiple
+                    dark={dark}
+                    value={active}
+                    className='mt-4'
+                    onChange={(e) => this.handleChange(e)}
+                  >
+                    {[mdiFormatBold, mdiFormatItalic, mdiFormatUnderline].map(
+                      (icon, i) => (
+                        <ToggleButton value={`${i + 1}`} color='var(--primary)'>
+                          <Icon path={icon} size={0.9} />
+                        </ToggleButton>
+                      )
+                    )}
+                  </ToggleButtonGroup>
+                </Card>
+              )
+            })}
+            <div className='text-center mx-auto pt-6'>
+              {`{ active: ${JSON.stringify(this.state.active)} }`}
+            </div>
+          </Card>
+          <CodeBlock lang='html'>{sizeDoc}</CodeBlock>
         </Card>
-        <CodeBlock lang='html'>{sizeDoc}</CodeBlock>
         <br />
         <br />
         <H5>API</H5>
