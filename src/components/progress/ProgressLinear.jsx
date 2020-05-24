@@ -16,6 +16,7 @@ class ProgressLinear extends React.Component {
   static defaultProps = {
     value: 0,
     height: 9,
+    active: true,
     ...DEFAULT_PROPS
   }
 
@@ -24,6 +25,7 @@ class ProgressLinear extends React.Component {
     height: G_NUM,
     active: G_BOOL,
     color: G_STRING,
+    striped: G_BOOL,
     bordered: G_BOOL,
     fillHeight: G_BOOL,
     indeterminate: G_BOOL,
@@ -46,7 +48,7 @@ class ProgressLinear extends React.Component {
   }
 
   getClass(classType) {
-    const { dark, bordered, indeterminate, fillHeight } = this.props
+    const { dark, striped, bordered, indeterminate, fillHeight } = this.props
     switch (classType) {
       case 'progress':
         return getModuleClasses(
@@ -62,8 +64,16 @@ class ProgressLinear extends React.Component {
           styles,
           `
             nu-progress-linear--bg
-            ${fillHeight ? 'nu-progress-linear--bg-filled' : ''}
+            ${striped ? 'nu-progress-linear--striped' : ''}
             ${indeterminate ? 'nu-progress-linear--indeterminate' : ''}
+          `
+        )
+      case 'bg-wrapper':
+        return getModuleClasses(
+          styles,
+          `
+            nu-progress-linear--bg-wrapper
+            ${fillHeight ? 'nu-progress-linear--bg-filled' : ''}
           `
         )
     }
@@ -97,13 +107,18 @@ class ProgressLinear extends React.Component {
         className={`${this.getClass('progress')} ${className}`}
       >
         <div
-          id={this.state.id}
-          className={`${this.getClass('bg')}`}
-          style={{
-            width: `${indeterminate ? 100 : computedValue}%`,
-            ...this.getHeightStyle(fillHeight ? height : height - 4)
-          }}
-        />
+          style={{ borderRadius: `${height * 2}px` }}
+          className={`${this.getClass('bg-wrapper')}`}
+        >
+          <div
+            id={this.state.id}
+            className={`${this.getClass('bg')}`}
+            style={{
+              width: `${indeterminate ? 100 : computedValue}%`,
+              ...this.getHeightStyle(fillHeight ? height : height - 5)
+            }}
+          />
+        </div>
       </div>
     )
   }

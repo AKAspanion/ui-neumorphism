@@ -14,6 +14,11 @@
   --primary-dark: #aa0660;
   --primary-light: #fa7ac0;
 
+  --error: #FF5252;
+  --info: #2196F3;
+  --success: #4CAF50;
+  --warning: #FFC107;
+
   --g-text-color-light: rgba(0, 0, 0, 0.87);
   --g-text-color-disabled-light: rgba(0, 0, 0, 0.38);
   --g-text-color-secondary-light: rgba(0, 0, 0, 0.60);

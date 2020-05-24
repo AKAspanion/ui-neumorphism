@@ -22,7 +22,6 @@ import {
   Card,
   Body2,
   Caption,
-  Overline,
   Subtitle2,
   IconButton,
   ToggleButton,
@@ -281,7 +280,7 @@ class FitnessApp extends React.Component {
               style={{
                 display: 'flex',
                 padding: '16px',
-                marginTop: '48px',
+                marginTop: '36px',
                 alignItems: 'center',
                 justifyContent: 'space-between'
               }}
@@ -313,7 +312,7 @@ class FitnessApp extends React.Component {
               style={{
                 display: 'flex',
                 padding: '16px',
-                marginTop: '24px',
+                marginTop: '20px',
                 alignItems: 'center',
                 justifyContent: 'space-between'
               }}

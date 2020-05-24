@@ -3,7 +3,7 @@
   width: inherit;
   overflow: hidden;
   align-items: center;
-  justify-content: start;
+  justify-content: center;
   box-sizing: border-box;
   background: var(--bg-color);
   transition: all 0.2s ease-in-out;
@@ -36,16 +36,30 @@
     1px 1px 3px var(--dark-bg-dark-shadow);
 }
 
+.nu-progress-linear--bg-wrapper {
+  width: calc(100% - 4px);
+  overflow: hidden;
+}
+
+.nu-progress-linear--bg-wrapper.nu-progress-linear--bg-filled {
+  width: 100%;
+}
+
 .nu-progress-linear--bg {
-  margin: 0px 2px;
-  max-width: calc(100% - 4px);
+  width: 100%;
+  overflow: hidden;
   background: var(--selector-bg);
   transition: all 0.2s ease-in-out;
 }
 
-.nu-progress-linear--bg-filled {
-  margin: 0px;
-  max-width: 100%;
+.nu-progress-linear--striped {
+  background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.40) 25%,
+      transparent 0, transparent 50%,
+      rgba(255, 255, 255, 0.40) 0,
+      rgba(255, 255, 255, 0.40) 75%,
+      transparent 0, transparent) var(--selector-bg) !important;
+
 }
 
 .nu-progress-linear--indeterminate {
