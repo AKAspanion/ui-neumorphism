@@ -10,8 +10,7 @@ const withWindowResize = (Component) => {
       super(props)
       this.state = {
         height: window.innerHeight,
-        width: window.innerWidth,
-        key: 1
+        width: window.innerWidth
       }
     }
 
@@ -25,7 +24,6 @@ const withWindowResize = (Component) => {
 
     updateDimensions = () => {
       this.setState({ width: window.innerWidth, height: window.innerHeight })
-      this.setState({ key: this.state.key + 1 })
     }
 
     getCurrentSize() {
@@ -42,13 +40,12 @@ const withWindowResize = (Component) => {
     }
 
     render() {
-      const { width, height, key } = this.state
+      const { width, height } = this.state
       return (
         <Component
           dimensions={{ width, height }}
           size={this.getCurrentSize()}
           {...this.props}
-          key={key}
         />
       )
     }

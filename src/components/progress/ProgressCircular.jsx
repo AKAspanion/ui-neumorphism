@@ -24,9 +24,9 @@ class ProgressCircular extends React.Component {
     value: G_NUM,
     size: G_NUM,
     width: G_NUM,
+    rotate: G_NUM,
     color: G_STRING,
     label: G_STRING,
-    rotate: G_STRING,
     elevated: G_BOOL,
     indeterminate: G_BOOL,
     ...DEFAULT_PROPS_TYPE

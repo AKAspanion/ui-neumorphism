@@ -13,14 +13,24 @@ class ProgressCircularView extends React.Component {
   }
   render() {
     const { dark } = this.props
-    const labelDoc = `<ProgressCircular${dark?' dark':''} value={10} color='var(--primary)'>
+    const labelDoc = `<ProgressCircular${
+      dark ? ' dark' : ''
+    } value={10} color='var(--primary)'>
   // Icon component is from '@mdi/react' and is not bundled with this library
   <Icon path={mdiNumeric10} size={0.9} />
 </ProgressCircular>
-<ProgressCircular${dark?' dark':''} value={20} color='var(--info)' label="40" />
-<ProgressCircular${dark?' dark':''} value={40} color='var(--warning)'>60</ProgressCircular$>
-<ProgressCircular${dark?' dark':''} value={80} color='var(--success)' label="80" />
-<ProgressCircular${dark?' dark':''} value={100} color='var(--error)'>100</ProgressCircular$>`
+<ProgressCircular${
+      dark ? ' dark' : ''
+    } value={20} color='var(--info)' label="40" />
+<ProgressCircular${
+      dark ? ' dark' : ''
+    } value={40} color='var(--warning)'>60</ProgressCircular$>
+<ProgressCircular${
+      dark ? ' dark' : ''
+    } value={80} color='var(--success)' label="80" />
+<ProgressCircular${
+      dark ? ' dark' : ''
+    } value={100} color='var(--error)'>100</ProgressCircular$>`
     return (
       <Card flat dark={dark}>
         <H4>Progress Circular</H4>
@@ -44,8 +54,8 @@ class ProgressCircularView extends React.Component {
         <br />
         <Card outlined className='pa-8'>
           <Card flat outlined={false} className='d-flex justify-center'>
-            {[20, 40, 60, 80, 100].map((p) => (
-              <ProgressCircular value={p} className='ma-8' />
+            {[20, 40, 60, 80, 100].map((p, i) => (
+              <ProgressCircular key={i} value={p} className='ma-8' />
             ))}
           </Card>
         </Card>
@@ -68,6 +78,7 @@ class ProgressCircularView extends React.Component {
             {['primary', 'info', 'warning', 'success', 'error'].map(
               (color, i) => (
                 <ProgressCircular
+                  key={i}
                   className='ma-8'
                   value={(i + 1) * 20}
                   color={`var(--${color})`}
@@ -95,6 +106,7 @@ class ProgressCircularView extends React.Component {
             {['primary', 'info', 'warning', 'success', 'error'].map(
               (color, i) => (
                 <ProgressCircular
+                  key={i}
                   indeterminate
                   className='ma-8'
                   value={(i + 1) * 20}
@@ -127,6 +139,7 @@ class ProgressCircularView extends React.Component {
             {['primary', 'info', 'warning', 'success', 'error'].map(
               (color, i) => (
                 <ProgressCircular
+                  key={i}
                   indeterminate
                   className='ma-8'
                   value={(i + 1) * 20}
@@ -162,6 +175,7 @@ class ProgressCircularView extends React.Component {
             {['primary', 'info', 'warning', 'success', 'error'].map(
               (color, i) => (
                 <ProgressCircular
+                  key={i}
                   value={50}
                   className='ma-8'
                   rotate={i * 45}
@@ -194,6 +208,7 @@ class ProgressCircularView extends React.Component {
             {['primary', 'info', 'warning', 'success', 'error'].map(
               (color, i) => (
                 <ProgressCircular
+                  key={i}
                   elevated
                   className='ma-8'
                   value={(i + 1) * 20}
