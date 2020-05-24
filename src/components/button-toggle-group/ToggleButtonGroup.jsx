@@ -41,7 +41,7 @@ class ToggleButtonGroup extends React.Component {
     let active = ''
     const { selected, value } = event
     const { key, active: stateActive } = this.state
-    const { multiple, mandatory, onChange } = this.props
+    const { multiple, mandatory, onClick } = this.props
     if (selected) {
       if (multiple) {
         active = [...(stateActive || []), value]
@@ -64,7 +64,7 @@ class ToggleButtonGroup extends React.Component {
     this.setState({ active })
     this.setState({ key: key + 1 })
 
-    callCallback(onChange, { event, active })
+    callCallback(onClick, { event, active })
   }
 
   render() {

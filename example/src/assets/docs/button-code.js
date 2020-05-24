@@ -74,3 +74,23 @@ export const iconButtons = (dark) => {
   <Icon path={mdiBroom} size={1} />
 </IconButton>`
 }
+
+export const toggleButtons = (dark, type, prop) => {
+  const darkProp = dark ? ' dark' : '';
+  const propType = prop ? ' ' + prop : '';
+  return `// Icon component is from '@mdi/react' and is not bundled with this library
+<ToggleButtonGroup${darkProp}${propType} ${type} onChange={this.${type}GroupChange.bind(this)}>
+  <ToggleButton value='1' color='var(--primary)'>
+    <Icon path={${type === 'mandatory'?'mdiFormatAlignLeft' :'mdiFormatBold'}} size={0.9} />
+  </ToggleButton>
+  <ToggleButton value='2' color='var(--primary)'>
+    <Icon path={${type === 'mandatory'?'mdiFormatAlignCenter' :'mdiFormatItalic'}} size={0.9} />
+  </ToggleButton>
+  <ToggleButton value='3' color='var(--primary)'>
+    <Icon path={${type === 'mandatory'?'mdiFormatAlignRight' :'mdiFormatUnderline'}} size={0.9} />
+  </ToggleButton>${type === 'mandatory' ? `
+  <ToggleButton disabled value='4' color='var(--primary)'>
+    <Icon path={mdiFormatAlignJustify} size={0.9} />
+  </ToggleButton>`:''}
+</ToggleButtonGroup>`
+}

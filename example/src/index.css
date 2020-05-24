@@ -1069,6 +1069,10 @@ code {
   align-self: stretch !important;
 }
 
+.text-center {
+  text-align: center;
+}
+
 .theme--light {
   --bg-color: var(--light-bg);
   --text-shadow: var(--light-bg-light-shadow);

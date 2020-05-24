@@ -20,139 +20,171 @@ import {
   ToggleButton,
   ToggleButtonGroup
 } from 'ui-neumorphism'
+import CodeBlock from '../containers/CodeBlock.jsx'
+import { toggleButtons } from '../assets/'
 
 class ToggleButtonView extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      active: '1',
+      mandatoryActive: '1',
+      multipleActive: [],
+      active: ['1'],
       key: 1
     }
   }
+
+  mandatoryGroupChange(e) {
+    this.setState({ mandatoryActive: e.active })
+  }
+
+  multipleGroupChange(e) {
+    this.setState({ multipleActive: e.active })
+  }
+
   handleChange(e) {
     this.setState({ active: e.active })
     this.setState({ key: this.state.key + 1 })
   }
+
   render() {
     const { dark } = this.props
     const { key, active } = this.state
+
+    const sizeDoc = `${toggleButtons(
+      dark,
+      'multiple',
+      `value={active} size='small'`
+    )}
+
+${toggleButtons(dark, 'multiple', `value={active} size='medium'`)}
+
+${toggleButtons(dark, 'multiple', `value={active} size='large'`)}
+`
     return (
       <Card flat dark={dark} key={key}>
         <H4>Toggle Buttons</H4>
         <H6>Toggle buttons can be used to group related options.</H6>
         <br />
-        <Subtitle1>
+        <Subtitle1 className='mb-1'>
           To emphasize groups of related Toggle buttons, a group should share a
-          common container. The <code>ToggleButtonGroup</code> controls the
-          selected state of its child buttons when given its own value prop.
+          common container.
+        </Subtitle1>
+        <Subtitle1>
+          The <code>ToggleButtonGroup</code> controls the selected state of its
+          child buttons when given its own value prop.
         </Subtitle1>
         <br />
         <br />
-        <H5 style={{ marginTop: '24px' }}>Mandatory selection</H5>
+        <H5>Mandatory selection</H5>
         <Subtitle1>
           Mandatory <code>ToggleButtonGroup</code> always has a value.
         </Subtitle1>
         <br />
-        <Card outlined>
-          <div
-            style={{
-              padding: '64px',
-              display: 'flex',
-              flexWrap: 'wrap',
-              alignItems: 'center',
-              justifyContent: 'space-around'
-            }}
+        <Card outlined className='py-12'>
+          <Card
+            flat
+            outlined={false}
+            className='d-flex flex-wrap align-center justify-center'
           >
-            <ToggleButtonGroup value='1' outlined mandatory dark={dark}>
-              <ToggleButton value='1' color='var(--primary)'>
-                <Icon path={mdiFormatAlignLeft} size={0.9} />
-              </ToggleButton>
-              <ToggleButton value='2' color='var(--primary)'>
-                <Icon path={mdiFormatAlignCenter} size={0.9} />
-              </ToggleButton>
-              <ToggleButton value='3' color='var(--primary)'>
-                <Icon path={mdiFormatAlignRight} size={0.9} />
-              </ToggleButton>
-              <ToggleButton disabled value='4' color='var(--primary)'>
-                <Icon path={mdiFormatAlignJustify} size={0.9} />
-              </ToggleButton>
+            <ToggleButtonGroup
+              value='1'
+              mandatory
+              onChange={this.mandatoryGroupChange.bind(this)}
+            >
+              {[
+                mdiFormatAlignLeft,
+                mdiFormatAlignCenter,
+                mdiFormatAlignRight,
+                mdiFormatAlignJustify
+              ].map((icon, i) => (
+                <ToggleButton
+                  disabled={i === 3}
+                  value={`${i + 1}`}
+                  color='var(--primary)'
+                >
+                  <Icon path={icon} size={0.9} />
+                </ToggleButton>
+              ))}
             </ToggleButtonGroup>
+          </Card>
+          <div className='text-center mx-auto pt-6'>
+            {`{ active: ${JSON.stringify(this.state.mandatoryActive)} }`}
           </div>
         </Card>
+        <CodeBlock lang='html'>{toggleButtons(dark, 'mandatory')}</CodeBlock>
         <br />
         <br />
-        <H5 style={{ marginTop: '24px' }}>Multiple selection</H5>
+        <H5 className='mt-6'>Multiple selection</H5>
         <Subtitle1>
           Multiple <code>ToggleButtonGroup</code> allows user to select multiple
-          variants and returns value as an array.
+          values and returns all value as an array.
         </Subtitle1>
         <br />
-        <Card outlined>
-          <div
-            style={{
-              padding: '64px',
-              display: 'flex',
-              flexWrap: 'wrap',
-              alignItems: 'center',
-              justifyContent: 'space-around'
-            }}
+        <Card outlined className='py-12'>
+          <Card
+            flat
+            outlined={false}
+            className='d-flex flex-wrap align-center justify-center'
           >
-            <ToggleButtonGroup multiple dark={dark}>
-              <ToggleButton value='1' color='var(--primary)'>
-                <Icon path={mdiFormatBold} size={0.9} />
-              </ToggleButton>
-              <ToggleButton value='2' color='var(--primary)'>
-                <Icon path={mdiFormatItalic} size={0.9} />
-              </ToggleButton>
-              <ToggleButton value='3' color='var(--primary)'>
-                <Icon path={mdiFormatUnderline} size={0.9} />
-              </ToggleButton>
+            <ToggleButtonGroup
+              multiple
+              onChange={this.multipleGroupChange.bind(this)}
+            >
+              {[mdiFormatBold, mdiFormatItalic, mdiFormatUnderline].map(
+                (icon, i) => (
+                  <ToggleButton value={`${i + 1}`} color='var(--primary)'>
+                    <Icon path={icon} size={0.9} />
+                  </ToggleButton>
+                )
+              )}
             </ToggleButtonGroup>
+          </Card>
+          <div className='text-center mx-auto pt-6'>
+            {`{ active: ${JSON.stringify(this.state.multipleActive)} }`}
           </div>
         </Card>
+        <CodeBlock lang='html'>{toggleButtons(dark, 'multiple')}</CodeBlock>
         <br />
         <br />
-        <H5 style={{ marginTop: '24px' }}>Sizes</H5>
+        <H5 className='mt-6'>Sizes</H5>
         <Subtitle1 style={{ marginBottom: '4px' }}>
           Use <code>size</code> property to change button size.
         </Subtitle1>
         <br />
-        <Card
-          outlined
-          style={{
-            padding: '32px',
-            display: 'flex',
-            flexWrap: 'wrap',
-            alignItems: 'center',
-            justifyContent: 'space-around'
-          }}
-        >
-          <div>
-            {['small', 'medium', 'large'].map((s, i) => {
-              return (
+        <Card outlined className='py-12'>
+          {['small', 'medium', 'large'].map((s, i) => {
+            return (
+              <Card
+                flat
+                outlined={false}
+                className='d-flex flex-wrap align-center justify-center'
+              >
                 <ToggleButtonGroup
                   key={i}
                   size={s}
                   multiple
                   dark={dark}
                   value={active}
-                  style={{ margin: '16px' }}
+                  className='mt-4'
                   onChange={(e) => this.handleChange(e)}
                 >
-                  <ToggleButton value='1' color='var(--primary)'>
-                    <Icon path={mdiFormatBold} size={0.9} />
-                  </ToggleButton>
-                  <ToggleButton value='2' color='var(--primary)'>
-                    <Icon path={mdiFormatItalic} size={0.9} />
-                  </ToggleButton>
-                  <ToggleButton value='3' color='var(--primary)'>
-                    <Icon path={mdiFormatUnderline} size={0.9} />
-                  </ToggleButton>
+                  {[mdiFormatBold, mdiFormatItalic, mdiFormatUnderline].map(
+                    (icon, i) => (
+                      <ToggleButton value={`${i + 1}`} color='var(--primary)'>
+                        <Icon path={icon} size={0.9} />
+                      </ToggleButton>
+                    )
+                  )}
                 </ToggleButtonGroup>
-              )
-            })}
+              </Card>
+            )
+          })}
+          <div className='text-center mx-auto pt-6'>
+            {`{ active: ${JSON.stringify(this.state.active)} }`}
           </div>
         </Card>
+        <CodeBlock lang='html'>{sizeDoc}</CodeBlock>
         <br />
         <br />
         <H5>API</H5>
