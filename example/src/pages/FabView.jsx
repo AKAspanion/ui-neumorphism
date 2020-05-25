@@ -1,8 +1,13 @@
 import React from 'react'
 
 import { Card, H4, H5, H6, Subtitle1, Fab } from 'ui-neumorphism'
-import CodeBlock from '../containers/CodeBlock.jsx'
+
+import DocCard from '../containers/DocCard.jsx'
 import { fabButtons } from '../assets/'
+
+const url =
+  'https://github.com/AKAspanion/ui-neumorphism/blob/master/example/src/pages/FabView.jsx'
+
 class FabView extends React.Component {
   render() {
     const { dark } = this.props
@@ -26,10 +31,10 @@ class FabView extends React.Component {
           Only one floating action button is recommended per screen to represent
           the most common action.
         </Subtitle1>
-        <br />
-        <Card outlined>
-          <Card outlined={false} className='d-flex justify-center'>
-            <Card flat outlined={false} className='py-12'>
+        <DocCard
+          url={url}
+          content={
+            <Card flat outlined={false}>
               <Fab className='pa-8'>
                 <span style={{ fontSize: '30px', margin: '2px 0px 0px 2px' }}>
                   &#43;
@@ -46,19 +51,20 @@ class FabView extends React.Component {
                 <span style={{ fontSize: '24px' }}>&#9762;</span>
               </Fab>
             </Card>
-          </Card>
-          <CodeBlock lang='html'>{fabButtons(dark, 'main')}</CodeBlock>
-        </Card>
-        <br />
-        <br />
-        <H5 className='mt-6'>Sizes</H5>
-        <Subtitle1 className='mb-1'>
-          Use <code>size</code> property to change button size.
-        </Subtitle1>
-        <br />
-        <Card outlined>
-          <Card outlined={false} className='d-flex justify-center'>
-            <Card flat outlined={false} className='py-12'>
+          }
+          code={[fabButtons, dark, ['main']]}
+        />
+        <DocCard
+          url={url}
+          className='mt-12'
+          title={<H5>Sizes</H5>}
+          subtitle={
+            <Subtitle1>
+              Use <code>size</code> property to change button size.
+            </Subtitle1>
+          }
+          content={
+            <Card flat outlined={false}>
               <Fab className='pa-8' size='small'>
                 S
               </Fab>
@@ -69,9 +75,9 @@ class FabView extends React.Component {
                 L
               </Fab>
             </Card>
-          </Card>
-          <CodeBlock lang='html'>{fabButtons(dark, 'size')}</CodeBlock>
-        </Card>
+          }
+          code={[fabButtons, dark, ['size']]}
+        />
         <br />
         <br />
         <H5>API</H5>

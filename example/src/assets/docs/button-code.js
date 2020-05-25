@@ -94,3 +94,15 @@ export const toggleButtons = (dark, type, prop) => {
   </ToggleButton>`:''}
 </ToggleButtonGroup>`
 }
+
+export const toggleSizes = (dark) => {
+  return `${['small', 'medium', 'large']
+    .map((s) =>
+    toggleButtons(
+        dark,
+        'multiple',
+        `value={active} size='${s}'`
+      )
+    )
+    .join('\n')}`
+}

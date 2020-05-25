@@ -10,9 +10,14 @@ import {
 } from '@mdi/js'
 
 import { Card, H4, H5, H6, Subtitle1, IconButton } from 'ui-neumorphism'
-import CodeBlock from '../containers/CodeBlock.jsx'
+
+import DocCard from '../containers/DocCard.jsx'
 import { iconButtons } from '../assets/'
-class ToggleButtonView extends React.Component {
+
+const url =
+  'https://github.com/AKAspanion/ui-neumorphism/blob/master/example/src/pages/IconButtonView.jsx'
+
+class IconButtonView extends React.Component {
   render() {
     const { dark } = this.props
     return (
@@ -24,10 +29,10 @@ class ToggleButtonView extends React.Component {
           Icons are appropriate for buttons that allow a single choice to be
           selected or deselected, such as adding or removing a star to an item.
         </Subtitle1>
-        <br />
-        <Card outlined>
-          <Card outlined={false} className='d-flex justify-center'>
-            <Card flat outlined={false} className='py-12'>
+        <DocCard
+          url={url}
+          content={
+            <Card flat outlined={false}>
               <IconButton className='ma-12'>
                 <Icon path={mdiRun} size={1} />
               </IconButton>
@@ -44,9 +49,9 @@ class ToggleButtonView extends React.Component {
                 <Icon path={mdiBroom} size={1} />
               </IconButton>
             </Card>
-          </Card>
-          <CodeBlock lang='html'>{iconButtons()}</CodeBlock>
-        </Card>
+          }
+          code={[iconButtons, dark]}
+        />
         <br />
         <br />
         <H5>API</H5>
@@ -56,4 +61,4 @@ class ToggleButtonView extends React.Component {
   }
 }
 
-export default ToggleButtonView
+export default IconButtonView
