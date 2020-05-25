@@ -1,5 +1,6 @@
-export const simpleCard = (type) => {
-  return `<Card${type ? ' '+type:''}>
+export const simpleCard = (dark, type) => {
+  const darkProp = dark ? ' dark' : '';
+  return `<Card${darkProp}${type ? ' '+type:''}>
   <CardContent>
     <Subtitle2 secondary style={{ marginBottom: '4px' }} >
       Word of the day
@@ -24,14 +25,28 @@ export const simpleCard = (type) => {
 </Card>`
 }
 
-export const simpleCardCopy = (type) => {
-  return `<Card${type ? ' '+type:''}>
-  ...
+export const simpleCardCopy = (dark, type, data) => {
+  const darkProp = dark ? ' dark' : '';
+  return `<Card${darkProp}${type ? ' '+type:''}>
+  ${data || '...'}
 </Card>`
 }
 
-export const mediaCard = (type) => {
-  return `<Card${type ? ' '+type:''}>
+export const elevationCard = (dark) => {
+  return `${[0, 1, 2, 3, 4, 5]
+    .map((i) =>
+      simpleCardCopy(
+        dark,
+        `elevation={${i}} width={100} height={100}`,
+        String(i)
+      )
+    )
+    .join('\n')}`
+}
+
+export const mediaCard = (dark) => {
+  const darkProp = dark ? ' dark' : '';
+  return `<Card${darkProp}>
   <CardMedia
     dark
     src='images/beaches-2.jpg'
@@ -54,11 +69,12 @@ export const mediaCard = (type) => {
       Explore
     </Button>
   </CardAction>
-</Card$>`
+</Card>`
 }
 
-export const complexCard = (type) => {
-  return `<Card${type ? ' '+type:''}>
+export const complexCard = (dark) => {
+  const darkProp = dark ? ' dark' : '';
+  return `<Card${darkProp}>
   <CardHeader
     title={<H6>Lorem ipsum</H6>}
     subtitle={<Subtitle2 secondary>Lorem ipsum dolor sit amet</Subtitle2>}
@@ -92,5 +108,5 @@ export const complexCard = (type) => {
       <Icon path={mdiShareVariant} size={1}></Icon>
     </IconButton>
   </CardAction>
-</Card$>`
+</Card>`
 }

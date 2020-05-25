@@ -7,7 +7,6 @@ import { getModuleClasses, passDownProp } from '../../util'
 import {
   G_NUM,
   G_BOOL,
-  G_STRING,
   DEFAULT_PROPS,
   DEFAULT_PROPS_TYPE
 } from '../../assets/index'
@@ -26,18 +25,19 @@ class Card extends React.Component {
     rounded: G_BOOL,
     disabled: G_BOOL,
     outlined: G_BOOL,
-    elevation: G_STRING,
+    elevation: G_NUM,
     ...DEFAULT_PROPS_TYPE
   }
 
   getClass() {
     const { dark, flat, inset, elevation, rounded, outlined } = this.props
+    const cardElevation = !isNaN(elevation) ? String(elevation) : null
     return getModuleClasses(
       styles,
       `
         nu-card
-        elevation-${elevation || '1'}
         ${flat ? 'nu-card--flat' : ''}
+        elevation-${cardElevation || 1}
         ${inset ? 'nu-card--inset' : ''}
         nu-card--${dark ? 'dark' : 'light'}
         ${rounded ? 'nu-card--rounded' : ''}

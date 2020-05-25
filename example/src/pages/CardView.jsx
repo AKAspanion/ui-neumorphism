@@ -12,36 +12,35 @@ import {
   Subtitle2,
   Spacer,
   Button,
-  Card,
   Body2,
+  Card,
   H6,
   H5,
   H4
 } from 'ui-neumorphism'
 
-import CodeBlock from '../containers/CodeBlock.jsx'
-import { simpleCard, simpleCardCopy, mediaCard, complexCard } from '../assets/'
+import DocCard from '../containers/DocCard.jsx'
+import {
+  mediaCard,
+  simpleCard,
+  complexCard,
+  elevationCard,
+  simpleCardCopy
+} from '../assets/'
+
+const url =
+  'https://github.com/AKAspanion/ui-neumorphism/blob/master/example/src/pages/CardView.jsx'
 class CardView extends React.Component {
   render() {
     const cardContent = (
       <CardContent>
-        <Subtitle2
-          secondary
-          style={{
-            marginBottom: '4px'
-          }}
-        >
+        <Subtitle2 secondary className='mb-1'>
           Word of the day
         </Subtitle2>
         <H5>
           be<span>•</span>nev<span>•</span>o<span>•</span>lent
         </H5>
-        <Subtitle2
-          secondary
-          style={{
-            marginBottom: '12px'
-          }}
-        >
+        <Subtitle2 secondary className='mb-3'>
           adjective
         </Subtitle2>
         <Body2>
@@ -58,119 +57,184 @@ class CardView extends React.Component {
         </Button>
       </CardAction>
     )
-
     const { dark } = this.props
     return (
-      <Card flat dark={dark}>
+      <Card flat dark={dark} className='code-block-container'>
         <H4>Cards</H4>
         <H6>Cards contain content and actions about a single subject.</H6>
-        <br />
-        <Subtitle1>
+        <Subtitle1 className='mt-3'>
           Although cards can support multiple actions, remember that cards are
           entry points to more complex and detailed information.
         </Subtitle1>
-        <br />
-        <H5 style={{ marginTop: '24px' }}>Simple Card</H5>
-        <Card outlined className='mt-2'>
-          <Card flat outlined={false} className='d-flex justify-center py-12'>
+        <DocCard
+          url={url}
+          className='mt-12'
+          title={<H5>Simple Card</H5>}
+          subtitle={
+            <Subtitle1>
+              In simplest form, card is used for wrapping content.
+            </Subtitle1>
+          }
+          content={
             <Card width={275}>
               {cardContent}
               {cardAction}
             </Card>
-          </Card>
-          <CodeBlock lang='html'>{simpleCard(dark ? 'dark' : '')}</CodeBlock>
-        </Card>
-        <br />
-        <br />
-        <H5>Inset Card</H5>
-        <Subtitle1>
-          Set <code>inset</code> flag to render an inset card.
-        </Subtitle1>
-        <Card outlined className='mt-2'>
-          <Card flat outlined={false} className='d-flex justify-center py-12'>
+          }
+          code={[simpleCard, dark]}
+        />
+        <DocCard
+          url={url}
+          className='mt-12'
+          title={<H5>Inset Card</H5>}
+          subtitle={
+            <Subtitle1>
+              An <code>inset</code> card reverses the elevation.
+            </Subtitle1>
+          }
+          content={
             <Card inset width={275}>
               {cardContent}
               {cardAction}
             </Card>
-          </Card>
-          <CodeBlock lang='html'>
-            {simpleCardCopy(dark ? 'dark inset' : 'inset')}
-          </CodeBlock>
-        </Card>
-        <br />
-        <br />
-        <H5>Outlined Card</H5>
-        <Subtitle1>
-          Set <code>outlined</code> flag to render an outlined card.
-        </Subtitle1>
-        <Card outlined className='mt-2'>
-          <Card flat outlined={false} className='d-flex justify-center py-12'>
+          }
+          code={[simpleCardCopy, dark, ['inset']]}
+        />
+        <DocCard
+          url={url}
+          className='mt-12'
+          title={<H5>Outlined Card</H5>}
+          subtitle={
+            <Subtitle1>
+              An <code>outlined</code> card has no elevation and contains a soft
+              border.
+            </Subtitle1>
+          }
+          content={
             <Card outlined width={275}>
               {cardContent}
               {cardAction}
             </Card>
-          </Card>
-          <CodeBlock lang='html'>
-            {simpleCardCopy(dark ? 'dark outlined' : 'outlined')}
-          </CodeBlock>
-        </Card>
-        <br />
-        <br />
-        <H5>Rounded Card</H5>
-        <Subtitle1>
-          Set <code>rounded</code> flag to render a rounded card.
-        </Subtitle1>
-        <Card outlined className='mt-2'>
-          <Card flat outlined={false} className='d-flex justify-center py-12'>
+          }
+          code={[simpleCardCopy, dark, ['outlined']]}
+        />
+        <DocCard
+          url={url}
+          className='mt-12'
+          title={<H5>Flat Card</H5>}
+          subtitle={
+            <Subtitle1>
+              A <code>flat</code> card has no elevation.
+            </Subtitle1>
+          }
+          content={
+            <Card flat width={275}>
+              {cardContent}
+              {cardAction}
+            </Card>
+          }
+          code={[simpleCardCopy, dark, ['flat']]}
+        />
+        <DocCard
+          url={url}
+          className='mt-12'
+          title={<H5>Rounded Card</H5>}
+          subtitle={
+            <Subtitle1>
+              A <code>rounded</code> card has has an alternate rounded corner
+              style.
+            </Subtitle1>
+          }
+          content={
             <Card rounded width={275}>
               {cardContent}
               {cardAction}
             </Card>
-          </Card>
-          <CodeBlock lang='html'>
-            {simpleCardCopy(dark ? 'dark rounded' : 'rounded')}
-          </CodeBlock>
-        </Card>
-        <br />
-        <br />
-        <H5>Disabled Card</H5>
-        <Subtitle1>
-          Set <code>disabled</code> flag to render a disabled card.
-        </Subtitle1>
-        <Card outlined className='mt-2'>
-          <Card flat outlined={false} className='d-flex justify-center py-12'>
+          }
+          code={[simpleCardCopy, dark, ['rounded']]}
+        />
+        <DocCard
+          url={url}
+          className='mt-12'
+          title={<H5>Disabled Card</H5>}
+          subtitle={
+            <Subtitle1>
+              A <code>disabled</code> card has no ability for click or target.
+            </Subtitle1>
+          }
+          content={
             <Card disabled width={275}>
               {cardContent}
               {cardAction}
             </Card>
-          </Card>
-          <CodeBlock lang='html'>
-            {simpleCardCopy(dark ? 'dark disabled' : 'disabled')}
-          </CodeBlock>
-        </Card>
-        <br />
-        <br />
-        <H5>Loading Card</H5>
-        <Subtitle1>
-          Set <code>loading</code> flag to show a loading progress bar on top.
-        </Subtitle1>
-        <Card outlined className='mt-2'>
-          <Card flat outlined={false} className='d-flex justify-center py-12'>
+          }
+          code={[simpleCardCopy, dark, ['disabled']]}
+        />
+        <DocCard
+          url={url}
+          className='mt-12'
+          title={<H5>Loading Card</H5>}
+          subtitle={
+            <Subtitle1>
+              A <code>loading</code> card shows a loading progress bar on top.
+            </Subtitle1>
+          }
+          content={
             <Card loading width={275}>
               {cardContent}
               {cardAction}
             </Card>
-          </Card>
-          <CodeBlock lang='html'>
-            {simpleCardCopy(dark ? 'dark loading' : 'loading')}
-          </CodeBlock>
-        </Card>
-        <br />
-        <br />
-        <H5>Media with text</H5>
-        <Subtitle1>You can add media inside a card.</Subtitle1>
-        <Card outlined className='mt-2'>
-          <Card flat outlined={false} className='d-flex justify-center py-12'>
+          }
+          code={[simpleCardCopy, dark, ['loading']]}
+        />
+        <DocCard
+          url={url}
+          className='mt-12'
+          title={<H5>Width and height</H5>}
+          subtitle={
+            <Subtitle1>
+              A card's size can be adjusted using the <code>width</code>&nbsp;
+              and&nbsp;
+              <code>height</code> props.
+            </Subtitle1>
+          }
+          content={
+            <Card width={200} height={300}>
+              {cardContent}
+              {cardAction}
+            </Card>
+          }
+          code={[simpleCardCopy, dark, ['width={200} height={300}']]}
+        />
+        <DocCard
+          url={url}
+          className='mt-12'
+          title={<H5>Elevation</H5>}
+          subtitle={
+            <Subtitle1>
+              Card supports 6 levels of elevation from 0-5. Using&nbsp;
+              <code>elevation</code> prop, you can adjust it.
+            </Subtitle1>
+          }
+          content={[0, 1, 2, 3, 4, 5].map((i) => (
+            <Card
+              key={i}
+              width={100}
+              height={100}
+              elevation={i}
+              className='ma-8 d-flex align-center justify-center'
+            >
+              {i}
+            </Card>
+          ))}
+          code={[elevationCard, dark]}
+        />
+        <DocCard
+          url={url}
+          className='mt-12'
+          title={<H5>Media with text</H5>}
+          subtitle={<Subtitle1>You can add media inside a card.</Subtitle1>}
+          content={
             <Card width={300}>
               <CardMedia
                 dark
@@ -201,17 +265,19 @@ class CardView extends React.Component {
                 </Button>
               </CardAction>
             </Card>
-          </Card>
-          <CodeBlock lang='html'>{mediaCard(dark ? 'dark' : '')}</CodeBlock>
-        </Card>
-        <br />
-        <br />
-        <H5>Advanced Card</H5>
-        <Subtitle1>
-          You can create unique card layouts in an advanced setting.
-        </Subtitle1>
-        <Card outlined className='mt-2'>
-          <Card flat outlined={false} className='d-flex justify-center py-12'>
+          }
+          code={[mediaCard, dark]}
+        />
+        <DocCard
+          url={url}
+          className='mt-12'
+          title={<H5>Advanced Card</H5>}
+          subtitle={
+            <Subtitle1>
+              You can create unique card layouts in an advanced setting.
+            </Subtitle1>
+          }
+          content={
             <Card width={300}>
               <CardHeader
                 title={<H6>Lorem ipsum</H6>}
@@ -249,9 +315,10 @@ class CardView extends React.Component {
                 </IconButton>
               </CardAction>
             </Card>
-          </Card>
-          <CodeBlock lang='html'>{complexCard(dark ? 'dark' : '')}</CodeBlock>
-        </Card>
+          }
+          code={[complexCard, dark]}
+        />
+        <br />
         <br />
         <br />
         <H5>API</H5>
