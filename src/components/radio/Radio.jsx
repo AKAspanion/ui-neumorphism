@@ -11,9 +11,9 @@ class Radio extends React.Component {
 
   static propTypes = SELECTION_CONTROL_PROP_TYPES
 
-  handleChange({ event, checked }) {
+  handleChange({ event, id, checked }) {
     const { value, onChange } = this.props
-    callCallback(onChange, { event, checked, value })
+    callCallback(onChange, { event, id, checked, value })
   }
 
   render() {

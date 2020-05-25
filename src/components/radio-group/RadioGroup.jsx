@@ -3,7 +3,7 @@ import React, { Children, cloneElement } from 'react'
 import { Radio } from '../index/'
 
 import radioStyles from '../radio/Radio.module.css'
-import { callCallback, getModuleClasses } from '../../util'
+import { callCallback, getModuleClasses, uid } from '../../util'
 import {
   DEFAULT_PROPS_TYPE,
   DEFAULT_PROPS,
@@ -34,18 +34,20 @@ class RadioGroup extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
+      id: `${props.id || uid()}`,
       active: this.props.value,
       key: 1
     }
   }
 
   handleChange({ event, checked, value }) {
+    const { id } = this.state
     const { onChange } = this.props
     if (checked) {
       this.setState({ active: value })
       this.setState({ key: this.state.key + 1 })
     }
-    callCallback(onChange, { event, active: value })
+    callCallback(onChange, { event, id, value })
   }
 
   getClasses() {

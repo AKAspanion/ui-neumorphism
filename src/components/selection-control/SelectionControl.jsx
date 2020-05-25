@@ -26,9 +26,9 @@ class SelectionControl extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      id: `${uid()}${this.props.value || ''}`,
-      isChecked: props.checked || false,
       type: props.type,
+      id: `${props.id || uid()}`,
+      isChecked: props.checked || false,
       styles: {
         radioStyles,
         switchStyles,
@@ -38,8 +38,8 @@ class SelectionControl extends React.Component {
   }
 
   componentDidMount() {
-    const { id, color, disabled } = this.props
-    const elem = document.getElementById(id || this.state.id)
+    const { color, disabled } = this.props
+    const elem = document.getElementById(this.state.id)
     if (!disabled) {
       setCSSVariable(elem, '--selector-bg', color)
     }
@@ -49,8 +49,9 @@ class SelectionControl extends React.Component {
     const isChecked = event.target.checked
     this.setState({ isChecked })
 
+    const { id } = this.state
     const { onChange } = this.props
-    callCallback(onChange, { event, checked: isChecked })
+    callCallback(onChange, { event, id, checked: isChecked })
   }
 
   getInputType(type) {
@@ -94,7 +95,6 @@ class SelectionControl extends React.Component {
 
   render() {
     const {
-      id,
       dark,
       name,
       value,
@@ -114,9 +114,9 @@ class SelectionControl extends React.Component {
       >
         <input
           name={name}
+          id={stateId}
           value={value}
           onClick={onClick}
-          id={id || stateId}
           required={required}
           disabled={disabled}
           checked={isChecked}
@@ -124,7 +124,7 @@ class SelectionControl extends React.Component {
           onChange={(e) => this.handleChange(e)}
           type={inputType === 'switch' ? 'checkbox' : inputType}
         />
-        <label htmlFor={id || stateId} className={this.getClasses('label')}>
+        <label htmlFor={stateId} className={this.getClasses('label')}>
           <Body1 dark={dark} disabled={disabled}>
             {label}
           </Body1>
