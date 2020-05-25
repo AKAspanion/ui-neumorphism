@@ -32,6 +32,7 @@ export {
   Form,
   Radio,
   RadioGroup,
+  TextField,
   Switch,
   Checkbox,
   SelectionControl

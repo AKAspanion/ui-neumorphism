@@ -4,7 +4,7 @@ import {
   FabView,
   CardView,
   FormView,
-  InputView,
+  TextFieldView,
   RadioView,
   ButtonView,
   SwitchView,
@@ -72,6 +72,12 @@ const routes = [{
     component: FormView,
   },
   {
+    id: 9,
+    path: "/text-field",
+    name: "Input: Text Field",
+    component: TextFieldView,
+  },
+  {
     id: 16,
     path: "/progress-linear",
     name: "Progress: Linear",
@@ -94,12 +100,6 @@ const routes = [{
     path: "/switch",
     name: "Switch",
     component: SwitchView,
-  },
-  {
-    id: 9,
-    path: "/input",
-    name: "Input",
-    component: InputView,
   },
   {
     id: 10,

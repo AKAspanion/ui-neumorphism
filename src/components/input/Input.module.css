@@ -1,0 +1,102 @@
+.nu-text-field-container {
+  display: flex;
+  margin: 4px 12px;
+  position: relative;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.nu-text-field {
+  outline: none;
+  border: none;
+  height: 40px;
+  font-size: 16px;
+  padding: 0px 16px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: var(--text-color);
+  background: var(--bg-color);
+  box-shadow: var(--box-shadow-inset);
+  transition: all 0.2s ease-in-out;
+}
+
+.nu-text-field-container--dense .nu-text-field {
+  height: 32px;
+  padding: 0px 16px;
+}
+
+.nu-text-field.nu-text-field--light {
+  --bg-color: var(--light-bg);
+  --text-color: var(--g-text-color-light);
+  --disabled-color: var(--g-text-color-disabled-light);
+  --box-shadow: 3px 3px 8px var(--light-bg-dark-shadow),
+    -3px -3px 8px var(--light-bg-light-shadow);
+  --box-shadow-inset: inset 2px 2px 6px var(--light-bg-dark-shadow),
+    inset -3px -3px 8px var(--light-bg-light-shadow);
+  --box-shadow-inset-thin: inset 1px 1px 2px var(--light-bg-dark-shadow),
+    inset -1px -1px 2px var(--light-bg-light-shadow);
+}
+
+.nu-text-field.nu-text-field--dark {
+  --bg-color: var(--dark-bg);
+  --text-color: var(--g-text-color-dark);
+  --disabled-color: var(--g-text-color-disabled-dark);
+  --box-shadow: 3px 3px 8px var(--dark-bg-dark-shadow),
+    -3px -3px 8px var(--dark-bg-light-shadow);
+  --box-shadow-inset: inset 2px 2px 6px var(--dark-bg-dark-shadow),
+    inset -2px -2px 6px var(--dark-bg-light-shadow);
+  --box-shadow-inset-thin: inset 1px 1px 2px var(--dark-bg-dark-shadow),
+    inset -1px -1px 2px var(--dark-bg-light-shadow);
+}
+
+.nu-text-field.nu-text-field--disabled::placeholder,
+.nu-text-field.nu-text-field--disabled {
+  user-select: none;
+  pointer-events: none;
+  color: var(--disabled-color);
+}
+
+.nu-text-field.nu-text-field--disabled {
+  box-shadow: var(--box-shadow-inset);
+}
+
+.nu-text-field.nu-text-field--rounded {
+  border-radius: 24px;
+}
+
+.nu-text-field.nu-text-field--outlined,
+.nu-text-field.nu-text-field--outlined:focus {
+  box-shadow: none !important;
+  border: 1px solid var(--text-color);
+}
+
+.nu-text-field:focus {
+  box-shadow: var(--box-shadow);
+}
+
+.nu-text-field.nu-text-field--disabled:focus,
+.nu-text-field.nu-text-field--readonly:focus {
+  box-shadow: var(--box-shadow-inset);
+}
+
+
+.nu-text-field-label {
+  z-index: 2;
+  top: 9px;
+  left: 16px;
+  right: auto;
+  position: absolute;
+}
+
+.nu-text-field-container--dense .nu-text-field-label {
+  top: 5px;
+}
+
+.nu-text-field-error {
+  height: 12px;
+  margin-top: 4px;
+  padding-left: 16px;
+  color: var(--error);
+  transition: all 0.3s ease-in-out;
+}
