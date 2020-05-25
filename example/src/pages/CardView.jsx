@@ -19,7 +19,6 @@ import {
   H4
 } from 'ui-neumorphism'
 
-import DocCard from '../containers/DocCard.jsx'
 import {
   mediaCard,
   simpleCard,
@@ -28,6 +27,7 @@ import {
   simpleCardCopy
 } from '../assets/'
 
+import DocCard from '../containers/DocCard.jsx'
 const url =
   'https://github.com/AKAspanion/ui-neumorphism/blob/master/example/src/pages/CardView.jsx'
 class CardView extends React.Component {
@@ -62,21 +62,21 @@ class CardView extends React.Component {
       <Card flat dark={dark} className='code-block-container'>
         <H4>Cards</H4>
         <H6>Cards contain content and actions about a single subject.</H6>
-        <Subtitle1 className='mt-3'>
+        <Subtitle1 className='mt-1'>
           Although cards can support multiple actions, remember that cards are
           entry points to more complex and detailed information.
         </Subtitle1>
         <DocCard
           url={url}
           className='mt-12'
-          title={<H5>Simple Card</H5>}
+          title={<H5>Simple card</H5>}
           subtitle={
             <Subtitle1>
               In simplest form, card is used for wrapping content.
             </Subtitle1>
           }
           content={
-            <Card width={275}>
+            <Card width={250}>
               {cardContent}
               {cardAction}
             </Card>
@@ -86,14 +86,14 @@ class CardView extends React.Component {
         <DocCard
           url={url}
           className='mt-12'
-          title={<H5>Inset Card</H5>}
+          title={<H5>Inset card</H5>}
           subtitle={
             <Subtitle1>
               An <code>inset</code> card reverses the elevation.
             </Subtitle1>
           }
           content={
-            <Card inset width={275}>
+            <Card inset width={250}>
               {cardContent}
               {cardAction}
             </Card>
@@ -103,7 +103,7 @@ class CardView extends React.Component {
         <DocCard
           url={url}
           className='mt-12'
-          title={<H5>Outlined Card</H5>}
+          title={<H5>Outlined card</H5>}
           subtitle={
             <Subtitle1>
               An <code>outlined</code> card has no elevation and contains a soft
@@ -111,7 +111,7 @@ class CardView extends React.Component {
             </Subtitle1>
           }
           content={
-            <Card outlined width={275}>
+            <Card outlined width={250}>
               {cardContent}
               {cardAction}
             </Card>
@@ -121,14 +121,14 @@ class CardView extends React.Component {
         <DocCard
           url={url}
           className='mt-12'
-          title={<H5>Flat Card</H5>}
+          title={<H5>Flat card</H5>}
           subtitle={
             <Subtitle1>
               A <code>flat</code> card has no elevation.
             </Subtitle1>
           }
           content={
-            <Card flat width={275}>
+            <Card flat width={250}>
               {cardContent}
               {cardAction}
             </Card>
@@ -138,7 +138,7 @@ class CardView extends React.Component {
         <DocCard
           url={url}
           className='mt-12'
-          title={<H5>Rounded Card</H5>}
+          title={<H5>Rounded card</H5>}
           subtitle={
             <Subtitle1>
               A <code>rounded</code> card has has an alternate rounded corner
@@ -146,7 +146,7 @@ class CardView extends React.Component {
             </Subtitle1>
           }
           content={
-            <Card rounded width={275}>
+            <Card rounded width={250}>
               {cardContent}
               {cardAction}
             </Card>
@@ -156,14 +156,14 @@ class CardView extends React.Component {
         <DocCard
           url={url}
           className='mt-12'
-          title={<H5>Disabled Card</H5>}
+          title={<H5>Disabled card</H5>}
           subtitle={
             <Subtitle1>
               A <code>disabled</code> card has no ability for click or target.
             </Subtitle1>
           }
           content={
-            <Card disabled width={275}>
+            <Card disabled width={250}>
               {cardContent}
               {cardAction}
             </Card>
@@ -173,14 +173,14 @@ class CardView extends React.Component {
         <DocCard
           url={url}
           className='mt-12'
-          title={<H5>Loading Card</H5>}
+          title={<H5>Loading card</H5>}
           subtitle={
             <Subtitle1>
               A <code>loading</code> card shows a loading progress bar on top.
             </Subtitle1>
           }
           content={
-            <Card loading width={275}>
+            <Card loading width={250}>
               {cardContent}
               {cardAction}
             </Card>
@@ -216,17 +216,21 @@ class CardView extends React.Component {
               <code>elevation</code> prop, you can adjust it.
             </Subtitle1>
           }
-          content={[0, 1, 2, 3, 4, 5].map((i) => (
-            <Card
-              key={i}
-              width={100}
-              height={100}
-              elevation={i}
-              className='ma-8 d-flex align-center justify-center'
-            >
-              {i}
+          content={
+            <Card flat className='d-flex align-center justify-center flex-wrap'>
+              {[0, 1, 2, 3, 4, 5].map((i) => (
+                <Card
+                  key={i}
+                  width={100}
+                  height={100}
+                  elevation={i}
+                  className='mx-8 my-10 d-flex align-center justify-center'
+                >
+                  {i}
+                </Card>
+              ))}
             </Card>
-          ))}
+          }
           code={[elevationCard, dark]}
         />
         <DocCard
@@ -235,7 +239,7 @@ class CardView extends React.Component {
           title={<H5>Media with text</H5>}
           subtitle={<Subtitle1>You can add media inside a card.</Subtitle1>}
           content={
-            <Card width={300}>
+            <Card width={275}>
               <CardMedia
                 dark
                 title='Top 10 Indian beaches'
@@ -271,14 +275,14 @@ class CardView extends React.Component {
         <DocCard
           url={url}
           className='mt-12'
-          title={<H5>Advanced Card</H5>}
+          title={<H5>Advanced card</H5>}
           subtitle={
             <Subtitle1>
               You can create unique card layouts in an advanced setting.
             </Subtitle1>
           }
           content={
-            <Card width={300}>
+            <Card width={275}>
               <CardHeader
                 title={<H6>Lorem ipsum</H6>}
                 subtitle={

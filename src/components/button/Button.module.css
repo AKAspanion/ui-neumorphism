@@ -18,8 +18,8 @@
 
 .nu-button.nu-button--light {
   --bg-color: var(--light-bg);
+  --border-color: var(--text-color);
   --text-color: var(--g-text-color-light);
-  --border-color: var(--light-bg-dark-shadow);
   --text-color-disabled: var(--g-text-color-disabled-light);
   --box-shadow: 5px 5px 12px var(--light-bg-dark-shadow),
     -4px -4px 10px var(--light-bg-light-shadow);
@@ -35,8 +35,8 @@
 
 .nu-button.nu-button--dark {
   --bg-color: var(--dark-bg);
+  --border-color: var(--text-color);
   --text-color: var(--g-text-color-dark);
-  --border-color: var(--dark-bg-dark-shadow);
   --text-color-disabled: var(--g-text-color-disabled-dark);
   --box-shadow: 5px 5px 12px var(--dark-bg-dark-shadow),
     -4px -4px 10px var(--dark-bg-light-shadow);

@@ -1,9 +1,13 @@
 import React from 'react'
 
 import { Card, Button, H4, H6, H5, Subtitle1 } from 'ui-neumorphism'
-import CodeBlock from '../containers/CodeBlock.jsx'
 
+import DocCard from '../containers/DocCard.jsx'
 import { allButtons, docButtons, blockButton, sizeButtons } from '../assets/'
+
+const url =
+  'https://github.com/AKAspanion/ui-neumorphism/blob/master/example/src/pages/ButtonView.jsx'
+
 class ButtonView extends React.Component {
   render() {
     const { dark } = this.props
@@ -14,186 +18,201 @@ class ButtonView extends React.Component {
           Buttons allow users to take actions, and make choices, with a single
           tap.
         </H6>
-        <br />
-        <Subtitle1>
-          Buttons communicate actions that users can take.
-          <br />
+        <Subtitle1 className='mt-1'>
           They are typically placed throughout your UI, in places like:&nbsp;
-          <code>dialog</code>, <code>forms</code>, <code>cards</code>,etc.
+          <code>forms</code>, <code>cards</code>, etc.
         </Subtitle1>
-        <br />
-        <Card outlined>
-          <Card flat outlined={false} className='btn-doc-card'>
-            <Button className='doc-btn'>default</Button>
-            <Button className='doc-btn' color='var(--primary)'>
-              colored
-            </Button>
-            <Button className='doc-btn' color='#ccc' bgColor='var(--primary)'>
-              colored
-            </Button>
-            <Button className='doc-btn' disabled>
-              disabled
-            </Button>
-            <Button className='doc-btn' rounded>
-              rounded
-            </Button>
-            <Button className='doc-btn' depressed>
-              depressed
-            </Button>
-            <Button className='doc-btn' outlined>
-              outlined
-            </Button>
-            <Button className='doc-btn' text>
-              text
-            </Button>
-          </Card>
-          <CodeBlock lang='html'>{allButtons(dark)}</CodeBlock>
-        </Card>
-        <br />
-        <br />
-        <H5 style={{ marginTop: '24px' }}>Contained Buttons</H5>
-        <Subtitle1>
-          Contained buttons are high-emphasis, distinguished by their use of
-          elevation. They contain actions that are primary to your app.
-        </Subtitle1>
-        <br />
-        <Card outlined>
-          <Card flat outlined={false} className='btn-doc-card'>
-            <Button className='doc-btn'>default</Button>
-            <Button className='doc-btn' color='var(--primary)'>
-              colored
-            </Button>
-            <Button className='doc-btn' disabled>
-              disabled
-            </Button>
-          </Card>
-          <CodeBlock lang='html'>{docButtons(dark)}</CodeBlock>
-        </Card>
-        <br />
-        <br />
-        <H5 style={{ marginTop: '24px' }}>Text Buttons</H5>
-        <Subtitle1 style={{ marginBottom: '4px' }}>
-          Text buttons are typically used for less-pronounced actions, to help
-          maintain an emphasis on content.
-        </Subtitle1>
-        <Subtitle1 style={{ marginBottom: '16px' }}>
-          For.eg. <code>dialog</code>, <code>cards</code>
-        </Subtitle1>
-        <Card outlined>
-          <Card flat outlined={false} className='btn-doc-card'>
-            <Button className='doc-btn' text>
-              default
-            </Button>
-            <Button className='doc-btn' text color='var(--primary)'>
-              colored
-            </Button>
-            <Button className='doc-btn' text disabled>
-              disabled
-            </Button>
-          </Card>
-          <CodeBlock lang='html'>{docButtons(dark, 'text')}</CodeBlock>
-        </Card>
-        <br />
-        <br />
-        <H5 style={{ marginTop: '24px' }}>Outlined Buttons</H5>
-        <Subtitle1 style={{ marginBottom: '16px' }}>
-          Outlined buttons are medium-emphasis buttons. They contain actions
-          that are important, but aren’t the primary action in an app.
-        </Subtitle1>
-        <Card outlined>
-          <Card flat outlined={false} className='btn-doc-card'>
-            <Button className='doc-btn' outlined>
-              default
-            </Button>
-            <Button className='doc-btn' outlined color='var(--primary)'>
-              colored
-            </Button>
-            <Button className='doc-btn' outlined disabled>
-              disabled
-            </Button>
-          </Card>
-          <CodeBlock lang='html'>{docButtons(dark, 'outlined')}</CodeBlock>
-        </Card>
-        <br />
-        <br />
-        <H5 style={{ marginTop: '24px' }}>Rounded Buttons</H5>
-        <Subtitle1 style={{ marginBottom: '16px' }}>
-          Rounded buttons are alternate high emphasis buttons with rounded
-          corners.
-        </Subtitle1>
-        <Card outlined>
-          <Card flat outlined={false} className='btn-doc-card'>
-            <Button className='doc-btn' rounded>
-              default
-            </Button>
-            <Button className='doc-btn' rounded color='var(--primary)'>
-              colored
-            </Button>
-            <Button className='doc-btn' rounded disabled>
-              disabled
-            </Button>
-          </Card>
-          <CodeBlock lang='html'>{docButtons(dark, 'rounded')}</CodeBlock>
-        </Card>
-        <br />
-        <br />
-        <H5 style={{ marginTop: '24px' }}>Depressed Buttons</H5>
-        <Subtitle1 style={{ marginBottom: '16px' }}>
-          Depressed buttons are alternate buttons with higher elevation removed
-          for slightly lower emphasis.
-        </Subtitle1>
-        <Card outlined>
-          <Card flat outlined={false} className='btn-doc-card'>
-            <Button className='doc-btn' depressed>
-              default
-            </Button>
-            <Button className='doc-btn' depressed color='var(--primary)'>
-              colored
-            </Button>
-            <Button className='doc-btn' depressed disabled>
-              disabled
-            </Button>
-          </Card>
-          <CodeBlock lang='html'>{docButtons(dark, 'depressed')}</CodeBlock>
-        </Card>
-        <br />
-        <br />
-        <H5 style={{ marginTop: '24px' }}>Block Buttons</H5>
-        <Subtitle1 style={{ marginBottom: '16px' }}>
-          Block buttons take up entire available space.
-        </Subtitle1>
-        <Card outlined>
-          <div
-            style={{
-              padding: '32px'
-            }}
-          >
-            <Button dark={dark} className='doc-btn' block>
-              block button
-            </Button>
-          </div>
-          <CodeBlock lang='html'>{blockButton(dark)}</CodeBlock>
-        </Card>
-        <br />
-        <br />
-        <H5 style={{ marginTop: '24px' }}>Sizes</H5>
-        <Subtitle1 style={{ marginBottom: '16px' }}>
-          Use <code>size</code> property to change button size.
-        </Subtitle1>
-        <Card outlined>
-          <Card flat outlined={false} className='btn-doc-card'>
-            <Button className='doc-btn' size='small'>
-              small
-            </Button>
-            <Button className='doc-btn' size='medium'>
-              medium
-            </Button>
-            <Button className='doc-btn' size='large'>
-              large
-            </Button>
-          </Card>
-          <CodeBlock lang='html'>{sizeButtons(dark)}</CodeBlock>
-        </Card>
+        <DocCard
+          url={url}
+          content={
+            <Card flat className='d-flex align-center justify-center flex-wrap'>
+              <Button className='ma-8'>default</Button>
+              <Button className='ma-8' color='var(--primary)'>
+                colored
+              </Button>
+              <Button className='ma-8' color='#ccc' bgColor='var(--primary)'>
+                colored
+              </Button>
+              <Button className='ma-8' disabled>
+                disabled
+              </Button>
+              <Button className='ma-8' rounded>
+                rounded
+              </Button>
+              <Button className='ma-8' depressed>
+                depressed
+              </Button>
+              <Button className='ma-8' outlined>
+                outlined
+              </Button>
+              <Button className='ma-8' text>
+                text
+              </Button>
+            </Card>
+          }
+          code={[allButtons, dark]}
+        />
+        <DocCard
+          url={url}
+          className='mt-12'
+          title={<H5>Contained buttons</H5>}
+          subtitle={
+            <Subtitle1>
+              Contained buttons are high-emphasis, distinguished by their use of
+              elevation. They contain actions that are primary to your app.
+            </Subtitle1>
+          }
+          content={
+            <Card flat className='d-flex align-center justify-center flex-wrap'>
+              <Button className='ma-8'>default</Button>
+              <Button className='ma-8' color='var(--primary)'>
+                colored
+              </Button>
+              <Button className='ma-8' disabled>
+                disabled
+              </Button>
+            </Card>
+          }
+          code={[docButtons, dark]}
+        />
+        <DocCard
+          url={url}
+          className='mt-12'
+          title={<H5>Text buttons</H5>}
+          subtitle={
+            <Subtitle1>
+              Text buttons are typically used for less-pronounced actions, to
+              help maintain an emphasis on content.
+            </Subtitle1>
+          }
+          content={
+            <Card flat className='d-flex align-center justify-center flex-wrap'>
+              <Button className='ma-8' text>
+                default
+              </Button>
+              <Button className='ma-8' text color='var(--primary)'>
+                colored
+              </Button>
+              <Button className='ma-8' text disabled>
+                disabled
+              </Button>
+            </Card>
+          }
+          code={[docButtons, dark, ['text']]}
+        />
+        <DocCard
+          url={url}
+          className='mt-12'
+          title={<H5>Outlined buttons</H5>}
+          subtitle={
+            <Subtitle1>
+              Outlined buttons are medium-emphasis buttons. They contain actions
+              that are important, but aren’t the primary action in an app.
+            </Subtitle1>
+          }
+          content={
+            <Card flat className='d-flex align-center justify-center flex-wrap'>
+              <Button className='ma-8' outlined>
+                default
+              </Button>
+              <Button className='ma-8' outlined color='var(--primary)'>
+                colored
+              </Button>
+              <Button className='ma-8' outlined disabled>
+                disabled
+              </Button>
+            </Card>
+          }
+          code={[docButtons, dark, ['outlined']]}
+        />
+        <DocCard
+          url={url}
+          className='mt-12'
+          title={<H5>Rounded buttons</H5>}
+          subtitle={
+            <Subtitle1>
+              Rounded buttons are alternate high emphasis buttons with rounded
+              corners.
+            </Subtitle1>
+          }
+          content={
+            <Card flat className='d-flex align-center justify-center flex-wrap'>
+              <Button className='ma-8' rounded>
+                default
+              </Button>
+              <Button className='ma-8' rounded color='var(--primary)'>
+                colored
+              </Button>
+              <Button className='ma-8' rounded disabled>
+                disabled
+              </Button>
+            </Card>
+          }
+          code={[docButtons, dark, ['rounded']]}
+        />
+        <DocCard
+          url={url}
+          className='mt-12'
+          title={<H5>Depressed buttons</H5>}
+          subtitle={
+            <Subtitle1>
+              Depressed buttons are alternate buttons with medium elevation for
+              slightly lower emphasis.
+            </Subtitle1>
+          }
+          content={
+            <Card flat className='d-flex align-center justify-center flex-wrap'>
+              <Button className='ma-8' depressed>
+                default
+              </Button>
+              <Button className='ma-8' depressed color='var(--primary)'>
+                colored
+              </Button>
+              <Button className='ma-8' depressed disabled>
+                disabled
+              </Button>
+            </Card>
+          }
+          code={[docButtons, dark, ['depressed']]}
+        />
+        <DocCard
+          url={url}
+          className='mt-12'
+          title={<H5>Block button</H5>}
+          subtitle={
+            <Subtitle1>Block buttons take up entire available space.</Subtitle1>
+          }
+          content={
+            <Card flat className='pa-8 fill-width' sty>
+              <Button block>block button</Button>
+            </Card>
+          }
+          code={[blockButton, dark]}
+        />
+        <DocCard
+          url={url}
+          className='mt-12'
+          title={<H5>Sizes</H5>}
+          subtitle={
+            <Subtitle1>
+              Use <code>size</code> prop to change button size.
+            </Subtitle1>
+          }
+          content={
+            <Card flat className='d-flex align-center justify-center flex-wrap'>
+              <Button className='ma-8' size='small'>
+                small
+              </Button>
+              <Button className='ma-8' size='medium'>
+                medium
+              </Button>
+              <Button className='ma-8' size='large'>
+                large
+              </Button>
+            </Card>
+          }
+          code={[sizeButtons, dark]}
+        />
         <br />
         <br />
         <H5>API</H5>

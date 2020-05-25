@@ -1074,6 +1074,14 @@ code {
   text-align: center;
 }
 
+.fill-width {
+  width: 100% !important;
+}
+
+.fill-height {
+  height: 100% !important;
+}
+
 .theme--light {
   --code-bg: #F5F2F0;
   --bg-color: var(--light-bg);
