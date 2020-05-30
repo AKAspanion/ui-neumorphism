@@ -24,8 +24,7 @@ class IconButtonView extends React.Component {
       <Card flat dark={dark}>
         <H4>Icon Button</H4>
         <H6>Icon buttons are commonly found in app bars and toolbars.</H6>
-        <br />
-        <Subtitle1 className='mb-1'>
+        <Subtitle1 className='mt-3'>
           Icons are appropriate for buttons that allow a single choice to be
           selected or deselected, such as adding or removing a star to an item.
         </Subtitle1>
@@ -35,7 +34,7 @@ class IconButtonView extends React.Component {
             <Card
               flat
               outlined={false}
-              className='d-flex justify-center align-center flex-wrap'
+              className='mt-6 d-flex justify-center align-center flex-wrap'
             >
               <IconButton className='ma-12'>
                 <Icon path={mdiRun} size={1} />

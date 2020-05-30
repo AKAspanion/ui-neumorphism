@@ -18,16 +18,13 @@ class FabView extends React.Component {
           A floating action button (FAB) performs the primary, or most common,
           action on a screen.
         </H6>
-        <br />
-        <Subtitle1 className='mb-1'>
+        <Subtitle1 className='mt-3'>
           A floating action button appears in front of all screen content,
           typically as a circular shape with an icon in its center.
-        </Subtitle1>
-        <Subtitle1 className='mb-1'>
+          <br />
           Only use a FAB if it is the most suitable way to present a screen’s
           primary action.
-        </Subtitle1>
-        <Subtitle1 className='mb-1'>
+          <br />
           Only one floating action button is recommended per screen to represent
           the most common action.
         </Subtitle1>

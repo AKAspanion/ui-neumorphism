@@ -33,8 +33,7 @@ class RadioView extends React.Component {
       <Card flat dark={dark}>
         <H4>Radio</H4>
         <H6>Radio buttons allow the user to select one option from a set.</H6>
-        <br />
-        <Subtitle1>
+        <Subtitle1 className='mt-3'>
           Use radio buttons when the user needs to see all available options.
           <br />
           Radio buttons should have the most commonly used option selected by

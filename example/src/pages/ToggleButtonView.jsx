@@ -58,12 +58,10 @@ class ToggleButtonView extends React.Component {
       <Card flat dark={dark}>
         <H4>Toggle Buttons</H4>
         <H6>Toggle buttons can be used to group related options.</H6>
-        <br />
-        <Subtitle1 className='mb-1'>
+        <Subtitle1 className='mt-3'>
           To emphasize groups of related Toggle buttons, a group should share a
           common container.
-        </Subtitle1>
-        <Subtitle1 className='mb-1'>
+          <br />
           The <code>ToggleButtonGroup</code> controls the selected state of its
           child buttons when given its own value prop.
         </Subtitle1>
@@ -80,7 +78,7 @@ class ToggleButtonView extends React.Component {
             <Card flat outlined={false}>
               <Card
                 flat
-                className='d-flex flex-wrap align-center justify-center'
+                className='mt-4 d-flex flex-wrap align-center justify-center'
               >
                 <ToggleButtonGroup
                   value='1'
@@ -126,7 +124,7 @@ class ToggleButtonView extends React.Component {
               <Card
                 flat
                 outlined={false}
-                className='d-flex flex-wrap align-center justify-center'
+                className='mt-4 d-flex flex-wrap align-center justify-center'
               >
                 <ToggleButtonGroup
                   multiple
@@ -168,7 +166,7 @@ class ToggleButtonView extends React.Component {
                   flat
                   key={i}
                   outlined={false}
-                  className='d-flex flex-wrap align-center justify-center'
+                  className='mt-4 d-flex flex-wrap align-center justify-center'
                 >
                   <ToggleButtonGroup
                     key={i}

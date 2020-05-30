@@ -14,7 +14,7 @@ class ProgressLinearView extends React.Component {
       <Card flat dark={dark}>
         <H4>Progress Linear</H4>
         <H6>Progress Linear displays a horizontal progress bar.</H6>
-        <Subtitle1 className='mt-1'>
+        <Subtitle1 className='mt-3'>
           The component is used to convey data visually to users. They can also
           represent an indeterminate amount, such as loading or processing.
         </Subtitle1>

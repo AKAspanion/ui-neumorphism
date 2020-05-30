@@ -18,8 +18,7 @@ class ButtonView extends React.Component {
           Buttons allow users to take actions, and make choices, with a single
           tap.
         </H6>
-        <br />
-        <Subtitle1 className='mb-1'>
+        <Subtitle1 className='mt-3'>
           They are typically placed throughout your UI, in places like:&nbsp;
           <code>forms</code>, <code>cards</code>, etc.
         </Subtitle1>

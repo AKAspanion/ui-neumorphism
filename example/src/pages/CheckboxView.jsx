@@ -16,9 +16,11 @@ class CheckboxView extends React.Component {
         </H6>
         <DocCard
           url={url}
-          className='mt-12'
           content={
-            <Card flat className='mt-4'>
+            <Card
+              flat
+              className='mt-6 d-flex align-center justify-center flex-wrap'
+            >
               <Checkbox color='var(--primary)' checked />
               <Checkbox color='#299ae6' />
               <Checkbox />
@@ -37,7 +39,10 @@ class CheckboxView extends React.Component {
             <Subtitle1>Checkbox can be provided with a label.</Subtitle1>
           }
           content={
-            <Card flat className='mt-4'>
+            <Card
+              flat
+              className='mt-6 d-flex align-center justify-center flex-wrap'
+            >
               <Checkbox color='var(--primary)' label='Primary' checked />
               <Checkbox label='Blue' color='#299ae6' />
               <Checkbox label='Default' />

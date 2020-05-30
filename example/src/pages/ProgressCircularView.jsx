@@ -19,7 +19,7 @@ class ProgressCircularView extends React.Component {
       <Card flat dark={dark}>
         <H4>Progress Circular</H4>
         <H6>Progress Circular displays a circular progress bar.</H6>
-        <Subtitle1 className='mt-1'>
+        <Subtitle1 className='mt-3'>
           ProgressCircular is used to convey data circularly to users. It also
           can be put into an indeterminate state to portray loading.
         </Subtitle1>

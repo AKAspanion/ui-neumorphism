@@ -62,7 +62,7 @@ class CardView extends React.Component {
       <Card flat dark={dark} className='code-block-container'>
         <H4>Cards</H4>
         <H6>Cards contain content and actions about a single subject.</H6>
-        <Subtitle1 className='mt-1'>
+        <Subtitle1 className='mt-3'>
           Although cards can support multiple actions, remember that cards are
           entry points to more complex and detailed information.
         </Subtitle1>
@@ -237,7 +237,14 @@ class CardView extends React.Component {
           url={url}
           className='mt-12'
           title={<H5>Media with text</H5>}
-          subtitle={<Subtitle1>You can add media inside a card.</Subtitle1>}
+          subtitle={
+            <Subtitle1>
+              You can add media inside a card.
+              <br />
+              P.S. Try to use illustrations instead of images as it works better
+              with overall look.
+            </Subtitle1>
+          }
           content={
             <Card width={275} className='overflow-hidden'>
               <CardMedia
