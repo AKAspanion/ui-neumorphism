@@ -7,6 +7,7 @@ export const checkBox = (dark) => {
 <Checkbox${darkProp} disabled checked />
 <Checkbox${darkProp} checked />`
 }
+
 export const checkBoxLabel = (dark) => {
   const darkProp = dark ? ' dark' : ''
   return `<Checkbox${darkProp} color='var(--primary)' label='Primary' checked />
