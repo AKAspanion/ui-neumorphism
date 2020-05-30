@@ -1,5 +1,5 @@
-export { overrideThemeVariables } from './util/'
-export { withWindowResize } from './hocs/'
+export { overrideThemeVariables, detectElementInDOM } from './util/'
+export { withWindowResize, withClickOutside } from './hocs/'
 
 export {
   Typography,

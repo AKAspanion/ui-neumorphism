@@ -51,7 +51,7 @@ class FitnessApp extends React.Component {
               }}
             >
               <Card
-                elevation='2'
+                elevation={2}
                 dark={dark}
                 style={{ padding: '16px', width: '116px', margin: '16px 0px' }}
               >
@@ -71,7 +71,7 @@ class FitnessApp extends React.Component {
                 <Caption secondary>In progress..</Caption>
               </Card>
               <Card
-                elevation='2'
+                elevation={2}
                 dark={dark}
                 style={{ padding: '16px', width: '116px', margin: '16px 0px' }}
               >
@@ -99,7 +99,7 @@ class FitnessApp extends React.Component {
               }}
             >
               <Card
-                elevation='2'
+                elevation={2}
                 dark={dark}
                 style={{ padding: '16px', width: '116px', margin: '0px' }}
               >
@@ -119,7 +119,7 @@ class FitnessApp extends React.Component {
                 <Caption secondary>In progress..</Caption>
               </Card>
               <Card
-                elevation='2'
+                elevation={2}
                 dark={dark}
                 style={{ padding: '16px', width: '116px', margin: '0px' }}
               >
@@ -140,7 +140,7 @@ class FitnessApp extends React.Component {
               </Card>
             </div>
             <H6 style={{ margin: '24px 0px 16px 0px' }}>Courses Collection</H6>
-            <Card rounded={false} elevation='2' style={{ padding: '16px' }}>
+            <Card rounded={false} elevation={2} style={{ padding: '16px' }}>
               <div
                 style={{
                   display: 'flex'
@@ -256,7 +256,7 @@ class FitnessApp extends React.Component {
             >
               <Card
                 dark={dark}
-                elevation='3'
+                elevation={3}
                 style={{
                   display: 'flex',
                   marginTop: '32px',
@@ -279,7 +279,7 @@ class FitnessApp extends React.Component {
             </div>
             <Card
               rounded={false}
-              elevation='2'
+              elevation={3}
               style={{
                 display: 'flex',
                 padding: '16px',
@@ -311,7 +311,7 @@ class FitnessApp extends React.Component {
             </Card>
             <Card
               rounded={false}
-              elevation='2'
+              elevation={2}
               style={{
                 display: 'flex',
                 padding: '16px',

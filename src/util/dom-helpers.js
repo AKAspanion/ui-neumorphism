@@ -47,11 +47,24 @@ export const overrideThemeVariables = (themeObject) => {
   const root = document.querySelector(':root')
   const themeVariables = Object.keys(themeObject)
   if (root) {
-    themeVariables.forEach(themeVar => {
+    themeVariables.forEach((themeVar) => {
       const varValue = themeObject[themeVar]
       if (varValue && themeVar.startsWith('--')) {
         setCSSVariable(root, themeVar, varValue)
       }
     })
   }
+}
+
+/**
+ *
+ * @param {*} path
+ * @param {*} element
+ */
+export const detectElementInDOM = (path = [], element = 'null') => {
+  return path
+    .map((elem) => elem.nodeName)
+    .join('-')
+    .toLowerCase()
+    .includes(element.toLowerCase())
 }

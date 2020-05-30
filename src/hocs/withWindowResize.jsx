@@ -1,9 +1,9 @@
 import React from 'react'
 
-const withWindowResize = (Component) => {
+const withWindowResize = (WrappedComponent) => {
   return class WithWindowResize extends React.Component {
     static displayName = `WithWindowResize(${
-      Component.displayName || Component.name || 'Component'
+      WrappedComponent.displayName || WrappedComponent.name || 'Component'
     })`
 
     constructor(props) {
@@ -42,7 +42,7 @@ const withWindowResize = (Component) => {
     render() {
       const { width, height } = this.state
       return (
-        <Component
+        <WrappedComponent
           dimensions={{ width, height }}
           size={this.getCurrentSize()}
           {...this.props}

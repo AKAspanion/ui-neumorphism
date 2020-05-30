@@ -16,6 +16,8 @@ class MainContainer extends React.Component {
       dark: false,
       open: false
     }
+    this.toggleTheme = this.toggleTheme.bind(this)
+    this.toggleSidebar = this.toggleSidebar.bind(this)
   }
 
   toggleTheme() {
@@ -41,17 +43,22 @@ class MainContainer extends React.Component {
             <Topbar
               size={size}
               dark={dark}
-              onClick={this.toggleTheme.bind(this)}
-              onMenuClick={this.toggleSidebar.bind(this)}
+              onClick={this.toggleTheme}
+              onMenuClick={this.toggleSidebar}
             />
             <Divider dense dark={dark} />
             <Card flat className='main-content'>
-              <Sidebar dark={dark} open={open} size={size} />
+              <Sidebar
+                dark={dark}
+                open={open}
+                size={size}
+                onOutsideClick={this.toggleSidebar}
+              />
               <Card
                 flat
-                className={`main-view overflow-hidden ${!isSmall ? 'main-view--large' : ''} ${
-                  open ? 'main-view--open' : ''
-                }`}
+                className={`main-view overflow-hidden ${
+                  !isSmall ? 'main-view--large' : ''
+                } ${open ? 'main-view--open' : ''}`}
               >
                 <Switch>
                   {routes.map((route) => (
