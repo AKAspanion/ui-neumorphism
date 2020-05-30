@@ -1,19 +1,19 @@
-export const checkBox = (dark) => {
+export const toggle = (dark, type = 'Checkbox') => {
   const darkProp = dark ? ' dark' : ''
-  return `<Checkbox${darkProp} color='var(--primary)' checked />
-<Checkbox${darkProp} color='#299ae6' />
-<Checkbox${darkProp} />
-<Checkbox${darkProp} disabled />
-<Checkbox${darkProp} disabled checked />
-<Checkbox${darkProp} checked />`
+  return `<${type}${darkProp} color='var(--primary)' checked />
+<${type}${darkProp} color='#299ae6' />
+<${type}${darkProp} />
+<${type}${darkProp} disabled />
+<${type}${darkProp} disabled checked />
+<${type}${darkProp} checked />`
 }
 
-export const checkBoxLabel = (dark) => {
+export const toggleLabel = (dark, type) => {
   const darkProp = dark ? ' dark' : ''
-  return `<Checkbox${darkProp} color='var(--primary)' label='Primary' checked />
-<Checkbox${darkProp} label='Blue' color='#299ae6' />
-<Checkbox${darkProp} label='Default' />
-<Checkbox${darkProp} disabled label='Disabled' />
-<Checkbox${darkProp} disabled checked label='Checked & Disabled' />
-<Checkbox${darkProp} checked label='Checked' />`
+  return `<${type}${darkProp} color='var(--primary)' label='Primary' checked />
+<${type}${darkProp} label='Blue' color='#299ae6' />
+<${type}${darkProp} label='Default' />
+<${type}${darkProp} disabled label='Disabled' />
+<${type}${darkProp} disabled checked label='Checked & Disabled' />
+<${type}${darkProp} checked label='Checked' />`
 }

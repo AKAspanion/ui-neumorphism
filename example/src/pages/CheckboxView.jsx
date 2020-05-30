@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Card, H4, H5, H6, Subtitle1, Checkbox } from 'ui-neumorphism'
-import { checkBox, checkBoxLabel } from '../assets/'
+import { toggle, toggleLabel } from '../assets/'
 import DocCard from '../containers/DocCard.jsx'
 const url =
   'https://github.com/AKAspanion/ui-neumorphism/blob/master/example/src/pages/CheckboxView.jsx'
@@ -27,7 +27,7 @@ class CheckboxView extends React.Component {
               <Checkbox checked />
             </Card>
           }
-          code={[checkBox, dark]}
+          code={[toggle, dark]}
         />
         <DocCard
           url={url}
@@ -46,7 +46,7 @@ class CheckboxView extends React.Component {
               <Checkbox checked label='Checked' />
             </Card>
           }
-          code={[checkBoxLabel, dark]}
+          code={[toggleLabel, dark]}
         />
         <br />
         <br />
