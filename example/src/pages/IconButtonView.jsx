@@ -32,7 +32,11 @@ class IconButtonView extends React.Component {
         <DocCard
           url={url}
           content={
-            <Card flat outlined={false}>
+            <Card
+              flat
+              outlined={false}
+              className='d-flex justify-center align-center flex-wrap'
+            >
               <IconButton className='ma-12'>
                 <Icon path={mdiRun} size={1} />
               </IconButton>

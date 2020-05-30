@@ -34,7 +34,11 @@ class FabView extends React.Component {
         <DocCard
           url={url}
           content={
-            <Card flat outlined={false}>
+            <Card
+              flat
+              outlined={false}
+              className='d-flex justify-center align-center flex-wrap'
+            >
               <Fab className='pa-8'>
                 <span style={{ fontSize: '30px', margin: '2px 0px 0px 2px' }}>
                   &#43;
@@ -64,7 +68,11 @@ class FabView extends React.Component {
             </Subtitle1>
           }
           content={
-            <Card flat outlined={false}>
+            <Card
+              flat
+              outlined={false}
+              className='d-flex justify-center align-center flex-wrap'
+            >
               <Fab className='pa-8' size='small'>
                 S
               </Fab>

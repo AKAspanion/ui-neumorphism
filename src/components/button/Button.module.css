@@ -177,8 +177,10 @@
   display: inherit;
   max-width: inherit;
   box-sizing: inherit;
+  align-items: inherit;
   text-shadow: inherit;
   border-radius: inherit;
+  justify-content: inherit;
   text-transform: uppercase;
   background-color: inherit;
   -webkit-tap-highlight-color: transparent !important;

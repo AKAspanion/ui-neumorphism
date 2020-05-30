@@ -11,8 +11,14 @@ class Sidebar extends React.Component {
     return size === 'sm' || size === 'xs'
   }
 
+  handleClick = (e) => {
+    this.handleClickOutside(e)
+    this.props.onClick(e)
+  }
+
   handleClickOutside = (e) => {
-    if (this.isSmall && !detectElementInDOM(e.path, 'button')) {
+    const { open } = this.props
+    if (open && this.isSmall && !detectElementInDOM(e.path, 'button')) {
       this.props.onOutsideClick()
     }
   }
@@ -35,7 +41,7 @@ class Sidebar extends React.Component {
           <NavLink
             exact
             to='/'
-            onClick={this.handleClickOutside}
+            onClick={this.handleClick}
             activeClassName='sidebar-link-active'
           >
             Home
@@ -55,7 +61,7 @@ class Sidebar extends React.Component {
                     <NavLink
                       to={path}
                       exact
-                      onClick={this.handleClickOutside}
+                      onClick={this.handleClick}
                       activeClassName='sidebar-link-active'
                     >
                       {name}
@@ -72,7 +78,7 @@ class Sidebar extends React.Component {
           <NavLink
             exact
             to='/typography'
-            onClick={this.handleClickOutside}
+            onClick={this.handleClick}
             activeClassName='sidebar-link-active'
           >
             Typography
@@ -82,7 +88,7 @@ class Sidebar extends React.Component {
           <NavLink
             exact
             to='/examples'
-            onClick={this.handleClickOutside}
+            onClick={this.handleClick}
             activeClassName='sidebar-link-active'
           >
             Examples

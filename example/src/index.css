@@ -2,6 +2,19 @@
   margin: 0;
   padding: 0;
 }
+@media screen and (min-device-width: 601px) {
+  *::-webkit-scrollbar {
+    width: 4px;
+  }
+  *::-webkit-scrollbar-track {
+    box-shadow: var(--box-shadow-inset);
+  }
+  *::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    border: 3px solid transparent;
+    background-color: var(--text-secondary);
+  }
+}
 
 pre {
   margin: 0px !important;
@@ -1087,6 +1100,7 @@ code {
   --text-shadow: var(--light-bg-light-shadow);
   --menu-text-color: var(--g-text-color-light);
   --menu-text-hover-color: var(--primary-dark);
+  --text-secondary: var(--g-text-color-disabled-light);
 }
 
 .theme--dark {
@@ -1095,6 +1109,7 @@ code {
   --text-shadow: var(--dark-bg-light-shadow);
   --menu-text-color: var(--g-text-color-dark);
   --menu-text-hover-color: var(--primary-light);
+  --text-secondary: var(--g-text-color-disabled-dark);
 }
 
 main {
@@ -1111,13 +1126,14 @@ main {
 .sidebar {
   top: -6px;
   z-index: 1;
+  overflow: auto;
   user-select: none;
-  padding: 16px;
   position: absolute;
-  height: calc(100% + 6px);
+  padding: 4px 16px;
   width: 300px !important;
   transform: translate3d(-324px, 0, 0);
   transition: transform 0.2s ease-in-out;
+  height: calc(100vh - var(--padding) * 2 - var(--topbar-height) - 6px);
 }
 
 .sidebar--open {
@@ -1206,15 +1222,16 @@ main {
 }
 
 .main-container {
-  padding: var(--padding);
+  height: 100vh;
+  --padding: 32px;
   overflow: hidden;
-  --padding: 48px;
-  --topbar-height: 96px;
+  padding: var(--padding);
+  --topbar-height: 99px;
 }
 
 .main-container-sm {
   --padding: 8px;
-  --topbar-height: 48px;
+  --topbar-height: 52px;
 }
 
 .main-content {
@@ -1222,14 +1239,16 @@ main {
   overflow: hidden;
   position: relative;
   align-items: flex-start;
+  border-top-right-radius: 0px !important;
 }
 
 .main-view {
   flex-grow: 1;
-  padding: 16px;
+  overflow: auto;
+  padding: 8px 16px;
   will-change: transform;
   transition: transform 0.2s ease-in-out;
-  min-height: calc(100vh - var(--padding) * 2 - var(--topbar-height));
+  height: calc(100vh - var(--padding) * 2 - var(--topbar-height) - 6px);
 }
 
 .main-view--open {
