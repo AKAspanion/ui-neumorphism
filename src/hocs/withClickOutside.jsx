@@ -5,12 +5,11 @@ const withClickOutside = (WrappedComponent) => {
   const componentName =
     WrappedComponent.displayName || WrappedComponent.name || 'Component'
   return class WithClickOutside extends React.Component {
-    node = null
-
     static displayName = `WithClickOutside(${componentName})`
 
     constructor(props) {
       super(props)
+      this.node = null
       this.handleClick = this.handleClick.bind(this)
     }
 
@@ -29,31 +28,33 @@ const withClickOutside = (WrappedComponent) => {
         do {
           if (currentNode === parentNode) {
             // click is inside
+            this.clickHandler(e, 'Inside')
             return
           }
           currentNode = currentNode.parentNode
         } while (currentNode)
         // click is outside
-        this.outsideClickHandler(e)
+        this.clickHandler(e)
       } catch (err) {
         throw new Error(err)
       }
     }
 
-    outsideClickHandler(e) {
-      if (typeof this.node.props.handleClickOutside === 'function') {
+    clickHandler(e, type = 'Outside') {
+      if (typeof this.node.props[`handleClick${type}`] === 'function') {
         this.node.props.handleClickOutside(e)
         return
       }
 
-      if (typeof this.node.handleClickOutside === 'function') {
+      if (typeof this.node[`handleClick${type}`] === 'function') {
         this.node.handleClickOutside(e)
         return
       }
-
-      throw new Error(
-        `${componentName}: needs a handleClickOutside function to handle outside clicks`
-      )
+      if (type === 'Outside') {
+        throw new Error(
+          `${componentName}: needs a handleClickOutside function to handle outside clicks`
+        )
+      }
     }
 
     render() {

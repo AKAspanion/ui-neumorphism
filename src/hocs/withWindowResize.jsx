@@ -1,4 +1,5 @@
 import React from 'react'
+import { findDOMNode } from 'react-dom'
 
 const withWindowResize = (WrappedComponent) => {
   return class WithWindowResize extends React.Component {
@@ -9,21 +10,40 @@ const withWindowResize = (WrappedComponent) => {
     constructor(props) {
       super(props)
       this.state = {
-        height: window.innerHeight,
-        width: window.innerWidth
+        height: null,
+        width: null
       }
+      this.node = null
+      this.resizeObserver = null
+      this.updateDimensions = this.updateDimensions.bind(this)
     }
 
     componentDidMount() {
-      window.addEventListener('resize', this.updateDimensions.bind(this))
+      // eslint-disable-next-line no-undef
+      this.resizeObserver = new ResizeObserver((entries) => {
+        const { width: currentWidth, height: currentHeight } = this.state
+        entries.forEach((entry) => {
+          const { width, height } = (entry && entry.contentRect) || {}
+          const isSizeChanged =
+            currentWidth !== width || currentHeight !== height
+
+          if (isSizeChanged) {
+            this.updateDimensions({ width, height })
+          }
+        })
+      })
+
+      this.resizeObserver.observe(this.node)
     }
 
     componentWillUnmount() {
-      window.removeEventListener('resize', this.updateDimensions.bind(this))
+      if (this.resizeObserver) {
+        this.resizeObserver.disconnect()
+      }
     }
 
-    updateDimensions = () => {
-      this.setState({ width: window.innerWidth, height: window.innerHeight })
+    updateDimensions = ({ width, height }) => {
+      this.setState({ width, height })
     }
 
     getCurrentSize() {
@@ -43,6 +63,7 @@ const withWindowResize = (WrappedComponent) => {
       const { width, height } = this.state
       return (
         <WrappedComponent
+          ref={(ref) => (this.node = findDOMNode(ref))}
           dimensions={{ width, height }}
           size={this.getCurrentSize()}
           {...this.props}
