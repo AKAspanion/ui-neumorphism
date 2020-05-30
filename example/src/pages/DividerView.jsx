@@ -1,8 +1,8 @@
 import React from 'react'
 
 import { Card, Divider, Subtitle1, Body2, H6, H5, H4 } from 'ui-neumorphism'
-import { divider } from '../assets/'
 
+import { divider } from '../assets/'
 import DocCard from '../containers/DocCard.jsx'
 const url =
   'https://github.com/AKAspanion/ui-neumorphism/blob/master/example/src/pages/CardView.jsx'

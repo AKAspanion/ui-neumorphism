@@ -37,7 +37,7 @@ class DocCard extends React.Component {
           </Card>
           <CodeBlock
             url={url}
-            lang='html'
+            lang='jsx'
             onThemeChange={this.handleTheme.bind(this)}
           >
             {code
