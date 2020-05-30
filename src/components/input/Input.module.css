@@ -1,10 +1,17 @@
 .nu-text-field-container {
+  cursor: text;
   display: flex;
   margin: 4px 12px;
   position: relative;
   box-sizing: border-box;
   flex-direction: column;
   align-items: flex-start;
+}
+.nu-text-field-container.nu-text-field-container--disabled {
+  opacity: 0.6;
+  user-select: none;
+  pointer-events: none;
+  color: var(--disabled-color);
 }
 
 .nu-text-field {
@@ -28,23 +35,23 @@
 
 .nu-text-field.nu-text-field--light {
   --bg-color: var(--light-bg);
+  --selector-bg: var(--text-secondary);
   --text-color: var(--g-text-color-light);
+  --text-secondary: var(--g-text-color-secondary-light);
   --disabled-color: var(--g-text-color-disabled-light);
-  --box-shadow: 3px 3px 8px var(--light-bg-dark-shadow),
-    -3px -3px 8px var(--light-bg-light-shadow);
-  --box-shadow-inset: inset 2px 2px 6px var(--light-bg-dark-shadow),
-    inset -3px -3px 8px var(--light-bg-light-shadow);
+  --box-shadow-inset: inset 2px 2px 5px var(--light-bg-dark-shadow),
+    inset -2px -2px 6px var(--light-bg-light-shadow);
   --box-shadow-inset-thin: inset 1px 1px 2px var(--light-bg-dark-shadow),
     inset -1px -1px 2px var(--light-bg-light-shadow);
 }
 
 .nu-text-field.nu-text-field--dark {
   --bg-color: var(--dark-bg);
+  --selector-bg: var(--text-secondary);
   --text-color: var(--g-text-color-dark);
+  --text-secondary: var(--g-text-color-secondary-dark);
   --disabled-color: var(--g-text-color-disabled-dark);
-  --box-shadow: 3px 3px 8px var(--dark-bg-dark-shadow),
-    -3px -3px 8px var(--dark-bg-light-shadow);
-  --box-shadow-inset: inset 2px 2px 6px var(--dark-bg-dark-shadow),
+  --box-shadow-inset: inset 2px 2px 5px var(--dark-bg-dark-shadow),
     inset -2px -2px 6px var(--dark-bg-light-shadow);
   --box-shadow-inset-thin: inset 1px 1px 2px var(--dark-bg-dark-shadow),
     inset -1px -1px 2px var(--dark-bg-light-shadow);
@@ -65,32 +72,42 @@
   border-radius: 24px;
 }
 
+/* hover and focus */
+.nu-text-field:hover,
+.nu-text-field:focus {
+  box-shadow: var(--box-shadow-inset-thin);
+}
+
+.nu-text-field.nu-text-field--outlined:hover,
+.nu-text-field.nu-text-field--outlined:focus {
+  --selector-bg: var(--text-color);
+}
+
 .nu-text-field.nu-text-field--outlined,
+.nu-text-field.nu-text-field--outlined:hover,
 .nu-text-field.nu-text-field--outlined:focus {
   box-shadow: none !important;
-  border: 1px solid var(--text-color);
+  border: 1px solid var(--selector-bg);
 }
 
-.nu-text-field:focus {
-  box-shadow: var(--box-shadow);
-}
-
-.nu-text-field.nu-text-field--disabled:focus,
-.nu-text-field.nu-text-field--readonly:focus {
+.nu-text-field.nu-text-field--disabled:hover,
+.nu-text-field.nu-text-field--disabled:focus {
   box-shadow: var(--box-shadow-inset);
 }
-
+/* end of hover and focus */
 
 .nu-text-field-label {
   z-index: 2;
-  top: 9px;
-  left: 16px;
+  top: 8px;
+  left: 17px;
   right: auto;
+  user-select: none;
   position: absolute;
+  cursor: text !important;
 }
 
 .nu-text-field-container--dense .nu-text-field-label {
-  top: 5px;
+  top: 6px;
 }
 
 .nu-text-field-error {

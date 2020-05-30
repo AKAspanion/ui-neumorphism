@@ -25,15 +25,23 @@ import {
   Subtitle2,
   IconButton,
   ToggleButton,
-  ProgressCircular
+  ProgressCircular,
+  withWindowResize
 } from 'ui-neumorphism'
 class FitnessApp extends React.Component {
   render() {
-    const { dark } = this.props
+    const { dark, size } = this.props
     return (
       <Card flat dark={dark} className='fitness-app-container'>
-        <Card flat className='fitness-app-wrapper'>
-          <Card rounded width={300} height={600} className='fitness-app'>
+        <Card flat className='fitness-app-wrapper overflow-hidden'>
+          <Card
+            rounded
+            width={300}
+            height={600}
+            className={`fitness-app ${
+              size === 'xs' ? 'fitness-app--small' : ''
+            } overflow-hidden`}
+          >
             <H4 style={{ fontWeight: '500', marginTop: '8px' }}>Program</H4>
             <div
               style={{
@@ -131,7 +139,7 @@ class FitnessApp extends React.Component {
                 <Caption secondary>No task</Caption>
               </Card>
             </div>
-            <H6 style={{ margin: '32px 0px 16px 0px' }}>Courses Collection</H6>
+            <H6 style={{ margin: '24px 0px 16px 0px' }}>Courses Collection</H6>
             <Card rounded={false} elevation='2' style={{ padding: '16px' }}>
               <div
                 style={{
@@ -181,19 +189,7 @@ class FitnessApp extends React.Component {
                 </Card>
               </div>
             </Card>
-            <div
-              style={{
-                display: 'flex',
-                width: '300px',
-                padding: '16px 24px',
-                margin: '8px 0px',
-                position: 'relative',
-                left: '-24px',
-                boxShadow: 'var(--box-shadow)',
-                background: 'var(--bg-color)',
-                justifyContent: 'space-between'
-              }}
-            >
+            <div className='fitness-app-nav-bar'>
               <ToggleButton selected dark={dark}>
                 <Icon path={mdiHome} size={0.9} color='var(--primary)' />
               </ToggleButton>
@@ -221,7 +217,14 @@ class FitnessApp extends React.Component {
             </div>
           </Card>
 
-          <Card rounded width={300} height={600} className='fitness-app'>
+          <Card
+            rounded
+            width={300}
+            height={600}
+            className={`fitness-app ${
+              size === 'xs' ? 'fitness-app--small' : ''
+            } overflow-hidden`}
+          >
             <div
               style={{
                 display: 'flex',
@@ -338,19 +341,7 @@ class FitnessApp extends React.Component {
                 100%
               </ProgressCircular>
             </Card>
-            <div
-              style={{
-                display: 'flex',
-                width: '300px',
-                padding: '16px 24px',
-                margin: '24px 0px',
-                position: 'relative',
-                left: '-24px',
-                boxShadow: 'var(--box-shadow)',
-                background: 'var(--bg-color)',
-                justifyContent: 'space-between'
-              }}
-            >
+            <div className='fitness-app-nav-bar'>
               <ToggleButton dark={dark}>
                 <Icon path={mdiHome} size={0.9} />
               </ToggleButton>
@@ -382,4 +373,4 @@ class FitnessApp extends React.Component {
   }
 }
 
-export default FitnessApp
+export default withWindowResize(FitnessApp)

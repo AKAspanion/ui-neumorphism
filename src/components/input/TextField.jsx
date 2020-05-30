@@ -109,6 +109,7 @@ class TextField extends React.Component {
           `
             nu-text-field-container 
             ${dense ? 'nu-text-field-container--dense' : ''}
+            ${disabled ? 'nu-text-field-container--disabled' : ''}
           `
         )
       case 'text-field':
@@ -165,6 +166,7 @@ class TextField extends React.Component {
           name={name}
           value={value}
           readOnly={readonly}
+          disabled={disabled}
           autoFocus={autofocus}
           placeholder={placeholder}
           tabIndex={disabled ? -1 : undefined}

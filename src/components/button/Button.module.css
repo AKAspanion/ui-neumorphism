@@ -174,7 +174,7 @@
   outline: none;
   color: inherit;
   cursor: inherit;
-  display: contents;
+  display: inherit;
   max-width: inherit;
   box-sizing: inherit;
   text-shadow: inherit;

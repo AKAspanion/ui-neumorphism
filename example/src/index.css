@@ -51,7 +51,6 @@ code {
   justify-content: start;
 }
 
-
 .ma-0 {
   margin: 0px !important;
 }
@@ -1083,7 +1082,7 @@ code {
 }
 
 .theme--light {
-  --code-bg: #F5F2F0;
+  --code-bg: #f5f2f0;
   --bg-color: var(--light-bg);
   --text-shadow: var(--light-bg-light-shadow);
   --menu-text-color: var(--g-text-color-light);
@@ -1118,9 +1117,8 @@ main {
   height: calc(100% + 6px);
   width: 300px !important;
   transform: translate3d(-324px, 0, 0);
-  transition: transform .2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
 }
-
 
 .sidebar--open {
   transform: translate3d(0, 0, 0);
@@ -1172,23 +1170,23 @@ main {
   padding-top: 4px;
 }
 
-.sidebar-menu input[type="checkbox"] {
+.sidebar-menu input[type='checkbox'] {
   appearance: none;
   position: absolute;
   left: -9999;
 }
 
-.sidebar-menu input[type="checkbox"]~ul,
-.sidebar-menu input[type="checkbox"]:checked~ul {
+.sidebar-menu input[type='checkbox'] ~ ul,
+.sidebar-menu input[type='checkbox']:checked ~ ul {
   overflow: hidden;
-  transition: all .25s;
+  transition: all 0.25s;
 }
 
-.sidebar-menu input[type="checkbox"]~ul {
+.sidebar-menu input[type='checkbox'] ~ ul {
   max-height: 0;
 }
 
-.sidebar-menu input[type="checkbox"]:checked~ul {
+.sidebar-menu input[type='checkbox']:checked ~ ul {
   max-height: 100vh;
   transition: all 1s;
 }
@@ -1196,7 +1194,6 @@ main {
 .sidebar-menu label {
   cursor: pointer;
 }
-
 
 /* Main container */
 
@@ -1216,7 +1213,7 @@ main {
 }
 
 .main-container-sm {
-  --padding: 24px;
+  --padding: 8px;
   --topbar-height: 48px;
 }
 
@@ -1231,7 +1228,7 @@ main {
   flex-grow: 1;
   padding: 16px;
   will-change: transform;
-  transition: transform .2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
   min-height: calc(100vh - var(--padding) * 2 - var(--topbar-height));
 }
 
@@ -1242,6 +1239,10 @@ main {
 }
 
 .main-view--large {
+  max-width: calc(100% - 300px);
+}
+
+.main-view--small {
   max-width: calc(100% - 300px);
 }
 
@@ -1273,7 +1274,25 @@ main {
 
 .fitness-app {
   padding: 24px;
-  margin: 16px;
+  position: relative;
+  margin: 16px 32px;
+}
+
+.fitness-app--small {
+  margin: 16px 0px;
+}
+
+.fitness-app-nav-bar {
+  width: 300px;
+  display: flex;
+  left: 0px;
+  bottom: -8px;
+  margin: 8px 0px;
+  padding: 16px 24px;
+  position: absolute;
+  box-shadow: var(--box-shadow);
+  background: var(--bg-color);
+  justify-content: space-between;
 }
 
 /* button doc */

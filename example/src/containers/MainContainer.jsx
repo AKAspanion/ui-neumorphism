@@ -49,7 +49,7 @@ class MainContainer extends React.Component {
               <Sidebar dark={dark} open={open} size={size} />
               <Card
                 flat
-                className={`main-view ${!isSmall ? 'main-view--large' : ''} ${
+                className={`main-view overflow-hidden ${!isSmall ? 'main-view--large' : ''} ${
                   open ? 'main-view--open' : ''
                 }`}
               >

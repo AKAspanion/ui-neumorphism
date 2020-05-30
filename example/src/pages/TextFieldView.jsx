@@ -53,6 +53,26 @@ class TextFieldView extends React.Component {
           outlined
           onChange={this.onChange.bind(this)}
         ></TextField>
+        <TextField
+          label='Text field 6'
+          className='my-3'
+          rounded
+          outlined
+          onChange={this.onChange.bind(this)}
+        ></TextField>
+        <TextField
+          label='Text field 7'
+          className='my-3'
+          outlined
+          onChange={this.onChange.bind(this)}
+        ></TextField>
+        <TextField
+          label='Text field 7'
+          className='my-3'
+          outlined
+          disabled
+          onChange={this.onChange.bind(this)}
+        ></TextField>
       </Card>
     )
   }
