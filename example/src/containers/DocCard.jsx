@@ -35,15 +35,15 @@ class DocCard extends React.Component {
           <Card flat outlined={false} className='d-flex justify-center py-12'>
             {content}
           </Card>
-          {code ? (
-            <CodeBlock
-              url={url}
-              lang='html'
-              onThemeChange={this.handleTheme.bind(this)}
-            >
-              {code[0](localDark ? darkTheme : code[1], ...(code[2] || []))}
-            </CodeBlock>
-          ) : null}
+          <CodeBlock
+            url={url}
+            lang='html'
+            onThemeChange={this.handleTheme.bind(this)}
+          >
+            {code
+              ? code[0](localDark ? darkTheme : code[1], ...(code[2] || []))
+              : null}
+          </CodeBlock>
         </Card>
       </Card>
     )

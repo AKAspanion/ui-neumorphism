@@ -48,12 +48,14 @@ class CodeBlock extends React.Component {
             <ToggleButton className='ml-1' onChange={onThemeChange}>
               <Icon path={mdiInvertColors} size={1} />
             </ToggleButton>
-            <IconButton
-              className='ml-1'
-              onClick={() => this.setState({ open: !open })}
-            >
-              <Icon path={mdiCodeTags} size={1} />
-            </IconButton>
+            {children ? (
+              <IconButton
+                className='ml-1'
+                onClick={() => this.setState({ open: !open })}
+              >
+                <Icon path={mdiCodeTags} size={1} />
+              </IconButton>
+            ) : null}
           </Card>
         )}
         <div className={`code-block ${!open ? 'code-block-closed' : ''}`}>

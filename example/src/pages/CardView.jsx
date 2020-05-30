@@ -180,7 +180,7 @@ class CardView extends React.Component {
             </Subtitle1>
           }
           content={
-            <Card loading width={250}>
+            <Card loading width={250} className='overflow-hidden'>
               {cardContent}
               {cardAction}
             </Card>
@@ -239,7 +239,7 @@ class CardView extends React.Component {
           title={<H5>Media with text</H5>}
           subtitle={<Subtitle1>You can add media inside a card.</Subtitle1>}
           content={
-            <Card width={275}>
+            <Card width={275} className='overflow-hidden'>
               <CardMedia
                 dark
                 title='Top 10 Indian beaches'
