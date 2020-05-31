@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Switch, Card, H4, H5, H6, Subtitle1 } from 'ui-neumorphism'
 
-import { toggle, toggleLabel } from '../assets/'
+import { toggle, toggleLabel } from '../docs/'
 
 import DocCard from '../containers/DocCard.jsx'
 const url =

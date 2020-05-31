@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Card, Radio, RadioGroup, H4, H6, H5, Subtitle1 } from 'ui-neumorphism'
 
-import { radio, radioStandalone } from '../assets/'
+import { radio, radioStandalone } from '../docs/'
 import DocCard from '../containers/DocCard.jsx'
 const url =
   'https://github.com/AKAspanion/ui-neumorphism/blob/master/example/src/pages/RadioView.jsx'

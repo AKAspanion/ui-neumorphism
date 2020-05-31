@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Card, H4, H5, H6, Subtitle1, Checkbox } from 'ui-neumorphism'
-import { toggle, toggleLabel } from '../assets/'
+import { toggle, toggleLabel } from '../docs/'
 import DocCard from '../containers/DocCard.jsx'
 const url =
   'https://github.com/AKAspanion/ui-neumorphism/blob/master/example/src/pages/CheckboxView.jsx'

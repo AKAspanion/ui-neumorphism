@@ -4,7 +4,7 @@ import Icon from '@mdi/react'
 import { mdiNumeric10 } from '@mdi/js'
 
 import { ProgressCircular, Card, H4, H5, H6, Subtitle1 } from 'ui-neumorphism'
-import { progressCircular, progressCircularLabel } from '../assets/'
+import { progressCircular, progressCircularLabel } from '../docs/'
 import DocCard from '../containers/DocCard.jsx'
 const url =
   'https://github.com/AKAspanion/ui-neumorphism/blob/master/example/src/pages/ProgressLinearView.jsx'

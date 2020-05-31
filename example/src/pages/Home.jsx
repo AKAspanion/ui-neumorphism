@@ -14,7 +14,7 @@ import {
 
 import CodeBlock from '../containers/CodeBlock.jsx'
 
-import FitnessApp from '../examples/FitnessApp.jsx'
+import { FitnessApp } from '../examples/'
 
 const importCode = `import React, { Component } from 'react'
 

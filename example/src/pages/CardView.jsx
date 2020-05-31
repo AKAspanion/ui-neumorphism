@@ -25,7 +25,7 @@ import {
   complexCard,
   elevationCard,
   simpleCardCopy
-} from '../assets/'
+} from '../docs/'
 
 import DocCard from '../containers/DocCard.jsx'
 const url =

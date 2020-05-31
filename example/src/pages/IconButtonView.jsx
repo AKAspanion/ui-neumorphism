@@ -12,7 +12,7 @@ import {
 import { Card, H4, H5, H6, Subtitle1, IconButton } from 'ui-neumorphism'
 
 import DocCard from '../containers/DocCard.jsx'
-import { iconButtons } from '../assets/'
+import { iconButtons } from '../docs/'
 
 const url =
   'https://github.com/AKAspanion/ui-neumorphism/blob/master/example/src/pages/IconButtonView.jsx'

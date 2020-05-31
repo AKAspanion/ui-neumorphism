@@ -3,7 +3,7 @@ import React from 'react'
 import { Card, Button, H4, H6, H5, Subtitle1 } from 'ui-neumorphism'
 
 import DocCard from '../containers/DocCard.jsx'
-import { allButtons, docButtons, blockButton, sizeButtons } from '../assets/'
+import { allButtons, docButtons, blockButton, sizeButtons } from '../docs/'
 
 const url =
   'https://github.com/AKAspanion/ui-neumorphism/blob/master/example/src/pages/ButtonView.jsx'

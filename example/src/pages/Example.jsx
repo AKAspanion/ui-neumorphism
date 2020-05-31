@@ -1,24 +1,16 @@
 import React from 'react'
 
-// import Icon from '@mdi/react'
-// import {
-//   mdiRun,
-//   mdiYoga,
-//   mdiHome,
-//   mdiBell,
-//   mdiTicket,
-//   mdiAccount,
-//   mdiArmFlex,
-//   mdiDumbbell,
-//   mdiChartLine,
-//   mdiChevronRight
-// } from '@mdi/js'
+import { Card } from 'ui-neumorphism'
+import { FitnessApp } from '../examples/'
 
-// import { Subtitle2, H4, H6, Caption, Card, ToggleButton } from 'ui-neumorphism'
 class Example extends React.Component {
   render() {
-    // const { dark } = this.props
-    return <div>Coming soon..</div>
+    const { dark } = this.props
+    return (
+      <Card flat dark={dark} className='py-2'>
+        <FitnessApp dark={dark} />
+      </Card>
+    )
   }
 }
 

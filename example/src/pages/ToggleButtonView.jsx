@@ -22,7 +22,7 @@ import {
 } from 'ui-neumorphism'
 
 import DocCard from '../containers/DocCard.jsx'
-import { toggleButtons, toggleSizes } from '../assets/'
+import { toggleButtons, toggleSizes } from '../docs/'
 
 const url =
   'https://github.com/AKAspanion/ui-neumorphism/blob/master/example/src/pages/ToggleButtonView.jsx'
