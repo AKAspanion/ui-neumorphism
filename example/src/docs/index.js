@@ -1,4 +1,5 @@
 export * from './code/card-code'
+export * from './code/table-code'
 export * from './code/button-code'
 export * from './code/divider-code'
 export * from './code/progress-code'

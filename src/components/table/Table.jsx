@@ -40,13 +40,14 @@ class Table extends React.Component {
   }
 
   getClasses(elem, value = {}) {
-    const { dark, inset, dense, outlined } = this.props
+    const { dark, inset, flat, dense, outlined } = this.props
     switch (elem) {
       case 'wrapper':
         return getModuleClasses(
           styles,
           `
             nu-table
+            ${flat ? 'nu-table--flat' : ''}
             ${inset ? 'nu-table--inset' : ''}
             ${dense ? 'nu-table--dense' : ''}
             nu-table--${dark ? 'dark' : 'light'}
