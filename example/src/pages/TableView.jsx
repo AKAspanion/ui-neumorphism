@@ -5,8 +5,9 @@ import { mdiNumeric4, mdiNumeric6, mdiNumeric9 } from '@mdi/js'
 
 import { Card, Table, H5, Subtitle1, H4, H6 } from 'ui-neumorphism'
 
-import { simpleTable, minimalTable } from '../docs/'
+import { simpleTable, minimalTable, tableApi } from '../docs/'
 import DocCard from '../containers/DocCard.jsx'
+import ApiCard from '../containers/ApiCard.jsx'
 
 function createItem(name, calories, fat, carbs, protein, iron) {
   return { name, calories, fat, carbs, protein, iron }
@@ -98,7 +99,8 @@ class TableView extends React.Component {
           subtitle={
             <Subtitle1>
               The <code>items</code> array having any valid jsx is easily
-              rendered. This way all table cell data can be customized individualy.
+              rendered. This way all table cell data can be customized
+              individualy.
             </Subtitle1>
           }
           content={
@@ -190,6 +192,7 @@ class TableView extends React.Component {
           }
           code={[minimalTable, dark, ['noHeaders']]}
         />
+        <ApiCard className='mt-12' entity='Table' data={tableApi(dark)} />
       </Card>
     )
   }

@@ -14,7 +14,7 @@ class Table extends React.Component {
 
   static defaultProps = {
     items: [],
-    heders: [],
+    headers: [],
     noDataValue: 'No data found',
     ...DEFAULT_PROPS
   }
@@ -39,8 +39,14 @@ class Table extends React.Component {
     return alignValues.find((v) => v === align) || alignValues[0]
   }
 
+  getVerticalAlignment(align) {
+    const alignValues = ['top', 'middle', 'bottom']
+    return alignValues.find((v) => v === align) || alignValues[1]
+  }
+
   getClasses(elem, value = {}) {
     const { dark, inset, flat, dense, outlined } = this.props
+    const { align, verticalAlign } = value
     switch (elem) {
       case 'wrapper':
         return getModuleClasses(
@@ -65,7 +71,7 @@ class Table extends React.Component {
           styles,
           `
             nu-table--header-cell
-            nu-table--align-${this.getAlignment(value.align)}
+            nu-table--align-${this.getAlignment(align)}
           `
         )
       case 'td':
@@ -73,7 +79,8 @@ class Table extends React.Component {
           styles,
           `
           nu-table--cell
-          nu-table--align-${this.getAlignment(value.align)}
+          nu-table--align-${this.getAlignment(align)}
+          nu-table--align-vertical-${this.getVerticalAlignment(verticalAlign)}
         `
         )
       case 'tbody':
@@ -90,7 +97,11 @@ class Table extends React.Component {
     return (
       <tr className={this.getClasses('thr')}>
         {headers.map((header, i) => (
-          <th key={i} scope='col' className={this.getClasses('th', header)}>
+          <th
+            key={i}
+            scope='col'
+            className={`${this.getClasses('th', header)} ${header.className}`}
+          >
             {header.text}
           </th>
         ))}
@@ -106,7 +117,7 @@ class Table extends React.Component {
           <td
             key={j}
             scope={j === 0 ? 'row' : null}
-            className={this.getClasses('td', header)}
+            className={`${this.getClasses('td', header)} ${header.className}`}
           >
             {item[header.value]}
           </td>

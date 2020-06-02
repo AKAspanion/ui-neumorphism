@@ -121,3 +121,15 @@
 .nu-table--align-justify {
   text-align: justify;
 }
+
+.nu-table--align-vertical-middle {
+  vertical-align: middle;
+}
+
+.nu-table--align-vertical-bottom {
+  vertical-align: bottom;
+}
+
+.nu-table--align-vertical-top {
+  vertical-align: top;
+}
