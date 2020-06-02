@@ -71,7 +71,7 @@
 .nu-card-content.nu-card-content--dark {
   --bg-color: var(--dark-bg);
   --text-color: var(--g-text-color-dark);
-  --border-color: var(--dark-bg-dark-shadow);
+  --border-color: var(--dark-bg-light-shadow);
   --box-shadow: 3px 3px 6px var(--dark-bg-dark-shadow),
     -3px -3px 6px var(--dark-bg-light-shadow);
   --box-shadow-2: 6px 6px 12px var(--dark-bg-dark-shadow),

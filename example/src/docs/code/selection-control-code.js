@@ -8,8 +8,7 @@ export const toggle = (dark, type = 'Checkbox') => {
 <${type}${darkProp} checked />`
 }
 
-export const toggleLabel = (dark, type) => {
-  const darkProp = dark ? ' dark' : ''
+export const toggleLabel = () => {
   return `className='d-flex align-center justify-center flex-wrap'`
 }
 

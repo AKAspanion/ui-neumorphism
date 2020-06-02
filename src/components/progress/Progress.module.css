@@ -28,7 +28,7 @@
 .nu-progress-linear.nu-progress-linear--dark,
 .nu-progress-circular.nu-progress-circular--dark {
   --bg-color: var(--dark-bg);
-  --border-color: var(--dark-bg-dark-shadow);
+  --border-color: var(--dark-bg-light-shadow);
   --selector-bg: var(--g-text-color-secondary-dark);
   --box-shadow-inset-dense: inset -1px -1px 3px var(--dark-bg-light-shadow),
     inset 1px 1px 3px var(--dark-bg-dark-shadow);

@@ -15,10 +15,6 @@ import {
   H2,
   H1
 } from 'ui-neumorphism'
-import { toggle, toggleLabel } from '../docs'
-import DocCard from '../containers/DocCard.jsx'
-const url =
-  'https://github.com/AKAspanion/ui-neumorphism/blob/master/example/src/pages/CheckboxView.jsx'
 class TypographyView extends React.Component {
   render() {
     const { dark: darkTheme } = this.props

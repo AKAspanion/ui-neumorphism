@@ -42,12 +42,12 @@ const withClickOutside = (WrappedComponent) => {
 
     clickHandler(e, type = 'Outside') {
       if (typeof this.node.props[`handleClick${type}`] === 'function') {
-        this.node.props.handleClickOutside(e)
+        this.node.props[`handleClick${type}`](e)
         return
       }
 
       if (typeof this.node[`handleClick${type}`] === 'function') {
-        this.node.handleClickOutside(e)
+        this.node[`handleClick${type}`](e)
         return
       }
       if (type === 'Outside') {

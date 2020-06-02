@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { H4, H5, H6, Subtitle1, Card } from 'ui-neumorphism'
+import { H4, H6, Subtitle1, Card } from 'ui-neumorphism'
 import DocCard from '../containers/DocCard.jsx'
 const url =
   'https://github.com/AKAspanion/ui-neumorphism/blob/master/example/src/pages/ProgressLinearView.jsx'
