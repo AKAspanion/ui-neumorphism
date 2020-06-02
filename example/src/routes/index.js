@@ -5,6 +5,7 @@ import {
   CardView,
   FormView,
   TextFieldView,
+  TableView,
   RadioView,
   ButtonView,
   SwitchView,
@@ -100,6 +101,12 @@ const routes = [{
     path: "/switch",
     name: "Switch",
     component: SwitchView,
+  },
+  {
+    id: 19,
+    path: "/table",
+    name: "Table",
+    component: TableView,
   },
   {
     id: 10,

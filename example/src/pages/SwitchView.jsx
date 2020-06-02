@@ -22,7 +22,7 @@ class SwitchView extends React.Component {
         <DocCard
           url={url}
           content={
-            <Card flat>
+            <Card flat className='d-flex align-center justify-center flex-wrap'>
               <Switch color='var(--primary)' checked />
               <Switch color='#299ae6' />
               <Switch />
@@ -39,13 +39,13 @@ class SwitchView extends React.Component {
           title={<H5>Switch with label</H5>}
           subtitle={<Subtitle1>Switch can be provided with a label.</Subtitle1>}
           content={
-            <Card flat>
-              <Switch color='var(--primary)' checked />
-              <Switch color='#299ae6' />
-              <Switch />
-              <Switch disabled />
-              <Switch disabled checked />
-              <Switch checked />
+            <Card flat className='d-flex align-center justify-center flex-wrap'>
+              <Switch color='var(--primary)' label='Primary' checked />
+              <Switch label='Blue' color='#299ae6' />
+              <Switch label='Default' />
+              <Switch disabled label='Disabled' />
+              <Switch disabled checked label='Checked & Disabled' />
+              <Switch checked label='Checked' />
             </Card>
           }
           code={[toggleLabel, dark, ['Switch']]}

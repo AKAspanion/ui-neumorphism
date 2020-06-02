@@ -29,6 +29,7 @@ export {
   ProgressCircular,
   Divider,
   Spacer,
+  Table,
   Form,
   Radio,
   RadioGroup,
