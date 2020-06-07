@@ -6,18 +6,18 @@ import {
   DEFAULT_PROPS,
   G_STRING,
   G_BOOL,
+  G_ARR,
   G_NUM,
-  G_ARR
+  G_NODE
 } from '../../assets/index'
 import { uid, getModuleClasses, callCallback } from '../../util'
 
-import { Subtitle1, Caption } from '../../index'
+import { Subtitle1, Caption, ProgressLinear } from '../../index'
 
 class TextField extends React.Component {
   static displayName = 'NuTextField'
 
   static defaultProps = {
-    valid: true,
     type: 'text',
     ...DEFAULT_PROPS
   }
@@ -26,10 +26,13 @@ class TextField extends React.Component {
     id: G_STRING,
     rules: G_ARR,
     dense: G_BOOL,
-    height: G_NUM,
     type: G_STRING,
     hint: G_STRING,
-    label: G_STRING,
+    append: G_NODE,
+    prepend: G_NODE,
+    value: G_STRING,
+    label: G_NODE,
+    counter: G_NUM,
     rounded: G_BOOL,
     loading: G_BOOL,
     readonly: G_BOOL,
@@ -44,11 +47,14 @@ class TextField extends React.Component {
 
   constructor(props) {
     super(props)
+    const { value, id } = props
     this.state = {
-      valid: props.valid,
-      errorMessage: 'Error',
-      value: props.value || '',
-      id: `${props.id || uid()}`
+      valid: true,
+      focused: false,
+      errorMessage: '',
+      value: value || '',
+      id: `${id || uid()}`,
+      count: (value || '').length
     }
   }
 
@@ -58,10 +64,15 @@ class TextField extends React.Component {
     return !placeholder && !value
   }
 
+  get isDisabled() {
+    const { loading, disabled } = this.props
+    return loading ? true : disabled
+  }
+
   validate(value) {
     let valid = true
-    let errorMessage = 'Error'
-    const { rules = [] } = this.props
+    let errorMessage = 'Invalid'
+    const { rules = [], counter } = this.props
     const ruleLength = rules.length
     for (let i = 0; i < ruleLength; i++) {
       const isValid = rules[i](value)
@@ -71,6 +82,10 @@ class TextField extends React.Component {
         break
       }
     }
+    if (counter !== undefined && value.length > counter) {
+      valid = false
+      errorMessage = `Max ${counter} characters`
+    }
     this.setState({ valid })
     this.setState({ errorMessage })
   }
@@ -79,57 +94,62 @@ class TextField extends React.Component {
     const { id, valid } = this.state
     const { onChange, noValidation } = this.props
     const value = event.target.value
+    const count = value.length
 
     if (!noValidation) {
       this.validate(value)
     }
 
     this.setState({ value })
+    this.setState({ count })
     callCallback(onChange, { event, id, value, valid })
   }
 
   handleFocus(event) {
     const { id } = this.state
     const { onFocus } = this.props
+    this.setState({ focused: true })
     callCallback(onFocus, { event, id })
   }
 
   handleBlur(event) {
     const { id } = this.state
     const { onBlur } = this.props
+    this.setState({ focused: false })
     callCallback(onBlur, { event, id })
   }
 
-  getClasses(classType) {
+  getClasses(classType, flag) {
     const { dark, outlined, dense, rounded, readonly, disabled } = this.props
-    switch (classType) {
-      case 'container':
-        return getModuleClasses(
-          styles,
-          `
+    if (classType === 'container') {
+      return getModuleClasses(
+        styles,
+        `
             nu-text-field-container 
             ${dense ? 'nu-text-field-container--dense' : ''}
+            ${rounded ? 'nu-text-field-container--rounded' : ''}
             ${disabled ? 'nu-text-field-container--disabled' : ''}
-          `
-        )
-      case 'text-field':
-        return getModuleClasses(
-          styles,
-          `
+            `
+      )
+    } else if (classType === 'text-field') {
+      return getModuleClasses(
+        styles,
+        `
             nu-text-field
             ${outlined ? 'nu-text-field--outlined' : ''}
             nu-text-field--${dark ? 'dark' : 'light'}
             ${rounded ? 'nu-text-field--rounded' : ''}
             ${readonly ? 'nu-text-field--readonly' : ''}
-            ${disabled ? 'nu-text-field--disabled' : ''}
-          `
-        )
-      case 'label':
-        return getModuleClasses(styles, 'nu-text-field-label')
-      case 'error':
-        return getModuleClasses(styles, 'nu-text-field-error')
-      default:
-        return ''
+            ${this.isDisabled ? 'nu-text-field--disabled' : ''}
+            `
+      )
+    } else if (classType === 'error') {
+      return getModuleClasses(
+        styles,
+        `nu-text-field-${flag ? 'hint' : 'error'}`
+      )
+    } else {
+      return getModuleClasses(styles, `nu-text-field-${classType}`)
     }
   }
 
@@ -138,8 +158,13 @@ class TextField extends React.Component {
       dark,
       type,
       name,
+      hint,
       label,
       style,
+      append,
+      prepend,
+      counter,
+      loading,
       disabled,
       readonly,
       className,
@@ -147,39 +172,80 @@ class TextField extends React.Component {
       placeholder,
       noValidation
     } = this.props
-    const { id, valid, value, errorMessage } = this.state
+    const { id, valid, value, count, errorMessage } = this.state
     return (
       <div
         style={style}
-        className={`${this.getClasses('container')} ${className}`}
+        className={`${this.getClasses('wrapper')} ${className}`}
       >
-        {this.canShowLabel ? (
-          <label htmlFor={id} className={`${this.getClasses('label')}`}>
-            <Subtitle1 dark={dark} secondary disabled={disabled}>
-              {label}
-            </Subtitle1>
-          </label>
+        {prepend ? (
+          <div className={`${this.getClasses('prepend')}`}>{prepend}</div>
         ) : null}
-        <input
-          id={id}
-          type={type}
-          name={name}
-          value={value}
-          readOnly={readonly}
-          disabled={disabled}
-          autoFocus={autofocus}
-          placeholder={placeholder}
-          tabIndex={disabled ? -1 : undefined}
-          onBlur={(e) => this.handleBlur(e)}
-          onFocus={(e) => this.handleFocus(e)}
-          onChange={(e) => this.handleChange(e)}
-          className={`${this.getClasses('text-field')}`}
-        />
-        {noValidation ? null : (
-          <Caption dark={dark} className={`${this.getClasses('error')}`}>
-            {!valid ? errorMessage : ''}
-          </Caption>
-        )}
+        <div className={`${this.getClasses('container')}`}>
+          {this.canShowLabel ? (
+            <label htmlFor={id} className={`${this.getClasses('label')}`}>
+              <Subtitle1
+                secondary
+                dark={dark}
+                component='div'
+                disabled={disabled}
+              >
+                {label}
+              </Subtitle1>
+            </label>
+          ) : null}
+          {loading ? (
+            <ProgressLinear
+              fillHeight
+              height={2}
+              dark={dark}
+              indeterminate
+              className={`${this.getClasses('loading')}`}
+            />
+          ) : null}
+          <input
+            id={id}
+            type={type}
+            name={name}
+            value={value}
+            readOnly={readonly}
+            autoFocus={autofocus}
+            placeholder={placeholder}
+            disabled={this.isDisabled}
+            tabIndex={this.isDisabled ? -1 : undefined}
+            onBlur={(e) => this.handleBlur(e)}
+            onFocus={(e) => this.handleFocus(e)}
+            onChange={(e) => this.handleChange(e)}
+            className={`${this.getClasses('text-field')}`}
+          />
+          <div className={`${this.getClasses('caption-wrapper', valid)}`}>
+            {noValidation ? (
+              hint
+            ) : (
+              <Caption
+                secondary
+                dark={dark}
+                component='div'
+                className={`${this.getClasses('error', valid)}`}
+              >
+                {valid ? hint : errorMessage}
+              </Caption>
+            )}
+            {counter ? (
+              <Caption
+                secondary
+                dark={dark}
+                component='div'
+                className={`${this.getClasses('counter')}`}
+              >
+                {count}/{counter}
+              </Caption>
+            ) : null}
+          </div>
+        </div>
+        {append ? (
+          <div className={`${this.getClasses('append')}`}>{append}</div>
+        ) : null}
       </div>
     )
   }

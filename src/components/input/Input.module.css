@@ -1,17 +1,15 @@
-.nu-text-field-container {
-  cursor: text;
+.nu-text-field-wrapper {
   display: flex;
   margin: 4px 12px;
-  position: relative;
   box-sizing: border-box;
-  flex-direction: column;
   align-items: flex-start;
+  justify-items: flex-start;
+  --focused-color: var(--primary);
 }
-.nu-text-field-container.nu-text-field-container--disabled {
-  opacity: 0.6;
-  user-select: none;
-  pointer-events: none;
-  color: var(--disabled-color);
+
+.nu-text-field-container {
+  cursor: text;
+  position: relative;
 }
 
 .nu-text-field {
@@ -26,6 +24,13 @@
   background: var(--bg-color);
   box-shadow: var(--box-shadow-inset);
   transition: all 0.2s ease-in-out;
+}
+
+.nu-text-field-container.nu-text-field-container--disabled {
+  opacity: 0.6;
+  user-select: none;
+  pointer-events: none;
+  color: var(--disabled-color);
 }
 
 .nu-text-field-container--dense .nu-text-field {
@@ -68,7 +73,8 @@
   box-shadow: var(--box-shadow-inset);
 }
 
-.nu-text-field.nu-text-field--rounded {
+.nu-text-field.nu-text-field--rounded,
+.nu-text-field-container.nu-text-field-container--rounded {
   border-radius: 24px;
 }
 
@@ -84,10 +90,15 @@
 }
 
 .nu-text-field.nu-text-field--outlined,
-.nu-text-field.nu-text-field--outlined:hover,
-.nu-text-field.nu-text-field--outlined:focus {
+.nu-text-field.nu-text-field--outlined:hover {
   box-shadow: none !important;
   border: 1px solid var(--selector-bg);
+}
+
+.nu-text-field.nu-text-field--outlined:focus {
+  --selector-bg: var(--primary);
+  transition: none;
+  border: 1.5px solid var(--selector-bg);
 }
 
 .nu-text-field.nu-text-field--disabled:hover,
@@ -98,7 +109,7 @@
 
 .nu-text-field-label {
   z-index: 2;
-  top: 8px;
+  top: 11px;
   left: 17px;
   right: auto;
   user-select: none;
@@ -110,10 +121,51 @@
   top: 6px;
 }
 
-.nu-text-field-error {
-  height: 12px;
+.nu-text-field-caption-wrapper {
+  width: 100%;
+  display: flex;
   margin-top: 4px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nu-text-field-error,
+.nu-text-field-hint {
+  height: 12px;
   padding-left: 16px;
-  color: var(--error);
+  transition: none !important;
   transition: all 0.3s ease-in-out;
+}
+
+.nu-text-field-error {
+  color: var(--error);
+}
+
+.nu-text-field-counter {
+  padding-left: 8px;
+  padding-right: 16px;
+}
+
+.nu-text-field-loading {
+  top: -2px;
+  left: 50%;
+  position: absolute;
+  width: calc(100% - 16px);
+  transform: translateX(-50%);
+}
+
+.nu-text-field-container--rounded .nu-text-field-loading {
+  width: calc(100% - 36px);
+}
+
+.nu-text-field-prepend,
+.nu-text-field-append {
+  padding-top: 10px;
+}
+
+.nu-text-field-append {
+  padding-left: 16px;
+}
+.nu-text-field-prepend {
+  padding-right: 16px;
 }

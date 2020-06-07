@@ -26,14 +26,33 @@ class TextFieldView extends React.Component {
           title={<H5>TextField</H5>}
           subtitle={
             <Subtitle1>
-              The <code>TextField</code> wrapper component is a complete form
-              control including a label, input and help text.
+              Text fields components are used for collecting user provided
+              information.
             </Subtitle1>
           }
           content={
             <Card flat>
               <TextField
+                autofocus
+                prepend="$"
+                append="%"
+                prefix="%"
                 label='Text field 1'
+                className='my-3'
+              ></TextField>
+              <TextField
+                label='Text field 1'
+                className='my-3'
+                type='password'
+              ></TextField>
+              <TextField
+                label='Text field 1'
+                className='my-3'
+                color='var(--success)'
+              ></TextField>
+              <TextField
+                loading
+                label={<div>hey</div>}
                 className='my-3'
                 rules={[
                   (v) => v !== '' || 'Cant be empty',
@@ -48,6 +67,7 @@ class TextFieldView extends React.Component {
               <TextField
                 label='Text field 3'
                 rounded
+                loading
                 className='my-3'
               ></TextField>
               <TextField
@@ -90,6 +110,7 @@ class TextFieldView extends React.Component {
                 label='Text field 7'
                 className='my-3'
                 outlined
+                loading
                 onChange={this.onChange.bind(this)}
               ></TextField>
               <TextField
