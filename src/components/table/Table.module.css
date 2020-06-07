@@ -1,6 +1,7 @@
 .nu-table {
   overflow-x: auto;
   border-radius: 8px;
+  box-sizing: border-box;
   box-shadow: var(--box-shadow);
   background-color: var(--bg-color);
   -webkit-overflow-scrolling: touch;

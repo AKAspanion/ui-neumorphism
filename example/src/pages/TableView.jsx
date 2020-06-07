@@ -198,7 +198,9 @@ class TableView extends React.Component {
         />
         <Divider dense className='mt-6' />
         <H4 className='mt-12'>
-          <a name='api'>API</a>
+          <a href='#api' name='api'>
+            API
+          </a>
         </H4>
         <ApiCard entity='Table' data={tableApi(dark)} />
       </Card>

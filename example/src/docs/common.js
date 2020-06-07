@@ -58,3 +58,15 @@ export const defaultApiDoc = (dark) => {
     )
   ]
 }
+
+export const eventDoc = (dark, type) => {
+  return createApiDoc(
+    dark,
+    `on${type}`,
+    'Function',
+    '',
+    <div>
+      Callback for <code>{type.toLowerCase()}</code> event
+    </div>
+  )
+}

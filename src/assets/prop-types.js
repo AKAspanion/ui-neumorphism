@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 
+export const G_ANY = PropTypes.any
 export const G_FUNC = PropTypes.func
 export const G_BOOL = PropTypes.bool
 export const G_NODE = PropTypes.node
@@ -33,6 +34,7 @@ export const TYPOGRAPHY_PROP_TYPES = {
 }
 
 export const SELECTION_CONTROL_PROP_TYPES = {
+  value: G_ANY,
   id: G_STRING,
   label: G_STRING,
   name: G_STRING,

@@ -2,9 +2,11 @@ import React from 'react'
 
 import { Switch, Card, H4, H5, H6, Subtitle1 } from 'ui-neumorphism'
 
-import { toggle, toggleLabel } from '../docs/'
+import { toggle, toggleLabel, switchApi } from '../docs/'
 
 import DocCard from '../containers/DocCard.jsx'
+import ApiCard from '../containers/ApiCard.jsx'
+
 const url =
   'https://github.com/AKAspanion/ui-neumorphism/blob/master/example/src/pages/SwitchView.jsx'
 class SwitchView extends React.Component {
@@ -50,10 +52,12 @@ class SwitchView extends React.Component {
           }
           code={[toggleLabel, dark, ['Switch']]}
         />
-        <br />
-        <br />
-        <H5>API</H5>
-        <Subtitle1>Coming soon..</Subtitle1>
+        <H4 className='mt-12'>
+          <a href='#api' name='api'>
+            API
+          </a>
+        </H4>
+        <ApiCard entity='Switch' data={switchApi(dark)} />
       </Card>
     )
   }
