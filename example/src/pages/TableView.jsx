@@ -3,7 +3,7 @@ import React from 'react'
 import Icon from '@mdi/react'
 import { mdiNumeric4, mdiNumeric6, mdiNumeric9 } from '@mdi/js'
 
-import { Card, Table, H5, Subtitle1, H4, H6 } from 'ui-neumorphism'
+import { Card, Table, H5, Subtitle1, H4, H6, Divider } from 'ui-neumorphism'
 
 import { simpleTable, minimalTable, tableApi } from '../docs/'
 import DocCard from '../containers/DocCard.jsx'
@@ -69,7 +69,11 @@ class TableView extends React.Component {
     const { dark } = this.props
     return (
       <Card dark={dark} flat className='py-2'>
-        <H4>Tables</H4>
+        <H4>
+          <a href='#component' name='component'>
+            Tables
+          </a>
+        </H4>
         <H6>Tables display sets of data in tabular form</H6>
         <Subtitle1 className='mt-1'>
           Tables display information in a way that’s easy to scan, so that users
@@ -86,7 +90,7 @@ class TableView extends React.Component {
             </Subtitle1>
           }
           content={
-            <Card flat className='fill-width px-12 mt-6'>
+            <Card flat className='fill-width px-6 mt-6'>
               <Table items={items} headers={headers} />
             </Card>
           }
@@ -104,7 +108,7 @@ class TableView extends React.Component {
             </Subtitle1>
           }
           content={
-            <Card flat className='fill-width px-12 mt-6'>
+            <Card flat className='fill-width px-6 mt-6'>
               <Table items={jsxItems} headers={headers} />
             </Card>
           }
@@ -120,7 +124,7 @@ class TableView extends React.Component {
             </Subtitle1>
           }
           content={
-            <Card flat className='fill-width px-12 mt-6'>
+            <Card flat className='fill-width px-6 mt-6'>
               <Table flat items={items} headers={headers} />
             </Card>
           }
@@ -137,7 +141,7 @@ class TableView extends React.Component {
             </Subtitle1>
           }
           content={
-            <Card flat className='fill-width px-12 mt-6'>
+            <Card flat className='fill-width px-6 mt-6'>
               <Table outlined items={items} headers={headers} />
             </Card>
           }
@@ -153,7 +157,7 @@ class TableView extends React.Component {
             </Subtitle1>
           }
           content={
-            <Card flat className='fill-width px-12 mt-6'>
+            <Card flat className='fill-width px-6 mt-6'>
               <Table inset items={items} headers={headers} />
             </Card>
           }
@@ -170,7 +174,7 @@ class TableView extends React.Component {
             </Subtitle1>
           }
           content={
-            <Card flat className='fill-width px-12 mt-6'>
+            <Card flat className='fill-width px-6 mt-6'>
               <Table dense items={items} headers={headers} />
             </Card>
           }
@@ -186,13 +190,17 @@ class TableView extends React.Component {
             </Subtitle1>
           }
           content={
-            <Card flat className='fill-width px-12 mt-6'>
+            <Card flat className='fill-width px-6 mt-6'>
               <Table noHeaders items={items} headers={headers} />
             </Card>
           }
           code={[minimalTable, dark, ['noHeaders']]}
         />
-        <ApiCard className='mt-12' entity='Table' data={tableApi(dark)} />
+        <Divider dense className='mt-6' />
+        <H4 className='mt-12'>
+          <a name='api'>API</a>
+        </H4>
+        <ApiCard entity='Table' data={tableApi(dark)} />
       </Card>
     )
   }

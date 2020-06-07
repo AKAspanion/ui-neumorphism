@@ -1,11 +1,11 @@
 import { createApiDoc, defaultApiDoc } from '../index.js'
 
 const headerExample = `{
-    text: string
-    value: string
-    className?: string
-    verticalAlign?: 'top' | 'middle' | 'bottom'
-    align?: 'inherit' | 'center' | 'left' | 'right' | 'justify'
+  value: string
+  text: string | jsx
+  className?: string
+  verticalAlign?: 'top' | 'middle' | 'bottom'
+  align?: 'inherit' | 'center' | 'left' | 'right' | 'justify'
 }`
 
 export const tableApi = (dark) => {

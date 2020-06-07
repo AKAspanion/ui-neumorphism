@@ -1130,7 +1130,7 @@ main {
   user-select: none;
   position: absolute;
   padding: 4px 16px;
-  width: 300px !important;
+  width: 250px !important;
   transform: translate3d(-324px, 0, 0);
   transition: transform 0.2s ease-in-out;
   height: calc(100vh - var(--padding) * 2 - var(--topbar-height) - 6px);
@@ -1154,7 +1154,7 @@ main {
 .sidebar ul li {
   padding: 6px 12px;
   list-style: none;
-  width: 260px;
+  width: 220px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -1211,6 +1211,10 @@ main {
   cursor: pointer;
 }
 
+.right-bar {
+  width: 150px;
+}
+
 /* Main container */
 
 .main-flex-card {
@@ -1254,15 +1258,15 @@ main {
 .main-view--open {
   opacity: 0.5;
   pointer-events: none;
-  transform: translate3d(300px, 0, 0) !important;
+  transform: translate3d(250px, 0, 0) !important;
 }
 
 .main-view--large {
-  max-width: calc(100% - 300px);
+  max-width: calc(100% - 250px - 150px);
 }
 
-.main-view--small {
-  max-width: calc(100% - 300px);
+.main-view--home {
+  max-width: calc(100% - 250px);
 }
 
 .main-topbar {

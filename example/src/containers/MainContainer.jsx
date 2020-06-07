@@ -1,12 +1,13 @@
 import React from 'react'
 import { findDOMNode } from 'react-dom'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, withRouter } from 'react-router-dom'
 
 import { Card, Divider, withWindowResize } from 'ui-neumorphism'
 import 'ui-neumorphism/dist/index.css'
 
 import Topbar from '../containers/Topbar.jsx'
 import Sidebar from '../containers/Sidebar.jsx'
+import RightBar from '../containers/RightBar.jsx'
 
 import routes from '../routes/index.js'
 
@@ -22,6 +23,11 @@ class MainContainer extends React.Component {
     this.toggleTheme = this.toggleTheme.bind(this)
     this.toggleSidebar = this.toggleSidebar.bind(this)
     this.onSidebarClick = this.onSidebarClick.bind(this)
+  }
+
+  get isHome() {
+    const { pathname: p } = this.props.location
+    return p === '/' || p === '/home' || p === '/examples'
   }
 
   toggleTheme() {
@@ -41,6 +47,7 @@ class MainContainer extends React.Component {
   }
 
   render() {
+    const { isHome } = this
     const { size } = this.props
     const { dark, open } = this.state
     const isSmall = size === 'sm' || size === 'xs'
@@ -71,8 +78,8 @@ class MainContainer extends React.Component {
                 flat
                 ref={(ref) => (this.mainView = findDOMNode(ref))}
                 className={`main-view ${!isSmall ? 'main-view--large' : ''} ${
-                  open ? 'main-view--open' : ''
-                }`}
+                  isHome ? 'main-view--home' : ''
+                } ${open ? 'main-view--open' : ''}`}
               >
                 <Switch>
                   {routes.map((route) => (
@@ -85,6 +92,7 @@ class MainContainer extends React.Component {
                   ))}
                 </Switch>
               </Card>
+              {isSmall || isHome ? null : <RightBar dark={dark} size={size} />}
             </Card>
           </Card>
         </Card>
@@ -93,4 +101,4 @@ class MainContainer extends React.Component {
   }
 }
 
-export default withWindowResize(MainContainer)
+export default withRouter(withWindowResize(MainContainer))
