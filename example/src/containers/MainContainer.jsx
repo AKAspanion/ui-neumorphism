@@ -2,7 +2,12 @@ import React from 'react'
 import { findDOMNode } from 'react-dom'
 import { Switch, Route, withRouter } from 'react-router-dom'
 
-import { Card, Divider, withWindowResize } from 'ui-neumorphism'
+import {
+  Card,
+  Divider,
+  withWindowResize,
+  overrideThemeVariables
+} from 'ui-neumorphism'
 import 'ui-neumorphism/dist/index.css'
 
 import Topbar from '../containers/Topbar.jsx'
@@ -31,6 +36,17 @@ class MainContainer extends React.Component {
   }
 
   toggleTheme() {
+    overrideThemeVariables({
+      '--light-bg': '#E4EBF5',
+      '--light-bg-dark-shadow': '#bec8e4',
+      '--light-bg-light-shadow': '#ffffff',
+      '--dark-bg': '#444444',
+      '--dark-bg-dark-shadow': '#363636',
+      '--dark-bg-light-shadow': '#525252',
+      '--primary': '#2979ff',
+      '--primary-dark': '#2962ff',
+      '--primary-light': '#82b1ff'
+    })
     this.setState({ dark: !this.state.dark })
   }
 

@@ -56,25 +56,34 @@ const themes = {
   'light-1': {
     '--light-bg': '#E9B7B9',
     '--light-bg-dark-shadow': '#ba9294',
-    '--light-bg-light-shadow': '#ffdcde'
+    '--light-bg-light-shadow': '#ffdcde',
+    '--primary': '#ff1744',
+    '--primary-dark': '#d50000',
+    '--primary-light': '#ff8a80'
   },
   'light-2': {
     '--light-bg': '#B9D7D2',
     '--light-bg-dark-shadow': '#94aca8',
-    '--light-bg-light-shadow': '#defffc'
+    '--light-bg-light-shadow': '#defffc',
+    '--primary': '#009688',
+    '--primary-dark': '#00695c',
+    '--primary-light': '#80cbc4'
   },
   'light-3': {
     '--light-bg': '#D6DDFB',
     '--light-bg-dark-shadow': '#abb1c9',
     '--light-bg-light-shadow': '#ffffff',
-    '--primary': '#8672FB',
-    '--primary-dark': '#4526f9',
-    '--primary-light': '#c7befd'
+    '--primary': '#9c27b0',
+    '--primary-dark': '#6a1b9a',
+    '--primary-light': '#ce93d8'
   },
   'light-4': {
     '--light-bg': '#cccccc',
     '--light-bg-dark-shadow': '#a3a3a3',
-    '--light-bg-light-shadow': '#f5f5f5'
+    '--light-bg-light-shadow': '#f5f5f5',
+    '--primary': '#424242',
+    '--primary-dark': '#616161',
+    '--primary-light': '#9e9e9e'
   },
   'dark-1': {
     '--dark-bg': '#292E35',
@@ -94,10 +103,7 @@ const themes = {
   'dark-4': {
     '--dark-bg': '#515568',
     '--dark-bg-dark-shadow': '#414453',
-    '--dark-bg-light-shadow': '#61667d',
-    '--primary': '#0087FF',
-    '--primary-dark': '#005db1',
-    '--primary-light': '#4eacff'
+    '--dark-bg-light-shadow': '#61667d'
   },
   default: {
     '--light-bg': '#E4EBF5',
@@ -106,9 +112,9 @@ const themes = {
     '--dark-bg': '#444444',
     '--dark-bg-dark-shadow': '#363636',
     '--dark-bg-light-shadow': '#525252',
-    '--primary': '#f71b94',
-    '--primary-dark': '#aa0660',
-    '--primary-light': '#fa7ac0'
+    '--primary': '#2979ff',
+    '--primary-dark': '#2962ff',
+    '--primary-light': '#82b1ff'
   }
 }
 
@@ -136,16 +142,12 @@ class Home extends React.Component {
         </Subtitle1>
         <br />
         <FitnessApp dark={dark} />
-        <br />
-        <br />
-        <H4>Installation</H4>
+        <H4 className='mt-12'>Installation</H4>
         <Divider dense className='mt-1 mb-3' />
         <CodeBlock noCollapse lang='bash'>
           {`npm install --save ui-neumorphism`}
         </CodeBlock>
-        <br />
-        <br />
-        <H4>Usage</H4>
+        <H4 className='mt-12'>Usage</H4>
         <Divider dense className='mt-1 mb-3' />
         <Body1 className='mb-2'>
           Components in this package can be imported as individual React
@@ -154,12 +156,11 @@ class Home extends React.Component {
         <CodeBlock noCollapse>
           {`import { Card, Button } from 'ui-neumorphism'`}
         </CodeBlock>
-        <br />
-        <Body1 className='mb-2'>Quick usage example to get you started:</Body1>
+        <Body1 className='mb-2 mt-4'>
+          Quick usage example to get you started:
+        </Body1>
         <CodeBlock noCollapse>{importCode}</CodeBlock>
-        <br />
-        <br />
-        <H4>Theming</H4>
+        <H4 className='mt-12'>Theming</H4>
         <Divider dense className='mt-1 mb-3' />
         <Body1 className='mb-2'>
           In neumorphism UI, theming is dead simple.
@@ -174,14 +175,11 @@ class Home extends React.Component {
           like this:
         </Body1>
         <CodeBlock noCollapse>{themeUtilCode}</CodeBlock>
-        <br />
-        <Body1>
+        <Body1 className='mt-4'>
           Using the power of CSS variables, you can change the theme anywhere in
           the entire application.
         </Body1>
-        <br />
-        <br />
-        <H6 className='mb-1'>Live theme example</H6>
+        <H6 className='mb-1 mt-10'>Live theme example</H6>
         <Body1 className='mb-1'>
           Toggle below buttons to see change in theme
         </Body1>
@@ -202,10 +200,7 @@ class Home extends React.Component {
             )
           })}
         </ToggleButtonGroup>
-        <br />
-        <br />
-        <br />
-        <H4>Author</H4>
+        <H4 className='mt-12'>Author</H4>
         <Divider dense className='mt-1 mb-3' />
         <Body1>Ankit Kumar Pandit</Body1>
         <br />
