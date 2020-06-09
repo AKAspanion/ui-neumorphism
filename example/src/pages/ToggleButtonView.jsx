@@ -28,6 +28,7 @@ import {
   toggleSizes,
   toggleButtons,
   toggleButtonApi,
+  toggleStandalone,
   toggleButtonGroupApi
 } from '../docs/'
 
@@ -38,11 +39,17 @@ class ToggleButtonView extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
+      standaloneActive: 1,
       mandatoryActive: '1',
       multipleActive: [],
       active: ['1'],
       key: 1
     }
+  }
+
+  handleStandaloneChange(e) {
+    this.setState({ standaloneActive: e.value })
+    this.setState({ key: this.state.key + 1 })
   }
 
   mandatoryGroupChange(e) {
@@ -60,7 +67,7 @@ class ToggleButtonView extends React.Component {
 
   render() {
     const { dark } = this.props
-    const { key, active } = this.state
+    const { key, active, standaloneActive } = this.state
     return (
       <Card flat dark={dark}>
         <H4>
@@ -161,6 +168,45 @@ class ToggleButtonView extends React.Component {
         <DocCard
           url={url}
           className='mt-12'
+          title={<H5>Standalone ToggleButtons</H5>}
+          subtitle={
+            <Subtitle1>
+              ToggleButtons can be used without the&nbsp;
+              <code>ToggleButtonGroup</code> wrapper. You need to implement your
+              own selection logic.
+            </Subtitle1>
+          }
+          content={
+            <Card key={key} flat outlined={false}>
+              <Card
+                flat
+                outlined={false}
+                className='mt-4 d-flex flex-wrap align-center justify-center'
+              >
+                {[mdiFormatBold, mdiFormatItalic, mdiFormatUnderline].map(
+                  (icon, i) => (
+                    <ToggleButton
+                      key={i}
+                      value={i + 1}
+                      color='var(--primary)'
+                      selected={standaloneActive === i + 1}
+                      onChange={(e) => this.handleStandaloneChange(e)}
+                    >
+                      <Icon path={icon} size={0.9} />
+                    </ToggleButton>
+                  )
+                )}
+              </Card>
+              <div className='text-center mx-auto pt-6'>
+                {`{ active: ${JSON.stringify(standaloneActive)} }`}
+              </div>
+            </Card>
+          }
+          code={[toggleStandalone, dark]}
+        />
+        <DocCard
+          url={url}
+          className='mt-12'
           title={<H5>Sizes</H5>}
           subtitle={
             <Subtitle1>
@@ -205,7 +251,6 @@ class ToggleButtonView extends React.Component {
           }
           code={[toggleSizes, dark]}
         />
-        <ToggleButton onChange={(e) => this.handleConsole(e)} onClick={(e) => this.handleConsole(e)}>A</ToggleButton>
         <Divider dense className='mt-6' />
         <H4 className='mt-12'>
           <a href='#api' name='api'>

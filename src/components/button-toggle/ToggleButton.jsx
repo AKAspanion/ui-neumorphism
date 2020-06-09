@@ -4,8 +4,8 @@ import { Button } from '../index'
 
 import { callCallback } from '../../util'
 import {
+  G_ANY,
   G_BOOL,
-  G_STRING,
   DEFAULT_PROPS,
   BUTTON_PROP_TYPES
 } from '../../assets/index'
@@ -19,7 +19,7 @@ class ToggleButton extends React.Component {
   }
 
   static propTypes = {
-    value: G_STRING,
+    value: G_ANY,
     selected: G_BOOL,
     ...BUTTON_PROP_TYPES
   }

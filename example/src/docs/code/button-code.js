@@ -123,3 +123,32 @@ export const toggleSizes = (dark) => {
     .map((s) => toggleButtons(dark, 'multiple', `value={active} size='${s}'`))
     .join('\n')}`
 }
+
+export const toggleStandalone = (dark) => {
+  const darkProp = dark ? '\n  dark' : ''
+  return `// Icon component is from '@mdi/react' and is not bundled with this library
+<ToggleButton${darkProp}
+  value={1}
+  color='var(--primary)'
+  selected={standaloneActive === 1}
+  onChange={(e) => this.handleStandaloneChange(e)}
+>
+  <Icon path={mdiFormatBold} size={0.9} />
+</ToggleButton>
+<ToggleButton${darkProp}
+  value={2}
+  color='var(--primary)'
+  selected={standaloneActive === 2}
+  onChange={(e) => this.handleStandaloneChange(e)}
+>
+  <Icon path={mdiFormatItalic} size={0.9} />
+</ToggleButton>
+<ToggleButton${darkProp}
+  value={3}
+  color='var(--primary)'
+  selected={standaloneActive === 3}
+  onChange={(e) => this.handleStandaloneChange(e)}
+>
+  <Icon path={mdiFormatUnderline} size={0.9} />
+</ToggleButton>`
+}
