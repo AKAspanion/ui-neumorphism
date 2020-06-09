@@ -20,8 +20,8 @@ class Checkbox extends React.Component {
   render() {
     return (
       <SelectionControl
-        type='checkbox'
         {...this.props}
+        type='checkbox'
         onChange={(e) => this.handleChange(e)}
       />
     )

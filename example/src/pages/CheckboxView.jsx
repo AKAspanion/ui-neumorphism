@@ -1,11 +1,18 @@
 import React from 'react'
 
-import { Card, H4, H5, H6, Subtitle1, Checkbox } from 'ui-neumorphism'
-import { toggle, toggleLabel } from '../docs/'
+import { Card, H4, H5, H6, Subtitle1, Divider, Checkbox } from 'ui-neumorphism'
+import { toggle, toggleLabel, checkboxApi } from '../docs/'
+
 import DocCard from '../containers/DocCard.jsx'
+import ApiCard from '../containers/ApiCard.jsx'
+
 const url =
   'https://github.com/AKAspanion/ui-neumorphism/blob/master/example/src/pages/CheckboxView.jsx'
 class CheckboxView extends React.Component {
+  handleConsole = (e) => {
+    console.log(e)
+  }
+
   render() {
     const { dark } = this.props
     return (
@@ -21,12 +28,12 @@ class CheckboxView extends React.Component {
               flat
               className='mt-6 d-flex align-center justify-center flex-wrap'
             >
-              <Checkbox color='var(--primary)' checked />
-              <Checkbox color='#299ae6' />
+              <Checkbox color='var(--error)' checked/>
+              <Checkbox color='var(--primary)' />
               <Checkbox />
               <Checkbox disabled />
               <Checkbox disabled checked />
-              <Checkbox checked />
+              <Checkbox checked color='var(--success)' />
             </Card>
           }
           code={[toggle, dark]}
@@ -43,20 +50,23 @@ class CheckboxView extends React.Component {
               flat
               className='mt-6 d-flex align-center justify-center flex-wrap'
             >
-              <Checkbox color='var(--primary)' label='Primary' checked />
-              <Checkbox label='Blue' color='#299ae6' />
+              <Checkbox color='var(--error)' label='Checkbox' checked />
+              <Checkbox label='Primary' color='var(--primary)' />
               <Checkbox label='Default' />
               <Checkbox disabled label='Disabled' />
               <Checkbox disabled checked label='Checked & Disabled' />
-              <Checkbox checked label='Checked' />
+              <Checkbox checked color='var(--success)' label='Checked' />
             </Card>
           }
           code={[toggleLabel, dark]}
         />
-        <br />
-        <br />
-        <H5>API</H5>
-        <Subtitle1>Coming soon..</Subtitle1>
+        <Divider dense className='mt-6' />
+        <H4 className='mt-12'>
+          <a href='#api' name='api'>
+            API
+          </a>
+        </H4>
+        <ApiCard entity='Checkbox' data={checkboxApi(dark)} />
       </Card>
     )
   }

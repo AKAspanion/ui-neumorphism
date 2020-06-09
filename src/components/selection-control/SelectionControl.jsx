@@ -6,7 +6,13 @@ import radioStyles from '../radio/Radio.module.css'
 import checkboxStyles from '../checkbox/Checkbox.module.css'
 import switchStyles from '../switch/Switch.module.css'
 
-import { uid, getModuleClasses, callCallback, setCSSVariable } from '../../util'
+import {
+  uid,
+  getModuleClasses,
+  callCallback,
+  setCSSVariable,
+  pickKeys
+} from '../../util'
 import {
   DEFAULT_PROPS,
   SELECTION_CONTROL_TYPES,
@@ -94,31 +100,34 @@ class SelectionControl extends React.Component {
   }
 
   render() {
-    const {
-      dark,
-      name,
-      value,
-      style,
-      label,
-      disabled,
-      required,
-      className,
-      onClick
-    } = this.props
+    const { dark, style, label, disabled, className } = this.props
     const { id: stateId, type, isChecked } = this.state
     const inputType = this.getInputType(type)
+    const attrs = pickKeys(this.props, [
+      'name',
+      'value',
+      'required',
+      'disabled'
+    ])
+    const events = pickKeys(this.props, [
+      'onClick',
+      'onMouseUp',
+      'onMouseOut',
+      'onMouseMove',
+      'onMouseDown',
+      'onMouseOver',
+      'onMouseEnter',
+      'onMouseLeave'
+    ])
     return (
       <div
         style={style}
         className={`${this.getClasses('container')} ${className}`}
       >
         <input
-          name={name}
+          {...attrs}
+          {...events}
           id={stateId}
-          value={value}
-          onClick={onClick}
-          required={required}
-          disabled={disabled}
           checked={isChecked}
           className={this.getClasses('input')}
           onChange={(e) => this.handleChange(e)}

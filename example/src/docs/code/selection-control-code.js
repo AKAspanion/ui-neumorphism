@@ -1,15 +1,21 @@
 export const toggle = (dark, type = 'Checkbox') => {
   const darkProp = dark ? ' dark' : ''
-  return `<${type}${darkProp} color='var(--primary)' checked />
-<${type}${darkProp} color='#299ae6' />
+  return `<${type}${darkProp} color='var(--error)' checked />
+<${type}${darkProp} color='var(--primary)' />
 <${type}${darkProp} />
 <${type}${darkProp} disabled />
 <${type}${darkProp} disabled checked />
-<${type}${darkProp} checked />`
+<${type}${darkProp} checked color='var(--success)' />`
 }
 
-export const toggleLabel = () => {
-  return `className='d-flex align-center justify-center flex-wrap'`
+export const toggleLabel = (dark, type = 'Checkbox') => {
+  const darkProp = dark ? ' dark' : ''
+  return `<${type}${darkProp} color='var(--error)' checked label='${type}' />
+<${type}${darkProp} color='var(--primary)' label='Primary' />
+<${type}${darkProp} label='Default' />
+<${type}${darkProp} disabled label='Disabled' />
+<${type}${darkProp} disabled checked label='Checked & Disabled' />
+<${type}${darkProp} checked color='var(--success)' label='Checked' />`
 }
 
 export const radio = (dark, prop) => {
