@@ -14,7 +14,7 @@ export const createApiDoc = (
   return {
     name: <span style={{ color: 'var(--primary)' }}>{name}</span>,
     type: <Subtitle2 dark={dark}>{type}</Subtitle2>,
-    initial,
+    initial: <Body2 dark={dark}>{initial}</Body2>,
     description: (
       <div>
         <Body2 dark={dark} secondary>
@@ -48,7 +48,7 @@ export const defaultApiDoc = (dark) => {
     ),
     createApiDoc(
       dark,
-      'styles',
+      'style',
       'Object',
       '{}',
       'Styles to be applied on component container.'

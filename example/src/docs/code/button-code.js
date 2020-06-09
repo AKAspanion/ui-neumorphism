@@ -68,19 +68,22 @@ export const fabPosButtons = (dark) => {
 export const iconButtons = (dark) => {
   const darkProp = dark ? ' dark' : ''
   return `// Icon component is from '@mdi/react' and is not bundled with this library
-<IconButton${darkProp}>
-  <Icon path={mdiRun} size={1} />
+<IconButton size='small'>
+  <Icon path={mdiRun} size={0.8} />
 </IconButton>
-<IconButton${darkProp} color='#b1b100'>
-  <Icon path={mdiStar} size={1} />
+<IconButton rounded text={false} color='var(--error)'>
+  <Icon path={mdiOpacity} size={1} />
 </IconButton>
-<IconButton${darkProp} disabled>
+<IconButton disabled>
   <Icon path={mdiTrashCanOutline} size={1} />
 </IconButton>
-<IconButton${darkProp} color='var(--primary)'>
+<IconButton text={false} size='large' color='var(--warning)'>
+  <Icon path={mdiStar} size={1} />
+</IconButton>
+<IconButton color='var(--primary)' rounded>
   <Icon path={mdiSpeaker} size={1} />
 </IconButton>
-<IconButton${darkProp} color='#299ae6' >
+<IconButton color='var(--success)' outlined>
   <Icon path={mdiBroom} size={1} />
 </IconButton>`
 }

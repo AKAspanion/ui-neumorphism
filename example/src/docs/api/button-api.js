@@ -55,6 +55,18 @@ const bgColor = (dark) =>
     'Applies specified color to the background.'
   )
 
+const rounded = (dark) =>
+  createApiDoc(
+    dark,
+    'rounded',
+    'Boolean',
+    'false',
+    'Applies a large border radius on the button.'
+  )
+
+const outlined = (dark) =>
+  createApiDoc(dark, 'outlined', 'Boolean', 'false', 'Applies a thin border.')
+
 export const buttonApi = (dark) => {
   return [
     ...defaultApiDoc(dark),
@@ -72,24 +84,12 @@ export const buttonApi = (dark) => {
       'false',
       'Expands the button to 100% of available space.'
     ),
-    active(dark),
-    createApiDoc(
-      dark,
-      'rounded',
-      'Boolean',
-      'false',
-      'Applies a large border radius on the button.'
-    ),
     sizes(dark),
     color(dark),
     bgColor(dark),
-    createApiDoc(
-      dark,
-      'outlined',
-      'Boolean',
-      'false',
-      'Applies a thin border.'
-    ),
+    active(dark),
+    rounded(dark),
+    outlined(dark),
     disabled(dark),
     createApiDoc(
       dark,
@@ -140,6 +140,29 @@ export const fabButtonApi = (dark) => {
       'true',
       'Animates button on render.'
     ),
+    disabled(dark),
+    eventDoc(dark, 'Click'),
+    eventDoc(dark, 'MouseOut'),
+    eventDoc(dark, 'MouseOver')
+  ]
+}
+
+export const iconButtonApi = (dark) => {
+  return [
+    ...defaultApiDoc(dark),
+    createApiDoc(
+      dark,
+      'text',
+      'Boolean',
+      'true',
+      'Removes the elevation and hover effect.'
+    ),
+    sizes(dark),
+    color(dark),
+    bgColor(dark),
+    active(dark),
+    rounded(dark),
+    outlined(dark),
     disabled(dark),
     eventDoc(dark, 'Click'),
     eventDoc(dark, 'MouseOut'),

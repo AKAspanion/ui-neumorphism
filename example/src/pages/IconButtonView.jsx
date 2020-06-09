@@ -6,13 +6,15 @@ import {
   mdiStar,
   mdiBroom,
   mdiSpeaker,
+  mdiOpacity,
   mdiTrashCanOutline
 } from '@mdi/js'
 
-import { Card, H4, H5, H6, Subtitle1, IconButton } from 'ui-neumorphism'
+import { Card, H4, Divider, H6, Subtitle1, IconButton } from 'ui-neumorphism'
 
 import DocCard from '../containers/DocCard.jsx'
-import { iconButtons } from '../docs/'
+import ApiCard from '../containers/ApiCard.jsx'
+import { iconButtons, iconButtonApi } from '../docs/'
 
 const url =
   'https://github.com/AKAspanion/ui-neumorphism/blob/master/example/src/pages/IconButtonView.jsx'
@@ -36,29 +38,45 @@ class IconButtonView extends React.Component {
               outlined={false}
               className='mt-6 d-flex justify-center align-center flex-wrap'
             >
-              <IconButton className='ma-12'>
-                <Icon path={mdiRun} size={1} />
+              <IconButton className='ma-12' size='small'>
+                <Icon path={mdiRun} size={0.8} />
               </IconButton>
-              <IconButton color='#b1b100' className='ma-12'>
-                <Icon path={mdiStar} size={1} />
+              <IconButton
+                rounded
+                text={false}
+                color='var(--error)'
+                className='ma-12'
+              >
+                <Icon path={mdiOpacity} size={1} />
               </IconButton>
               <IconButton disabled className='ma-12'>
                 <Icon path={mdiTrashCanOutline} size={1} />
               </IconButton>
-              <IconButton color='var(--primary)' className='ma-12'>
+              <IconButton
+                text={false}
+                size='large'
+                className='ma-12'
+                color='var(--warning)'
+              >
+                <Icon path={mdiStar} size={1} />
+              </IconButton>
+              <IconButton color='var(--primary)' className='ma-12' rounded>
                 <Icon path={mdiSpeaker} size={1} />
               </IconButton>
-              <IconButton color='#299ae6' className='ma-12'>
+              <IconButton color='var(--success)' className='ma-12' outlined>
                 <Icon path={mdiBroom} size={1} />
               </IconButton>
             </Card>
           }
           code={[iconButtons, dark]}
         />
-        <br />
-        <br />
-        <H5>API</H5>
-        <Subtitle1>Coming soon..</Subtitle1>
+        <Divider dense className='mt-6' />
+        <H4 className='mt-12'>
+          <a href='#api' name='api'>
+            API
+          </a>
+        </H4>
+        <ApiCard entity='IconButton' data={iconButtonApi(dark)} />
       </Card>
     )
   }
