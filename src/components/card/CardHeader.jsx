@@ -4,9 +4,9 @@ import styles from './Card.module.css'
 import { getModuleClasses, passDownProp } from '../../util'
 import {
   G_BOOL,
+  G_NODE,
   DEFAULT_PROPS,
-  DEFAULT_PROPS_TYPE,
-  G_NODE
+  DEFAULT_PROPS_TYPE
 } from '../../assets/index'
 
 class CardHeader extends React.Component {

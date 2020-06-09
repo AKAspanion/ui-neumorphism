@@ -10,6 +10,7 @@ import {
   CardMedia,
   Subtitle1,
   Subtitle2,
+  Divider,
   Spacer,
   Button,
   Body2,
@@ -20,14 +21,21 @@ import {
 } from 'ui-neumorphism'
 
 import {
+  cardApi,
   mediaCard,
   simpleCard,
   complexCard,
+  cardMediaApi,
+  cardActionApi,
+  cardHeaderApi,
   elevationCard,
-  simpleCardCopy
+  simpleCardCopy,
+  cardContentApi
 } from '../docs/'
 
 import DocCard from '../containers/DocCard.jsx'
+import ApiCard from '../containers/ApiCard.jsx'
+
 const url =
   'https://github.com/AKAspanion/ui-neumorphism/blob/master/example/src/pages/CardView.jsx'
 class CardView extends React.Component {
@@ -60,7 +68,11 @@ class CardView extends React.Component {
     const { dark } = this.props
     return (
       <Card flat dark={dark} className='code-block-container'>
-        <H4>Cards</H4>
+        <H4>
+          <a href='#component' name='component'>
+            Cards
+          </a>
+        </H4>
         <H6>Cards contain content and actions about a single subject.</H6>
         <Subtitle1 className='mt-3'>
           Although cards can support multiple actions, remember that cards are
@@ -329,11 +341,21 @@ class CardView extends React.Component {
           }
           code={[complexCard, dark]}
         />
-        <br />
-        <br />
-        <br />
-        <H5>API</H5>
-        <Subtitle1>Coming soon..</Subtitle1>
+        <Divider dense className='mt-6' />
+        <H4 className='mt-12'>
+          <a href='#api' name='api'>
+            API
+          </a>
+        </H4>
+        <ApiCard entity='Card' data={cardApi(dark)} />
+        <div className='mt-12'></div>
+        <ApiCard entity='CardHeader' data={cardHeaderApi(dark)} />
+        <div className='mt-12'></div>
+        <ApiCard entity='CardMedia' data={cardMediaApi(dark)} />
+        <div className='mt-12'></div>
+        <ApiCard entity='CardContent' data={cardContentApi(dark)} />
+        <div className='mt-12'></div>
+        <ApiCard entity='CardAction' data={cardActionApi(dark)} />
       </Card>
     )
   }

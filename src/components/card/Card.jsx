@@ -3,7 +3,7 @@ import React from 'react'
 import { ProgressLinear } from '../../index'
 
 import styles from './Card.module.css'
-import { getModuleClasses, passDownProp } from '../../util'
+import { getModuleClasses, passDownProp, pickKeys } from '../../util'
 import {
   G_NUM,
   G_BOOL,
@@ -22,7 +22,11 @@ class Card extends React.Component {
     height: G_NUM,
     inset: G_BOOL,
     loading: G_BOOL,
+    minWidth: G_NUM,
+    maxWidth: G_NUM,
     rounded: G_BOOL,
+    minHeight: G_NUM,
+    maxHeight: G_NUM,
     disabled: G_BOOL,
     outlined: G_BOOL,
     elevation: G_NUM,
@@ -48,23 +52,24 @@ class Card extends React.Component {
 
   render() {
     const sizeStyles = {}
-    const {
-      dark,
-      style,
-      width,
-      height,
-      loading,
-      children,
-      className
-    } = this.props
+    const { dark, style, loading, children, className } = this.props
     const cardChildren = passDownProp(children, this.props, [
       'dark',
       'rounded',
       'disabled',
       'outlined'
     ])
-    if (width) sizeStyles.width = `${width}px`
-    if (height) sizeStyles.height = `${height}px`
+    const pickedStyles = pickKeys(this.props, [
+      'width',
+      'height',
+      'minWidth',
+      'maxWidth',
+      'minHeight',
+      'maxHeight'
+    ])
+    Object.keys(pickedStyles).map((key) => {
+      sizeStyles[key] = `${pickedStyles[key]}px`
+    })
     return (
       <div
         style={{ ...style, ...sizeStyles }}
