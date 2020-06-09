@@ -16,13 +16,20 @@ import {
   H6,
   H5,
   Card,
+  Divider,
   Subtitle1,
   ToggleButton,
   ToggleButtonGroup
 } from 'ui-neumorphism'
 
 import DocCard from '../containers/DocCard.jsx'
-import { toggleButtons, toggleSizes } from '../docs/'
+import ApiCard from '../containers/ApiCard.jsx'
+import {
+  toggleSizes,
+  toggleButtons,
+  toggleButtonApi,
+  toggleButtonGroupApi
+} from '../docs/'
 
 const url =
   'https://github.com/AKAspanion/ui-neumorphism/blob/master/example/src/pages/ToggleButtonView.jsx'
@@ -56,7 +63,11 @@ class ToggleButtonView extends React.Component {
     const { key, active } = this.state
     return (
       <Card flat dark={dark}>
-        <H4>Toggle Buttons</H4>
+        <H4>
+          <a href='#component' name='component'>
+            <H4>Toggle Buttons</H4>
+          </a>
+        </H4>
         <H6>Toggle buttons can be used to group related options.</H6>
         <Subtitle1 className='mt-3'>
           To emphasize groups of related Toggle buttons, a group should share a
@@ -83,6 +94,8 @@ class ToggleButtonView extends React.Component {
                 <ToggleButtonGroup
                   value='1'
                   mandatory
+                  text={false}
+                  color='var(--primary)'
                   onChange={this.mandatoryGroupChange.bind(this)}
                 >
                   {[
@@ -91,12 +104,7 @@ class ToggleButtonView extends React.Component {
                     mdiFormatAlignRight,
                     mdiFormatAlignJustify
                   ].map((icon, i) => (
-                    <ToggleButton
-                      key={i}
-                      disabled={i === 3}
-                      value={`${i + 1}`}
-                      color='var(--primary)'
-                    >
+                    <ToggleButton key={i} disabled={i === 3} value={`${i + 1}`}>
                       <Icon path={icon} size={0.9} />
                     </ToggleButton>
                   ))}
@@ -197,10 +205,16 @@ class ToggleButtonView extends React.Component {
           }
           code={[toggleSizes, dark]}
         />
-        <br />
-        <br />
-        <H5>API</H5>
-        <Subtitle1>Coming soon..</Subtitle1>
+        <ToggleButton onChange={(e) => this.handleConsole(e)} onClick={(e) => this.handleConsole(e)}>A</ToggleButton>
+        <Divider dense className='mt-6' />
+        <H4 className='mt-12'>
+          <a href='#api' name='api'>
+            API
+          </a>
+        </H4>
+        <ApiCard entity='ToggleButtonGroup' data={toggleButtonGroupApi(dark)} />
+        <div className='mt-12'></div>
+        <ApiCard entity='ToggleButton' data={toggleButtonApi(dark)} />
       </Card>
     )
   }

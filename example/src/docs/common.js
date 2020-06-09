@@ -13,15 +13,23 @@ export const createApiDoc = (
 ) => {
   return {
     name: <span style={{ color: 'var(--primary)' }}>{name}</span>,
-    type: <Subtitle2 dark={dark}>{type}</Subtitle2>,
-    initial: <Body2 dark={dark}>{initial}</Body2>,
+    type: (
+      <Subtitle2 dark={dark} component='div'>
+        {type}
+      </Subtitle2>
+    ),
+    initial: (
+      <Body2 dark={dark} component='div'>
+        {initial}
+      </Body2>
+    ),
     description: (
       <div>
-        <Body2 dark={dark} secondary>
+        <Body2 dark={dark} secondary component='div'>
           {description}
         </Body2>
         {codeCaption ? (
-          <Caption dark={dark} className='mt-3 mb-1'>
+          <Caption dark={dark} component='div' className='mt-3 mb-1'>
             {codeCaption}
           </Caption>
         ) : null}
@@ -63,14 +71,16 @@ export const defaultApiDoc = (dark) => {
   ]
 }
 
-export const eventDoc = (dark, type) => {
+export const eventDoc = (dark, type, caption, code) => {
   return createApiDoc(
     dark,
     `on${type}`,
     'Function',
     '',
     <div>
-      Callback for <code>{type.toLowerCase()}</code> event
-    </div>
+      Callback for <code>{type.toLowerCase()}</code> event.
+    </div>,
+    caption,
+    code
   )
 }

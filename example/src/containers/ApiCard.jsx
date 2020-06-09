@@ -14,7 +14,7 @@ class ApiCard extends React.Component {
     ]
     const { dark, style, entity, data, className } = this.props
     return (
-      <Card flat dark={dark} style={style} className={className}>
+      <Card flat dark={dark} style={style} className={`mb-3 ${className}`}>
         <H6>The API documentation of the {entity} component.</H6>
         <H5 className='mt-4 mb-3'>Import</H5>
         <CodeBlock lang='jsx' noCollapse>

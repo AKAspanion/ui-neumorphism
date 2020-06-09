@@ -68,22 +68,22 @@ export const fabPosButtons = (dark) => {
 export const iconButtons = (dark) => {
   const darkProp = dark ? ' dark' : ''
   return `// Icon component is from '@mdi/react' and is not bundled with this library
-<IconButton size='small'>
+<IconButton${darkProp} size='small'>
   <Icon path={mdiRun} size={0.8} />
 </IconButton>
-<IconButton rounded text={false} color='var(--error)'>
+<IconButton${darkProp} rounded text={false} color='var(--error)'>
   <Icon path={mdiOpacity} size={1} />
 </IconButton>
-<IconButton disabled>
+<IconButton${darkProp} disabled>
   <Icon path={mdiTrashCanOutline} size={1} />
 </IconButton>
-<IconButton text={false} size='large' color='var(--warning)'>
+<IconButton${darkProp} text={false} size='large' color='var(--warning)'>
   <Icon path={mdiStar} size={1} />
 </IconButton>
-<IconButton color='var(--primary)' rounded>
+<IconButton${darkProp} color='var(--primary)' rounded>
   <Icon path={mdiSpeaker} size={1} />
 </IconButton>
-<IconButton color='var(--success)' outlined>
+<IconButton${darkProp} color='var(--success)' outlined>
   <Icon path={mdiBroom} size={1} />
 </IconButton>`
 }
@@ -92,25 +92,25 @@ export const toggleButtons = (dark, type, prop) => {
   const darkProp = dark ? ' dark' : ''
   const propType = prop ? ' ' + prop : ''
   return `// Icon component is from '@mdi/react' and is not bundled with this library
-<ToggleButtonGroup${darkProp}${propType} ${type} onChange={this.${type}GroupChange.bind(this)}>
-  <ToggleButton value='1' color='var(--primary)'>
+<ToggleButtonGroup${darkProp}${propType} ${type} color='var(--primary)' onChange={this.${type}GroupChange.bind(this)}>
+  <ToggleButton value='1'>
     <Icon path={${
       type === 'mandatory' ? 'mdiFormatAlignLeft' : 'mdiFormatBold'
     }} size={0.9} />
   </ToggleButton>
-  <ToggleButton value='2' color='var(--primary)'>
+  <ToggleButton value='2'>
     <Icon path={${
       type === 'mandatory' ? 'mdiFormatAlignCenter' : 'mdiFormatItalic'
     }} size={0.9} />
   </ToggleButton>
-  <ToggleButton value='3' color='var(--primary)'>
+  <ToggleButton value='3'>
     <Icon path={${
       type === 'mandatory' ? 'mdiFormatAlignRight' : 'mdiFormatUnderline'
     }} size={0.9} />
   </ToggleButton>${
     type === 'mandatory'
       ? `
-  <ToggleButton disabled value='4' color='var(--primary)'>
+  <ToggleButton disabled value='4'>
     <Icon path={mdiFormatAlignJustify} size={0.9} />
   </ToggleButton>`
       : ''

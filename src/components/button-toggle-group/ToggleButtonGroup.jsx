@@ -2,7 +2,7 @@ import React, { Children, cloneElement } from 'react'
 
 import { ToggleButton } from '../index'
 
-import { callCallback } from '../../util'
+import { callCallback, passDownProp } from '../../util'
 import {
   G_BOOL,
   DEFAULT_PROPS,
@@ -68,38 +68,33 @@ class ToggleButtonGroup extends React.Component {
   }
 
   render() {
-    const {
-      style,
-      size,
-      children,
-      multiple,
-      className,
-      dark: parentDark
-    } = this.props
-    const buttons = Children.map(children, (child) => {
-      if (child.type === ToggleButton) {
-        let selected = false
-        const { active } = this.state
-        const { value, dark } = child.props
+    const { style, children, multiple, className } = this.props
+    const buttons = passDownProp(
+      Children.map(children, (child) => {
+        if (child.type === ToggleButton) {
+          let selected = false
+          const { active } = this.state
+          const { value } = child.props
 
-        if (Array.isArray(active)) {
-          const trimmedActive = multiple
-            ? active
-            : active.filter((a, i) => i === 0)
-          selected = !!trimmedActive.find((a) => a === value)
-        } else {
-          selected = active === value
+          if (Array.isArray(active)) {
+            const trimmedActive = multiple
+              ? active
+              : active.filter((a, i) => i === 0)
+            selected = !!trimmedActive.find((a) => a === value)
+          } else {
+            selected = active === value
+          }
+
+          return cloneElement(child, {
+            selected,
+            key: this.state.key,
+            onChange: (e) => this.handleClick(e, child)
+          })
         }
-
-        return cloneElement(child, {
-          size,
-          selected,
-          key: this.state.key,
-          dark: dark || parentDark,
-          onChange: (e) => this.handleClick(e, child)
-        })
-      }
-    })
+      }),
+      this.props,
+      ['dark', 'size', 'color', 'rounded', 'disabled', 'outlined']
+    )
     return (
       <div style={style} className={className}>
         {buttons}

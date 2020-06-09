@@ -4,7 +4,13 @@ import { Card, Button, H4, H6, H5, Divider, Subtitle1 } from 'ui-neumorphism'
 
 import DocCard from '../containers/DocCard.jsx'
 import ApiCard from '../containers/ApiCard.jsx'
-import { allButtons, docButtons, blockButton, sizeButtons, buttonApi } from '../docs/'
+import {
+  buttonApi,
+  allButtons,
+  docButtons,
+  blockButton,
+  sizeButtons
+} from '../docs/'
 
 const url =
   'https://github.com/AKAspanion/ui-neumorphism/blob/master/example/src/pages/ButtonView.jsx'
@@ -14,7 +20,11 @@ class ButtonView extends React.Component {
     const { dark } = this.props
     return (
       <Card flat dark={dark}>
-        <H4>Buttons</H4>
+        <H4>
+          <a href='#component' name='component'>
+            Buttons
+          </a>
+        </H4>
         <H6>
           Buttons allow users to take actions, and make choices, with a single
           tap.

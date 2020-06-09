@@ -1,7 +1,8 @@
 import React from 'react'
 
 import styles from './Button.module.css'
-import { getModuleClasses, passDownProp } from '../../util'
+
+import { getModuleClasses, passDownProp, pickKeys } from '../../util'
 import { BUTTON_PROP_TYPES, DEFAULT_PROPS } from '../../assets/index'
 
 class Button extends React.Component {
@@ -58,6 +59,10 @@ class Button extends React.Component {
     }
   }
 
+  handleConsole(e) {
+    console.log(e.nativeEvent)
+  }
+
   render() {
     const {
       type,
@@ -69,13 +74,19 @@ class Button extends React.Component {
       children,
       className
     } = this.props
-    const { onClick, mouseOver, mouseOut } = this.props
     const btnChildren = passDownProp(children, this.props, 'dark')
     return (
       <div
-        onClick={onClick}
-        onMouseOut={mouseOut}
-        onMouseOver={mouseOver}
+        {...pickKeys(this.props, [
+          'onClick',
+          'onMouseUp',
+          'onMouseOut',
+          'onMouseMove',
+          'onMouseDown',
+          'onMouseOver',
+          'onMouseEnter',
+          'onMouseLeave'
+        ])}
         className={`${this.getClasses('container')} ${className}`}
         style={{
           ...style,

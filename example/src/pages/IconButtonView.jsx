@@ -24,7 +24,11 @@ class IconButtonView extends React.Component {
     const { dark } = this.props
     return (
       <Card flat dark={dark}>
-        <H4>Icon Button</H4>
+        <H4>
+          <a href='#component' name='component'>
+            Icon Button
+          </a>
+        </H4>
         <H6>Icon buttons are commonly found in app bars and toolbars.</H6>
         <Subtitle1 className='mt-3'>
           Icons are appropriate for buttons that allow a single choice to be

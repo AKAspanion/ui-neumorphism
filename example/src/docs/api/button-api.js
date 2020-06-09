@@ -1,13 +1,13 @@
 import React from 'react'
 import { createApiDoc, defaultApiDoc, eventDoc } from '../index.js'
 
-const sizes = (dark) =>
+const sizes = (dark, desc) =>
   createApiDoc(
     dark,
     'size',
     `small | medium | large`,
     'medium',
-    'The size of the button.'
+    desc || 'The size of the button.'
   )
 const active = (dark) =>
   createApiDoc(
@@ -34,13 +34,13 @@ const color = (dark) =>
       <div>
         Light:&nbsp;&nbsp;
         <span style={{ color: 'var(--primary-dark)' }}>
-          var(--g-text-color-light)
+          --g-text-color-light
         </span>
       </div>
       <div>
         Dark:&nbsp;&nbsp;
         <span style={{ color: 'var(--primary-dark)' }}>
-          var(--g-text-color-dark)
+          --g-text-color-dark
         </span>
       </div>
     </div>,
@@ -66,6 +66,15 @@ const rounded = (dark) =>
 
 const outlined = (dark) =>
   createApiDoc(dark, 'outlined', 'Boolean', 'false', 'Applies a thin border.')
+
+const trueText = (dark) =>
+  createApiDoc(
+    dark,
+    'text',
+    'Boolean',
+    'true',
+    'Removes the elevation and hover effect.'
+  )
 
 export const buttonApi = (dark) => {
   return [
@@ -99,8 +108,13 @@ export const buttonApi = (dark) => {
       'Lowers elevation to a medium state.'
     ),
     eventDoc(dark, 'Click'),
+    eventDoc(dark, 'MouseUp'),
     eventDoc(dark, 'MouseOut'),
-    eventDoc(dark, 'MouseOver')
+    eventDoc(dark, 'MouseMove'),
+    eventDoc(dark, 'MouseDown'),
+    eventDoc(dark, 'MouseOver'),
+    eventDoc(dark, 'MouseEnter'),
+    eventDoc(dark, 'MouseLeave')
   ]
 }
 
@@ -142,21 +156,20 @@ export const fabButtonApi = (dark) => {
     ),
     disabled(dark),
     eventDoc(dark, 'Click'),
+    eventDoc(dark, 'MouseUp'),
     eventDoc(dark, 'MouseOut'),
-    eventDoc(dark, 'MouseOver')
+    eventDoc(dark, 'MouseMove'),
+    eventDoc(dark, 'MouseDown'),
+    eventDoc(dark, 'MouseOver'),
+    eventDoc(dark, 'MouseEnter'),
+    eventDoc(dark, 'MouseLeave')
   ]
 }
 
 export const iconButtonApi = (dark) => {
   return [
     ...defaultApiDoc(dark),
-    createApiDoc(
-      dark,
-      'text',
-      'Boolean',
-      'true',
-      'Removes the elevation and hover effect.'
-    ),
+    trueText(dark),
     sizes(dark),
     color(dark),
     bgColor(dark),
@@ -165,7 +178,122 @@ export const iconButtonApi = (dark) => {
     outlined(dark),
     disabled(dark),
     eventDoc(dark, 'Click'),
+    eventDoc(dark, 'MouseUp'),
     eventDoc(dark, 'MouseOut'),
-    eventDoc(dark, 'MouseOver')
+    eventDoc(dark, 'MouseMove'),
+    eventDoc(dark, 'MouseDown'),
+    eventDoc(dark, 'MouseOver'),
+    eventDoc(dark, 'MouseEnter'),
+    eventDoc(dark, 'MouseLeave')
+  ]
+}
+
+export const toggleButtonApi = (dark) => {
+  return [
+    ...defaultApiDoc(dark),
+    createApiDoc(
+      dark,
+      'value',
+      'any',
+      '',
+      <div>
+        Assigned value for the toggle button. Useful with&nbsp;
+        <code>ToggleButtonGroup</code>
+      </div>
+    ),
+    createApiDoc(
+      dark,
+      'selected',
+      'Boolean',
+      'false',
+      <div>
+        Sets the state of Button to be active when
+        <code>true</code>
+      </div>
+    ),
+    trueText(dark),
+    sizes(dark),
+    color(dark),
+    rounded(dark),
+    outlined(dark),
+    disabled(dark),
+    eventDoc(
+      dark,
+      'Click',
+      'Response Format:',
+      `{
+    value: prop value
+    event: native event,
+}`
+    ),
+    eventDoc(
+      dark,
+      'Change',
+      'Response Format:',
+      `{ 
+    value: prop value
+    event: native event,
+    selected: true | false,
+}`
+    ),
+    eventDoc(dark, 'MouseUp'),
+    eventDoc(dark, 'MouseOut'),
+    eventDoc(dark, 'MouseMove'),
+    eventDoc(dark, 'MouseDown'),
+    eventDoc(dark, 'MouseOver'),
+    eventDoc(dark, 'MouseEnter'),
+    eventDoc(dark, 'MouseLeave')
+  ]
+}
+
+export const toggleButtonGroupApi = (dark) => {
+  return [
+    ...defaultApiDoc(dark),
+    sizes(
+      dark,
+      'Sets the specified size of all toggle buttons inside the group.'
+    ),
+    color(dark),
+    createApiDoc(
+      dark,
+      'value',
+      'any',
+      '',
+      'The currently selected value within the group or an array of selected values.'
+    ),
+    rounded(dark),
+    outlined(dark),
+    disabled(dark),
+    createApiDoc(
+      dark,
+      'multiple',
+      'Boolean',
+      'false',
+      'Allows multiple values to be selected.'
+    ),
+    createApiDoc(
+      dark,
+      'mandatory',
+      'Boolean',
+      'false',
+      'At least one selection is always required in group.'
+    ),
+    eventDoc(
+      dark,
+      'Click',
+      'Response Format:',
+      `{ 
+    active: value array | value,
+    event: ToggleButton \`onChange\` event
+}`
+    ),
+    eventDoc(
+      dark,
+      'Change',
+      'Response Format:',
+      `{ 
+    active: value array | value
+}`
+    )
   ]
 }

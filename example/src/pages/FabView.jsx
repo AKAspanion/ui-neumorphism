@@ -14,7 +14,11 @@ class FabView extends React.Component {
     const { dark } = this.props
     return (
       <Card flat dark={dark}>
-        <H4>Floating action button</H4>
+        <H4>
+          <a href='#component' name='component'>
+            Floating action button
+          </a>
+        </H4>
         <H6>
           A floating action button (FAB) performs the primary, or most common,
           action on a screen.
