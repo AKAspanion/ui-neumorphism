@@ -1,10 +1,12 @@
 import React from 'react'
+import { withRouter } from 'react-router-dom'
 
 import {
   H4,
   H6,
   Card,
   Body1,
+  Button,
   Divider,
   Subtitle1,
   ToggleButton,
@@ -132,6 +134,10 @@ class Home extends React.Component {
     overrideThemeVariables(themes[theme])
   }
 
+  handleExampleClick(e) {
+    this.props.history.push('/examples')
+  }
+
   render() {
     const { dark } = this.props
     return (
@@ -142,6 +148,15 @@ class Home extends React.Component {
         </Subtitle1>
         <br />
         <FitnessApp dark={dark} />
+        <Card flat className='text-center my-12'>
+          <Button
+            outlined
+            color='var(--primary)'
+            onClick={(e) => this.handleExampleClick(e)}
+          >
+            Show more
+          </Button>
+        </Card>
         <H4 className='mt-12'>Installation</H4>
         <Divider dense className='mt-1 mb-3' />
         <CodeBlock noCollapse lang='bash'>
@@ -209,4 +224,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home
+export default withRouter(Home)

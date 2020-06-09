@@ -1265,6 +1265,10 @@ main {
   max-width: calc(100% - 250px - 150px);
 }
 
+.main-view--small {
+  max-width: calc(100%) !important;
+}
+
 .main-view--home {
   max-width: calc(100% - 250px);
 }

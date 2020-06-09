@@ -1,5 +1,5 @@
 import React from 'react'
-import { Caption } from 'ui-neumorphism'
+import { Body2, Caption, Subtitle2 } from 'ui-neumorphism'
 import CodeBlock from '../containers/CodeBlock.jsx'
 
 export const createApiDoc = (
@@ -13,11 +13,13 @@ export const createApiDoc = (
 ) => {
   return {
     name: <span style={{ color: 'var(--primary)' }}>{name}</span>,
-    type,
+    type: <Subtitle2 dark={dark}>{type}</Subtitle2>,
     initial,
     description: (
       <div>
-        {description}
+        <Body2 dark={dark} secondary>
+          {description}
+        </Body2>
         {codeCaption ? (
           <Caption dark={dark} className='mt-3 mb-1'>
             {codeCaption}
@@ -40,7 +42,9 @@ export const defaultApiDoc = (dark) => {
       'dark',
       'Boolean',
       'false',
-      'Changes theme to dark when true.'
+      <div>
+        Changes theme to dark when <code>true</code>.
+      </div>
     ),
     createApiDoc(
       dark,

@@ -32,7 +32,9 @@ class MainContainer extends React.Component {
 
   get isHome() {
     const { pathname: p } = this.props.location
-    return p === '/' || p === '/home' || p === '/examples'
+    return (
+      p === '/' || p === '/home' || p === '/examples' || p === '/typography'
+    )
   }
 
   toggleTheme() {
@@ -93,9 +95,11 @@ class MainContainer extends React.Component {
               <Card
                 flat
                 ref={(ref) => (this.mainView = findDOMNode(ref))}
-                className={`main-view ${!isSmall ? 'main-view--large' : ''} ${
-                  isHome ? 'main-view--home' : ''
-                } ${open ? 'main-view--open' : ''}`}
+                className={`main-view main-view--${
+                  !isSmall ? 'large' : 'small'
+                } ${isHome ? 'main-view--home' : ''} ${
+                  open ? 'main-view--open' : ''
+                }`}
               >
                 <Switch>
                   {routes.map((route) => (
