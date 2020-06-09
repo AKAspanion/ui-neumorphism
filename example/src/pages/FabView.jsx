@@ -1,9 +1,10 @@
 import React from 'react'
 
-import { Card, H4, H5, H6, Subtitle1, Fab } from 'ui-neumorphism'
+import { Card, H4, H5, H6, Subtitle1, Divider, Fab } from 'ui-neumorphism'
 
 import DocCard from '../containers/DocCard.jsx'
-import { fabButtons } from '../docs/'
+import ApiCard from '../containers/ApiCard.jsx'
+import { fabButtons, fabPosButtons, fabButtonApi } from '../docs/'
 
 const url =
   'https://github.com/AKAspanion/ui-neumorphism/blob/master/example/src/pages/FabView.jsx'
@@ -83,10 +84,49 @@ class FabView extends React.Component {
           }
           code={[fabButtons, dark, ['size']]}
         />
-        <br />
-        <br />
-        <H5>API</H5>
-        <Subtitle1>Coming soon..</Subtitle1>
+        <DocCard
+          url={url}
+          className='mt-12'
+          title={<H5>Position</H5>}
+          subtitle={
+            <Subtitle1>
+              Use the <code>fixed</code> or <code>absolute</code> prop along
+              with <code>top</code>, <code>left</code>, <code>right</code>,
+              or&nbsp;
+              <code>bottom</code>, to postion the button anywhere inside a
+              container.
+            </Subtitle1>
+          }
+          content={
+            <Card
+              flat
+              outlined={false}
+              style={{ position: 'relative', height: '300px' }}
+              className='d-flex fill-width justify-center align-center flex-wrap mx-3'
+            >
+              <Fab absolute top left>
+                A
+              </Fab>
+              <Fab absolute top right>
+                B
+              </Fab>
+              <Fab absolute bottom left>
+                C
+              </Fab>
+              <Fab absolute bottom right>
+                D
+              </Fab>
+            </Card>
+          }
+          code={[fabPosButtons, dark, ['size']]}
+        />
+        <Divider dense className='mt-6' />
+        <H4 className='mt-12'>
+          <a href='#api' name='api'>
+            API
+          </a>
+        </H4>
+        <ApiCard entity='Fab' data={fabButtonApi(dark)} />
       </Card>
     )
   }

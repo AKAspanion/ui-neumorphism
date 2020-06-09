@@ -1,4 +1,59 @@
+import React from 'react'
 import { createApiDoc, defaultApiDoc, eventDoc } from '../index.js'
+
+const sizes = (dark) =>
+  createApiDoc(
+    dark,
+    'size',
+    `small | medium | large`,
+    'medium',
+    'The size of the button.'
+  )
+const active = (dark) =>
+  createApiDoc(
+    dark,
+    'active',
+    'Boolean',
+    'false',
+    'Renders the button in active state.'
+  )
+const disabled = (dark) =>
+  createApiDoc(
+    dark,
+    'disabled',
+    'Boolean',
+    'false',
+    'Removes the ability to click or target the button.'
+  )
+const color = (dark) =>
+  createApiDoc(
+    dark,
+    'color',
+    'String',
+    <div>
+      <div>
+        Light:&nbsp;&nbsp;
+        <span style={{ color: 'var(--primary-dark)' }}>
+          var(--g-text-color-light)
+        </span>
+      </div>
+      <div>
+        Dark:&nbsp;&nbsp;
+        <span style={{ color: 'var(--primary-dark)' }}>
+          var(--g-text-color-dark)
+        </span>
+      </div>
+    </div>,
+    'Applies specified color to the button content.'
+  )
+const bgColor = (dark) =>
+  createApiDoc(
+    dark,
+    'bgColor',
+    'String',
+    '',
+    'Applies specified color to the background.'
+  )
 
 export const buttonApi = (dark) => {
   return [
@@ -17,13 +72,7 @@ export const buttonApi = (dark) => {
       'false',
       'Expands the button to 100% of available space.'
     ),
-    createApiDoc(
-      dark,
-      'active',
-      'Boolean',
-      'false',
-      'Renders the button in active state.'
-    ),
+    active(dark),
     createApiDoc(
       dark,
       'rounded',
@@ -31,27 +80,9 @@ export const buttonApi = (dark) => {
       'false',
       'Applies a large border radius on the button.'
     ),
-    createApiDoc(
-      dark,
-      'size',
-      `small | medium | large`,
-      'medium',
-      'The size of the button.'
-    ),
-    createApiDoc(
-      dark,
-      'color',
-      'String',
-      '',
-      'Applies specified color to the button text.'
-    ),
-    createApiDoc(
-      dark,
-      'bgColor',
-      'String',
-      '--g-text-color-light/--g-text-color-dark',
-      'Applies specified color to the background.'
-    ),
+    sizes(dark),
+    color(dark),
+    bgColor(dark),
     createApiDoc(
       dark,
       'outlined',
@@ -59,13 +90,7 @@ export const buttonApi = (dark) => {
       'false',
       'Applies a thin border.'
     ),
-    createApiDoc(
-      dark,
-      'disabled',
-      'Boolean',
-      'false',
-      'Removes the ability to click or target the button.'
-    ),
+    disabled(dark),
     createApiDoc(
       dark,
       'depressed',
@@ -73,6 +98,49 @@ export const buttonApi = (dark) => {
       'false',
       'Lowers elevation to a medium state.'
     ),
+    eventDoc(dark, 'Click'),
+    eventDoc(dark, 'MouseOut'),
+    eventDoc(dark, 'MouseOver')
+  ]
+}
+
+export const fabButtonApi = (dark) => {
+  return [
+    ...defaultApiDoc(dark),
+    sizes(dark),
+    active(dark),
+    color(dark),
+    bgColor(dark),
+    ...['top', 'left', 'right', 'bottom'].map((pos) =>
+      createApiDoc(
+        dark,
+        pos,
+        'Boolean',
+        'false',
+        <div>
+          Aligns the button towards the <code>{pos}</code>.
+        </div>
+      )
+    ),
+    ...['fixed', 'absolute'].map((pos) =>
+      createApiDoc(
+        dark,
+        pos,
+        'Boolean',
+        'false',
+        <div>
+          Applies <code>position: {pos}</code> to the component.
+        </div>
+      )
+    ),
+    createApiDoc(
+      dark,
+      'animation',
+      'Boolean',
+      'true',
+      'Animates button on render.'
+    ),
+    disabled(dark),
     eventDoc(dark, 'Click'),
     eventDoc(dark, 'MouseOut'),
     eventDoc(dark, 'MouseOver')

@@ -1,5 +1,5 @@
 export const allButtons = (dark) => {
-  const darkProp = dark ? ' dark' : '';
+  const darkProp = dark ? ' dark' : ''
   return `<Button${darkProp}>default</Button>
 <Button${darkProp} color='var(--primary)'>colored</Button>
 <Button${darkProp} color='#ccc' bgColor='var(--primary)'>colored</Button>
@@ -11,27 +11,27 @@ export const allButtons = (dark) => {
 }
 
 export const docButtons = (dark, type) => {
-  const darkProp = dark ? ' dark' : '';
-  const typeProp = type ? ' ' + type : '';
+  const darkProp = dark ? ' dark' : ''
+  const typeProp = type ? ' ' + type : ''
   return `<Button${darkProp}${typeProp}>default</Button>
 <Button${darkProp}${typeProp} color='var(--primary)'>colored</Button>
 <Button${darkProp}${typeProp} disabled>disabled</Button>`
 }
 
 export const blockButton = (dark) => {
-  const darkProp = dark ? ' dark' : '';
+  const darkProp = dark ? ' dark' : ''
   return `<Button${darkProp} block>block button</Button>`
 }
 
 export const sizeButtons = (dark, type) => {
-  const darkProp = dark ? ' dark' : '';
+  const darkProp = dark ? ' dark' : ''
   return `<Button${darkProp} size='small'>small</Button>
 <Button${darkProp} size='medium'>medium</Button>
 <Button${darkProp} size='large'>large</Button>`
 }
 
 export const fabButtons = (dark, type) => {
-  const darkProp = dark ? ' dark' : '';
+  const darkProp = dark ? ' dark' : ''
   switch (type) {
     case 'main':
       return `<Fab${darkProp}>
@@ -55,8 +55,18 @@ export const fabButtons = (dark, type) => {
   }
 }
 
+export const fabPosButtons = (dark) => {
+  const darkProp = dark ? ' dark' : ''
+  return `<Card${darkProp} flat style={{ position: 'relative'}}>
+  <Fab${darkProp} absolute top left>A</Fab>
+  <Fab${darkProp} absolute top right>B</Fab>
+  <Fab${darkProp} absolute bottom left>C</Fab>
+  <Fab${darkProp} absolute bottom right>D</Fab>
+</Card>`
+}
+
 export const iconButtons = (dark) => {
-  const darkProp = dark ? ' dark' : '';
+  const darkProp = dark ? ' dark' : ''
   return `// Icon component is from '@mdi/react' and is not bundled with this library
 <IconButton${darkProp}>
   <Icon path={mdiRun} size={1} />
@@ -76,33 +86,37 @@ export const iconButtons = (dark) => {
 }
 
 export const toggleButtons = (dark, type, prop) => {
-  const darkProp = dark ? ' dark' : '';
-  const propType = prop ? ' ' + prop : '';
+  const darkProp = dark ? ' dark' : ''
+  const propType = prop ? ' ' + prop : ''
   return `// Icon component is from '@mdi/react' and is not bundled with this library
 <ToggleButtonGroup${darkProp}${propType} ${type} onChange={this.${type}GroupChange.bind(this)}>
   <ToggleButton value='1' color='var(--primary)'>
-    <Icon path={${type === 'mandatory'?'mdiFormatAlignLeft' :'mdiFormatBold'}} size={0.9} />
+    <Icon path={${
+      type === 'mandatory' ? 'mdiFormatAlignLeft' : 'mdiFormatBold'
+    }} size={0.9} />
   </ToggleButton>
   <ToggleButton value='2' color='var(--primary)'>
-    <Icon path={${type === 'mandatory'?'mdiFormatAlignCenter' :'mdiFormatItalic'}} size={0.9} />
+    <Icon path={${
+      type === 'mandatory' ? 'mdiFormatAlignCenter' : 'mdiFormatItalic'
+    }} size={0.9} />
   </ToggleButton>
   <ToggleButton value='3' color='var(--primary)'>
-    <Icon path={${type === 'mandatory'?'mdiFormatAlignRight' :'mdiFormatUnderline'}} size={0.9} />
-  </ToggleButton>${type === 'mandatory' ? `
+    <Icon path={${
+      type === 'mandatory' ? 'mdiFormatAlignRight' : 'mdiFormatUnderline'
+    }} size={0.9} />
+  </ToggleButton>${
+    type === 'mandatory'
+      ? `
   <ToggleButton disabled value='4' color='var(--primary)'>
     <Icon path={mdiFormatAlignJustify} size={0.9} />
-  </ToggleButton>`:''}
+  </ToggleButton>`
+      : ''
+  }
 </ToggleButtonGroup>`
 }
 
 export const toggleSizes = (dark) => {
   return `${['small', 'medium', 'large']
-    .map((s) =>
-    toggleButtons(
-        dark,
-        'multiple',
-        `value={active} size='${s}'`
-      )
-    )
+    .map((s) => toggleButtons(dark, 'multiple', `value={active} size='${s}'`))
     .join('\n')}`
 }
