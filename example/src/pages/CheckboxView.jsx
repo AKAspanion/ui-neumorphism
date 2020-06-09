@@ -17,7 +17,11 @@ class CheckboxView extends React.Component {
     const { dark } = this.props
     return (
       <Card flat dark={dark}>
-        <H4>Checkbox</H4>
+        <H4>
+          <a href='#component' name='component'>
+            Checkbox
+          </a>
+        </H4>
         <H6>
           Checkboxes allow the user to select one or more items from a set.
         </H6>
@@ -28,7 +32,7 @@ class CheckboxView extends React.Component {
               flat
               className='mt-6 d-flex align-center justify-center flex-wrap'
             >
-              <Checkbox color='var(--error)' checked/>
+              <Checkbox color='var(--error)' checked />
               <Checkbox color='var(--primary)' />
               <Checkbox />
               <Checkbox disabled />

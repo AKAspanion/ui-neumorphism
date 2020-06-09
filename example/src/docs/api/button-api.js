@@ -220,7 +220,7 @@ export const toggleButtonApi = (dark) => {
     eventDoc(
       dark,
       'Click',
-      'Response Format:',
+      'Response object definition',
       `{
     value: prop value
     event: native event,
@@ -229,7 +229,7 @@ export const toggleButtonApi = (dark) => {
     eventDoc(
       dark,
       'Change',
-      'Response Format:',
+      'Response object definition',
       `{ 
     value: prop value
     event: native event,
@@ -281,7 +281,7 @@ export const toggleButtonGroupApi = (dark) => {
     eventDoc(
       dark,
       'Click',
-      'Response Format:',
+      'Response object definition',
       `{ 
     active: value array | value,
     event: ToggleButton \`onChange\` event
@@ -290,7 +290,7 @@ export const toggleButtonGroupApi = (dark) => {
     eventDoc(
       dark,
       'Change',
-      'Response Format:',
+      'Response object definition',
       `{ 
     active: value array | value
 }`

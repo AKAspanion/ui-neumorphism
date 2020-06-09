@@ -41,7 +41,7 @@ export const selectionControlApi = (dark, type) => {
     eventDoc(
       dark,
       'Change',
-      'Response Format:',
+      'Response object definition',
       `{
     id: prop id | [auto-generated],
     event: native change event,

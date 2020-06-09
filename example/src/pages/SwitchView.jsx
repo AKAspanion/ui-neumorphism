@@ -14,7 +14,11 @@ class SwitchView extends React.Component {
     const { dark } = this.props
     return (
       <Card flat dark={dark}>
-        <H4>Switch</H4>
+        <H4>
+          <a href='#component' name='component'>
+            Switch
+          </a>
+        </H4>
         <H6>Switches toggle the state of a single setting on or off.</H6>
         <Subtitle1 className='mt-3'>
           Switches are the preferred way to adjust settings on mobile. The

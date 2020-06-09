@@ -1,4 +1,4 @@
-import { createApiDoc, defaultApiDoc, eventDoc } from '../index.js'
+import { createApiDoc, defaultApiDoc } from '../index.js'
 
 const headerExample = `{
   value: string
@@ -49,8 +49,6 @@ export const tableApi = (dark) => {
       'Boolean',
       'false',
       'Removes the header of the table.'
-    ),
-    eventDoc(dark, 'Click'),
-    eventDoc(dark, 'Change')
+    )
   ]
 }

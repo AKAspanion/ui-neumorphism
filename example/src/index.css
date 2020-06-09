@@ -1285,6 +1285,10 @@ main {
   margin-left: 4px;
 }
 
+.topbar-title {
+  font-weight: 400 !important;
+}
+
 /* Fitness app */
 
 .fitness-app-container {
