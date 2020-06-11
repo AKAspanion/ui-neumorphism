@@ -1,8 +1,11 @@
 import React from 'react'
 
 import { H4, H6, Card, Subtitle1, TextField, H5 } from 'ui-neumorphism'
+import {textFieldApi} from '../docs/'
 
 import DocCard from '../containers/DocCard.jsx'
+import ApiCard from '../containers/ApiCard.jsx'
+
 const url =
   'https://github.com/AKAspanion/ui-neumorphism/blob/master/example/src/pages/TextFieldView.jsx'
 
@@ -14,7 +17,11 @@ class TextFieldView extends React.Component {
     const { dark } = this.props
     return (
       <Card flat dark={dark}>
-        <H4>Text Field</H4>
+        <H4>
+          <a href='#component' name='component'>
+            Text Field
+          </a>
+        </H4>
         <H6>Text fields let users enter and edit text.</H6>
         <Subtitle1 className='mt-3'>
           Text fields allow users to enter text into a UI. They typically appear
@@ -34,9 +41,9 @@ class TextFieldView extends React.Component {
             <Card flat>
               <TextField
                 autofocus
-                prepend="$"
-                append="%"
-                prefix="%"
+                prepend='$'
+                append='%'
+                prefix='%'
                 label='Text field 1'
                 className='my-3'
               ></TextField>
@@ -123,6 +130,12 @@ class TextFieldView extends React.Component {
             </Card>
           }
         />
+        <H4 className='mt-12'>
+          <a href='#api' name='api'>
+            API
+          </a>
+        </H4>
+        <ApiCard entity='TextField' data={textFieldApi(dark)} />
       </Card>
     )
   }

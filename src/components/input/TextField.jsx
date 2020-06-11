@@ -2,13 +2,9 @@ import React from 'react'
 
 import styles from '../input/Input.module.css'
 import {
+  TEXT_FIELD_PROP_TYPES,
   DEFAULT_PROPS_TYPE,
-  DEFAULT_PROPS,
-  G_STRING,
-  G_BOOL,
-  G_ARR,
-  G_NUM,
-  G_NODE
+  DEFAULT_PROPS
 } from '../../assets/index'
 import { uid, getModuleClasses, callCallback } from '../../util'
 
@@ -23,25 +19,7 @@ class TextField extends React.Component {
   }
 
   static propTypes = {
-    id: G_STRING,
-    rules: G_ARR,
-    dense: G_BOOL,
-    type: G_STRING,
-    hint: G_STRING,
-    append: G_NODE,
-    prepend: G_NODE,
-    value: G_STRING,
-    label: G_NODE,
-    counter: G_NUM,
-    rounded: G_BOOL,
-    loading: G_BOOL,
-    readonly: G_BOOL,
-    disabled: G_BOOL,
-    outlined: G_BOOL,
-    autofocus: G_BOOL,
-    clearable: G_BOOL,
-    noValidation: G_BOOL,
-    placeholder: G_STRING,
+    ...TEXT_FIELD_PROP_TYPES,
     ...DEFAULT_PROPS_TYPE
   }
 

@@ -22,7 +22,11 @@ export const DEFAULT_PROPS_TYPE = {
 
 export const SIZE_PROP = PropTypes.oneOf(['small', 'medium', 'large'])
 export const POSITION_PROP = PropTypes.oneOf(['top', 'right', 'bottom', 'left'])
-export const SELECTION_CONTROL_TYPES = PropTypes.oneOf(['radio', 'checkbox', 'switch'])
+export const SELECTION_CONTROL_TYPES = PropTypes.oneOf([
+  'radio',
+  'checkbox',
+  'switch'
+])
 export const BUTTON_ALTERNATE_TYPES = PropTypes.oneOf(['fab', 'icon', 'toggle'])
 
 export const TYPOGRAPHY_PROP_TYPES = {
@@ -68,4 +72,29 @@ export const BUTTON_PROP_TYPES = {
   ...DEFAULT_PROPS_TYPE
 }
 
-export const BUTTON_GROUP_VALUE = PropTypes.oneOfType([PropTypes.string, PropTypes.array])
+export const TEXT_FIELD_PROP_TYPES = {
+  id: G_STRING,
+  rules: G_ARR,
+  dense: G_BOOL,
+  type: G_STRING,
+  hint: G_STRING,
+  append: G_NODE,
+  prepend: G_NODE,
+  value: G_STRING,
+  label: G_NODE,
+  counter: G_NUM,
+  rounded: G_BOOL,
+  loading: G_BOOL,
+  readonly: G_BOOL,
+  disabled: G_BOOL,
+  outlined: G_BOOL,
+  autofocus: G_BOOL,
+  clearable: G_BOOL,
+  noValidation: G_BOOL,
+  placeholder: G_STRING
+}
+
+export const BUTTON_GROUP_VALUE = PropTypes.oneOfType([
+  PropTypes.string,
+  PropTypes.array
+])
