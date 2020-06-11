@@ -1094,6 +1094,14 @@ code {
   height: 100% !important;
 }
 
+.p-absolute {
+  position: absolute;
+}
+
+.p-relative {
+  position: relative;
+}
+
 .theme--light {
   --code-bg: #f5f2f0;
   --bg-color: var(--light-bg);
@@ -1101,6 +1109,8 @@ code {
   --menu-text-color: var(--g-text-color-light);
   --menu-text-hover-color: var(--primary-dark);
   --text-secondary: var(--g-text-color-disabled-light);
+  --box-shadow-inset-small: inset -1px -1px 1px var(--light-bg-light-shadow),
+    inset 1px 1px 1px var(--light-bg-dark-shadow);
 }
 
 .theme--dark {
@@ -1110,6 +1120,8 @@ code {
   --menu-text-color: var(--g-text-color-dark);
   --menu-text-hover-color: var(--primary-light);
   --text-secondary: var(--g-text-color-disabled-dark);
+  --box-shadow-inset-small: inset -1px -1px 1px var(--dark-bg-light-shadow),
+    inset 1px 1px 1px var(--dark-bg-dark-shadow);
 }
 
 main {
@@ -1356,4 +1368,96 @@ main {
 .code-block-closed {
   max-height: 0px;
   transition: all 0.3s ease-in-out;
+}
+
+/* clock */
+
+.clock-app-toggle {
+  position: absolute;
+  bottom: 24px;
+}
+
+.clock-hand {
+  z-index: 200;
+  bottom: 50px;
+  position: absolute;
+  border-radius: 2px;
+  transform-origin: bottom;
+}
+
+.clock-hours {
+  width: 4px;
+  height: 45px;
+  background: grey;
+}
+
+.clock-minutes {
+  width: 4px;
+  height: 70px;
+  background: grey;
+}
+.clock-seconds {
+  width: 2px;
+  height: 90px;
+  background: var(--error);
+}
+
+.clock-point {
+  width: 8px;
+  height: 8px;
+  z-index: 300;
+  border-radius: 4px;
+  background: grey;
+}
+
+.marker--1,
+.marker--3 {
+  width: 4px;
+  height: 16px;
+}
+.marker--2,
+.marker--4 {
+  height: 4px;
+  width: 16px;
+}
+
+.marker--1,
+.marker--3,
+.marker--2,
+.marker--4 {
+  border-radius: 2px;
+  box-shadow: var(--box-shadow-inset-small);
+}
+
+.marker--1 {
+  top: 2px;
+}
+
+.marker--2 {
+  left: 2px;
+}
+
+.marker--3 {
+  bottom: 2px;
+}
+
+.marker--4 {
+  right: 2px;
+}
+
+.clock-dashed {
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='112' ry='112' stroke='grey' stroke-width='18' stroke-dasharray='1%2c4.5' stroke-dashoffset='25' stroke-linecap='butt'/%3e%3c/svg%3e") !important;
+}
+
+.clock-dashed--animating {
+  animation: dash-animate 10s linear infinite;
+}
+
+@keyframes dash-animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
