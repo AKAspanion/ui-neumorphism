@@ -12,14 +12,14 @@ class Example extends React.Component {
           <H3 secondary className='mt-10 mb-12'>
             CLOCK APP
           </H3>
-          <ClockApp />
+          <ClockApp dark={dark} />
         </Card>
         <Divider className='my-12' />
         <Card flat className='mb-12 text-center'>
           <H3 secondary className='mb-12'>
             FITNESS APP
           </H3>
-          <FitnessApp />
+          <FitnessApp dark={dark} />
         </Card>
       </Card>
     )
