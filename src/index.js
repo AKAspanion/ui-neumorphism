@@ -35,6 +35,7 @@ export {
   RadioGroup,
   TextField,
   Switch,
+  Slider,
   Checkbox,
   SelectionControl
 } from './components/'

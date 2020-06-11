@@ -9,6 +9,7 @@ import {
   RadioView,
   ButtonView,
   SwitchView,
+  SliderView,
   DividerView,
   CheckboxView,
   IconButtonView,
@@ -96,6 +97,12 @@ const routes = [
     path: '/radio',
     name: 'Radio',
     component: RadioView
+  },
+  {
+    id: 21,
+    path: '/slider',
+    name: 'Slider',
+    component: SliderView
   },
   {
     id: 7,
