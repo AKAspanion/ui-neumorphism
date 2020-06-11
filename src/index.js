@@ -27,6 +27,7 @@ export {
   Fab,
   ProgressLinear,
   ProgressCircular,
+  Tooltip,
   Divider,
   Spacer,
   Table,

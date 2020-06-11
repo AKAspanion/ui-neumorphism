@@ -10,6 +10,7 @@ import {
   ButtonView,
   SwitchView,
   SliderView,
+  TooltipView,
   DividerView,
   CheckboxView,
   IconButtonView,
@@ -115,6 +116,12 @@ const routes = [
     path: '/table',
     name: 'Table',
     component: TableView
+  },
+  {
+    id: 22,
+    path: '/tooltip',
+    name: 'Tooltip',
+    component: TooltipView
   },
   {
     id: 10,
