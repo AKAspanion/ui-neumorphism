@@ -59,10 +59,6 @@ class Button extends React.Component {
     }
   }
 
-  handleConsole(e) {
-    console.log(e.nativeEvent)
-  }
-
   render() {
     const {
       type,

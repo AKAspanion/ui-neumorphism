@@ -24,6 +24,7 @@ export {
   ToggleButton,
   IconButton,
   Button,
+  Avatar,
   Fab,
   ProgressLinear,
   ProgressCircular,

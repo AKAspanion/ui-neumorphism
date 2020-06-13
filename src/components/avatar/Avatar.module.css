@@ -1,0 +1,38 @@
+.nu-avatar {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  align-items: center;
+  justify-content: center;
+  color: var(--avatar-text-color);
+  background: var(--avatar-bg-color);
+  --avatar-bg-color: var(--primary);
+  --avatar-text-color: var(--g-text-color-dark);
+}
+
+.nu-avatar--small {
+  width: 24px;
+  height: 24px;
+}
+
+.nu-avatar--medium {
+  width: 40px;
+  height: 40px;
+}
+
+.nu-avatar--large {
+  width: 56px;
+  height: 56px;
+}
+
+.nu-avatar--circle {
+  border-radius: 50%;
+}
+
+.nu-avatar--square {
+  border-radius: 0px;
+}
+
+.nu-avatar--rounded {
+  border-radius: 8px;
+}

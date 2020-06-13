@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Card, H4, H6 } from 'ui-neumorphism'
+import { Card, H4, H6, Avatar } from 'ui-neumorphism'
 
 // import { toggle, toggleLabel, switchApi } from '../docs/'
 
@@ -27,7 +27,15 @@ class AvatarView extends React.Component {
           url={url}
           content={
             <Card flat className='d-flex align-center justify-center flex-wrap'>
-              Coming soon..
+              <Avatar size='large' src='https://lh3.googleusercontent.com/a-/AAuE7mBL0Hh_wKgNlXtZks9XqIU3uv-j3COoKuYysLS_Svg'>
+                AB
+              </Avatar>
+              <Avatar square alt='AB'>
+              </Avatar>
+              <Avatar rounded size='large' alt='AB'>
+              </Avatar>
+              <Avatar rounded size='large' alt='AB' bgColor='red'>
+              </Avatar>
             </Card>
           }
         />

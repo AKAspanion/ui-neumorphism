@@ -1,6 +1,7 @@
 export { default as ToggleButtonGroup } from './button-toggle-group/ToggleButtonGroup.jsx'
 export { default as ToggleButton } from './button-toggle/ToggleButton.jsx'
 export { default as IconButton } from './button-icon/IconButton.jsx'
+export { default as Avatar } from './avatar/Avatar.jsx'
 export { default as Button } from './button/Button.jsx'
 export { default as Fab } from './button-fab/Fab.jsx'
 export { default as CardContent } from './card/CardContent.jsx'
