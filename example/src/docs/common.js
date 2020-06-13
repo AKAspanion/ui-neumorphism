@@ -43,17 +43,8 @@ export const createApiDoc = (
   }
 }
 
-export const defaultApiDoc = (dark) => {
-  return [
-    createApiDoc(
-      dark,
-      'dark',
-      'Boolean',
-      'false',
-      <div>
-        Changes theme to dark when <code>true</code>.
-      </div>
-    ),
+export const defaultApiDoc = (dark, nodark) => {
+  const data = [
     createApiDoc(
       dark,
       'style',
@@ -69,6 +60,20 @@ export const defaultApiDoc = (dark) => {
       'Classes to be applied on component container.'
     )
   ]
+  if (!nodark) {
+    data.unshift(
+      createApiDoc(
+        dark,
+        'dark',
+        'Boolean',
+        'false',
+        <div>
+          Changes theme to dark when <code>true</code>.
+        </div>
+      )
+    )
+  }
+  return data
 }
 
 export const eventDoc = (dark, type, caption, code) => {

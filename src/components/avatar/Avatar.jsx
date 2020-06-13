@@ -4,9 +4,9 @@ import styles from './Avatar.module.css'
 
 import { getModuleClasses, uid, setCSSVariable } from '../../util'
 import {
+  SIZE_PROP_WITH_NUM,
   DEFAULT_PROPS_TYPE,
   DEFAULT_PROPS,
-  SIZE_PROP,
   G_STRING,
   G_BOOL
 } from '../../assets/index'
@@ -24,13 +24,12 @@ class Avatar extends React.Component {
   static propTypes = {
     alt: G_STRING,
     src: G_STRING,
-    circle: G_BOOL,
     square: G_BOOL,
     rounded: G_BOOL,
-    size: SIZE_PROP,
     color: G_STRING,
     bgColor: G_STRING,
-    ...DEFAULT_PROPS_TYPE
+    ...DEFAULT_PROPS_TYPE,
+    size: SIZE_PROP_WITH_NUM
   }
 
   constructor(props) {
@@ -41,20 +40,24 @@ class Avatar extends React.Component {
     }
   }
 
+  get initials() {
+    const initials = this.props.alt.match(/\b\w/g) || []
+    return ((initials.shift() || '') + (initials.pop() || '')).toUpperCase()
+  }
+
+  get isSizeNumber() {
+    return !isNaN(this.props.size)
+  }
+
   get size() {
     const s = this.sizeText
+    if (this.isSizeNumber) return this.props.size
     return s === 'small' ? 24 : s === 'medium' ? 40 : s === 'large' ? 56 : 40
   }
 
   get variant() {
-    const { circle, square, rounded } = this.props
-    return circle
-      ? 'circle'
-      : square
-      ? 'square'
-      : rounded
-      ? 'rounded'
-      : 'circle'
+    const { square, rounded } = this.props
+    return square ? 'square' : rounded ? 'rounded' : 'circle'
   }
 
   get sizeText() {
@@ -71,22 +74,28 @@ class Avatar extends React.Component {
     } else if (children) {
       return children
     } else if (alt) {
-      return alt[0]
+      return this.initials
     }
   }
 
-  getClasses() {
-    return getModuleClasses(
-      styles,
-      `
-        nu-avatar
-        nu-avatar--${this.variant}
-        nu-avatar--${this.sizeText}
-      `
-    )
+  getClasses(name) {
+    const sizeClass = this.isSizeNumber ? '' : `nu-avatar--${this.sizeText}`
+    switch (name) {
+      case 'avatar':
+        return getModuleClasses(
+          styles,
+          `
+            nu-avatar
+            nu-avatar--${this.variant}
+            ${sizeClass}
+          `
+        )
+      case 'img':
+        return getModuleClasses(styles, 'nu-avatar--img')
+    }
   }
 
-  seeLoaded() {
+  setLoaded() {
     const { src } = this.props
     if (!src) {
       return null
@@ -103,7 +112,7 @@ class Avatar extends React.Component {
   }
 
   componentWillMount() {
-    this.seeLoaded()
+    this.setLoaded()
   }
 
   componentDidMount() {
@@ -115,7 +124,7 @@ class Avatar extends React.Component {
 
   componentDidUpdate({ src }) {
     if (this.props.src !== src) {
-      this.seeLoaded()
+      this.setLoaded()
     }
   }
 
@@ -127,11 +136,16 @@ class Avatar extends React.Component {
   }
 
   render() {
-    const { style, className } = this.props
+    const sizeStyles = {}
+    const { style, size, className } = this.props
+    if (this.isSizeNumber) {
+      sizeStyles.width = `${size}px`
+      sizeStyles.height = `${size}px`
+    }
     return (
       <div
-        style={style}
         id={this.state.id}
+        style={{ ...style, ...sizeStyles }}
         className={`${this.getClasses('avatar')} ${className}`}
       >
         {this.avatarChildren}

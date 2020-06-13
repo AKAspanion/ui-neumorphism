@@ -150,12 +150,14 @@ class Table extends React.Component {
             )}
             <tbody className={this.getClasses('tbody')}>
               {!items.length ? (
-                <td
-                  colSpan={headers.length}
-                  className={this.getClasses('no-data')}
-                >
-                  {noDataValue}
-                </td>
+                <tr>
+                  <td
+                    colSpan={headers.length}
+                    className={this.getClasses('no-data')}
+                  >
+                    {noDataValue}
+                  </td>
+                </tr>
               ) : (
                 this.getTableRowData()
               )}

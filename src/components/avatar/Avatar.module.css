@@ -7,7 +7,14 @@
   color: var(--avatar-text-color);
   background: var(--avatar-bg-color);
   --avatar-bg-color: var(--primary);
-  --avatar-text-color: var(--g-text-color-dark);
+  --avatar-text-color: var(--white);
+}
+
+.nu-avatar--img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  text-align: center;
 }
 
 .nu-avatar--small {

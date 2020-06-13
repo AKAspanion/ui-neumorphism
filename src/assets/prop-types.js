@@ -23,6 +23,7 @@ export const DEFAULT_PROPS_TYPE = {
 }
 
 export const SIZE_PROP = PropTypes.oneOf(['small', 'medium', 'large'])
+export const SIZE_PROP_WITH_NUM = PropTypes.oneOfType([SIZE_PROP, G_NUM])
 export const POSITION_PROP = PropTypes.oneOf(['top', 'right', 'bottom', 'left'])
 export const SELECTION_CONTROL_TYPES = PropTypes.oneOf([
   'radio',

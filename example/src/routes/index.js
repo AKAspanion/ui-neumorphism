@@ -5,9 +5,10 @@ import {
   CardView,
   ChipView,
   FormView,
-  AvatarView,
   TableView,
   RadioView,
+  BadgeView,
+  AvatarView,
   SelectView,
   ButtonView,
   SwitchView,
@@ -33,8 +34,14 @@ const routes = [
   {
     id: 22,
     path: '/avatar',
-    name: 'Avatars',
+    name: 'Avatar',
     component: AvatarView
+  },
+  {
+    id: 25,
+    path: '/badge',
+    name: 'Badge',
+    component: BadgeView
   },
   {
     id: 4,
