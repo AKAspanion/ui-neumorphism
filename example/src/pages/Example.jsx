@@ -8,15 +8,15 @@ class Example extends React.Component {
     const { dark } = this.props
     return (
       <Card flat dark={dark} className='py-2'>
-        <Card flat className='text-center'>
-          <H3 secondary className='mt-10 mb-12'>
+        <Card flat>
+          <H3 secondary className='mt-10 mb-12 text-center'>
             CLOCK APP
           </H3>
           <ClockApp dark={dark} />
         </Card>
         <Divider className='my-12' />
-        <Card flat className='mb-12 text-center'>
-          <H3 secondary className='mb-12'>
+        <Card flat className='mb-12'>
+          <H3 secondary className='mb-12 text-center'>
             FITNESS APP
           </H3>
           <FitnessApp dark={dark} />

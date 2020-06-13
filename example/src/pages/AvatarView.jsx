@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Card, H4, H6, Subtitle1, Tooltip, Button } from 'ui-neumorphism'
+import { Card, H4, H6, Subtitle1 } from 'ui-neumorphism'
 
 // import { toggle, toggleLabel, switchApi } from '../docs/'
 
@@ -8,27 +8,21 @@ import DocCard from '../containers/DocCard.jsx'
 // import ApiCard from '../containers/ApiCard.jsx'
 
 const url =
-  'https://github.com/AKAspanion/ui-neumorphism/blob/master/example/src/pages/TooltipView.jsx'
-class TooltipView extends React.Component {
-  handleConsole(e) {
-    // console.log(e)
-  }
+  'https://github.com/AKAspanion/ui-neumorphism/blob/master/example/src/pages/AvatarView.jsx'
+class AvatarView extends React.Component {
   render() {
     const { dark } = this.props
     return (
       <Card flat dark={dark}>
         <H4>
           <a href='#component' name='component'>
-            Tooltip
+            Avatar
           </a>
         </H4>
         <H6>
-          Tooltips display informative text when users hover over an element.
+          Avatars focus on a subject, using a simple background. They can
+          represent a user or a brand (with a logo or branded graphic).
         </H6>
-        <Subtitle1 className='mt-3'>
-          When activated, Tooltips display a text label identifying an element,
-          such as a description of its function.
-        </Subtitle1>
         <DocCard
           url={url}
           content={
@@ -48,4 +42,4 @@ class TooltipView extends React.Component {
   }
 }
 
-export default TooltipView
+export default AvatarView

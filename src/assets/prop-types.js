@@ -9,6 +9,8 @@ export const G_NUM = PropTypes.number
 export const G_OBJ = PropTypes.object
 export const G_STRING = PropTypes.string
 
+export const G_REQ = PropTypes.isRequired
+
 export const DEFAULT_PROPS = {
   className: '',
   style: {}

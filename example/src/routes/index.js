@@ -3,16 +3,19 @@ import {
   Example,
   FabView,
   CardView,
-  // FormView,
-  TextFieldView,
+  ChipView,
+  FormView,
+  AvatarView,
   TableView,
   RadioView,
+  SelectView,
   ButtonView,
   SwitchView,
   SliderView,
   TooltipView,
   DividerView,
   CheckboxView,
+  TextFieldView,
   IconButtonView,
   TypographyView,
   ToggleButtonView,
@@ -26,6 +29,12 @@ const routes = [
     path: '/',
     name: '',
     component: Home
+  },
+  {
+    id: 22,
+    path: '/avatar',
+    name: 'Avatars',
+    component: AvatarView
   },
   {
     id: 4,
@@ -58,6 +67,12 @@ const routes = [
     component: CardView
   },
   {
+    id: 23,
+    path: '/chip',
+    name: 'Chip',
+    component: ChipView
+  },
+  {
     id: 8,
     path: '/checkbox',
     name: 'Checkbox',
@@ -69,12 +84,12 @@ const routes = [
     name: 'Divider',
     component: DividerView
   },
-  // {
-  //   id: 18,
-  //   path: "/form",
-  //   name: "Form",
-  //   component: FormView,
-  // },
+  {
+    id: 18,
+    path: '/form',
+    name: 'Form',
+    component: FormView
+  },
   {
     id: 9,
     path: '/text-field',
@@ -98,6 +113,12 @@ const routes = [
     path: '/radio',
     name: 'Radio',
     component: RadioView
+  },
+  {
+    id: 21,
+    path: '/Select',
+    name: 'Select',
+    component: SelectView
   },
   {
     id: 21,
