@@ -47,6 +47,16 @@ class Sidebar extends React.Component {
             Home
           </NavLink>
         </div>
+        <div className='sidebar-menu-title'>
+          <NavLink
+            exact
+            to='/examples'
+            onClick={this.handleClick}
+            activeClassName='sidebar-link-active'
+          >
+            Examples
+          </NavLink>
+        </div>
         <div className='sidebar-menu'>
           <input type='checkbox' id='list-item-1'></input>
           <label htmlFor='list-item-1' className='sidebar-menu-title'>
@@ -82,16 +92,6 @@ class Sidebar extends React.Component {
             activeClassName='sidebar-link-active'
           >
             Typography
-          </NavLink>
-        </div>
-        <div className='sidebar-menu-title'>
-          <NavLink
-            exact
-            to='/examples'
-            onClick={this.handleClick}
-            activeClassName='sidebar-link-active'
-          >
-            Examples
           </NavLink>
         </div>
       </Card>

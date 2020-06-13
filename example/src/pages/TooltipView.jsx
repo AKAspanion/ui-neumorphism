@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Card, H4, H6, Subtitle1, Tooltip, Button } from 'ui-neumorphism'
+import { Card, H4, H6, Subtitle1 } from 'ui-neumorphism'
 
 // import { toggle, toggleLabel, switchApi } from '../docs/'
 

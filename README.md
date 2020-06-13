@@ -1,8 +1,10 @@
 # ui-neumorphism
 
->  React component library designed on the "new skeuomorphism" UI/UX trend.
+> React component library designed on the "new skeuomorphism" UI/UX trend.
 
 [![NPM](https://img.shields.io/npm/v/ui-neumorphism.svg)](https://www.npmjs.com/package/ui-neumorphism) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+
+![Fitness App by Jray](https://firebasestorage.googleapis.com/v0/b/spanion-portfolio.appspot.com/o/fitness--theme.jpg?alt=media&token=df27927a-bfcf-4b54-85e7-bde8a72d3947)
 
 Live demo and documentation at https://akaspanion.github.io/ui-neumorphism/
 
@@ -26,6 +28,7 @@ class Example extends Component {
   }
 }
 ```
+
 ## Theming
 
 In neumorphism UI, theming is dead simple.
@@ -33,6 +36,7 @@ In neumorphism UI, theming is dead simple.
 It is accomplished by using and modifying root css variables for colors.
 
 To change the theme, you modify the root css variables directly or with the help of `overrideThemeVariables()` function, like this.
+
 ```javascript
 import React, { Component } from 'react'
 
@@ -58,6 +62,7 @@ class App extends Component {
   ...
 }
 ```
+
 Here `--light-bg` and `--dark-bg` are css variables that hold specific values of color.
 
 Using this power of CSS variables, you can change the app theme from anywhere in the entire application.

@@ -1,4 +1,4 @@
-import { createApiDoc, defaultApiDoc } from '../index.js'
+import { defaultApiDoc } from '../index.js'
 
 export const textFieldApi = (dark) => {
   return [...defaultApiDoc(dark)]
