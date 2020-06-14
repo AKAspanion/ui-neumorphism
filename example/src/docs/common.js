@@ -12,6 +12,7 @@ export const createApiDoc = (
   descriptionCode
 ) => {
   return {
+    title: name,
     name: <span style={{ color: 'var(--primary)' }}>{name}</span>,
     type: (
       <Subtitle2 dark={dark} component='div'>

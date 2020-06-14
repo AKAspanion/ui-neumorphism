@@ -64,6 +64,15 @@
   border-collapse: collapse;
 }
 
+.nu-table--toolbar {
+  display: flex;
+  padding: 16px;
+  flex-wrap: wrap;
+  min-height: 56px;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+}
+
 .nu-table--header-row {
   border-bottom: 1px solid var(--border-color);
 }

@@ -196,30 +196,32 @@ class TextField extends React.Component {
             onChange={(e) => this.handleChange(e)}
             className={`${this.getClasses('text-field')}`}
           />
-          <div className={`${this.getClasses('caption-wrapper', valid)}`}>
-            {noValidation ? (
-              hint
-            ) : (
-              <Caption
-                secondary
-                dark={dark}
-                component='div'
-                className={`${this.getClasses('error', valid)}`}
-              >
-                {valid ? hint : errorMessage}
-              </Caption>
-            )}
-            {counter ? (
-              <Caption
-                secondary
-                dark={dark}
-                component='div'
-                className={`${this.getClasses('counter')}`}
-              >
-                {count}/{counter}
-              </Caption>
-            ) : null}
-          </div>
+          {noValidation && !counter ? null : (
+            <div className={`${this.getClasses('caption-wrapper', valid)}`}>
+              {noValidation ? (
+                hint
+              ) : (
+                <Caption
+                  secondary
+                  dark={dark}
+                  component='div'
+                  className={`${this.getClasses('error', valid)}`}
+                >
+                  {valid ? hint : errorMessage}
+                </Caption>
+              )}
+              {counter ? (
+                <Caption
+                  secondary
+                  dark={dark}
+                  component='div'
+                  className={`${this.getClasses('counter')}`}
+                >
+                  {count}/{counter}
+                </Caption>
+              ) : null}
+            </div>
+          )}
         </div>
         {append ? (
           <div className={`${this.getClasses('append')}`}>{append}</div>

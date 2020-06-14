@@ -57,6 +57,10 @@
   --badge-offset-size: 0px;
 }
 
+.nu-badge--nopadding {
+  padding: 0px !important;
+}
+
 .nu-badge--top {
   top: 0px;
 }

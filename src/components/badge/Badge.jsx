@@ -2,7 +2,7 @@ import React from 'react'
 
 import styles from './Badge.module.css'
 
-import { getModuleClasses, setCSSVariable, uid } from '../../util'
+import { getModuleClasses, setCSSVariable, uid, passDownProp } from '../../util'
 import {
   DEFAULT_PROPS_TYPE,
   DEFAULT_PROPS,
@@ -33,6 +33,7 @@ class Badge extends React.Component {
     label: G_STRING,
     color: G_STRING,
     bordered: G_BOOL,
+    noPadding: G_BOOL,
     bgColor: G_STRING,
     borderColor: G_STRING,
     ...DEFAULT_PROPS_TYPE
@@ -59,9 +60,9 @@ class Badge extends React.Component {
   }
 
   get badgeContent() {
-    const { dot, visible } = this.props
+    const { dot, label, visible } = this.props
     return visible ? (
-      <span className={this.getClasses('badge')}>
+      <span aria-label={label} className={this.getClasses('badge')}>
         {dot ? null : this.content}
       </span>
     ) : null
@@ -69,21 +70,31 @@ class Badge extends React.Component {
 
   get badgeChildren() {
     const { inline, left, children } = this.props
+    const badgeChildren = passDownProp(children, this.props, 'dark')
     return inline && left ? (
       <React.Fragment>
         {this.badgeContent}
-        {children}
+        {badgeChildren}
       </React.Fragment>
     ) : (
       <React.Fragment>
-        {children}
+        {badgeChildren}
         {this.badgeContent}
       </React.Fragment>
     )
   }
 
   getClasses(name) {
-    const { dot, left, square, inline, bottom, overlap, bordered } = this.props
+    const {
+      dot,
+      left,
+      square,
+      inline,
+      bottom,
+      overlap,
+      bordered,
+      noPadding
+    } = this.props
     switch (name) {
       case 'wrapper':
         return getModuleClasses(
@@ -101,6 +112,7 @@ class Badge extends React.Component {
             ${dot ? 'nu-badge--dot' : ''}
             ${square ? 'nu-badge--square' : ''}
             ${bordered ? 'nu-badge--bordered' : ''}
+            ${noPadding ? 'nu-badge--nopadding' : ''}
             ${
               inline
                 ? ''

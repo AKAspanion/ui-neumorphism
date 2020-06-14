@@ -3,11 +3,13 @@ import React from 'react'
 import styles from './Table.module.css'
 import { getModuleClasses } from '../../util'
 import {
-  DEFAULT_PROPS,
   DEFAULT_PROPS_TYPE,
+  DEFAULT_PROPS,
   G_ARR,
-  G_BOOL
+  G_BOOL,
+  G_NODE
 } from '../../assets/index'
+import { Spacer } from '../../index'
 
 class Table extends React.Component {
   static displayName = 'NuTable'
@@ -24,14 +26,27 @@ class Table extends React.Component {
     items: G_ARR,
     dense: G_BOOL,
     headers: G_ARR,
+    actions: G_NODE,
     outlined: G_BOOL,
     noHeaders: G_BOOL,
+    description: G_NODE,
     ...DEFAULT_PROPS_TYPE
   }
 
   get canSelfRender() {
     const { headers, items } = this.props
     return !!headers || !!items
+  }
+
+  get tableToolbar() {
+    const { description, actions } = this.props
+    return description || actions ? (
+      <div className={this.getClasses('toolbar')}>
+        {description}
+        <Spacer />
+        {actions}
+      </div>
+    ) : null
   }
 
   getAlignment(align) {
@@ -60,6 +75,8 @@ class Table extends React.Component {
             ${outlined ? 'nu-table--outlined' : ''}
           `
         )
+      case 'toolbar':
+        return getModuleClasses(styles, 'nu-table--toolbar')
       case 'table':
         return getModuleClasses(styles, 'nu-table--table')
       case 'thr':
@@ -145,6 +162,11 @@ class Table extends React.Component {
           <table className={this.getClasses('table')}>
             {noHeaders ? null : (
               <thead className={this.getClasses('thead')}>
+                {this.tableToolbar ? (
+                  <tr>
+                    <th colSpan={headers.length}>{this.tableToolbar}</th>
+                  </tr>
+                ) : null}
                 {this.getTableHeadData()}
               </thead>
             )}

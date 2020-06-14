@@ -1,51 +1,51 @@
 import React from 'react'
 import { createApiDoc, defaultApiDoc } from '../index.js'
 
-const attribute = (attr) =>
+const attribute = (dark, attr) =>
   createApiDoc(
-    false,
+    dark,
     attr,
     'String',
     '',
     `The ${attr} attribute for the img element.`
   )
 
-const variant = (type) =>
+const variant = (dark, type) =>
   createApiDoc(
-    false,
+    dark,
     type,
     'Boolean',
     'false',
     `Renders ${type} variant of avatar.`
   )
 
-export const avatarApi = () => {
+export const avatarApi = (dark) => {
   return [
-    ...defaultApiDoc(false, true),
-    attribute('alt'),
-    attribute('src'),
+    ...defaultApiDoc(dark, true),
+    attribute(dark, 'alt'),
+    attribute(dark, 'src'),
     createApiDoc(
-      false,
+      dark,
       'size',
       `'small' | 'medium' | 'large' | Number`,
       'medium',
       'The css color of the avatar.'
     ),
     createApiDoc(
-      false,
+      dark,
       'color',
       'String',
       <span style={{ color: 'var(--primary-dark)' }}>--white</span>,
       'The css color of the avatar.'
     ),
     createApiDoc(
-      false,
+      dark,
       'bgColor',
       'String',
       <span style={{ color: 'var(--primary-dark)' }}>--primary</span>,
       'The css background color of the avatar.'
     ),
-    variant('square'),
-    variant('rounded')
+    variant(dark, 'square'),
+    variant(dark, 'rounded')
   ]
 }

@@ -252,7 +252,7 @@ class AvatarView extends React.Component {
             API
           </a>
         </H4>
-        <ApiCard entity='Avatar' data={avatarApi()} />
+        <ApiCard entity='Avatar' data={avatarApi(dark)} />
       </Card>
     )
   }
