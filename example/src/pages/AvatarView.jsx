@@ -168,7 +168,7 @@ class AvatarView extends React.Component {
           title={<H5>Sizes</H5>}
           subtitle={
             <Subtitle1>
-              Use <code>size</code> prop to change button size. You can also
+              Use <code>size</code> prop to change avatar size. You can also
               give custom size numbers.
             </Subtitle1>
           }

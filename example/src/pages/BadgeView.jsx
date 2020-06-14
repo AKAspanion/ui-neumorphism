@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Card, H4, H6, Subtitle1 } from 'ui-neumorphism'
+import { Card, H4, H6, Subtitle1, Badge, Avatar } from 'ui-neumorphism'
 
 // import { toggle, toggleLabel, switchApi } from '../docs/'
 
@@ -29,8 +29,26 @@ class BadgeView extends React.Component {
         <DocCard
           url={url}
           content={
-            <Card flat className='d-flex align-center justify-center flex-wrap'>
-              Coming soon..
+            <Card
+              flat
+              className='mt-6 d-flex align-center justify-center flex-wrap'
+            >
+              <Badge bgColor='red' className='ma-8' bordered content='3'>
+                <Avatar square bgColor='var(--error)'>
+                  AB
+                </Avatar>
+              </Badge>
+              <Badge className='ma-8' content='200' max={34}>
+                <Avatar square bgColor='var(--error)'>
+                  AB
+                </Avatar>
+              </Badge>
+              <Badge className='ma-8' bottom dot overlap bordered>
+                <Avatar bgColor='var(--error)'>AB</Avatar>
+              </Badge>
+              <Badge className='ma-8' left bottom overlap content='2' bordered>
+                <Avatar bgColor='var(--error)'>AB</Avatar>
+              </Badge>
             </Card>
           }
         />

@@ -1,6 +1,6 @@
 # ui-neumorphism
 
-> React component library designed on the "new skeuomorphism" UI/UX trend.
+> React component library designed on the "new skeuomorphism" or "neumorphism" UI/UX trend.
 
 [![NPM](https://img.shields.io/npm/v/ui-neumorphism.svg)](https://www.npmjs.com/package/ui-neumorphism) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 

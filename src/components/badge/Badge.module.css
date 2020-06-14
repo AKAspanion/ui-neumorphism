@@ -1,0 +1,110 @@
+.nu-badge {
+  user-select: none;
+  position: relative;
+  --badge-bg-color: var(--primary);
+  --badge-text-color: var(--white);
+  --badge-border-color: var(--white);
+}
+
+.nu-badge--inline {
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+}
+
+.nu-badge--badge {
+  display: flex;
+  font-size: 12px;
+  padding: 2px 6px;
+  position: absolute;
+  text-align: center;
+  border-radius: 12px;
+  white-space: nowrap;
+  align-items: center;
+  --badge-height: 20px;
+  box-sizing: border-box;
+  justify-content: center;
+  --badge-offset-size: 3px;
+  height: var(--badge-height);
+  color: var(--badge-text-color);
+  min-width: var(--badge-height);
+  background: var(--badge-bg-color);
+  transition: 0.3s ease-in-out;
+}
+
+.nu-badge--inline .nu-badge--badge {
+  position: relative;
+  margin: 0 4px;
+}
+
+.nu-badge--dot {
+  padding: 0px;
+  --badge-height: 8px;
+  --badge-offset-size: 1.5px;
+}
+
+.nu-badge--bordered {
+  --badge-border-width: 2px;
+  border: var(--badge-border-width) solid var(--badge-border-color);
+}
+
+.nu-badge--dot.nu-badge--bordered {
+  --badge-border-width: 1.5px;
+}
+
+.nu-badge--square {
+  border-radius: 0px;
+  --badge-offset-size: 0px;
+}
+
+.nu-badge--top {
+  top: 0px;
+}
+
+.nu-badge--left {
+  left: 0px;
+}
+
+.nu-badge--right {
+  right: 0px;
+}
+
+.nu-badge--bottom {
+  bottom: 0px;
+}
+
+.nu-badge--right-top {
+  transform: translate(
+    calc(100% - var(--badge-offset-size)),
+    calc(-100% + var(--badge-offset-size))
+  );
+}
+
+.nu-badge--left-top {
+  transform: translate(
+    calc(-100% + var(--badge-offset-size)),
+    calc(-100% + var(--badge-offset-size))
+  );
+}
+
+.nu-badge--right-bottom {
+  transform: translate(
+    calc(100% - var(--badge-offset-size)),
+    calc(100% - var(--badge-offset-size))
+  );
+}
+
+.nu-badge--left-bottom {
+  transform: translate(
+    calc(-100% + var(--badge-offset-size)),
+    calc(100% - var(--badge-offset-size))
+  );
+}
+
+.nu-badge--overlap {
+  --badge-offset-size: 12px;
+}
+
+.nu-badge--dot.nu-badge--overlap {
+  --badge-offset-size: 9px;
+}
