@@ -20,8 +20,8 @@ import {
   Caption,
   Subtitle1,
   IconButton,
+  withResize,
   ToggleButton,
-  withWindowResize,
   ToggleButtonGroup
 } from 'ui-neumorphism'
 class ClockApp extends React.Component {
@@ -301,4 +301,4 @@ class ClockApp extends React.Component {
   }
 }
 
-export default withWindowResize(ClockApp)
+export default withResize(ClockApp)

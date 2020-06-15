@@ -5,7 +5,7 @@ import { Switch, Route, withRouter } from 'react-router-dom'
 import {
   Card,
   Divider,
-  withWindowResize,
+  withResize,
   overrideThemeVariables
 } from 'ui-neumorphism'
 import 'ui-neumorphism/dist/index.css'
@@ -121,4 +121,4 @@ class MainContainer extends React.Component {
   }
 }
 
-export default withRouter(withWindowResize(MainContainer))
+export default withRouter(withResize(MainContainer, { onlyWidth: true }))

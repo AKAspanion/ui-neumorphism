@@ -1,9 +1,9 @@
 import React from 'react'
 import { findDOMNode } from 'react-dom'
 
-const withWindowResize = (WrappedComponent) => {
-  return class WithWindowResize extends React.Component {
-    static displayName = `WithWindowResize(${
+const withResize = (WrappedComponent, config = {}) => {
+  return class withResize extends React.Component {
+    static displayName = `WithResize(${
       WrappedComponent.displayName || WrappedComponent.name || 'Component'
     })`
 
@@ -19,15 +19,22 @@ const withWindowResize = (WrappedComponent) => {
     }
 
     componentDidMount() {
+      const { onlyWidth, onlyHeight } = config
+      const configNotActive = !onlyWidth && !onlyHeight
       // eslint-disable-next-line no-undef
       this.resizeObserver = new ResizeObserver((entries) => {
         const { width: currentWidth, height: currentHeight } = this.state
         entries.forEach((entry) => {
           const { width, height } = (entry && entry.contentRect) || {}
-          const isSizeChanged =
-            currentWidth !== width || currentHeight !== height
+          const isWidthChanged = currentWidth !== width
+          const isHeightChanged = currentHeight !== height
+          const isSizeChanged = isHeightChanged || isWidthChanged
 
-          if (isSizeChanged) {
+          if (onlyWidth && isWidthChanged) {
+            this.updateDimensions({ width })
+          } else if (onlyHeight && isHeightChanged) {
+            this.updateDimensions({ height })
+          } else if (isSizeChanged && configNotActive) {
             this.updateDimensions({ width, height })
           }
         })
@@ -42,8 +49,8 @@ const withWindowResize = (WrappedComponent) => {
       }
     }
 
-    updateDimensions = ({ width, height }) => {
-      this.setState({ width, height })
+    updateDimensions = (dimensions) => {
+      this.setState({ ...this.state, ...dimensions })
     }
 
     getCurrentSize() {
@@ -73,4 +80,4 @@ const withWindowResize = (WrappedComponent) => {
   }
 }
 
-export default withWindowResize
+export default withResize

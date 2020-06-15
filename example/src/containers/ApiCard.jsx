@@ -9,7 +9,7 @@ import {
   Card,
   Table,
   TextField,
-  withWindowResize
+  withResize
 } from 'ui-neumorphism'
 import CodeBlock from '../containers/CodeBlock.jsx'
 
@@ -78,4 +78,4 @@ class ApiCard extends React.Component {
   }
 }
 
-export default withWindowResize(ApiCard)
+export default withResize(ApiCard)

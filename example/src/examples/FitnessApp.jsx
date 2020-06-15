@@ -24,9 +24,9 @@ import {
   Caption,
   Subtitle2,
   IconButton,
+  withResize,
   ToggleButton,
   ProgressCircular,
-  withWindowResize
 } from 'ui-neumorphism'
 class FitnessApp extends React.Component {
   render() {
@@ -373,4 +373,4 @@ class FitnessApp extends React.Component {
   }
 }
 
-export default withWindowResize(FitnessApp)
+export default withResize(FitnessApp)

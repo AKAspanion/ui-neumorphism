@@ -2,35 +2,35 @@ import {
   Home,
   Example,
   FabView,
-  TabView,
+  // TabView,
+  // ChipView,
+  // ListView,
+  // MenuView,
+  // FormView,
   CardView,
-  ChipView,
-  ListView,
-  MenuView,
-  FormView,
   TableView,
   RadioView,
   BadgeView,
   AlertView,
-  DialogView,
+  // DialogView,
+  // SelectView,
+  // SliderView,
   AvatarView,
-  SelectView,
   ButtonView,
   SwitchView,
-  SliderView,
-  TooltipView,
   DividerView,
-  CarouselView,
-  SnackbarView,
+  // TooltipView,
+  // CarouselView,
+  // SnackbarView,
   CheckboxView,
   TextareaView,
   TextFieldView,
-  PaginationView,
+  // PaginationView,
   IconButtonView,
   TypographyView,
   ToggleButtonView,
   ProgressLinearView,
-  ExpansionPanelView,
+  // ExpansionPanelView,
   ProgressCircularView
 } from '../pages/index.js'
 
@@ -89,66 +89,66 @@ const routes = [
     name: 'Card',
     component: CardView
   },
-  {
-    id: 26,
-    path: '/carousel',
-    name: 'Carousel',
-    component: CarouselView
-  },
+  // {
+  //   id: 26,
+  //   path: '/carousel',
+  //   name: 'Carousel',
+  //   component: CarouselView
+  // },
   {
     id: 8,
     path: '/checkbox',
     name: 'Checkbox',
     component: CheckboxView
   },
-  {
-    id: 23,
-    path: '/chip',
-    name: 'Chip',
-    component: ChipView
-  },
-  {
-    id: 15,
-    path: '/dialog',
-    name: 'Dialog',
-    component: DialogView
-  },
+  // {
+  //   id: 23,
+  //   path: '/chip',
+  //   name: 'Chip',
+  //   component: ChipView
+  // },
+  // {
+  //   id: 15,
+  //   path: '/dialog',
+  //   name: 'Dialog',
+  //   component: DialogView
+  // },
   {
     id: 15,
     path: '/divider',
     name: 'Divider',
     component: DividerView
   },
-  {
-    id: 18,
-    path: '/expansion-panel',
-    name: 'Expansion Panel',
-    component: ExpansionPanelView
-  },
-  {
-    id: 18,
-    path: '/form',
-    name: 'Form',
-    component: FormView
-  },
-  {
-    id: 31,
-    path: '/list',
-    name: 'List',
-    component: ListView
-  },
-  {
-    id: 30,
-    path: '/menu',
-    name: 'Menu',
-    component: MenuView
-  },
-  {
-    id: 29,
-    path: '/pagination',
-    name: 'Pagination',
-    component: PaginationView
-  },
+  // {
+  //   id: 18,
+  //   path: '/expansion-panel',
+  //   name: 'Expansion Panel',
+  //   component: ExpansionPanelView
+  // },
+  // {
+  //   id: 18,
+  //   path: '/form',
+  //   name: 'Form',
+  //   component: FormView
+  // },
+  // {
+  //   id: 31,
+  //   path: '/list',
+  //   name: 'List',
+  //   component: ListView
+  // },
+  // {
+  //   id: 30,
+  //   path: '/menu',
+  //   name: 'Menu',
+  //   component: MenuView
+  // },
+  // {
+  //   id: 29,
+  //   path: '/pagination',
+  //   name: 'Pagination',
+  //   component: PaginationView
+  // },
   {
     id: 17,
     path: '/progress-circular',
@@ -167,24 +167,24 @@ const routes = [
     name: 'Radio',
     component: RadioView
   },
-  {
-    id: 21,
-    path: '/Select',
-    name: 'Select',
-    component: SelectView
-  },
-  {
-    id: 21,
-    path: '/slider',
-    name: 'Slider',
-    component: SliderView
-  },
-  {
-    id: 7,
-    path: '/snackbar',
-    name: 'Snackbar',
-    component: SnackbarView
-  },
+  // {
+  //   id: 21,
+  //   path: '/Select',
+  //   name: 'Select',
+  //   component: SelectView
+  // },
+  // {
+  //   id: 21,
+  //   path: '/slider',
+  //   name: 'Slider',
+  //   component: SliderView
+  // },
+  // {
+  //   id: 7,
+  //   path: '/snackbar',
+  //   name: 'Snackbar',
+  //   component: SnackbarView
+  // },
   {
     id: 28,
     path: '/switch',
@@ -197,12 +197,12 @@ const routes = [
     name: 'Table',
     component: TableView
   },
-  {
-    id: 19,
-    path: '/tab',
-    name: 'Tab',
-    component: TabView
-  },
+  // {
+  //   id: 19,
+  //   path: '/tab',
+  //   name: 'Tab',
+  //   component: TabView
+  // },
   {
     id: 27,
     path: '/text-area',
@@ -215,12 +215,12 @@ const routes = [
     name: 'TextField',
     component: TextFieldView
   },
-  {
-    id: 22,
-    path: '/tooltip',
-    name: 'Tooltip',
-    component: TooltipView
-  },
+  // {
+  //   id: 22,
+  //   path: '/tooltip',
+  //   name: 'Tooltip',
+  //   component: TooltipView
+  // },
   {
     id: 10,
     path: '/typography',
