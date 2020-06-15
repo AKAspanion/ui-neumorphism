@@ -6,7 +6,7 @@
 
 ![Fitness App by Jray](https://firebasestorage.googleapis.com/v0/b/spanion-portfolio.appspot.com/o/fitness--theme.jpg?alt=media&token=df27927a-bfcf-4b54-85e7-bde8a72d3947)
 
-Live demo and documentation at https://akaspanion.github.io/ui-neumorphism/
+Live demo and documentation [here](https://akaspanion.github.io/ui-neumorphism/).
 
 ## Install
 

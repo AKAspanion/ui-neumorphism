@@ -34,7 +34,7 @@ class ButtonView extends React.Component {
           <code>forms</code>, <code>cards</code>, etc.
         </Subtitle1>
         <DocCard
-          url={url}
+          url={url + '#L40-L61'}
           content={
             <Card flat className='d-flex align-center justify-center flex-wrap'>
               <Button className='ma-8'>default</Button>
@@ -64,8 +64,8 @@ class ButtonView extends React.Component {
           code={[allButtons, dark]}
         />
         <DocCard
-          url={url}
           className='mt-12'
+          url={url + '#L78-L84'}
           title={<H5>Contained buttons</H5>}
           subtitle={
             <Subtitle1>
@@ -87,8 +87,8 @@ class ButtonView extends React.Component {
           code={[docButtons, dark]}
         />
         <DocCard
-          url={url}
           className='mt-12'
+          url={url + '#L101-L109'}
           title={<H5>Text buttons</H5>}
           subtitle={
             <Subtitle1>
@@ -112,8 +112,8 @@ class ButtonView extends React.Component {
           code={[docButtons, dark, ['text']]}
         />
         <DocCard
-          url={url}
           className='mt-12'
+          url={url + '#L126-L134'}
           title={<H5>Outlined buttons</H5>}
           subtitle={
             <Subtitle1>
@@ -137,8 +137,8 @@ class ButtonView extends React.Component {
           code={[docButtons, dark, ['outlined']]}
         />
         <DocCard
-          url={url}
           className='mt-12'
+          url={url + '#L151-L159'}
           title={<H5>Rounded buttons</H5>}
           subtitle={
             <Subtitle1>
@@ -162,8 +162,8 @@ class ButtonView extends React.Component {
           code={[docButtons, dark, ['rounded']]}
         />
         <DocCard
-          url={url}
           className='mt-12'
+          url={url + '#L176-L184'}
           title={<H5>Depressed buttons</H5>}
           subtitle={
             <Subtitle1>
@@ -187,8 +187,8 @@ class ButtonView extends React.Component {
           code={[docButtons, dark, ['depressed']]}
         />
         <DocCard
-          url={url}
           className='mt-12'
+          url={url + '#L198'}
           title={<H5>Block button</H5>}
           subtitle={
             <Subtitle1>Block buttons take up entire available space.</Subtitle1>
@@ -201,8 +201,8 @@ class ButtonView extends React.Component {
           code={[blockButton, dark]}
         />
         <DocCard
-          url={url}
           className='mt-12'
+          url={url + '#L214-L222'}
           title={<H5>Sizes</H5>}
           subtitle={
             <Subtitle1>

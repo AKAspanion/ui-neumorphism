@@ -47,8 +47,8 @@ class BadgeView extends React.Component {
           Badge generates a small badge to the top-right of its child(ren).
         </H6>
         <DocCard
-          url={url + '#L39'}
           className='mt-12'
+          url={url + '#L64-L72'}
           title={<H5>Default badges</H5>}
           subtitle={
             <Subtitle1>
@@ -75,8 +75,8 @@ class BadgeView extends React.Component {
           code={[simpleBadge]}
         />
         <DocCard
-          url={url}
           className='mt-12'
+          url={url + '#L92-L100'}
           title={<H5>Overlap badge</H5>}
           subtitle={
             <Subtitle1>
@@ -103,8 +103,8 @@ class BadgeView extends React.Component {
           code={[simpleBadge, dark, ['overlap']]}
         />
         <DocCard
-          url={url}
           className='mt-12'
+          url={url + '#L119-L124'}
           title={<H5>Dot badge</H5>}
           subtitle={
             <Subtitle1>
@@ -127,8 +127,8 @@ class BadgeView extends React.Component {
           code={[dotBadge]}
         />
         <DocCard
-          url={url}
           className='mt-12'
+          url={url + '#L144-L152'}
           title={<H5>Bordered badge</H5>}
           subtitle={
             <Subtitle1>
@@ -156,8 +156,8 @@ class BadgeView extends React.Component {
         />
 
         <DocCard
-          url={url}
           className='mt-12'
+          url={url + '#L172-L183'}
           title={<H5>Badge alignment</H5>}
           subtitle={
             <Subtitle1>
@@ -186,8 +186,8 @@ class BadgeView extends React.Component {
           code={[alignBadge]}
         />
         <DocCard
-          url={url}
           className='mt-12'
+          url={url + '#L203-L211'}
           title={<H5>Maximum value</H5>}
           subtitle={
             <Subtitle1>
@@ -214,8 +214,8 @@ class BadgeView extends React.Component {
           code={[maxBadge]}
         />
         <DocCard
-          url={url}
           className='mt-12'
+          url={url + '#L230-L235'}
           title={<H5>Inline badge</H5>}
           subtitle={
             <Subtitle1>
@@ -238,8 +238,8 @@ class BadgeView extends React.Component {
           code={[inlineBadge]}
         />
         <DocCard
-          url={url}
           className='mt-12'
+          url={url + '#L255-L260'}
           title={<H5>Square badge</H5>}
           subtitle={
             <Subtitle1>
@@ -263,8 +263,8 @@ class BadgeView extends React.Component {
           code={[squareBadge]}
         />
         <DocCard
-          url={url}
           className='mt-12'
+          url={url + '#L281-L301'}
           title={<H5>Colors</H5>}
           subtitle={
             <Subtitle1>
@@ -304,8 +304,8 @@ class BadgeView extends React.Component {
           code={[colorBadge]}
         />
         <DocCard
-          url={url}
           className='mt-12'
+          url={url + '#L321-L357'}
           title={<H5>Customization options</H5>}
           subtitle={
             <Subtitle1>
@@ -332,9 +332,7 @@ class BadgeView extends React.Component {
                 bgColor='var(--error)'
                 content={<Icon path={mdiLock} size={0.5} />}
               >
-                <Button disabled outlined>
-                  Close
-                </Button>
+                <Button disabled>Action</Button>
               </Badge>
               <Badge
                 overlap

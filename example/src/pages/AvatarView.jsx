@@ -36,8 +36,8 @@ class AvatarView extends React.Component {
           brands(with a logo or branded graphic).
         </H6>
         <DocCard
-          url={url}
           className='mt-12'
+          url={url + '#L52-L61'}
           title={<H5>Image avatars</H5>}
           subtitle={
             <Subtitle1>
@@ -64,8 +64,8 @@ class AvatarView extends React.Component {
           code={[imgAvatar]}
         />
         <DocCard
-          url={url}
           className='mt-12'
+          url={url + '#L81-L84'}
           title={<H5>Letter avatars</H5>}
           subtitle={
             <Subtitle1>
@@ -87,8 +87,8 @@ class AvatarView extends React.Component {
           code={[textAvatar]}
         />
         <DocCard
-          url={url}
           className='mt-12'
+          url={url + '#L104-L109'}
           title={<H5>Icon avatars</H5>}
           subtitle={
             <Subtitle1>
@@ -112,8 +112,8 @@ class AvatarView extends React.Component {
           code={[iconAvatar]}
         />
         <DocCard
-          url={url}
           className='mt-12'
+          url={url + '#L129-L134'}
           title={<H5>Colors</H5>}
           subtitle={
             <Subtitle1>
@@ -137,8 +137,8 @@ class AvatarView extends React.Component {
           code={[colorAvatar]}
         />
         <DocCard
-          url={url}
           className='mt-12'
+          url={url + '#L155-L160'}
           title={<H5>Types</H5>}
           subtitle={
             <Subtitle1>
@@ -163,8 +163,8 @@ class AvatarView extends React.Component {
           code={[varientAvatar]}
         />
         <DocCard
-          url={url}
           className='mt-12'
+          url={url + '#L181-L195'}
           title={<H5>Sizes</H5>}
           subtitle={
             <Subtitle1>
@@ -209,8 +209,8 @@ class AvatarView extends React.Component {
           code={[sizeAvatar]}
         />
         <DocCard
-          url={url}
           className='mt-12'
+          url={url + '#L232-L244'}
           title={<H5>Fallback</H5>}
           subtitle={
             <Subtitle1>

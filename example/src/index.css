@@ -1138,7 +1138,7 @@ main {
 .sidebar {
   top: -6px;
   z-index: 1;
-  overflow: auto;
+  overflow: hidden;
   user-select: none;
   position: absolute;
   padding: 4px 16px;
@@ -1158,7 +1158,6 @@ main {
 }
 
 .sidebar ul {
-  padding: 4px 0px 0px 0px;
   list-style: none;
   margin: 0;
 }
@@ -1195,7 +1194,7 @@ main {
 }
 
 .sidebar-menu {
-  padding-top: 4px;
+  padding: 4px 0px;
 }
 
 .sidebar-menu input[type='checkbox'] {
@@ -1215,7 +1214,8 @@ main {
 }
 
 .sidebar-menu input[type='checkbox']:checked ~ ul {
-  max-height: 100vh;
+  max-height: calc(100vh - var(--padding) * 2 - var(--topbar-height) - 152px);
+  overflow-y: scroll;
   transition: all 1s;
 }
 

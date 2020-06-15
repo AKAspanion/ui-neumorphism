@@ -122,10 +122,9 @@ export const customBadge = () => {
   bordered
   noPadding
   bgColor='var(--error)'
+  content={<Icon path={mdiLock} size={0.5} />}
 >
-  <Button disabled outlined>
-    Close
-  </Button>
+  <Button disabled>Action</Button>
 </Badge>
 <Badge
   overlap

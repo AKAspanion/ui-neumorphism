@@ -2,12 +2,17 @@ import {
   Home,
   Example,
   FabView,
+  TabView,
   CardView,
   ChipView,
+  ListView,
+  MenuView,
   FormView,
   TableView,
   RadioView,
   BadgeView,
+  AlertView,
+  DialogView,
   AvatarView,
   SelectView,
   ButtonView,
@@ -15,12 +20,17 @@ import {
   SliderView,
   TooltipView,
   DividerView,
+  CarouselView,
+  SnackbarView,
   CheckboxView,
+  TextareaView,
   TextFieldView,
+  PaginationView,
   IconButtonView,
   TypographyView,
   ToggleButtonView,
   ProgressLinearView,
+  ExpansionPanelView,
   ProgressCircularView
 } from '../pages/index.js'
 
@@ -30,6 +40,12 @@ const routes = [
     path: '/',
     name: '',
     component: Home
+  },
+  {
+    id: 25,
+    path: '/alert',
+    name: 'Alert',
+    component: AlertView
   },
   {
     id: 22,
@@ -74,16 +90,28 @@ const routes = [
     component: CardView
   },
   {
-    id: 23,
-    path: '/chip',
-    name: 'Chip',
-    component: ChipView
+    id: 26,
+    path: '/carousel',
+    name: 'Carousel',
+    component: CarouselView
   },
   {
     id: 8,
     path: '/checkbox',
     name: 'Checkbox',
     component: CheckboxView
+  },
+  {
+    id: 23,
+    path: '/chip',
+    name: 'Chip',
+    component: ChipView
+  },
+  {
+    id: 15,
+    path: '/dialog',
+    name: 'Dialog',
+    component: DialogView
   },
   {
     id: 15,
@@ -93,27 +121,45 @@ const routes = [
   },
   {
     id: 18,
+    path: '/expansion-panel',
+    name: 'Expansion Panel',
+    component: ExpansionPanelView
+  },
+  {
+    id: 18,
     path: '/form',
     name: 'Form',
     component: FormView
   },
   {
-    id: 9,
-    path: '/text-field',
-    name: 'Input: Text Field',
-    component: TextFieldView
+    id: 31,
+    path: '/list',
+    name: 'List',
+    component: ListView
   },
   {
-    id: 16,
-    path: '/progress-linear',
-    name: 'Progress: Linear',
-    component: ProgressLinearView
+    id: 30,
+    path: '/menu',
+    name: 'Menu',
+    component: MenuView
+  },
+  {
+    id: 29,
+    path: '/pagination',
+    name: 'Pagination',
+    component: PaginationView
   },
   {
     id: 17,
     path: '/progress-circular',
     name: 'Progress: Circular',
     component: ProgressCircularView
+  },
+  {
+    id: 16,
+    path: '/progress-linear',
+    name: 'Progress: Linear',
+    component: ProgressLinearView
   },
   {
     id: 5,
@@ -135,6 +181,12 @@ const routes = [
   },
   {
     id: 7,
+    path: '/snackbar',
+    name: 'Snackbar',
+    component: SnackbarView
+  },
+  {
+    id: 28,
     path: '/switch',
     name: 'Switch',
     component: SwitchView
@@ -144,6 +196,24 @@ const routes = [
     path: '/table',
     name: 'Table',
     component: TableView
+  },
+  {
+    id: 19,
+    path: '/tab',
+    name: 'Tab',
+    component: TabView
+  },
+  {
+    id: 27,
+    path: '/text-area',
+    name: 'Textarea',
+    component: TextareaView
+  },
+  {
+    id: 9,
+    path: '/text-field',
+    name: 'TextField',
+    component: TextFieldView
   },
   {
     id: 22,
