@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { withImage } from '../../index'
+
 import styles from './Avatar.module.css'
 
 import { getModuleClasses, uid, setCSSVariable } from '../../util'
@@ -12,8 +14,6 @@ import {
 } from '../../assets/index'
 
 class Avatar extends React.Component {
-  image
-
   static displayName = 'NuAvatar'
 
   static defaultProps = {
@@ -35,8 +35,7 @@ class Avatar extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      id: uid(),
-      loaded: false
+      id: uid()
     }
   }
 
@@ -66,9 +65,7 @@ class Avatar extends React.Component {
   }
 
   get avatarChildren() {
-    const { src, alt, children } = this.props
-    const { loaded } = this.state
-
+    const { src, alt, loaded, children } = this.props
     if (src && loaded) {
       return <img alt={alt} src={src} width={this.size} height={this.size} />
     } else if (children) {
@@ -95,44 +92,11 @@ class Avatar extends React.Component {
     }
   }
 
-  setLoaded() {
-    const { src } = this.props
-    if (!src) {
-      return null
-    }
-    // eslint-disable-next-line no-undef
-    this.image = new Image()
-    this.image.src = src
-    this.image.onload = () => {
-      this.setState((state) => ({ ...state, loaded: true }))
-    }
-    this.image.onerror = () => {
-      this.setState((state) => ({ ...state, loaded: false }))
-    }
-  }
-
-  componentWillMount() {
-    this.setLoaded()
-  }
-
   componentDidMount() {
     const { color, bgColor } = this.props
     const elem = document.getElementById(this.state.id)
     setCSSVariable(elem, '--avatar-bg-color', bgColor)
     setCSSVariable(elem, '--avatar-text-color', color)
-  }
-
-  componentDidUpdate({ src }) {
-    if (this.props.src !== src) {
-      this.setLoaded()
-    }
-  }
-
-  componentWillUnmount() {
-    if (this.image) {
-      this.image.onerror = null
-      this.image.onload = null
-    }
   }
 
   render() {
@@ -154,4 +118,4 @@ class Avatar extends React.Component {
   }
 }
 
-export default Avatar
+export default withImage(Avatar)

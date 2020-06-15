@@ -10,22 +10,22 @@ import {
   G_STRING,
   G_NUM
 } from '../../assets/index'
-import { findDOMNode } from 'react-dom'
 
 class Parallax extends React.Component {
-  box
-
   static displayName = 'NuParallax'
 
   static defaultProps = {
-    height: 300,
+    speed: 1,
+    height: 400,
     ...DEFAULT_PROPS
   }
 
   static propTypes = {
+    speed: G_NUM,
     alt: G_STRING,
     src: G_STRING,
     height: G_NUM,
+    containerId: G_STRING,
     ...DEFAULT_PROPS_TYPE
   }
 
@@ -47,8 +47,8 @@ class Parallax extends React.Component {
           <img
             alt={alt}
             src={src}
-            style={{ transform: `translate(-50%, ${parallax}px)` }}
             className={this.getClass('nu-parallax--img')}
+            style={{ transform: `translate(-50%, ${parallax}px)` }}
           />
         </div>
       )
@@ -58,17 +58,28 @@ class Parallax extends React.Component {
   }
 
   handleScroll(e) {
+    const { imageHeight, height, speed } = this.props
+    const parallaxDist = imageHeight - height
+    let parallax = 0
+    let scrollTop = 0
+    let windowHeight = 0
+    let percentScrolled = 0
+    let windowScrollHeight = 1
     if (this.state.container) {
-      const windowHeight = e.target.offsetHeight
-      const scrollTop = Math.round(e.target.scrollTop)
-      const windowScrollHeight = e.target.scrollHeight
-      const parallaxDist = this.props.imageHeight - this.props.height
-      const percentScrolled = scrollTop / (windowScrollHeight - windowHeight)
-      const parallax = Math.round(parallaxDist * percentScrolled)
-      this.setState({ parallax })
+      windowHeight = e.target.offsetHeight
+      scrollTop = Math.round(e.target.scrollTop)
+      windowScrollHeight = e.target.scrollHeight
+      percentScrolled = scrollTop / (windowScrollHeight - windowHeight)
     } else {
-      // TODO
+      const doc = document.documentElement || document.body
+      scrollTop = doc.scrollTop
+      windowHeight = doc.clientHeight
+      windowScrollHeight = doc.scrollHeight
+      percentScrolled = scrollTop / (windowScrollHeight - windowHeight)
     }
+    parallax = Math.round(parallaxDist * percentScrolled * speed)
+    console.log(parallax)
+    this.setState({ parallax })
   }
 
   componentWillUnmount() {
@@ -76,7 +87,7 @@ class Parallax extends React.Component {
     if (container) {
       container.removeEventListener('scroll', this.handleScroll)
     } else {
-      window.removeEventListener('scroll', this.handleScroll)
+      document.removeEventListener('scroll', this.handleScroll)
     }
   }
 
@@ -87,7 +98,7 @@ class Parallax extends React.Component {
       if (container) {
         container.addEventListener('scroll', this.handleScroll)
       } else {
-        window.addEventListener('scroll', this.handleScroll)
+        document.addEventListener('scroll', this.handleScroll)
       }
       return {
         ...state,
@@ -105,7 +116,6 @@ class Parallax extends React.Component {
     return (
       <div
         style={{ ...style, height: `${height}px` }}
-        ref={(ref) => (this.box = findDOMNode(ref))}
         className={`${this.getClass('nu-parallax')} ${className}`}
       >
         {this.parallaxImage}
