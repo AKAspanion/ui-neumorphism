@@ -1,5 +1,5 @@
 export { overrideThemeVariables, detectElementInDOM } from './util/'
-export { withResize, withClickOutside } from './hocs/'
+export { withImage, withResize, withClickOutside } from './hocs/'
 
 export {
   Typography,
@@ -26,8 +26,9 @@ export {
   Button,
   Avatar,
   Fab,
-  ProgressLinear,
   ProgressCircular,
+  ProgressLinear,
+  Parallax,
   Tooltip,
   Divider,
   Spacer,

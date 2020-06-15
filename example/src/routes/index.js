@@ -24,6 +24,7 @@ import {
   // SnackbarView,
   CheckboxView,
   TextareaView,
+  ParallaxView,
   TextFieldView,
   // PaginationView,
   IconButtonView,
@@ -149,6 +150,12 @@ const routes = [
   //   name: 'Pagination',
   //   component: PaginationView
   // },
+  {
+    id: 37,
+    path: '/parallax',
+    name: 'Parallax',
+    component: ParallaxView
+  },
   {
     id: 17,
     path: '/progress-circular',

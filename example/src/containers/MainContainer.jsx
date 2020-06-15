@@ -94,6 +94,7 @@ class MainContainer extends React.Component {
               />
               <Card
                 flat
+                id='mainView'
                 ref={(ref) => (this.mainView = findDOMNode(ref))}
                 className={`main-view main-view--${
                   !isSmall ? 'large' : 'small'

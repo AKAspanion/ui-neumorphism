@@ -24,7 +24,6 @@ class Sidebar extends React.Component {
   }
 
   componentDidMount() {
-    console.log(routes)
     document.getElementById('list-item-1').checked = true
   }
 

@@ -52,7 +52,7 @@ class Card extends React.Component {
 
   render() {
     const sizeStyles = {}
-    const { dark, style, loading, children, className } = this.props
+    const { id, dark, style, loading, children, className } = this.props
     const cardChildren = passDownProp(children, this.props, [
       'dark',
       'rounded',
@@ -72,6 +72,7 @@ class Card extends React.Component {
     })
     return (
       <div
+        id={id}
         style={{ ...style, ...sizeStyles }}
         className={`${this.getClass()} ${className}`}
       >
