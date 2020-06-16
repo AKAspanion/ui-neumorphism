@@ -31,6 +31,12 @@ export const SELECTION_CONTROL_TYPES = PropTypes.oneOf([
   'switch'
 ])
 export const BUTTON_ALTERNATE_TYPES = PropTypes.oneOf(['fab', 'icon', 'toggle'])
+export const CONTEXT_COLOR_TYPES = PropTypes.oneOf([
+  'info',
+  'error',
+  'success',
+  'warning'
+])
 
 export const TYPOGRAPHY_PROP_TYPES = {
   dark: G_BOOL,
@@ -54,21 +60,37 @@ export const SELECTION_CONTROL_PROP_TYPES = {
   ...DEFAULT_PROPS_TYPE
 }
 
-export const CARD_PROP_TYPES = {
+export const COMMON_CARD_PROPS = {
   flat: G_BOOL,
   width: G_NUM,
   height: G_NUM,
   inset: G_BOOL,
-  loading: G_BOOL,
   minWidth: G_NUM,
   maxWidth: G_NUM,
   rounded: G_BOOL,
   minHeight: G_NUM,
   maxHeight: G_NUM,
-  disabled: G_BOOL,
   outlined: G_BOOL,
   bordered: G_BOOL,
-  elevation: G_NUM,
+  elevation: G_NUM
+}
+
+export const ALERT_PROP_TYPES = {
+  icon: G_NODE,
+  dense: G_BOOL,
+  color: G_STRING,
+  closeIcon: G_NODE,
+  closable: G_BOOL,
+  ...COMMON_CARD_PROPS,
+  ...DEFAULT_PROPS_TYPE,
+  border: POSITION_PROP,
+  type: CONTEXT_COLOR_TYPES
+}
+
+export const CARD_PROP_TYPES = {
+  loading: G_BOOL,
+  disabled: G_BOOL,
+  ...COMMON_CARD_PROPS,
   ...DEFAULT_PROPS_TYPE
 }
 

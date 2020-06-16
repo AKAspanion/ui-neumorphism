@@ -11,7 +11,7 @@ import {
   TableView,
   RadioView,
   BadgeView,
-  // AlertView,
+  AlertView,
   // DialogView,
   // SelectView,
   // SliderView,
@@ -42,12 +42,12 @@ const routes = [
     name: '',
     component: Home
   },
-  // {
-  //   id: 25,
-  //   path: '/alert',
-  //   name: 'Alert',
-  //   component: AlertView
-  // },
+  {
+    id: 25,
+    path: '/alert',
+    name: 'Alert',
+    component: AlertView
+  },
   {
     id: 22,
     path: '/avatar',

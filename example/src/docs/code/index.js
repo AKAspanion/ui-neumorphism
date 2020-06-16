@@ -1,5 +1,6 @@
 export * from './card-code'
 export * from './table-code'
+export * from './alert-code'
 export * from './badge-code'
 export * from './avatar-code'
 export * from './button-code'
