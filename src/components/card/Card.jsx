@@ -4,37 +4,25 @@ import { ProgressLinear } from '../../index'
 
 import styles from './Card.module.css'
 import { getModuleClasses, passDownProp, pickKeys } from '../../util'
-import {
-  G_NUM,
-  G_BOOL,
-  DEFAULT_PROPS,
-  DEFAULT_PROPS_TYPE
-} from '../../assets/index'
+import { DEFAULT_PROPS, CARD_PROP_TYPES } from '../../assets/index'
 
 class Card extends React.Component {
   static displayName = 'NuCard'
 
   static defaultProps = DEFAULT_PROPS
 
-  static propTypes = {
-    flat: G_BOOL,
-    width: G_NUM,
-    height: G_NUM,
-    inset: G_BOOL,
-    loading: G_BOOL,
-    minWidth: G_NUM,
-    maxWidth: G_NUM,
-    rounded: G_BOOL,
-    minHeight: G_NUM,
-    maxHeight: G_NUM,
-    disabled: G_BOOL,
-    outlined: G_BOOL,
-    elevation: G_NUM,
-    ...DEFAULT_PROPS_TYPE
-  }
+  static propTypes = CARD_PROP_TYPES
 
   getClass() {
-    const { dark, flat, inset, elevation, rounded, outlined } = this.props
+    const {
+      dark,
+      flat,
+      inset,
+      rounded,
+      outlined,
+      bordered,
+      elevation
+    } = this.props
     const cardElevation = !isNaN(elevation) ? String(elevation) : null
     return getModuleClasses(
       styles,
@@ -45,6 +33,7 @@ class Card extends React.Component {
         ${inset ? 'nu-card--inset' : ''}
         nu-card--${dark ? 'dark' : 'light'}
         ${rounded ? 'nu-card--rounded' : ''}
+        ${bordered ? 'nu-card--bordered' : ''}
         ${outlined ? 'nu-card--outlined' : ''}
       `
     )
@@ -57,7 +46,8 @@ class Card extends React.Component {
       'dark',
       'rounded',
       'disabled',
-      'outlined'
+      'outlined',
+      'bordered'
     ])
     const pickedStyles = pickKeys(this.props, [
       'width',

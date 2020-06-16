@@ -79,8 +79,8 @@ class CardView extends React.Component {
           entry points to more complex and detailed information.
         </Subtitle1>
         <DocCard
-          url={url}
           className='mt-12'
+          url={url + '#L91-L94'}
           title={<H5>Simple card</H5>}
           subtitle={
             <Subtitle1>
@@ -96,8 +96,8 @@ class CardView extends React.Component {
           code={[simpleCard, dark]}
         />
         <DocCard
-          url={url}
           className='mt-12'
+          url={url + '#L108-L111'}
           title={<H5>Inset card</H5>}
           subtitle={
             <Subtitle1>
@@ -111,6 +111,23 @@ class CardView extends React.Component {
             </Card>
           }
           code={[simpleCardCopy, dark, ['inset']]}
+        />
+        <DocCard
+          className='mt-12'
+          url={url + '#L125-L128'}
+          title={<H5>Bordered card</H5>}
+          subtitle={
+            <Subtitle1>
+              An <code>bordered</code> card contains a soft border.
+            </Subtitle1>
+          }
+          content={
+            <Card bordered width={250}>
+              {cardContent}
+              {cardAction}
+            </Card>
+          }
+          code={[simpleCardCopy, dark, ['bordered']]}
         />
         <DocCard
           url={url}
@@ -131,8 +148,8 @@ class CardView extends React.Component {
           code={[simpleCardCopy, dark, ['outlined']]}
         />
         <DocCard
-          url={url}
           className='mt-12'
+          url={url + '#L160-L163'}
           title={<H5>Flat card</H5>}
           subtitle={
             <Subtitle1>
@@ -148,8 +165,8 @@ class CardView extends React.Component {
           code={[simpleCardCopy, dark, ['flat']]}
         />
         <DocCard
-          url={url}
           className='mt-12'
+          url={url + '#L178-L181'}
           title={<H5>Rounded card</H5>}
           subtitle={
             <Subtitle1>
@@ -166,8 +183,8 @@ class CardView extends React.Component {
           code={[simpleCardCopy, dark, ['rounded']]}
         />
         <DocCard
-          url={url}
           className='mt-12'
+          url={url + '#L195-L198'}
           title={<H5>Disabled card</H5>}
           subtitle={
             <Subtitle1>
@@ -183,8 +200,8 @@ class CardView extends React.Component {
           code={[simpleCardCopy, dark, ['disabled']]}
         />
         <DocCard
-          url={url}
           className='mt-12'
+          url={url + '#L212-L215'}
           title={<H5>Loading card</H5>}
           subtitle={
             <Subtitle1>
@@ -200,8 +217,8 @@ class CardView extends React.Component {
           code={[simpleCardCopy, dark, ['loading']]}
         />
         <DocCard
-          url={url}
           className='mt-12'
+          url={url + '#L231-L234'}
           title={<H5>Width and height</H5>}
           subtitle={
             <Subtitle1>
@@ -219,8 +236,8 @@ class CardView extends React.Component {
           code={[simpleCardCopy, dark, ['width={200} height={300}']]}
         />
         <DocCard
-          url={url}
           className='mt-12'
+          url={url + '#L249-L261'}
           title={<H5>Elevation</H5>}
           subtitle={
             <Subtitle1>
@@ -246,8 +263,8 @@ class CardView extends React.Component {
           code={[elevationCard, dark]}
         />
         <DocCard
-          url={url}
           className='mt-12'
+          url={url + '#L278-L307'}
           title={<H5>Media with text</H5>}
           subtitle={
             <Subtitle1>
@@ -292,8 +309,8 @@ class CardView extends React.Component {
           code={[mediaCard, dark]}
         />
         <DocCard
-          url={url}
           className='mt-12'
+          url={url + '#L321-L357'}
           title={<H5>Advanced card</H5>}
           subtitle={
             <Subtitle1>

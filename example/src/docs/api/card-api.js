@@ -56,6 +56,7 @@ export const cardApi = (dark) => {
       'false',
       "Removes the card's elevation and adds a thin border."
     ),
+    createApiDoc(dark, 'bordered', 'Boolean', 'false', 'Adds a thin border.'),
     createApiDoc(
       dark,
       'elevation',
@@ -111,13 +112,7 @@ export const cardContentApi = (dark) => {
 export const cardMediaApi = (dark) => {
   return [
     ...defaultApiDoc(dark),
-    createApiDoc(
-      dark,
-      'src',
-      'String',
-      '',
-      'The source of the media content.'
-    ),
+    createApiDoc(dark, 'src', 'String', '', 'The source of the media content.'),
     createApiDoc(
       dark,
       'title',

@@ -54,6 +54,24 @@ export const SELECTION_CONTROL_PROP_TYPES = {
   ...DEFAULT_PROPS_TYPE
 }
 
+export const CARD_PROP_TYPES = {
+  flat: G_BOOL,
+  width: G_NUM,
+  height: G_NUM,
+  inset: G_BOOL,
+  loading: G_BOOL,
+  minWidth: G_NUM,
+  maxWidth: G_NUM,
+  rounded: G_BOOL,
+  minHeight: G_NUM,
+  maxHeight: G_NUM,
+  disabled: G_BOOL,
+  outlined: G_BOOL,
+  bordered: G_BOOL,
+  elevation: G_NUM,
+  ...DEFAULT_PROPS_TYPE
+}
+
 export const BUTTON_PROP_TYPES = {
   style: G_OBJ,
   dark: G_BOOL,

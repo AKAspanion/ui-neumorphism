@@ -122,7 +122,7 @@
 .nu-card.nu-card--flat {
   box-shadow: none !important;
 }
-
+.nu-card.nu-card--bordered,
 .nu-card.nu-card--outlined {
   border: 1px solid var(--border-color);
 }

@@ -51,8 +51,8 @@ class CardHeader extends React.Component {
   render() {
     const {
       style,
-      avatar,
       title,
+      avatar,
       action,
       children,
       subtitle,
