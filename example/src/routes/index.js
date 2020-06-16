@@ -11,7 +11,7 @@ import {
   TableView,
   RadioView,
   BadgeView,
-  AlertView,
+  // AlertView,
   // DialogView,
   // SelectView,
   // SliderView,
@@ -22,8 +22,8 @@ import {
   // TooltipView,
   // CarouselView,
   // SnackbarView,
+  // TextareaView,
   CheckboxView,
-  TextareaView,
   ParallaxView,
   TextFieldView,
   // PaginationView,
@@ -42,12 +42,12 @@ const routes = [
     name: '',
     component: Home
   },
-  {
-    id: 25,
-    path: '/alert',
-    name: 'Alert',
-    component: AlertView
-  },
+  // {
+  //   id: 25,
+  //   path: '/alert',
+  //   name: 'Alert',
+  //   component: AlertView
+  // },
   {
     id: 22,
     path: '/avatar',
@@ -210,12 +210,12 @@ const routes = [
   //   name: 'Tab',
   //   component: TabView
   // },
-  {
-    id: 27,
-    path: '/text-area',
-    name: 'Textarea',
-    component: TextareaView
-  },
+  // {
+  //   id: 27,
+  //   path: '/text-area',
+  //   name: 'Textarea',
+  //   component: TextareaView
+  // },
   {
     id: 9,
     path: '/text-field',

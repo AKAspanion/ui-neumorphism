@@ -64,8 +64,17 @@ const rounded = (dark) =>
     'Applies a large border radius on the button.'
   )
 
+const bordered = (dark) =>
+  createApiDoc(dark, 'bordered', 'Boolean', 'false', 'Applies a thin border.')
+
 const outlined = (dark) =>
-  createApiDoc(dark, 'outlined', 'Boolean', 'false', 'Applies a thin border.')
+  createApiDoc(
+    dark,
+    'outlined',
+    'Boolean',
+    'false',
+    'Applies a border and removes elevation.'
+  )
 
 const trueText = (dark) =>
   createApiDoc(
@@ -99,6 +108,7 @@ export const buttonApi = (dark) => {
     active(dark),
     rounded(dark),
     outlined(dark),
+    bordered(dark),
     disabled(dark),
     createApiDoc(
       dark,
@@ -154,6 +164,7 @@ export const fabButtonApi = (dark) => {
       'true',
       'Animates button on render.'
     ),
+    bordered(dark),
     disabled(dark),
     eventDoc(dark, 'Click'),
     eventDoc(dark, 'MouseUp'),
@@ -176,6 +187,7 @@ export const iconButtonApi = (dark) => {
     active(dark),
     rounded(dark),
     outlined(dark),
+    bordered(dark),
     disabled(dark),
     eventDoc(dark, 'Click'),
     eventDoc(dark, 'MouseUp'),
@@ -216,6 +228,7 @@ export const toggleButtonApi = (dark) => {
     color(dark),
     rounded(dark),
     outlined(dark),
+    bordered(dark),
     disabled(dark),
     eventDoc(
       dark,
@@ -263,6 +276,7 @@ export const toggleButtonGroupApi = (dark) => {
     ),
     rounded(dark),
     outlined(dark),
+    bordered(dark),
     disabled(dark),
     createApiDoc(
       dark,

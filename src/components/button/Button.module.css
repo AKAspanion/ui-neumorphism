@@ -20,6 +20,7 @@
   --bg-color: var(--light-bg);
   --border-color: var(--text-color);
   --text-color: var(--g-text-color-light);
+  --light-border-color: var(--light-bg-dark-shadow);
   --text-color-disabled: var(--g-text-color-disabled-light);
   --box-shadow: 5px 5px 12px var(--light-bg-dark-shadow),
     -4px -4px 10px var(--light-bg-light-shadow);
@@ -37,6 +38,7 @@
   --bg-color: var(--dark-bg);
   --border-color: var(--text-color);
   --text-color: var(--g-text-color-dark);
+  --light-border-color: var(--dark-bg-light-shadow);
   --text-color-disabled: var(--g-text-color-disabled-dark);
   --box-shadow: 5px 5px 12px var(--dark-bg-dark-shadow),
     -4px -4px 10px var(--dark-bg-light-shadow);
@@ -125,6 +127,9 @@
   --bg-color: transparent !important;
 }
 
+.nu-button.nu-button--bordered {
+  border: 1px solid var(--light-border-color);
+}
 
 .nu-button.nu-button--outlined {
   box-shadow: none !important;

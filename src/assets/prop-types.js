@@ -65,6 +65,7 @@ export const BUTTON_PROP_TYPES = {
   color: G_STRING,
   bgColor: G_STRING,
   outlined: G_BOOL,
+  bordered: G_BOOL,
   disabled: G_BOOL,
   depressed: G_BOOL,
   onClick: G_FUNC,

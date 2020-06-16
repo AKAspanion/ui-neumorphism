@@ -34,7 +34,7 @@ class FabView extends React.Component {
           the most common action.
         </Subtitle1>
         <DocCard
-          url={url}
+          url={url + '#L44-L58'}
           content={
             <Card
               flat
@@ -61,8 +61,8 @@ class FabView extends React.Component {
           code={[fabButtons, dark, ['main']]}
         />
         <DocCard
-          url={url}
           className='mt-12'
+          url={url + '#L78-L86'}
           title={<H5>Sizes</H5>}
           subtitle={
             <Subtitle1>
@@ -89,8 +89,8 @@ class FabView extends React.Component {
           code={[fabButtons, dark, ['size']]}
         />
         <DocCard
-          url={url}
           className='mt-12'
+          url={url + '#L111-L122'}
           title={<H5>Position</H5>}
           subtitle={
             <Subtitle1>

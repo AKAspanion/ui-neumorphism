@@ -84,8 +84,8 @@ class ToggleButtonView extends React.Component {
           child buttons when given its own value prop.
         </Subtitle1>
         <DocCard
-          url={url}
           className='mt-12'
+          url={url + '#L101-L118'}
           title={<H5>Mandatory selection</H5>}
           subtitle={
             <Subtitle1>
@@ -125,8 +125,8 @@ class ToggleButtonView extends React.Component {
           code={[toggleButtons, dark, ['mandatory']]}
         />
         <DocCard
-          url={url}
           className='mt-12'
+          url={url + '#L144-L159'}
           title={<H5>Multiple selection</H5>}
           subtitle={
             <Subtitle1>
@@ -166,8 +166,8 @@ class ToggleButtonView extends React.Component {
           code={[toggleButtons, dark, ['multiple']]}
         />
         <DocCard
-          url={url}
           className='mt-12'
+          url={url + '#L186-L198'}
           title={<H5>Standalone ToggleButtons</H5>}
           subtitle={
             <Subtitle1>
@@ -205,8 +205,8 @@ class ToggleButtonView extends React.Component {
           code={[toggleStandalone, dark]}
         />
         <DocCard
-          url={url}
           className='mt-12'
+          url={url + '#L218-L246'}
           title={<H5>Sizes</H5>}
           subtitle={
             <Subtitle1>

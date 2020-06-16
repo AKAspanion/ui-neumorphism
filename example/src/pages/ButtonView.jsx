@@ -34,7 +34,7 @@ class ButtonView extends React.Component {
           <code>forms</code>, <code>cards</code>, etc.
         </Subtitle1>
         <DocCard
-          url={url + '#L40-L61'}
+          url={url + '#L40-L64'}
           content={
             <Card flat className='d-flex align-center justify-center flex-wrap'>
               <Button className='ma-8'>default</Button>
@@ -53,6 +53,9 @@ class ButtonView extends React.Component {
               <Button className='ma-8' depressed>
                 depressed
               </Button>
+              <Button className='ma-8' bordered>
+                bordered
+              </Button>
               <Button className='ma-8' outlined>
                 outlined
               </Button>
@@ -65,7 +68,7 @@ class ButtonView extends React.Component {
         />
         <DocCard
           className='mt-12'
-          url={url + '#L78-L84'}
+          url={url + '#L81-L87'}
           title={<H5>Contained buttons</H5>}
           subtitle={
             <Subtitle1>
@@ -88,7 +91,7 @@ class ButtonView extends React.Component {
         />
         <DocCard
           className='mt-12'
-          url={url + '#L101-L109'}
+          url={url + '#L104-L112'}
           title={<H5>Text buttons</H5>}
           subtitle={
             <Subtitle1>
@@ -113,7 +116,31 @@ class ButtonView extends React.Component {
         />
         <DocCard
           className='mt-12'
-          url={url + '#L126-L134'}
+          url={url + '#L128-L136'}
+          title={<H5>Bordered buttons</H5>}
+          subtitle={
+            <Subtitle1>
+              Bordered buttons are have a light border around them.
+            </Subtitle1>
+          }
+          content={
+            <Card flat className='d-flex align-center justify-center flex-wrap'>
+              <Button className='ma-8' bordered>
+                default
+              </Button>
+              <Button className='ma-8' bordered color='var(--primary)'>
+                colored
+              </Button>
+              <Button className='ma-8' bordered disabled>
+                disabled
+              </Button>
+            </Card>
+          }
+          code={[docButtons, dark, ['bordered']]}
+        />
+        <DocCard
+          className='mt-12'
+          url={url + '#L153-L161'}
           title={<H5>Outlined buttons</H5>}
           subtitle={
             <Subtitle1>
@@ -138,7 +165,7 @@ class ButtonView extends React.Component {
         />
         <DocCard
           className='mt-12'
-          url={url + '#L151-L159'}
+          url={url + '#L178-L186'}
           title={<H5>Rounded buttons</H5>}
           subtitle={
             <Subtitle1>
@@ -163,7 +190,7 @@ class ButtonView extends React.Component {
         />
         <DocCard
           className='mt-12'
-          url={url + '#L176-L184'}
+          url={url + '#L203-L211'}
           title={<H5>Depressed buttons</H5>}
           subtitle={
             <Subtitle1>
@@ -188,7 +215,7 @@ class ButtonView extends React.Component {
         />
         <DocCard
           className='mt-12'
-          url={url + '#L198'}
+          url={url + '#L225'}
           title={<H5>Block button</H5>}
           subtitle={
             <Subtitle1>Block buttons take up entire available space.</Subtitle1>
@@ -202,7 +229,7 @@ class ButtonView extends React.Component {
         />
         <DocCard
           className='mt-12'
-          url={url + '#L214-L222'}
+          url={url + '#L241-L249'}
           title={<H5>Sizes</H5>}
           subtitle={
             <Subtitle1>

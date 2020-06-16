@@ -30,6 +30,7 @@ class Button extends React.Component {
       active,
       rounded,
       disabled,
+      bordered,
       outlined,
       depressed
     } = this.props
@@ -48,6 +49,7 @@ class Button extends React.Component {
             nu-button--${dark ? 'dark' : 'light'}
             ${rounded ? 'nu-button--rounded' : ''}
             ${outlined ? 'nu-button--outlined' : ''}
+            ${bordered ? 'nu-button--bordered' : ''}
             ${disabled ? 'nu-button--disabled' : ''}
             ${depressed ? 'nu-button--depressed' : ''}
           `

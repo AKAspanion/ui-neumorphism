@@ -93,7 +93,7 @@ class ToggleButtonGroup extends React.Component {
         }
       }),
       this.props,
-      ['dark', 'size', 'color', 'rounded', 'disabled', 'outlined']
+      ['dark', 'size', 'color', 'rounded', 'disabled', 'outlined', 'bordered']
     )
     return (
       <div style={style} className={className}>

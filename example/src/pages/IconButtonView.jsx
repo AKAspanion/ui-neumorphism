@@ -35,7 +35,7 @@ class IconButtonView extends React.Component {
           selected or deselected, such as adding or removing a star to an item.
         </Subtitle1>
         <DocCard
-          url={url}
+          url={url + '#L45-L72'}
           content={
             <Card
               flat
