@@ -19,7 +19,7 @@ import {
   ButtonView,
   SwitchView,
   DividerView,
-  // TooltipView,
+  TooltipView,
   // CarouselView,
   // SnackbarView,
   // TextareaView,
@@ -222,12 +222,12 @@ const routes = [
     name: 'TextField',
     component: TextFieldView
   },
-  // {
-  //   id: 22,
-  //   path: '/tooltip',
-  //   name: 'Tooltip',
-  //   component: TooltipView
-  // },
+  {
+    id: 22,
+    path: '/tooltip',
+    name: 'Tooltip',
+    component: TooltipView
+  },
   {
     id: 10,
     path: '/typography',

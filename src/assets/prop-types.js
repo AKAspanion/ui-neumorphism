@@ -66,19 +66,23 @@ export const COMMON_CARD_DEFAULT_PROPS = {
   bordered: false
 }
 
-export const COMMON_CARD_PROPS = {
-  flat: G_BOOL,
+export const CSS_DIMENSION_DEFAULT_PROPS = {
   width: G_NUM,
   height: G_NUM,
-  inset: G_BOOL,
   minWidth: G_NUM,
   maxWidth: G_NUM,
-  rounded: G_BOOL,
   minHeight: G_NUM,
-  maxHeight: G_NUM,
+  maxHeight: G_NUM
+}
+
+export const COMMON_CARD_PROPS = {
+  flat: G_BOOL,
+  inset: G_BOOL,
+  rounded: G_BOOL,
   outlined: G_BOOL,
   bordered: G_BOOL,
-  elevation: G_NUM
+  elevation: G_NUM,
+  ...CSS_DIMENSION_DEFAULT_PROPS
 }
 
 export const ALERT_PROP_TYPES = {
@@ -159,3 +163,15 @@ export const BUTTON_GROUP_VALUE = PropTypes.oneOfType([
   PropTypes.array,
   PropTypes.string
 ])
+
+export const TOOLTIP_PROP_TYPES = {
+  top: G_BOOL,
+  left: G_BOOL,
+  open: G_BOOL,
+  inset: G_BOOL,
+  right: G_BOOL,
+  bottom: G_BOOL,
+  title: G_NODE.isRequired,
+  ...DEFAULT_PROPS_TYPE,
+  ...CSS_DIMENSION_DEFAULT_PROPS
+}

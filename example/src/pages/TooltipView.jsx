@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Card, H4, H6, Subtitle1 } from 'ui-neumorphism'
+import { Card, H4, H6, Subtitle1, Tooltip, Button } from 'ui-neumorphism'
 
 // import { toggle, toggleLabel, switchApi } from '../docs/'
 
@@ -10,8 +10,11 @@ import DocCard from '../containers/DocCard.jsx'
 const url =
   'https://github.com/AKAspanion/ui-neumorphism/blob/master/example/src/pages/TooltipView.jsx'
 class TooltipView extends React.Component {
+  state = {
+    v: false
+  }
   handleConsole(e) {
-    // console.log(e)
+    console.log(e)
   }
   render() {
     const { dark } = this.props
@@ -33,7 +36,30 @@ class TooltipView extends React.Component {
           url={url}
           content={
             <Card flat className='d-flex align-center justify-center flex-wrap'>
-              Coming soon..
+              <Tooltip
+                top
+                inset
+                className='ma-3'
+                title={<div>abcsdssdsdabsc</div>}
+              >
+                <Button>abcde</Button>
+              </Tooltip>
+              <Tooltip left className='ma-3' title={<div>abcsdssdsdabsc</div>}>
+                <Button>abcdef</Button>
+              </Tooltip>
+              <Tooltip right className='ma-3' title={<div>abcsdssdsdabsc</div>}>
+                <Button disabled>abcdef</Button>
+              </Tooltip>
+              <Tooltip
+                className='ma-3'
+                title={<div>abcsdssdsdabsc</div>}
+                minWidth={23}
+                open={this.state.v}
+                onOpen={(e) => this.setState({ v: true })}
+                onClose={(e) => this.setState({ v: false })}
+              >
+                help
+              </Tooltip>
             </Card>
           }
         />

@@ -1,0 +1,6 @@
+.nu-tooltip {
+  z-index: 10;
+  padding: 12px;
+  font-size: 14px;
+  position: absolute;
+}
