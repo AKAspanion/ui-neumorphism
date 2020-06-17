@@ -4,7 +4,7 @@ import { Button } from '../index'
 
 import styles from './Fab.module.css'
 import { getModuleClasses } from '../../util'
-import { G_BOOL, BUTTON_PROP_TYPES, DEFAULT_PROPS } from '../../assets/index'
+import { FAB_BUTTON_PROP_TYPES, DEFAULT_PROPS } from '../../assets/index'
 
 class Fab extends React.Component {
   static displayName = 'NuFab'
@@ -14,16 +14,7 @@ class Fab extends React.Component {
     ...DEFAULT_PROPS
   }
 
-  static propTypes = {
-    top: G_BOOL,
-    left: G_BOOL,
-    right: G_BOOL,
-    bottom: G_BOOL,
-    fixed: G_BOOL,
-    absolute: G_BOOL,
-    animation: G_BOOL,
-    ...BUTTON_PROP_TYPES
-  }
+  static propTypes = FAB_BUTTON_PROP_TYPES
 
   getClasses() {
     const { fixed, top, right, bottom, left, absolute, animation } = this.props
@@ -43,15 +34,13 @@ class Fab extends React.Component {
   }
 
   render() {
-    const { children, style, className } = this.props
+    const { children, style, className, ...otherProps } = this.props
     return (
       <div style={style} className={`${this.getClasses()} ${className}`}>
         <Button
-          {...this.props}
+          {...otherProps}
           rounded
           type='fab'
-          style={{}}
-          className=''
           text={false}
           block={false}
           outlined={false}

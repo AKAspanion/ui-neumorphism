@@ -1,4 +1,11 @@
 import PropTypes from 'prop-types'
+import {
+  SIZES,
+  POSITIONS,
+  CONTEXT_COLORS,
+  ALTERNATE_BUTONS,
+  SELECTION_CONTROLS
+} from './types'
 
 export const G_ANY = PropTypes.any
 export const G_FUNC = PropTypes.func
@@ -12,8 +19,8 @@ export const G_STRING = PropTypes.string
 export const G_REQ = PropTypes.isRequired
 
 export const DEFAULT_PROPS = {
-  className: '',
-  style: {}
+  style: {},
+  className: ''
 }
 
 export const DEFAULT_PROPS_TYPE = {
@@ -22,21 +29,12 @@ export const DEFAULT_PROPS_TYPE = {
   className: G_STRING
 }
 
-export const SIZE_PROP = PropTypes.oneOf(['small', 'medium', 'large'])
+export const SIZE_PROP = PropTypes.oneOf(SIZES)
+export const POSITION_PROP = PropTypes.oneOf(POSITIONS)
+export const CONTEXT_COLOR_TYPES = PropTypes.oneOf(CONTEXT_COLORS)
+export const BUTTON_ALTERNATE_TYPES = PropTypes.oneOf(ALTERNATE_BUTONS)
 export const SIZE_PROP_WITH_NUM = PropTypes.oneOfType([SIZE_PROP, G_NUM])
-export const POSITION_PROP = PropTypes.oneOf(['top', 'right', 'bottom', 'left'])
-export const SELECTION_CONTROL_TYPES = PropTypes.oneOf([
-  'radio',
-  'checkbox',
-  'switch'
-])
-export const BUTTON_ALTERNATE_TYPES = PropTypes.oneOf(['fab', 'icon', 'toggle'])
-export const CONTEXT_COLOR_TYPES = PropTypes.oneOf([
-  'info',
-  'error',
-  'success',
-  'warning'
-])
+export const SELECTION_CONTROL_TYPES = PropTypes.oneOf(SELECTION_CONTROLS)
 
 export const TYPOGRAPHY_PROP_TYPES = {
   dark: G_BOOL,
@@ -49,15 +47,23 @@ export const TYPOGRAPHY_PROP_TYPES = {
 export const SELECTION_CONTROL_PROP_TYPES = {
   value: G_ANY,
   id: G_STRING,
-  label: G_STRING,
   name: G_STRING,
+  label: G_STRING,
   checked: G_BOOL,
-  required: G_BOOL,
-  disabled: G_BOOL,
   color: G_STRING,
   onClick: G_FUNC,
+  required: G_BOOL,
+  disabled: G_BOOL,
   onChange: G_FUNC,
   ...DEFAULT_PROPS_TYPE
+}
+
+export const COMMON_CARD_DEFAULT_PROPS = {
+  flat: false,
+  inset: false,
+  rounded: false,
+  outlined: false,
+  bordered: false
 }
 
 export const COMMON_CARD_PROPS = {
@@ -79,8 +85,8 @@ export const ALERT_PROP_TYPES = {
   icon: G_NODE,
   dense: G_BOOL,
   color: G_STRING,
-  closeIcon: G_NODE,
   closable: G_BOOL,
+  closeIcon: G_NODE,
   ...COMMON_CARD_PROPS,
   ...DEFAULT_PROPS_TYPE,
   border: POSITION_PROP,
@@ -103,31 +109,42 @@ export const BUTTON_PROP_TYPES = {
   rounded: G_BOOL,
   size: SIZE_PROP,
   color: G_STRING,
-  bgColor: G_STRING,
+  onClick: G_FUNC,
   outlined: G_BOOL,
   bordered: G_BOOL,
   disabled: G_BOOL,
-  depressed: G_BOOL,
-  onClick: G_FUNC,
   mouseOut: G_FUNC,
+  bgColor: G_STRING,
+  depressed: G_BOOL,
   mouseOver: G_FUNC,
   className: G_STRING,
-  type: BUTTON_ALTERNATE_TYPES,
-  ...DEFAULT_PROPS_TYPE
+  ...DEFAULT_PROPS_TYPE,
+  type: BUTTON_ALTERNATE_TYPES
+}
+
+export const FAB_BUTTON_PROP_TYPES = {
+  top: G_BOOL,
+  left: G_BOOL,
+  right: G_BOOL,
+  fixed: G_BOOL,
+  bottom: G_BOOL,
+  absolute: G_BOOL,
+  animation: G_BOOL,
+  ...BUTTON_PROP_TYPES
 }
 
 export const TEXT_FIELD_PROP_TYPES = {
   id: G_STRING,
   rules: G_ARR,
   dense: G_BOOL,
+  label: G_NODE,
   type: G_STRING,
   hint: G_STRING,
+  counter: G_NUM,
   append: G_NODE,
   prepend: G_NODE,
-  value: G_STRING,
-  label: G_NODE,
-  counter: G_NUM,
   rounded: G_BOOL,
+  value: G_STRING,
   loading: G_BOOL,
   readonly: G_BOOL,
   disabled: G_BOOL,
@@ -139,6 +156,6 @@ export const TEXT_FIELD_PROP_TYPES = {
 }
 
 export const BUTTON_GROUP_VALUE = PropTypes.oneOfType([
-  PropTypes.string,
-  PropTypes.array
+  PropTypes.array,
+  PropTypes.string
 ])

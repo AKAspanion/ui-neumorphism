@@ -6,6 +6,7 @@ import { callCallback, passDownProp } from '../../util'
 import {
   G_BOOL,
   DEFAULT_PROPS,
+  CARD_PASS_DOWN,
   BUTTON_PROP_TYPES,
   BUTTON_GROUP_VALUE
 } from '../../assets'
@@ -93,7 +94,7 @@ class ToggleButtonGroup extends React.Component {
         }
       }),
       this.props,
-      ['dark', 'size', 'color', 'rounded', 'disabled', 'outlined', 'bordered']
+      ['size', 'color', ...CARD_PASS_DOWN]
     )
     return (
       <div style={style} className={className}>

@@ -3,7 +3,12 @@ import React from 'react'
 import styles from './Button.module.css'
 
 import { getModuleClasses, passDownProp, pickKeys } from '../../util'
-import { BUTTON_PROP_TYPES, DEFAULT_PROPS } from '../../assets/index'
+import {
+  BUTTON_PROP_TYPES,
+  DEFAULT_PROPS,
+  MOUSE_EVENTS,
+  SIZES
+} from '../../assets/index'
 
 class Button extends React.Component {
   static displayName = 'NuButton'
@@ -16,8 +21,7 @@ class Button extends React.Component {
   static propTypes = BUTTON_PROP_TYPES
 
   getValidSize(size) {
-    const sizes = ['small', 'medium', 'large']
-    return sizes.find((s) => s === size) || 'medium'
+    return SIZES.find((s) => s === size) || 'medium'
   }
 
   getClasses(classType) {
@@ -63,6 +67,7 @@ class Button extends React.Component {
 
   render() {
     const {
+      id,
       type,
       style,
       color,
@@ -75,16 +80,8 @@ class Button extends React.Component {
     const btnChildren = passDownProp(children, this.props, 'dark')
     return (
       <div
-        {...pickKeys(this.props, [
-          'onClick',
-          'onMouseUp',
-          'onMouseOut',
-          'onMouseMove',
-          'onMouseDown',
-          'onMouseOver',
-          'onMouseEnter',
-          'onMouseLeave'
-        ])}
+        id={id}
+        {...pickKeys(this.props, MOUSE_EVENTS)}
         className={`${this.getClasses('container')} ${className}`}
         style={{
           ...style,

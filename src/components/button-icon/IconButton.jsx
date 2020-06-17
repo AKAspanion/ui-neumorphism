@@ -14,9 +14,9 @@ class IconButton extends React.Component {
   static propTypes = BUTTON_PROP_TYPES
 
   render() {
-    const { children } = this.props
+    const { children, ...otherProps } = this.props
     return (
-      <Button {...this.props} type='icon' block={false} depressed={false}>
+      <Button {...otherProps} type='icon' block={false} depressed={false}>
         {children}
       </Button>
     )

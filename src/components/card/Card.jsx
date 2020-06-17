@@ -4,12 +4,22 @@ import { ProgressLinear } from '../../index'
 
 import styles from './Card.module.css'
 import { getModuleClasses, passDownProp, pickKeys } from '../../util'
-import { DEFAULT_PROPS, CARD_PROP_TYPES } from '../../assets/index'
+import {
+  DEFAULT_PROPS,
+  CSS_DIMENSIONS,
+  CARD_PASS_DOWN,
+  CARD_PROP_TYPES,
+  COMMON_CARD_DEFAULT_PROPS
+} from '../../assets/index'
 
 class Card extends React.Component {
   static displayName = 'NuCard'
 
-  static defaultProps = DEFAULT_PROPS
+  static defaultProps = {
+    disabled: false,
+    ...DEFAULT_PROPS,
+    ...COMMON_CARD_DEFAULT_PROPS
+  }
 
   static propTypes = CARD_PROP_TYPES
 
@@ -42,21 +52,8 @@ class Card extends React.Component {
   render() {
     const sizeStyles = {}
     const { id, dark, style, loading, children, className } = this.props
-    const cardChildren = passDownProp(children, this.props, [
-      'dark',
-      'rounded',
-      'disabled',
-      'outlined',
-      'bordered'
-    ])
-    const pickedStyles = pickKeys(this.props, [
-      'width',
-      'height',
-      'minWidth',
-      'maxWidth',
-      'minHeight',
-      'maxHeight'
-    ])
+    const cardChildren = passDownProp(children, this.props, CARD_PASS_DOWN)
+    const pickedStyles = pickKeys(this.props, CSS_DIMENSIONS)
     Object.keys(pickedStyles).map((key) => {
       sizeStyles[key] = `${pickedStyles[key]}px`
     })

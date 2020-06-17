@@ -10,7 +10,8 @@ import {
   DEFAULT_PROPS_TYPE,
   DEFAULT_PROPS,
   G_STRING,
-  G_BOOL
+  G_BOOL,
+  SIZES
 } from '../../assets/index'
 
 class Avatar extends React.Component {
@@ -60,8 +61,7 @@ class Avatar extends React.Component {
   }
 
   get sizeText() {
-    const sizes = ['small', 'medium', 'large']
-    return sizes.find((s) => s === this.props.size) || 'medium'
+    return SIZES.find((s) => s === this.props.size) || 'medium'
   }
 
   get avatarChildren() {

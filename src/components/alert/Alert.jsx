@@ -4,7 +4,12 @@ import { Card, Spacer, IconButton } from '../../index'
 import styles from './Alert.module.css'
 
 import { getModuleClasses, uid, setCSSVariable, callCallback } from '../../util'
-import { ALERT_PROP_TYPES, DEFAULT_PROPS } from '../../assets/index'
+import {
+  POSITIONS,
+  DEFAULT_PROPS,
+  CONTEXT_COLORS,
+  ALERT_PROP_TYPES
+} from '../../assets/index'
 
 class Alert extends React.Component {
   static displayName = 'NuAlert'
@@ -24,18 +29,11 @@ class Alert extends React.Component {
   }
 
   get type() {
-    return (
-      ['success', 'info', 'warning', 'error'].find(
-        (t) => t === this.props.type
-      ) || null
-    )
+    return CONTEXT_COLORS.find((t) => t === this.props.type) || null
   }
 
   get border() {
-    return (
-      ['top', 'right', 'bottom', 'left'].find((t) => t === this.props.border) ||
-      null
-    )
+    return POSITIONS.find((t) => t === this.props.border) || null
   }
 
   get icon() {

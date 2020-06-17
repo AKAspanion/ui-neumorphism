@@ -58,10 +58,10 @@ class ToggleButton extends React.Component {
   }
 
   render() {
-    const { children } = this.props
+    const { children, ...otherProps } = this.props
     return (
       <Button
-        {...this.props}
+        {...otherProps}
         type='toggle'
         block={false}
         depressed={false}

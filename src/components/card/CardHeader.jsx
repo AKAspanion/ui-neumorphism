@@ -6,7 +6,9 @@ import {
   G_BOOL,
   G_NODE,
   DEFAULT_PROPS,
-  DEFAULT_PROPS_TYPE
+  DEFAULT_PROPS_TYPE,
+  CARD_HEAD_PASS_DOWN,
+  CARD_CHILD_PASS_DOWN
 } from '../../assets/index'
 
 class CardHeader extends React.Component {
@@ -58,18 +60,15 @@ class CardHeader extends React.Component {
       subtitle,
       className
     } = this.props
-    const cardTitle = passDownProp(title, this.props, ['dark', 'disabled'])
-    const cardAvatar = passDownProp(avatar, this.props, ['dark', 'disabled'])
-    const cardAction = passDownProp(action, this.props, ['dark', 'disabled'])
-    const cardSubTitle = passDownProp(subtitle, this.props, [
-      'dark',
-      'disabled'
-    ])
-    const cardChildren = passDownProp(children, this.props, [
-      'dark',
-      'rounded',
-      'disabled'
-    ])
+    const cardTitle = passDownProp(title, this.props, CARD_HEAD_PASS_DOWN)
+    const cardAvatar = passDownProp(avatar, this.props, CARD_HEAD_PASS_DOWN)
+    const cardAction = passDownProp(action, this.props, CARD_HEAD_PASS_DOWN)
+    const cardSubTitle = passDownProp(subtitle, this.props, CARD_HEAD_PASS_DOWN)
+    const cardChildren = passDownProp(
+      children,
+      this.props,
+      CARD_CHILD_PASS_DOWN
+    )
     return (
       <div style={style} className={`${this.getClass('wrapper')} ${className}`}>
         {cardAvatar || cardTitle || cardSubTitle || cardAction ? (
