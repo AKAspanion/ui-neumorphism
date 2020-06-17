@@ -1,5 +1,5 @@
 import React from 'react'
-import { createApiDoc, defaultApiDoc, eventDoc } from '../index.js'
+import { createApiDoc, defaultApiDoc, positionApi, eventDoc } from '../index.js'
 
 const sizes = (dark, desc) =>
   createApiDoc(
@@ -135,17 +135,7 @@ export const fabButtonApi = (dark) => {
     active(dark),
     color(dark),
     bgColor(dark),
-    ...['top', 'left', 'right', 'bottom'].map((pos) =>
-      createApiDoc(
-        dark,
-        pos,
-        'Boolean',
-        'false',
-        <div>
-          Aligns the button towards the <code>{pos}</code>.
-        </div>
-      )
-    ),
+    ...positionApi(dark, 'button'),
     ...['fixed', 'absolute'].map((pos) =>
       createApiDoc(
         dark,

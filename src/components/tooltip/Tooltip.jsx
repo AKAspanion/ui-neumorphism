@@ -39,15 +39,15 @@ class Tooltip extends React.Component {
         left: 0
       }
     }
-    this.controlled = props.open !== undefined
+    this.controlled = props.visible !== undefined
     this.handleMouseOnToolTip = this.handleMouseOnToolTip.bind(this)
   }
 
   get styles() {
     const sizeStyles = {}
-    const { open } = this.props
+    const { visible } = this.props
     const { pos, active } = this.state
-    const canView = this.controlled ? open : active
+    const canView = this.controlled ? visible : active
 
     const pickedStyles = pickKeys(this.props, CSS_DIMENSIONS)
     Object.keys(pickedStyles).map(
@@ -146,7 +146,7 @@ class Tooltip extends React.Component {
   }
 
   render() {
-    const { title, style, className } = this.props
+    const { content, style, className } = this.props
     const children = passDownProp(this.tooltipChildren, this.props, ['dark'])
     const pickedProps = pickKeys(this.props, ['dark', 'inset'])
     return (
@@ -160,7 +160,7 @@ class Tooltip extends React.Component {
             style={this.styles}
             className={`${this.getClasses('tooltip')}`}
           >
-            {title}
+            {content}
           </Card>,
           document.body
         )}

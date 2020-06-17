@@ -16,8 +16,6 @@ export const G_NUM = PropTypes.number
 export const G_OBJ = PropTypes.object
 export const G_STRING = PropTypes.string
 
-export const G_REQ = PropTypes.isRequired
-
 export const DEFAULT_PROPS = {
   style: {},
   className: ''
@@ -167,11 +165,11 @@ export const BUTTON_GROUP_VALUE = PropTypes.oneOfType([
 export const TOOLTIP_PROP_TYPES = {
   top: G_BOOL,
   left: G_BOOL,
-  open: G_BOOL,
   inset: G_BOOL,
   right: G_BOOL,
   bottom: G_BOOL,
-  title: G_NODE.isRequired,
+  visible: G_BOOL,
   ...DEFAULT_PROPS_TYPE,
+  content: G_NODE.isRequired,
   ...CSS_DIMENSION_DEFAULT_PROPS
 }

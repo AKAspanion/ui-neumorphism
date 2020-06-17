@@ -90,3 +90,31 @@ export const eventDoc = (dark, type, caption, code) => {
     code
   )
 }
+
+const styleDoc = (dark, prop, type) =>
+  createApiDoc(dark, prop, 'Number', '', `Sets the ${prop} for the ${type}.`)
+
+export const cssDimensionsApi = (dark, type) => {
+  return [
+    styleDoc(dark, 'width', type),
+    styleDoc(dark, 'height', type),
+    styleDoc(dark, 'minWidth', type),
+    styleDoc(dark, 'maxWidth', type),
+    styleDoc(dark, 'minHeight', type),
+    styleDoc(dark, 'maxHeight', type)
+  ]
+}
+
+export const positionApi = (dark, type) => {
+  return ['top', 'left', 'right', 'bottom'].map((pos) =>
+    createApiDoc(
+      dark,
+      pos,
+      'Boolean',
+      'false',
+      <div>
+        Aligns the {type} towards the <code>{pos}</code>.
+      </div>
+    )
+  )
+}

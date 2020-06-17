@@ -1,7 +1,4 @@
-import { createApiDoc, defaultApiDoc } from '../index.js'
-
-const style = (dark, prop, type) =>
-  createApiDoc(dark, prop, 'Number', '', `Sets the ${prop} for the ${type}.`)
+import { createApiDoc, defaultApiDoc, cssDimensionsApi } from '../index.js'
 
 const disabled = (dark, type) =>
   createApiDoc(
@@ -38,8 +35,6 @@ export const cardApi = (dark, type = 'card') => {
       'false',
       `Reverses the ${type}'s elevation`
     ),
-    style(dark, 'width', type),
-    style(dark, 'height', type),
     createApiDoc(
       dark,
       'loading',
@@ -64,10 +59,7 @@ export const cardApi = (dark, type = 'card') => {
       '1',
       `Designates an elevation applied to the ${type} between 0 and 5.`
     ),
-    style(dark, 'minWidth', type),
-    style(dark, 'maxWidth', type),
-    style(dark, 'minHeight', type),
-    style(dark, 'maxHeight', type)
+    ...cssDimensionsApi(dark, type)
   ]
 }
 
@@ -139,3 +131,4 @@ export const cardActionApi = (dark) => {
     disabled(dark, 'card action')
   ]
 }
+

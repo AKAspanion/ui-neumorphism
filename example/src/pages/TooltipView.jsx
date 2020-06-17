@@ -2,19 +2,16 @@ import React from 'react'
 
 import { Card, H4, H6, Subtitle1, Tooltip, Button } from 'ui-neumorphism'
 
-// import { toggle, toggleLabel, switchApi } from '../docs/'
+import { tooltipApi } from '../docs/'
 
 import DocCard from '../containers/DocCard.jsx'
-// import ApiCard from '../containers/ApiCard.jsx'
+import ApiCard from '../containers/ApiCard.jsx'
 
 const url =
   'https://github.com/AKAspanion/ui-neumorphism/blob/master/example/src/pages/TooltipView.jsx'
 class TooltipView extends React.Component {
   state = {
     v: false
-  }
-  handleConsole(e) {
-    console.log(e)
   }
   render() {
     const { dark } = this.props
@@ -40,21 +37,21 @@ class TooltipView extends React.Component {
                 top
                 inset
                 className='ma-3'
-                title={<div>abcsdssdsdabsc</div>}
+                content={<div>abcsdssdsdabsc</div>}
               >
                 <Button>abcde</Button>
               </Tooltip>
-              <Tooltip left className='ma-3' title={<div>abcsdssdsdabsc</div>}>
+              <Tooltip left className='ma-3' content={<div>abcsdssdsdabsc</div>}>
                 <Button>abcdef</Button>
               </Tooltip>
-              <Tooltip right className='ma-3' title={<div>abcsdssdsdabsc</div>}>
+              <Tooltip right className='ma-3' content={<div>abcsdssdsdabsc</div>}>
                 <Button disabled>abcdef</Button>
               </Tooltip>
               <Tooltip
                 className='ma-3'
-                title={<div>abcsdssdsdabsc</div>}
-                minWidth={23}
-                open={this.state.v}
+                content={<div>abcs ds sds da bsc</div>}
+                maxWidth={50}
+                visible={this.state.v}
                 onOpen={(e) => this.setState({ v: true })}
                 onClose={(e) => this.setState({ v: false })}
               >
@@ -68,7 +65,7 @@ class TooltipView extends React.Component {
             API
           </a>
         </H4>
-        Coming soon..
+        <ApiCard entity='Tooltip' data={tooltipApi(dark)} />
       </Card>
     )
   }
