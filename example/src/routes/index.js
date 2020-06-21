@@ -22,7 +22,7 @@ import {
   TooltipView,
   // CarouselView,
   // SnackbarView,
-  // TextareaView,
+  TextareaView,
   CheckboxView,
   ParallaxView,
   TextFieldView,
@@ -210,12 +210,12 @@ const routes = [
   //   name: 'Tab',
   //   component: TabView
   // },
-  // {
-  //   id: 27,
-  //   path: '/text-area',
-  //   name: 'Textarea',
-  //   component: TextareaView
-  // },
+  {
+    id: 27,
+    path: '/text-area',
+    name: 'Textarea',
+    component: TextareaView
+  },
   {
     id: 9,
     path: '/text-field',

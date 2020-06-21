@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { createElement } from 'react'
 
 import styles from '../input/Input.module.css'
 import {
@@ -6,7 +6,7 @@ import {
   DEFAULT_PROPS_TYPE,
   DEFAULT_PROPS
 } from '../../assets/index'
-import { uid, getModuleClasses, callCallback } from '../../util'
+import { uid, getModuleClasses, callCallback, pickKeys } from '../../util'
 
 import { Subtitle1, Caption, ProgressLinear } from '../../index'
 
@@ -15,6 +15,7 @@ class TextField extends React.Component {
 
   static defaultProps = {
     type: 'text',
+    tag: 'input',
     ...DEFAULT_PROPS
   }
 
@@ -34,6 +35,43 @@ class TextField extends React.Component {
       id: `${id || uid()}`,
       count: (value || '').length
     }
+  }
+
+  get input() {
+    const {
+      tag,
+      type,
+      name,
+      height,
+      readonly,
+      autofocus,
+      inputStyles,
+      placeholder
+    } = this.props
+    const { id, value } = this.state
+    const className = `${this.getClasses('text-field')} ${
+      tag === 'textarea' ? this.getClasses('text-area') : ''
+    }`
+    const events = pickKeys(this.props, ['onInput', 'onKeyUp', 'onKeyDown'])
+
+    const inputProps = {
+      id: id,
+      className,
+      type: type,
+      name: name,
+      value: value,
+      readOnly: readonly,
+      autoFocus: autofocus,
+      placeholder: placeholder,
+      disabled: this.isDisabled,
+      onBlur: (e) => this.handleBlur(e),
+      onFocus: (e) => this.handleFocus(e),
+      onChange: (e) => this.handleChange(e),
+      tabIndex: this.isDisabled ? -1 : undefined,
+      style: { height: `${height}px`, ...inputStyles },
+      ...events
+    }
+    return createElement(tag, inputProps)
   }
 
   get canShowLabel() {
@@ -98,7 +136,15 @@ class TextField extends React.Component {
   }
 
   getClasses(classType, flag) {
-    const { dark, outlined, dense, rounded, readonly, disabled } = this.props
+    const {
+      dark,
+      dense,
+      rounded,
+      readonly,
+      outlined,
+      bordered,
+      disabled
+    } = this.props
     if (classType === 'container') {
       return getModuleClasses(
         styles,
@@ -114,9 +160,10 @@ class TextField extends React.Component {
         styles,
         `
             nu-text-field
-            ${outlined ? 'nu-text-field--outlined' : ''}
             nu-text-field--${dark ? 'dark' : 'light'}
             ${rounded ? 'nu-text-field--rounded' : ''}
+            ${outlined ? 'nu-text-field--outlined' : ''}
+            ${bordered ? 'nu-text-field--bordered' : ''}
             ${readonly ? 'nu-text-field--readonly' : ''}
             ${this.isDisabled ? 'nu-text-field--disabled' : ''}
             `
@@ -134,8 +181,6 @@ class TextField extends React.Component {
   render() {
     const {
       dark,
-      type,
-      name,
       hint,
       label,
       style,
@@ -144,13 +189,10 @@ class TextField extends React.Component {
       counter,
       loading,
       disabled,
-      readonly,
       className,
-      autofocus,
-      placeholder,
       noValidation
     } = this.props
-    const { id, valid, value, count, errorMessage } = this.state
+    const { id, valid, count, errorMessage } = this.state
     return (
       <div
         style={style}
@@ -181,21 +223,7 @@ class TextField extends React.Component {
               className={`${this.getClasses('loading')}`}
             />
           ) : null}
-          <input
-            id={id}
-            type={type}
-            name={name}
-            value={value}
-            readOnly={readonly}
-            autoFocus={autofocus}
-            placeholder={placeholder}
-            disabled={this.isDisabled}
-            tabIndex={this.isDisabled ? -1 : undefined}
-            onBlur={(e) => this.handleBlur(e)}
-            onFocus={(e) => this.handleFocus(e)}
-            onChange={(e) => this.handleChange(e)}
-            className={`${this.getClasses('text-field')}`}
-          />
+          {this.input}
           {noValidation && !counter ? null : (
             <div className={`${this.getClasses('caption-wrapper', valid)}`}>
               {noValidation ? (

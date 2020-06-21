@@ -17,13 +17,19 @@
   border: none;
   height: 40px;
   font-size: 16px;
+  min-height: 40px;
   padding: 0px 16px;
   border-radius: 8px;
   box-sizing: border-box;
   color: var(--text-color);
   background: var(--bg-color);
   box-shadow: var(--box-shadow-inset);
-  transition: all 0.2s ease-in-out;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.nu-text-field.nu-text-field-text-area {
+  resize: vertical;
+  padding: 11px 16px 9px 16px;
 }
 
 .nu-text-field-container.nu-text-field-container--disabled {
@@ -35,13 +41,21 @@
 
 .nu-text-field-container--dense .nu-text-field {
   height: 32px;
+  min-height: 32px;
   padding: 0px 16px;
+}
+
+.nu-text-field-container--dense .nu-text-field.nu-text-field-text-area {
+  height: 32px;
+  min-height: 32px;
+  padding: 7px 16px 5px 16px;
 }
 
 .nu-text-field.nu-text-field--light {
   --bg-color: var(--light-bg);
   --selector-bg: var(--text-secondary);
   --text-color: var(--g-text-color-light);
+  --border-color: var(--light-bg-light-shadow);
   --text-secondary: var(--g-text-color-secondary-light);
   --disabled-color: var(--g-text-color-disabled-light);
   --box-shadow-inset: inset 2px 2px 5px var(--light-bg-dark-shadow),
@@ -54,6 +68,7 @@
   --bg-color: var(--dark-bg);
   --selector-bg: var(--text-secondary);
   --text-color: var(--g-text-color-dark);
+  --border-color: var(--dark-bg-light-shadow);
   --text-secondary: var(--g-text-color-secondary-dark);
   --disabled-color: var(--g-text-color-disabled-dark);
   --box-shadow-inset: inset 2px 2px 5px var(--dark-bg-dark-shadow),
@@ -71,6 +86,10 @@
 
 .nu-text-field.nu-text-field--disabled {
   box-shadow: var(--box-shadow-inset);
+}
+
+.nu-text-field.nu-text-field--bordered {
+  border: 1px solid var(--border-color);
 }
 
 .nu-text-field.nu-text-field--rounded,

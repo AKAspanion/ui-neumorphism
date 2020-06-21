@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Card, H4, H6 } from 'ui-neumorphism'
+import { Card, H4, H6, Textarea } from 'ui-neumorphism'
 
 // import { toggle, toggleLabel, switchApi } from '../docs/'
 
@@ -27,7 +27,11 @@ class TextareaView extends React.Component {
           url={url}
           content={
             <Card flat className='d-flex align-center justify-center flex-wrap'>
-              Coming soon..
+              <Textarea label='Text area' />
+              <Textarea dense label='Text area' />
+              <Textarea height={94} label='Text area' />
+              <Textarea dense autoExpand label='Text area' />
+              <Textarea height={94} autoExpand label='Text area' />
             </Card>
           }
         />

@@ -41,6 +41,7 @@ export {
   Radio,
   RadioGroup,
   TextField,
+  Textarea,
   Switch,
   Slider,
   Checkbox,

@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { H4, H6, Card, Subtitle1, TextField, H5 } from 'ui-neumorphism'
-import {textFieldApi} from '../docs/'
+import { textFieldApi } from '../docs/'
 
 import DocCard from '../containers/DocCard.jsx'
 import ApiCard from '../containers/ApiCard.jsx'
@@ -40,7 +40,11 @@ class TextFieldView extends React.Component {
           content={
             <Card flat>
               <TextField
-                autofocus
+                bordered
+                label='Text field border'
+                className='my-3'
+              ></TextField>
+              <TextField
                 prepend='$'
                 append='%'
                 prefix='%'
