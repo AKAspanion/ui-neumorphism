@@ -3,7 +3,7 @@ import React from 'react'
 import { TextField } from '../../index'
 import { callCallback } from '../../util'
 
-class Textarea extends React.Component {
+class TextArea extends React.Component {
   static displayName = 'NuTextarea'
 
   constructor(props) {
@@ -43,4 +43,4 @@ class Textarea extends React.Component {
   }
 }
 
-export default Textarea
+export default TextArea

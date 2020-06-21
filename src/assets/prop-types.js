@@ -138,6 +138,7 @@ export const FAB_BUTTON_PROP_TYPES = {
 export const TEXT_FIELD_PROP_TYPES = {
   id: G_STRING,
   rules: G_ARR,
+  width: G_NUM,
   dense: G_BOOL,
   label: G_NODE,
   height: G_NUM,

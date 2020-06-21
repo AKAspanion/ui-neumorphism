@@ -10,6 +10,7 @@
 .nu-text-field-container {
   cursor: text;
   position: relative;
+  box-sizing: border-box;
 }
 
 .nu-text-field {

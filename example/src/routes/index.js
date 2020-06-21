@@ -213,7 +213,7 @@ const routes = [
   {
     id: 27,
     path: '/text-area',
-    name: 'Textarea',
+    name: 'TextArea',
     component: TextareaView
   },
   {

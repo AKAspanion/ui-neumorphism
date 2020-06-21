@@ -84,13 +84,8 @@ export const inputApi = (dark, type) => {
       '',
       `Creates a counter for ${type}'s length.`
     ),
-    createApiDoc(
-      dark,
-      'height',
-      'Number',
-      '40 | 32',
-      `Sets ${type}'s height.`
-    ),
+    createApiDoc(dark, 'height', 'Number', '40 | 32', `Sets ${type}'s height.`),
+    createApiDoc(dark, 'width', 'Number', '', `Sets ${type}'s width.`),
     createApiDoc(
       dark,
       'prepend',
@@ -129,4 +124,18 @@ export const inputApi = (dark, type) => {
 
 export const textFieldApi = (dark, type) => {
   return [...defaultApiDoc(dark), ...inputApi(dark, 'TextField')]
+}
+
+export const textAreaApi = (dark, type) => {
+  return [
+    ...defaultApiDoc(dark),
+    ...inputApi(dark, 'TextArea'),
+    createApiDoc(
+      dark,
+      'autoExpand',
+      'boolean',
+      'false',
+      'Automatically expand the textarea, vertically, depending on amount of text.'
+    )
+  ]
 }

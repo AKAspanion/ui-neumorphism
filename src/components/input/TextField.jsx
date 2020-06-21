@@ -42,6 +42,7 @@ class TextField extends React.Component {
       tag,
       type,
       name,
+      width,
       height,
       readonly,
       autofocus,
@@ -68,7 +69,12 @@ class TextField extends React.Component {
       onFocus: (e) => this.handleFocus(e),
       onChange: (e) => this.handleChange(e),
       tabIndex: this.isDisabled ? -1 : undefined,
-      style: { height: `${height}px`, ...inputStyles },
+      style: {
+        width: `${width}px`,
+        height: `${height}px`,
+        minHeight: `${height}px`,
+        ...inputStyles
+      },
       ...events
     }
     return createElement(tag, inputProps)
