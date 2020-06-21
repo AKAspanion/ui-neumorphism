@@ -15,16 +15,18 @@ class Fade extends React.Component {
   constructor(props) {
     super(props)
     this.state = { status: '' }
+    this.updateStatus = this.updateStatus.bind(this)
+  }
+
+  updateStatus(status) {
+    this.setState({ status })
   }
 
   render() {
     const { status } = this.state
     const { children: child, ...otherProps } = this.props
     return (
-      <TransitionWrapper
-        {...otherProps}
-        onUpdate={(e) => this.setState({ status: e })}
-      >
+      <TransitionWrapper {...otherProps} onUpdate={this.updateStatus}>
         {cloneElement(child, {
           style: {
             ...this.transitionStyles[status],

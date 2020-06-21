@@ -12,7 +12,7 @@ import {
   RadioView,
   BadgeView,
   AlertView,
-  // DialogView,
+  DialogView,
   // SelectView,
   // SliderView,
   AvatarView,
@@ -108,12 +108,12 @@ const routes = [
   //   name: 'Chip',
   //   component: ChipView
   // },
-  // {
-  //   id: 15,
-  //   path: '/dialog',
-  //   name: 'Dialog',
-  //   component: DialogView
-  // },
+  {
+    id: 15,
+    path: '/dialog',
+    name: 'Dialog',
+    component: DialogView
+  },
   {
     id: 15,
     path: '/divider',

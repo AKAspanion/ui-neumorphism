@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Card, H4, H6 } from 'ui-neumorphism'
+import { Card, H4, H6, Dialog, Button } from 'ui-neumorphism'
 
 // import { toggle, toggleLabel, switchApi } from '../docs/'
 
@@ -10,6 +10,13 @@ import DocCard from '../containers/DocCard.jsx'
 const url =
   'https://github.com/AKAspanion/ui-neumorphism/blob/master/example/src/pages/DialogView.jsx'
 class DialogView extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      visible: false
+    }
+  }
+
   render() {
     const { dark } = this.props
     return (
@@ -28,7 +35,21 @@ class DialogView extends React.Component {
           url={url}
           content={
             <Card flat className='d-flex align-center justify-center flex-wrap'>
-              Coming soon..
+              <Button onClick={() => this.setState({ visible: true })}>
+                open
+              </Button>
+              <Dialog
+                persistent
+                visible={this.state.visible}
+                onClose={() => this.setState({ visible: false })}
+              >
+                <Card className='pa-4 ma-4'>
+                  dialog <br /> <br />
+                  <Button onClick={() => this.setState({ visible: false })}>
+                    close
+                  </Button>
+                </Card>
+              </Dialog>
             </Card>
           }
         />

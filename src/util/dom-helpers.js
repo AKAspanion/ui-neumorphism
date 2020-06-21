@@ -68,3 +68,26 @@ export const detectElementInDOM = (path = [], element = 'null') => {
     .toLowerCase()
     .includes(element.toLowerCase())
 }
+
+/**
+ *
+ * @param {*} event : DOM click event
+ * @param {*} node : DOM node to detect click inside of
+ */
+
+export const findClickInside = (event, node) => {
+  let currentNode = event.target
+  try {
+    do {
+      if (currentNode === node) {
+        // click is inside
+        return true
+      }
+      currentNode = currentNode.parentNode
+    } while (currentNode)
+    // click is outside
+    return false
+  } catch (err) {
+    throw new Error(err)
+  }
+}

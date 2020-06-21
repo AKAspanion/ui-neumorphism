@@ -6,6 +6,10 @@ import { callCallback } from '../util'
 class TransitionWrapper extends React.Component {
   static displayName = 'NuTransitionWrapper'
 
+  static defaultProps = {
+    timeout: 0
+  }
+
   constructor(props) {
     super(props)
     this.state = { updated: 0 }
@@ -50,7 +54,7 @@ class TransitionWrapper extends React.Component {
   }
 
   render() {
-    const { children, ...otherProps } = this.props
+    const { children, onUpdate, ...otherProps } = this.props
     return (
       <Transition
         onExit={this.handleExit}

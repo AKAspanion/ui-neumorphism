@@ -1,0 +1,36 @@
+.nu-dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  outline: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1050;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color);
+}
+
+.nu-dialog.nu-dialog--light {
+  --bg-color: var(--light-bg);
+  --text-color: var(--g-text-color-light);
+}
+
+.nu-dialog.nu-dialog--dark {
+  --bg-color: var(--dark-bg);
+  --text-color: var(--g-text-color-dark);
+  --border-color: var(--dark-bg-light-shadow);
+}
+
+.nu-dialog-overlay {
+  width: 100%;
+  height: 100%;
+  opacity: 0.96;
+  background: var(--bg-color);
+}
+
+.nu-dialog-content {
+  position: absolute;
+}

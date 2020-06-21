@@ -33,6 +33,7 @@ export {
   Tooltip,
   Divider,
   Spacer,
+  Dialog,
   Alert,
   Badge,
   Table,

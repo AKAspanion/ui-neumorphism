@@ -1,6 +1,8 @@
 import React from 'react'
 import { findDOMNode } from 'react-dom'
 
+import { findClickInside } from '../util/'
+
 const withClickOutside = (WrappedComponent) => {
   const componentName =
     WrappedComponent.displayName || WrappedComponent.name || 'Component'
@@ -22,21 +24,12 @@ const withClickOutside = (WrappedComponent) => {
     }
 
     handleClick = (e) => {
-      let currentNode = e.target
       const parentNode = findDOMNode(this.node)
-      try {
-        do {
-          if (currentNode === parentNode) {
-            // click is inside
-            this.clickHandler(e, 'Inside')
-            return
-          }
-          currentNode = currentNode.parentNode
-        } while (currentNode)
-        // click is outside
-        this.clickHandler(e)
-      } catch (err) {
-        throw new Error(err)
+      const isClickInside = findClickInside(e, parentNode)
+      if (isClickInside) {
+        this.clickHandler(e, 'Inside')
+      } else {
+        this.clickHandler(e, 'Outside')
       }
     }
 
