@@ -30,13 +30,6 @@ export const parallaxApi = (dark) => {
     ),
     createApiDoc(
       dark,
-      'speed',
-      'Number',
-      '1.0',
-      'Sets the speed of the parallax.'
-    ),
-    createApiDoc(
-      dark,
       'containerId',
       'String',
       '',

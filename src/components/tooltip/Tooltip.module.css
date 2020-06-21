@@ -1,6 +1,11 @@
 .nu-tooltip {
   z-index: 10;
-  padding: 12px;
+  width: auto;
   font-size: 14px;
+  padding: 8px 16px;
   position: absolute;
+  pointer-events: none;
+  display: inline-block;
+  transform-origin: center;
+  transition: opacity 0.2s ease-in-out;
 }

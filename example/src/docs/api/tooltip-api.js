@@ -23,6 +23,13 @@ export const tooltipApi = (dark) => {
       'Node, isRequired',
       '',
       'Content of the tooltip.'
+    ),
+    createApiDoc(
+      dark,
+      'transition',
+      'Grow | Fade',
+      'Grow',
+      'Transition style for the tooltip.'
     )
   ]
 }

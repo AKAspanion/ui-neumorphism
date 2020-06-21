@@ -1,7 +1,7 @@
 import React, { cloneElement, Children, createElement } from 'react'
 import { createPortal, findDOMNode } from 'react-dom'
 
-import { Card } from '../../index'
+import { Card, Grow } from '../../index'
 
 import styles from './Tooltip.module.css'
 import {
@@ -24,6 +24,7 @@ class Tooltip extends React.Component {
 
   static defaultProps = {
     bottom: true,
+    transition: Grow,
     ...DEFAULT_PROPS
   }
 
@@ -43,11 +44,23 @@ class Tooltip extends React.Component {
     this.handleMouseOnToolTip = this.handleMouseOnToolTip.bind(this)
   }
 
+  get canView() {
+    return this.controlled ? this.props.visible : this.state.active
+  }
+
+  get origin() {
+    const d = ' center'
+    const { top, left, bottom, right } = this.props
+    if (top) return 'bottom' + d
+    if (left) return 'right' + d
+    if (right) return 'left' + d
+    if (bottom) return 'top' + d
+    return 'top' + d
+  }
+
   get styles() {
     const sizeStyles = {}
-    const { visible } = this.props
-    const { pos, active } = this.state
-    const canView = this.controlled ? visible : active
+    const { pos } = this.state
 
     const pickedStyles = pickKeys(this.props, CSS_DIMENSIONS)
     Object.keys(pickedStyles).map(
@@ -57,9 +70,29 @@ class Tooltip extends React.Component {
     return {
       top: `${pos.top}px`,
       left: `${pos.left}px`,
-      visibility: canView ? 'visible' : 'hidden',
+      transformOrigin: this.origin,
+      visibility: this.canView ? 'visible' : 'hidden',
       ...sizeStyles
     }
+  }
+
+  get tooltip() {
+    const { content, transition: Transition } = this.props
+    const pickedProps = pickKeys(this.props, ['dark', 'inset'])
+    return createPortal(
+      <Transition appear timeout={0} in={this.canView}>
+        <Card
+          {...pickedProps}
+          role='tooltip'
+          id={this.state.id}
+          style={this.styles}
+          className={`${this.getClasses('tooltip')}`}
+        >
+          {content}
+        </Card>
+      </Transition>,
+      document.body
+    )
   }
 
   get tooltipChildren() {
@@ -128,14 +161,14 @@ class Tooltip extends React.Component {
   }
 
   handleMouseOnToolTip(e, callback) {
+    this.calcPosition()
+
     const { onOpen, onClose } = this.props
     const isOver = e.type === 'mouseenter'
 
     if (!this.controlled) {
       this.setState({ active: isOver })
     }
-
-    this.calcPosition()
 
     callCallback(callback, e)
     callCallback(isOver ? onOpen : onClose, isOver)
@@ -146,24 +179,12 @@ class Tooltip extends React.Component {
   }
 
   render() {
-    const { content, style, className } = this.props
+    const { style, className } = this.props
     const children = passDownProp(this.tooltipChildren, this.props, ['dark'])
-    const pickedProps = pickKeys(this.props, ['dark', 'inset'])
     return (
       <div style={style} className={className}>
         {children}
-        {createPortal(
-          <Card
-            {...pickedProps}
-            role='tooltip'
-            id={this.state.id}
-            style={this.styles}
-            className={`${this.getClasses('tooltip')}`}
-          >
-            {content}
-          </Card>,
-          document.body
-        )}
+        {this.tooltip}
       </div>
     )
   }
