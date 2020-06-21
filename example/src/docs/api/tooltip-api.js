@@ -30,6 +30,13 @@ export const tooltipApi = (dark) => {
       'Grow | Fade',
       'Grow',
       'Transition style for the tooltip.'
+    ),
+    createApiDoc(
+      dark,
+      'visible',
+      'Boolean',
+      'false',
+      'Controls whether the tooltip is visible or hidden.'
     )
   ]
 }

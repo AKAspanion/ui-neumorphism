@@ -2,10 +2,10 @@ import React from 'react'
 
 import { Card, H4, H6, Dialog, Button } from 'ui-neumorphism'
 
-// import { toggle, toggleLabel, switchApi } from '../docs/'
+import { dialogApi } from '../docs/'
 
 import DocCard from '../containers/DocCard.jsx'
-// import ApiCard from '../containers/ApiCard.jsx'
+import ApiCard from '../containers/ApiCard.jsx'
 
 const url =
   'https://github.com/AKAspanion/ui-neumorphism/blob/master/example/src/pages/DialogView.jsx'
@@ -39,12 +39,12 @@ class DialogView extends React.Component {
                 open
               </Button>
               <Dialog
-                persistent
+                minWidth={300}
                 visible={this.state.visible}
                 onClose={() => this.setState({ visible: false })}
               >
                 <Card className='pa-4 ma-4'>
-                  dialog <br /> <br />
+                  dialog  <br /> <br />
                   <Button onClick={() => this.setState({ visible: false })}>
                     close
                   </Button>
@@ -58,7 +58,7 @@ class DialogView extends React.Component {
             API
           </a>
         </H4>
-        Coming soon..
+        <ApiCard entity='Dialog' data={dialogApi(dark)} />
       </Card>
     )
   }

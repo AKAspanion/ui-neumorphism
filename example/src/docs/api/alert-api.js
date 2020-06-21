@@ -47,6 +47,13 @@ export const alertApi = (dark) => {
       'String',
       '',
       'Applies specified color to the alert component.'
+    ),
+    createApiDoc(
+      dark,
+      'visible',
+      'Boolean',
+      'false',
+      'Controls whether the alert is visible or hidden.'
     )
   ]
 }

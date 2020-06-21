@@ -9,9 +9,14 @@ import {
   getModuleClasses,
   findClickInside,
   passDownProp,
-  callCallback
+  callCallback,
+  pickKeys
 } from '../../util'
-import { DEFAULT_PROPS, DEFAULT_PROPS_TYPE } from '../../assets/index'
+import {
+  DEFAULT_PROPS,
+  CSS_DIMENSIONS,
+  DEFAULT_PROPS_TYPE
+} from '../../assets/index'
 
 class Dialog extends React.Component {
   static displayName = 'NuDialog'
@@ -29,21 +34,28 @@ class Dialog extends React.Component {
   }
 
   get dialog() {
+    const sizeStyles = {}
     const { style, visible, children, className } = this.props
     const dialogChildren = passDownProp(children, this.props, ['dark'])
+
+    const pickedStyles = pickKeys(this.props, CSS_DIMENSIONS)
+    Object.keys(pickedStyles).map(
+      (key) => (sizeStyles[key] = `${pickedStyles[key]}px`)
+    )
+
     return createPortal(
       <div
         role='dialog'
-        style={style}
         onClick={this.handleClickInside}
-        className={`${this.getClasses('dialog')} ${className}`}
+        className={this.getClasses('dialog')}
       >
         <div className={this.getClasses('nu-dialog-overlay')} />
         <Grow appear in={visible}>
           <div
             role='document'
             id='nudialogcontent'
-            className={this.getClasses('nu-dialog-content')}
+            style={{ ...sizeStyles, ...style }}
+            className={`${this.getClasses('nu-dialog-content')} ${className}`}
           >
             {dialogChildren}
           </div>
