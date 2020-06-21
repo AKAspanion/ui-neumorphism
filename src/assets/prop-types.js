@@ -140,6 +140,8 @@ export const TEXT_FIELD_PROP_TYPES = {
   rules: G_ARR,
   dense: G_BOOL,
   label: G_NODE,
+  height: G_NUM,
+  name: G_STRING,
   type: G_STRING,
   hint: G_STRING,
   counter: G_NUM,
@@ -151,9 +153,10 @@ export const TEXT_FIELD_PROP_TYPES = {
   readonly: G_BOOL,
   disabled: G_BOOL,
   outlined: G_BOOL,
+  bordered: G_BOOL,
   autofocus: G_BOOL,
   clearable: G_BOOL,
-  noValidation: G_BOOL,
+  hideExtra: G_BOOL,
   placeholder: G_STRING
 }
 

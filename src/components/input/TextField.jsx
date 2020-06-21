@@ -108,11 +108,11 @@ class TextField extends React.Component {
 
   handleChange(event) {
     const { id, valid } = this.state
-    const { onChange, noValidation } = this.props
+    const { onChange, hideExtra } = this.props
     const value = event.target.value
     const count = value.length
 
-    if (!noValidation) {
+    if (!hideExtra) {
       this.validate(value)
     }
 
@@ -190,7 +190,7 @@ class TextField extends React.Component {
       loading,
       disabled,
       className,
-      noValidation
+      hideExtra
     } = this.props
     const { id, valid, count, errorMessage } = this.state
     return (
@@ -224,9 +224,9 @@ class TextField extends React.Component {
             />
           ) : null}
           {this.input}
-          {noValidation && !counter ? null : (
+          {hideExtra && !counter ? null : (
             <div className={`${this.getClasses('caption-wrapper', valid)}`}>
-              {noValidation ? (
+              {hideExtra ? (
                 hint
               ) : (
                 <Caption
