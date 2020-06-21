@@ -1,6 +1,16 @@
 import React from 'react'
 
-import { Card, H4, H6, Subtitle1 } from 'ui-neumorphism'
+import Icon from '@mdi/react'
+import {
+  mdiCake,
+  mdiStar,
+  mdiAccount,
+  mdiAccountCircle,
+  mdiCloseOutline,
+  mdiOpenInNew
+} from '@mdi/js'
+
+import { Card, H4, H6, Subtitle1, Chip } from 'ui-neumorphism'
 
 // import { toggle, toggleLabel, switchApi } from '../docs/'
 
@@ -33,7 +43,108 @@ class ChipView extends React.Component {
           url={url}
           content={
             <Card flat className='d-flex align-center justify-center flex-wrap'>
-              Coming soon..
+              <Chip active className='ma-3'>
+                active
+              </Chip>
+              <Chip size='small' className='ma-3'>
+                small
+              </Chip>
+              <Chip className='ma-3'>medium</Chip>
+              <Chip size='large' className='ma-3'>
+                large
+              </Chip>
+              <Chip label className='ma-3'>
+                label
+              </Chip>
+              <Chip type='info' className='ma-3'>
+                info
+              </Chip>
+              <Chip type='error' className='ma-3'>
+                error
+              </Chip>
+              <Chip type='success' className='ma-3'>
+                success
+              </Chip>
+              <Chip type='warning' className='ma-3'>
+                warning
+              </Chip>
+              <Chip
+                className='ma-3'
+                append={<Icon path={mdiAccount} size={0.68} />}
+              >
+                append
+              </Chip>
+              <Chip
+                className='ma-3'
+                prepend={<Icon path={mdiAccount} size={0.68} />}
+              >
+                prepend
+              </Chip>
+              <Chip
+                type='error'
+                className='ma-3'
+                append={<Icon path={mdiCake} size={0.6} />}
+                prepend={<Icon path={mdiAccountCircle} size={0.68} />}
+              >
+                Happy Birthday
+              </Chip>
+              <Chip type='error' className='ma-3' closable>
+                Close
+              </Chip>
+              <Chip
+                type='error'
+                className='ma-3'
+                append={<Icon path={mdiStar} size={0.68} />}
+                action={<Icon path={mdiCloseOutline} size={0.68} />}
+              >
+                Action
+              </Chip>
+              <Chip
+                type='success'
+                outlined
+                className='ma-3'
+                append={<Icon path={mdiStar} size={0.68} />}
+                action={<Icon path={mdiCloseOutline} size={0.68} />}
+              >
+                Outlined
+              </Chip>
+              <Chip
+                type='error'
+                bordered
+                className='ma-3'
+                append={<Icon path={mdiStar} size={0.68} />}
+                action={<Icon path={mdiCloseOutline} size={0.68} />}
+              >
+                Bordered
+              </Chip>
+              <Chip
+                type='error'
+                flat
+                className='ma-3'
+                append={<Icon path={mdiStar} size={0.68} />}
+                action={<Icon path={mdiCloseOutline} size={0.68} />}
+              >
+                Flat
+              </Chip>
+              <Chip
+                type='error'
+                flat
+                bordered
+                className='ma-3'
+                append={<Icon path={mdiStar} size={0.68} />}
+                action={<Icon path={mdiCloseOutline} size={0.68} />}
+              >
+                Chip
+              </Chip>
+              <Chip
+                type='info'
+                link='https://www.google.com'
+                outlined
+                className='ma-3'
+                action={<Icon path={mdiOpenInNew} size={0.68} />}
+              >
+                Link
+              </Chip>
             </Card>
           }
         />

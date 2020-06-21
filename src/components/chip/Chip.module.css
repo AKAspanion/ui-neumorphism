@@ -1,0 +1,128 @@
+.nu-chip {
+  outline: none;
+  padding: 0 10px;
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+  border-radius: 16px;
+  align-items: center;
+  white-space: nowrap;
+  display: inline-flex;
+  text-decoration: none;
+  vertical-align: middle;
+  color: var(--text-color);
+  transition-duration: 0.3s;
+  background: var(--bg-color);
+  box-shadow: var(--box-shadow);
+  transition-timing-function: ease-in-out;
+  transition-property: box-shadow, opacity;
+}
+
+.nu-chip:hover {
+  text-decoration: none !important;
+}
+
+.nu-chip.nu-chip--light {
+  --bg-color: var(--light-bg);
+  --text-color: var(--g-text-color-light);
+  --border-color: var(--light-bg-dark-shadow);
+  --box-shadow: -2px -2px 3px var(--light-bg-light-shadow),
+    1px 1px 2px var(--light-bg-dark-shadow);
+  --box-shadow-inset: inset -1px -1px 2px var(--light-bg-light-shadow),
+    inset 2px 2px 3px var(--light-bg-dark-shadow);
+}
+
+.nu-chip.nu-chip--dark {
+  --bg-color: var(--dark-bg);
+  --text-color: var(--g-text-color-dark);
+  --border-color: var(--dark-bg-dark-shadow);
+  --box-shadow: 2px 2px 3px var(--dark-bg-dark-shadow),
+    -1px -1px 2px var(--dark-bg-light-shadow);
+  --box-shadow-inset: inset 1px 1px 2px var(--dark-bg-dark-shadow),
+    inset -2px -2px 3px var(--dark-bg-light-shadow);
+}
+
+.nu-chip.nu-chip--active {
+  box-shadow: var(--box-shadow-inset);
+}
+
+.nu-chip.nu-chip--label {
+  border-radius: 8px !important;
+}
+
+.nu-chip.nu-chip--flat {
+  box-shadow: none !important;
+}
+
+.nu-chip.nu-chip--bordered {
+  border: 1px solid var(--border-color);
+}
+
+.nu-chip.nu-chip--outlined {
+  box-shadow: none !important;
+  border: 1px solid var(--text-color);
+}
+
+.nu-chip.nu-chip--small {
+  height: 16px;
+  font-size: 10px;
+}
+
+.nu-chip.nu-chip--medium {
+  height: 24px;
+  font-size: 12px;
+}
+
+.nu-chip.nu-chip--large {
+  height: 32px;
+  font-size: 14px;
+}
+
+.nu-chip.nu-chip--info {
+  --text-color: var(--info);
+}
+
+.nu-chip.nu-chip--error {
+  --text-color: var(--error);
+}
+
+.nu-chip.nu-chip--warning {
+  --text-color: var(--warning);
+}
+
+.nu-chip.nu-chip--success {
+  --text-color: var(--success);
+}
+
+.nu-chip.nu-chip--medium .nu-append {
+  margin-left: 4px;
+  margin-right: -6px;
+}
+
+.nu-chip.nu-chip--medium .nu-prepend {
+  margin-left: -6px;
+  margin-right: 4px;
+}
+
+.nu-chip .nu-action {
+  margin-left: 4px;
+  margin-right: -4px;
+}
+
+.nu-chip .nu-action,
+.nu-chip .nu-action.nu-action--close {
+  cursor: pointer;
+}
+
+.nu-chip .nu-action.nu-action--close {
+  margin-left: 8px;
+  margin-right: 0px;
+}
+
+.nu-chip .nu-action--close {
+  transform: scale(1.5);
+}
+
+.nu-chip .nu-append.nu-append--with-action {
+  margin-right: 0px;
+}

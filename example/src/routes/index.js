@@ -3,7 +3,7 @@ import {
   Example,
   FabView,
   // TabView,
-  // ChipView,
+  ChipView,
   // ListView,
   // MenuView,
   // FormView,
@@ -102,12 +102,12 @@ const routes = [
     name: 'Checkbox',
     component: CheckboxView
   },
-  // {
-  //   id: 23,
-  //   path: '/chip',
-  //   name: 'Chip',
-  //   component: ChipView
-  // },
+  {
+    id: 23,
+    path: '/chip',
+    name: 'Chip',
+    component: ChipView
+  },
   {
     id: 15,
     path: '/dialog',

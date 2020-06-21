@@ -26,6 +26,7 @@ export {
   IconButton,
   Button,
   Avatar,
+  Chip,
   Fab,
   ProgressCircular,
   ProgressLinear,
