@@ -7,11 +7,11 @@ import checkboxStyles from '../checkbox/Checkbox.module.css'
 import switchStyles from '../switch/Switch.module.css'
 
 import {
-  uid,
   getModuleClasses,
-  callCallback,
   setCSSVariable,
-  pickKeys
+  callCallback,
+  pickKeys,
+  uid
 } from '../../util'
 import {
   DEFAULT_PROPS,

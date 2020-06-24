@@ -1,7 +1,7 @@
 import React from 'react'
 import { createApiDoc, defaultApiDoc, eventDoc } from '../index.js'
 
-export const selectionControlApi = (dark, type) => {
+export const selectionControlApi = (dark, type, valueKey = 'value') => {
   return [
     ...defaultApiDoc(dark),
     createApiDoc(
@@ -38,6 +38,26 @@ export const selectionControlApi = (dark, type) => {
       'false',
       `Renders the ${type} disabled.`
     ),
+    createApiDoc(
+      dark,
+      'color',
+      'String',
+      <div>
+        <div>
+          Light:&nbsp;&nbsp;
+          <span style={{ color: 'var(--primary-dark)' }}>
+            --g-text-color-light
+          </span>
+        </div>
+        <div>
+          Dark:&nbsp;&nbsp;
+          <span style={{ color: 'var(--primary-dark)' }}>
+            --g-text-color-dark
+          </span>
+        </div>
+      </div>,
+      `Applies specified color to the ${type}.`
+    ),
     eventDoc(
       dark,
       'Change',
@@ -45,7 +65,7 @@ export const selectionControlApi = (dark, type) => {
       `{
     id: prop id | [auto-generated],
     event: native change event,
-    value: true | false
+    ${valueKey}: true | false
 }`
     ),
     eventDoc(dark, 'Click'),
@@ -65,4 +85,72 @@ export const switchApi = (dark) => {
 
 export const checkboxApi = (dark) => {
   return selectionControlApi(dark, 'Checkbox')
+}
+
+export const radioApi = (dark) => {
+  return [...selectionControlApi(dark, 'Radio', 'checked')]
+}
+
+export const radioGroupApi = (dark) => {
+  return [
+    ...defaultApiDoc(dark),
+    createApiDoc(
+      dark,
+      'id',
+      'String',
+      '[auto-generated]',
+      `Gives an id to the group.`
+    ),
+    createApiDoc(
+      dark,
+      'value',
+      'any',
+      '',
+      'The currently selected value within the group.'
+    ),
+    createApiDoc(
+      dark,
+      'disabled',
+      'Boolean',
+      'false',
+      'Removes the ability to click or target the group.'
+    ),
+    createApiDoc(
+      dark,
+      'color',
+      'String',
+      <div>
+        <div>
+          Light:&nbsp;&nbsp;
+          <span style={{ color: 'var(--primary-dark)' }}>
+            --g-text-color-light
+          </span>
+        </div>
+        <div>
+          Dark:&nbsp;&nbsp;
+          <span style={{ color: 'var(--primary-dark)' }}>
+            --g-text-color-dark
+          </span>
+        </div>
+      </div>,
+      'Applies specified color to the group radios.'
+    ),
+    eventDoc(
+      dark,
+      'Change',
+      'Response object definition',
+      `{ 
+    id: prop id | [auto-generated],
+    value: selected Radio's value,
+    event: Radio's \`onChange\` event,
+}`
+    ),
+    createApiDoc(
+      dark,
+      'vertical',
+      'Boolean',
+      'false',
+      'Changes orientation of radios inside group to vertical.'
+    )
+  ]
 }

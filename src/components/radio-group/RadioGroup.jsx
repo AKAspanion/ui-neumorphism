@@ -2,15 +2,16 @@ import React, { Children, cloneElement } from 'react'
 
 import { Radio } from '../index/'
 
-import radioStyles from '../radio/Radio.module.css'
-import { callCallback, getModuleClasses, uid } from '../../util'
+import radioStyles from './RadioGroup.module.css'
+import { callCallback, getModuleClasses, uid, passDownProp } from '../../util'
 import {
   DEFAULT_PROPS_TYPE,
   DEFAULT_PROPS,
   G_STRING,
   G_BOOL,
   G_FUNC,
-  G_NODE
+  G_NODE,
+  G_ANY
 } from '../../assets/index'
 class RadioGroup extends React.Component {
   static displayName = 'NuRadioGroup'
@@ -21,8 +22,8 @@ class RadioGroup extends React.Component {
   }
 
   static propTypes = {
-    name: G_STRING,
-    value: G_STRING,
+    id: G_ANY,
+    value: G_ANY,
     color: G_STRING,
     disabled: G_BOOL,
     vertical: G_BOOL,
@@ -40,7 +41,7 @@ class RadioGroup extends React.Component {
     }
   }
 
-  handleChange({ event, checked, value }) {
+  handleChange({ event, checked, value }, childOnChange) {
     const { id } = this.state
     const { onChange } = this.props
     if (checked) {
@@ -48,6 +49,7 @@ class RadioGroup extends React.Component {
       this.setState({ key: this.state.key + 1 })
     }
     callCallback(onChange, { event, id, value })
+    callCallback(childOnChange, { event, checked, value })
   }
 
   getClasses() {
@@ -61,26 +63,20 @@ class RadioGroup extends React.Component {
   }
 
   render() {
-    const {
-      style,
-      children,
-      className,
-      dark: parentDark,
-      color: parentColor,
-      disabled: parentDisabled
-    } = this.props
-    const radios = Children.map(children, (child) => {
-      if (child.type === Radio) {
-        const { value, dark, color, disabled } = child.props
-        return cloneElement(child, {
-          dark: dark || parentDark,
-          color: color || parentColor,
-          disabled: disabled || parentDisabled,
-          checked: this.state.active === value,
-          onChange: (e) => this.handleChange(e)
-        })
-      }
-    })
+    const { style, children, className } = this.props
+    const radios = passDownProp(
+      Children.map(children, (child) => {
+        if (child.type === Radio) {
+          const { value, onChange } = child.props
+          return cloneElement(child, {
+            checked: this.state.active === value,
+            onChange: (e) => this.handleChange(e, onChange)
+          })
+        }
+      }),
+      this.props,
+      ['dark', 'color', 'disabled']
+    )
     return (
       <div
         style={style}

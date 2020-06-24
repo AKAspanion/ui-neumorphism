@@ -1,9 +1,19 @@
 import React from 'react'
 
-import { Card, Radio, RadioGroup, H4, H6, H5, Subtitle1 } from 'ui-neumorphism'
+import {
+  RadioGroup,
+  Subtitle1,
+  Divider,
+  Radio,
+  Card,
+  H4,
+  H6,
+  H5
+} from 'ui-neumorphism'
 
-import { radio, radioStandalone } from '../docs/'
+import { radio, radioStandalone, radioApi, radioGroupApi } from '../docs/'
 import DocCard from '../containers/DocCard.jsx'
+import ApiCard from '../containers/ApiCard.jsx'
 const url =
   'https://github.com/AKAspanion/ui-neumorphism/blob/master/example/src/pages/RadioView.jsx'
 class RadioView extends React.Component {
@@ -131,7 +141,7 @@ class RadioView extends React.Component {
             <RadioGroup
               vertical
               value='1'
-              color='var(--primary)'
+              color='var(--error)'
               onChange={this.onChange}
             >
               <Radio value='1' label='Female' />
@@ -141,10 +151,15 @@ class RadioView extends React.Component {
           }
           code={[radio, dark, ['vertical']]}
         />
-        <br />
-        <br />
-        <H5>API</H5>
-        <Subtitle1>Coming soon..</Subtitle1>
+        <Divider dense className='mt-6' />
+        <H4 className='mt-12'>
+          <a href='#api' name='api'>
+            API
+          </a>
+        </H4>
+        <ApiCard entity='RadioGroup' data={radioGroupApi(dark)} />
+        <div className='mt-12'></div>
+        <ApiCard entity='Radio' data={radioApi(dark)} />
       </Card>
     )
   }
