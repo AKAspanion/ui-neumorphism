@@ -166,6 +166,26 @@ export const BUTTON_GROUP_VALUE = PropTypes.oneOfType([
   PropTypes.string
 ])
 
+export const PROGRESS_CIRCULAR_DEFAULT_PROPS = {
+  size: 36,
+  width: 2,
+  value: 0,
+  rotate: 0,
+  ...DEFAULT_PROPS
+}
+export const PROGRESS_CIRCULAR_PROP_TYPES = {
+  value: G_NUM,
+  size: G_NUM,
+  flat: G_BOOL,
+  width: G_NUM,
+  rotate: G_NUM,
+  color: G_STRING,
+  label: G_STRING,
+  elevated: G_BOOL,
+  indeterminate: G_BOOL,
+  ...DEFAULT_PROPS_TYPE
+}
+
 export const TOOLTIP_PROP_TYPES = {
   top: G_BOOL,
   left: G_BOOL,

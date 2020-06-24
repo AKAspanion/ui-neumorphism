@@ -3,40 +3,20 @@ import React from 'react'
 import styles from './Progress.module.css'
 import { uid, setCSSVariable, getModuleClasses } from '../../util'
 import {
-  G_NUM,
-  G_BOOL,
-  G_STRING,
-  DEFAULT_PROPS,
-  DEFAULT_PROPS_TYPE
+  PROGRESS_CIRCULAR_PROP_TYPES,
+  PROGRESS_CIRCULAR_DEFAULT_PROPS
 } from '../../assets/index'
 
 class ProgressCircular extends React.Component {
   static displayName = 'NuProgressCircular'
 
-  static defaultProps = {
-    size: 36,
-    width: 2,
-    value: 0,
-    ...DEFAULT_PROPS
-  }
+  static defaultProps = PROGRESS_CIRCULAR_DEFAULT_PROPS
 
-  static propTypes = {
-    value: G_NUM,
-    size: G_NUM,
-    width: G_NUM,
-    rotate: G_NUM,
-    color: G_STRING,
-    label: G_STRING,
-    elevated: G_BOOL,
-    indeterminate: G_BOOL,
-    ...DEFAULT_PROPS_TYPE
-  }
+  static propTypes = PROGRESS_CIRCULAR_PROP_TYPES
 
   constructor(props) {
     super(props)
-    this.state = {
-      id: uid()
-    }
+    this.state = { id: uid() }
   }
 
   get radius() {
@@ -85,11 +65,12 @@ class ProgressCircular extends React.Component {
   }
 
   getClasses(classType) {
-    const { dark, elevated } = this.props
+    const { dark, flat, elevated } = this.props
     if (classType === 'progress') {
       return getModuleClasses(
         styles,
         ` nu-progress-circular
+          nu-progress-circular--${flat ? 'flat' : ''}
           nu-progress-circular--${dark ? 'dark' : 'light'}
           nu-progress-circular--${elevated ? 'elevated' : 'not-elevated'}
         `
@@ -109,9 +90,9 @@ class ProgressCircular extends React.Component {
       width,
       style,
       label,
+      children,
       className,
-      indeterminate,
-      children
+      indeterminate
     } = this.props
     return (
       <div

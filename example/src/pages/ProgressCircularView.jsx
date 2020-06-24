@@ -3,11 +3,24 @@ import React from 'react'
 import Icon from '@mdi/react'
 import { mdiNumeric10 } from '@mdi/js'
 
-import { ProgressCircular, Card, H4, H5, H6, Subtitle1 } from 'ui-neumorphism'
-import { progressCircular, progressCircularLabel } from '../docs/'
+import {
+  H4,
+  H5,
+  H6,
+  Card,
+  Divider,
+  Subtitle1,
+  ProgressCircular
+} from 'ui-neumorphism'
+import {
+  progressCircular,
+  progressCircularApi,
+  progressCircularLabel
+} from '../docs/'
 import DocCard from '../containers/DocCard.jsx'
+import ApiCard from '../containers/ApiCard.jsx'
 const url =
-  'https://github.com/AKAspanion/ui-neumorphism/blob/master/example/src/pages/ProgressLinearView.jsx'
+  'https://github.com/AKAspanion/ui-neumorphism/blob/master/example/src/pages/ProgressCircularView.jsx'
 
 class ProgressCircularView extends React.Component {
   state = {
@@ -241,6 +254,49 @@ class ProgressCircularView extends React.Component {
         <DocCard
           url={url}
           className='mt-12'
+          title={<H5>Flat</H5>}
+          subtitle={
+            <Subtitle1>
+              Using the <code>flat</code> prop, ProgressCircular's elevation can
+              be removed.
+            </Subtitle1>
+          }
+          content={
+            <Card
+              flat
+              className='mt-6 d-flex justify-center align-center flex-wrap'
+            >
+              {['primary', 'info', 'warning', 'success', 'error'].map(
+                (color, i) => (
+                  <ProgressCircular
+                    flat
+                    key={i}
+                    className='ma-8'
+                    value={(i + 1) * 20}
+                    color={`var(--${color})`}
+                    width={i % 2 === 0 ? 8 : 4}
+                    size={i % 2 === 0 ? 64 : 36}
+                  />
+                )
+              )}
+            </Card>
+          }
+          code={[
+            progressCircular,
+            dark,
+            [
+              [0, 1, 2, 3, 4].map(
+                (i) =>
+                  `flat value={${(i + 1) * 20}} size={${
+                    i % 2 === 0 ? 64 : 36
+                  }} width={${i % 2 === 0 ? 8 : 4}}`
+              )
+            ]
+          ]}
+        />
+        <DocCard
+          url={url}
+          className='mt-12'
           title={<H5>Label</H5>}
           subtitle={
             <Subtitle1>
@@ -290,10 +346,13 @@ class ProgressCircularView extends React.Component {
           }
           code={[progressCircularLabel, dark]}
         />
-        <br />
-        <br />
-        <H5>API</H5>
-        <Subtitle1>Coming soon..</Subtitle1>
+        <Divider dense className='mt-6' />
+        <H4 className='mt-12'>
+          <a href='#api' name='api'>
+            API
+          </a>
+        </H4>
+        <ApiCard entity='ProgressCircular' data={progressCircularApi(dark)} />
       </Card>
     )
   }

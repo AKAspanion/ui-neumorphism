@@ -53,13 +53,17 @@
 }
 
 .nu-progress-linear--striped {
-  background: linear-gradient(135deg,
-      rgba(255, 255, 255, 0.40) 25%,
-      transparent 0, transparent 50%,
-      rgba(255, 255, 255, 0.40) 0,
-      rgba(255, 255, 255, 0.40) 75%,
-      transparent 0, transparent) var(--selector-bg) !important;
-
+  background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.4) 25%,
+      transparent 0,
+      transparent 50%,
+      rgba(255, 255, 255, 0.4) 0,
+      rgba(255, 255, 255, 0.4) 75%,
+      transparent 0,
+      transparent
+    )
+    var(--selector-bg) !important;
 }
 
 .nu-progress-linear--indeterminate {
@@ -118,6 +122,11 @@
   box-shadow: var(--box-shadow-dense);
 }
 
+.nu-progress-circular--flat .nu-progress-circular--outer,
+.nu-progress-circular--flat .nu-progress-circular--inner {
+  box-shadow: none !important;
+}
+
 .nu-progress-circular--svg {
   z-index: 2;
 }
@@ -150,7 +159,7 @@
   }
 
   100% {
-    transform: rotateZ(360deg)
+    transform: rotateZ(360deg);
   }
 }
 
