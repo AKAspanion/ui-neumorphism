@@ -3,10 +3,19 @@ import React, { cloneElement, createElement } from 'react'
 import styles from './Chip.module.css'
 
 import { getModuleClasses, uid, callCallback, setCSSVariable } from '../../util'
-import { SIZES, CONTEXT_COLORS } from '../../assets/'
+import {
+  SIZES,
+  DEFAULT_PROPS,
+  CONTEXT_COLORS,
+  CHIP_PROP_TYPES
+} from '../../assets/'
 
 class Chip extends React.Component {
   static displayName = 'NuChip'
+
+  static defaultProps = DEFAULT_PROPS
+
+  static propTypes = CHIP_PROP_TYPES
 
   constructor(props) {
     super(props)
@@ -32,9 +41,8 @@ class Chip extends React.Component {
 
   get prepend() {
     const { prepend } = this.props
-    return prepend
-      ? cloneElement(prepend, { className: this.getClasses('nu-prepend') })
-      : null
+    const className = this.getClasses('nu-prepend')
+    return prepend ? cloneElement(prepend, { className }) : null
   }
 
   get action() {
@@ -45,7 +53,7 @@ class Chip extends React.Component {
     if (action) {
       actionItem = cloneElement(action, {
         className: this.getClasses('nu-action'),
-        onClick: (e) => this.handleActionClick(e)
+        onClick: this.handleActionClick()
       })
     }
 
@@ -53,12 +61,12 @@ class Chip extends React.Component {
       closableItem = closeIcon ? (
         cloneElement(action, {
           className: this.getClasses('nu-action'),
-          onClick: (e) => this.handleActionClick(e)
+          onClick: this.handleActionClick()
         })
       ) : (
         <span
           className={this.getClasses('nu-action nu-action--close')}
-          onClick={(e) => this.handleActionClick(e)}
+          onClick={this.handleActionClick()}
         >
           ×
         </span>
@@ -90,13 +98,13 @@ class Chip extends React.Component {
     }
   }
 
-  handleActionClick(e) {
-    callCallback(this.props.onAction, e)
-  }
-
   setColor() {
     const elem = document.getElementById(this.state.id)
     setCSSVariable(elem, '--text-color', this.props.color)
+  }
+
+  handleActionClick(e) {
+    callCallback(this.props.onAction, e)
   }
 
   componentDidMount() {
@@ -108,13 +116,12 @@ class Chip extends React.Component {
   }
 
   render() {
+    const linkProps = {}
     const { link, style, children, className } = this.props
     const tag = link ? 'a' : 'span'
-    const linkProps = {}
-    if (link) {
-      linkProps.href = link
-    }
-    return createElement(
+    if (link) linkProps.href = link
+
+    const elem = createElement(
       tag,
       {
         style,
@@ -124,6 +131,8 @@ class Chip extends React.Component {
       },
       [this.prepend, children, this.append, this.action]
     )
+
+    return elem
   }
 }
 

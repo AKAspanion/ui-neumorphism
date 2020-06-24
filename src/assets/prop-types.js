@@ -219,3 +219,22 @@ export const TOOLTIP_PROP_TYPES = {
   content: G_NODE.isRequired,
   ...CSS_DIMENSION_DEFAULT_PROPS
 }
+
+export const CHIP_PROP_TYPES = {
+  flat: G_BOOL,
+  active: G_BOOL,
+  link: G_STRING,
+  append: G_NODE,
+  action: G_NODE,
+  prepend: G_NODE,
+  label: G_STRING,
+  color: G_STRING,
+  size: SIZE_PROP,
+  closable: G_BOOL,
+  outlined: G_BOOL,
+  bordered: G_BOOL,
+  onAction: G_FUNC,
+  closeIcon: G_NODE,
+  ...DEFAULT_PROPS_TYPE,
+  type: CONTEXT_COLOR_TYPES
+}

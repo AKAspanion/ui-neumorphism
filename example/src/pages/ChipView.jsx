@@ -5,17 +5,17 @@ import {
   mdiCake,
   mdiStar,
   mdiAccount,
-  mdiAccountCircle,
+  mdiOpenInNew,
   mdiCloseOutline,
-  mdiOpenInNew
+  mdiAccountCircle
 } from '@mdi/js'
 
-import { Card, H4, H6, Subtitle1, Chip } from 'ui-neumorphism'
+import { Card, H4, H6, Subtitle1, Divider, Chip } from 'ui-neumorphism'
 
-// import { toggle, toggleLabel, switchApi } from '../docs/'
+import { chipApi } from '../docs/'
 
 import DocCard from '../containers/DocCard.jsx'
-// import ApiCard from '../containers/ApiCard.jsx'
+import ApiCard from '../containers/ApiCard.jsx'
 
 const url =
   'https://github.com/AKAspanion/ui-neumorphism/blob/master/example/src/pages/ChipView.jsx'
@@ -72,16 +72,16 @@ class ChipView extends React.Component {
                 className='ma-3'
                 append={<Icon path={mdiAccount} size={0.68} />}
               >
-                append
+                Append
               </Chip>
               <Chip
                 className='ma-3'
                 prepend={<Icon path={mdiAccount} size={0.68} />}
               >
-                prepend
+                Prepend
               </Chip>
               <Chip
-                type='error'
+                type='info'
                 className='ma-3'
                 append={<Icon path={mdiCake} size={0.6} />}
                 prepend={<Icon path={mdiAccountCircle} size={0.68} />}
@@ -89,19 +89,19 @@ class ChipView extends React.Component {
                 Happy Birthday
               </Chip>
               <Chip type='error' className='ma-3' closable>
-                Close
+                Closable
               </Chip>
               <Chip
-                type='error'
+                type='warning'
                 className='ma-3'
                 append={<Icon path={mdiStar} size={0.68} />}
                 action={<Icon path={mdiCloseOutline} size={0.68} />}
               >
-                Action
+                Append & Action
               </Chip>
               <Chip
-                type='success'
                 outlined
+                type='success'
                 className='ma-3'
                 append={<Icon path={mdiStar} size={0.68} />}
                 action={<Icon path={mdiCloseOutline} size={0.68} />}
@@ -109,8 +109,8 @@ class ChipView extends React.Component {
                 Outlined
               </Chip>
               <Chip
-                type='error'
                 bordered
+                type='error'
                 className='ma-3'
                 append={<Icon path={mdiStar} size={0.68} />}
                 action={<Icon path={mdiCloseOutline} size={0.68} />}
@@ -118,8 +118,8 @@ class ChipView extends React.Component {
                 Bordered
               </Chip>
               <Chip
-                type='error'
                 flat
+                type='warning'
                 className='ma-3'
                 append={<Icon path={mdiStar} size={0.68} />}
                 action={<Icon path={mdiCloseOutline} size={0.68} />}
@@ -131,29 +131,32 @@ class ChipView extends React.Component {
                 flat
                 bordered
                 className='ma-3'
+                onAction={() => console.log('close clicked')}
                 append={<Icon path={mdiStar} size={0.68} />}
                 action={<Icon path={mdiCloseOutline} size={0.68} />}
               >
-                Chip
+                Flat & Bordered
               </Chip>
               <Chip
-                type='info'
-                link='https://www.google.com'
+                label
                 outlined
+                type='info'
                 className='ma-3'
+                link='https://github.com/AKAspanion'
                 action={<Icon path={mdiOpenInNew} size={0.68} />}
               >
-                Link
+                Link & Label
               </Chip>
             </Card>
           }
         />
+        <Divider dense className='mt-6' />
         <H4 className='mt-12'>
           <a href='#api' name='api'>
             API
           </a>
         </H4>
-        Coming soon..
+        <ApiCard entity='Chip' data={chipApi(dark)} />
       </Card>
     )
   }

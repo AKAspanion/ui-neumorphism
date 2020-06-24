@@ -119,8 +119,13 @@
   margin-right: 0px;
 }
 
-.nu-chip .nu-action--close {
+.nu-chip.nu-chip--small .nu-action--close,
+.nu-chip.nu-chip--medium .nu-action--close {
   transform: scale(1.5);
+}
+
+.nu-chip.nu-chip--large .nu-action--close {
+  transform: scale(1.65);
 }
 
 .nu-chip .nu-append.nu-append--with-action {
