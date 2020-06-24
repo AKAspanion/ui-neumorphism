@@ -1,9 +1,18 @@
 import React from 'react'
 
-import { ProgressLinear, Card, H4, H5, H6, Subtitle1 } from 'ui-neumorphism'
+import {
+  H4,
+  H5,
+  H6,
+  Card,
+  Divider,
+  Subtitle1,
+  ProgressLinear
+} from 'ui-neumorphism'
 
-import { progressLinear } from '../docs/'
+import { progressLinear, progressLinearApi } from '../docs/'
 import DocCard from '../containers/DocCard.jsx'
+import ApiCard from '../containers/ApiCard.jsx'
 const url =
   'https://github.com/AKAspanion/ui-neumorphism/blob/master/example/src/pages/ProgressLinearView.jsx'
 
@@ -60,7 +69,7 @@ class ProgressLinearView extends React.Component {
             <Card flat className='fill-width mt-6 px-12'>
               <ProgressLinear value={40} color='var(--primary)' />
               <br />
-              <ProgressLinear value={40} color='var(--info)' />
+              <ProgressLinear value={40} color='var(--error)' />
               <br />
               <ProgressLinear value={40} color='var(--success)' />
             </Card>
@@ -81,7 +90,7 @@ class ProgressLinearView extends React.Component {
             <Card flat className='fill-width mt-6 px-12'>
               <ProgressLinear indeterminate color='var(--primary)' />
               <br />
-              <ProgressLinear indeterminate color='var(--info)' />
+              <ProgressLinear indeterminate color='var(--error)' />
               <br />
               <ProgressLinear indeterminate color='var(--success)' />
             </Card>
@@ -102,7 +111,7 @@ class ProgressLinearView extends React.Component {
             <Card flat className='fill-width mt-6 px-12'>
               <ProgressLinear height={10} value={40} color='var(--primary)' />
               <br />
-              <ProgressLinear height={20} value={60} color='var(--info)' />
+              <ProgressLinear height={20} value={60} color='var(--error)' />
               <br />
               <ProgressLinear height={30} value={80} color='var(--success)' />
             </Card>
@@ -131,7 +140,7 @@ class ProgressLinearView extends React.Component {
             <Card flat className='fill-width mt-6 px-12'>
               <ProgressLinear striped value={40} color='var(--primary)' />
               <br />
-              <ProgressLinear striped value={60} color='var(--info)' />
+              <ProgressLinear striped value={60} color='var(--error)' />
               <br />
               <ProgressLinear striped value={80} color='var(--success)' />
             </Card>
@@ -156,7 +165,7 @@ class ProgressLinearView extends React.Component {
             <Card flat className='fill-width mt-6 px-12'>
               <ProgressLinear bordered value={40} color='var(--primary)' />
               <br />
-              <ProgressLinear bordered value={60} color='var(--info)' />
+              <ProgressLinear bordered value={60} color='var(--error)' />
               <br />
               <ProgressLinear bordered value={80} color='var(--success)' />
             </Card>
@@ -190,7 +199,7 @@ class ProgressLinearView extends React.Component {
                 fillHeight
                 height={8}
                 value={40}
-                color='var(--info)'
+                color='var(--error)'
               />
               <br />
               <ProgressLinear
@@ -207,10 +216,13 @@ class ProgressLinearView extends React.Component {
             [[1, 2, 3].map((i) => `fillHeight height={${4 * i}} value={40}`)]
           ]}
         />
-        <br />
-        <br />
-        <H5>API</H5>
-        <Subtitle1>Coming soon..</Subtitle1>
+        <Divider dense className='mt-6' />
+        <H4 className='mt-12'>
+          <a href='#api' name='api'>
+            API
+          </a>
+        </H4>
+        <ApiCard entity='ProgressLinear' data={progressLinearApi(dark)} />
       </Card>
     )
   }

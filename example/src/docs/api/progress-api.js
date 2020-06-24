@@ -1,8 +1,7 @@
 import { createApiDoc, defaultApiDoc } from '../index.js'
 
-export const progressCircularApi = (dark, type = 'card') => {
+const defaultApi = (dark) => {
   return [
-    ...defaultApiDoc(dark),
     createApiDoc(
       dark,
       'value',
@@ -10,6 +9,27 @@ export const progressCircularApi = (dark, type = 'card') => {
       '0',
       'The percentage value for current progress.'
     ),
+    createApiDoc(
+      dark,
+      'color',
+      'String',
+      'var(--primary)',
+      "Set's the color of the stroke."
+    ),
+    createApiDoc(
+      dark,
+      'indeterminate',
+      'Boolean',
+      'false',
+      'Constantly animates the progress.'
+    )
+  ]
+}
+
+export const progressCircularApi = (dark, type = 'card') => {
+  return [
+    ...defaultApiDoc(dark),
+    ...defaultApi(dark),
     createApiDoc(
       dark,
       'size',
@@ -41,24 +61,45 @@ export const progressCircularApi = (dark, type = 'card') => {
     ),
     createApiDoc(
       dark,
-      'indeterminate',
-      'Boolean',
-      'false',
-      'Constantly animates, the progress circular.'
-    ),
-    createApiDoc(
-      dark,
-      'color',
-      'String',
-      'var(--primary)',
-      "Set's the color of the stroke."
-    ),
-    createApiDoc(
-      dark,
       'label',
       'String',
       '',
       'Label to show inside the circle.'
+    )
+  ]
+}
+
+export const progressLinearApi = (dark) => {
+  return [
+    ...defaultApiDoc(dark),
+    ...defaultApi(dark),
+    createApiDoc(
+      dark,
+      'height',
+      'Number',
+      '9',
+      'Sets the height for the component.'
+    ),
+    createApiDoc(
+      dark,
+      'active',
+      'Boolean',
+      'true',
+      'Hides the component when not true.'
+    ),
+    createApiDoc(
+      dark,
+      'striped',
+      'Boolean',
+      'false',
+      'Adds a stripe background to the stroke.'
+    ),
+    createApiDoc(
+      dark,
+      'fillHeight',
+      'Boolean',
+      'false',
+      'Fills the entire height when true.'
     )
   ]
 }
