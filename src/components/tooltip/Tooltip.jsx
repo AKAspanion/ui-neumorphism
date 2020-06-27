@@ -25,6 +25,7 @@ class Tooltip extends React.Component {
   static defaultProps = {
     bottom: true,
     transition: Grow,
+    transitionProps: {},
     ...DEFAULT_PROPS
   }
 
@@ -41,6 +42,7 @@ class Tooltip extends React.Component {
       }
     }
     this.controlled = props.visible !== undefined
+    this.calcPosition = this.calcPosition.bind(this)
     this.handleMouseOnToolTip = this.handleMouseOnToolTip.bind(this)
   }
 
@@ -70,17 +72,20 @@ class Tooltip extends React.Component {
     return {
       top: `${pos.top}px`,
       left: `${pos.left}px`,
-      transformOrigin: this.origin,
-      visibility: this.canView ? 'visible' : 'hidden',
       ...sizeStyles
     }
   }
 
   get tooltip() {
-    const { content, transition: Transition } = this.props
+    const { content, transitionProps, transition: Transition } = this.props
     const pickedProps = pickKeys(this.props, ['dark', 'inset'])
     return createPortal(
-      <Transition appear timeout={0} in={this.canView}>
+      <Transition
+        origin={this.origin}
+        {...transitionProps}
+        in={this.canView}
+        appear
+      >
         <Card
           {...pickedProps}
           role='tooltip'
@@ -161,8 +166,6 @@ class Tooltip extends React.Component {
   }
 
   handleMouseOnToolTip(e, callback) {
-    this.calcPosition()
-
     const { onOpen, onClose } = this.props
     const isOver = e.type === 'mouseenter'
 
@@ -176,6 +179,11 @@ class Tooltip extends React.Component {
 
   componentDidMount() {
     this.calcPosition()
+    document.addEventListener('scroll', this.calcPosition, true)
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('scroll', this.calcPosition, true)
   }
 
   render() {

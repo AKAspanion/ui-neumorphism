@@ -19,7 +19,7 @@ class TextFieldView extends React.Component {
       <Card flat dark={dark}>
         <H4>
           <a href='#component' name='component'>
-            Text Field
+            Text
           </a>
         </H4>
         <H6>Text fields let users enter and edit text.</H6>
@@ -38,32 +38,33 @@ class TextFieldView extends React.Component {
             </Subtitle1>
           }
           content={
-            <Card flat>
-              <TextField
-                bordered
-                label='Text field border'
-                className='my-3'
-              ></TextField>
+            <Card flat className='d-flex align-center justify-center flex-wrap'>
+              <TextField label='Text' className='my-3'></TextField>
               <TextField
                 prepend='$'
                 append='%'
                 prefix='%'
-                label='Text field 1'
+                label='Append & Prepend'
                 className='my-3'
               ></TextField>
               <TextField
-                label='Text field 1'
+                label='Password'
                 className='my-3'
                 type='password'
               ></TextField>
               <TextField
-                label='Text field 1'
+                label='Number'
                 className='my-3'
-                color='var(--success)'
+                type='number'
+              ></TextField>
+              <TextField
+                label='Bordered'
+                className='my-3'
+                bordered
               ></TextField>
               <TextField
                 loading
-                label={<div>hey</div>}
+                label={<div>Loading</div>}
                 className='my-3'
                 rules={[
                   (v) => v !== '' || 'Cant be empty',
@@ -73,59 +74,41 @@ class TextFieldView extends React.Component {
               <TextField
                 disabled
                 className='my-3'
-                label='Text field 2'
+                label='Disabled'
               ></TextField>
               <TextField
-                label='Text field 3'
+                label='Rounded'
                 rounded
-                loading
                 className='my-3'
               ></TextField>
               <TextField
-                label='Text field 4'
+                label='Readonly'
                 className='my-3'
-                value='abc'
                 readonly
               ></TextField>
+              <TextField label='Dense' className='my-3' dense></TextField>
               <TextField
-                label='Text field 5'
+                label='Dense & Rounded'
                 className='my-3'
-                value='abc'
-                dense
-              ></TextField>
-              <TextField
-                label='Text field 5'
-                className='my-3'
-                value='abc'
                 dense
                 rounded
                 onChange={this.onChange.bind(this)}
               ></TextField>
               <TextField
-                label='Text field 5'
+                label='Outlined'
                 className='my-3'
-                value='abc'
-                dense
+                outlined
+                onChange={this.onChange.bind(this)}
+              ></TextField>
+              <TextField
+                label='Outlined & Rounded'
+                className='my-3'
+                outlined
                 rounded
-                outlined
                 onChange={this.onChange.bind(this)}
               ></TextField>
               <TextField
-                label='Text field 6'
-                className='my-3'
-                rounded
-                outlined
-                onChange={this.onChange.bind(this)}
-              ></TextField>
-              <TextField
-                label='Text field 7'
-                className='my-3'
-                outlined
-                loading
-                onChange={this.onChange.bind(this)}
-              ></TextField>
-              <TextField
-                label='Text field 7'
+                label='Disabled & Outlined'
                 className='my-3'
                 outlined
                 disabled

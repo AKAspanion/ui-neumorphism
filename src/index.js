@@ -1,6 +1,6 @@
 export { overrideThemeVariables, detectElementInDOM } from './util/'
 export { withImage, withResize, withClickOutside } from './hocs/'
-export { Grow, Fade } from './transitions'
+export { Grow, Fade, Slide } from './transitions'
 
 export {
   Typography,

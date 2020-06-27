@@ -2,12 +2,27 @@ import React, { cloneElement } from 'react'
 
 import TransitionWrapper from './TransitionWrapper'
 
+import { G_NUM } from '../assets'
+
 class Fade extends React.Component {
   static displayName = 'NuFade'
 
+  static defaultProps = {
+    duration: 200
+  }
+
+  static propTypes = {
+    duration: G_NUM
+  }
+
+  defaultStyle = {
+    opacity: 0,
+    transition: `opacity ${this.props.duration}ms ease-in-out`
+  }
+
   transitionStyles = {
-    entering: { opacity: 1, transition: 'opacity 200ms' },
-    entered: { opacity: 1, transition: 'opacity 200ms' },
+    entering: { opacity: 1 },
+    entered: { opacity: 1 },
     exiting: { opacity: 0 },
     exited: { opacity: 0 }
   }
@@ -29,6 +44,7 @@ class Fade extends React.Component {
       <TransitionWrapper {...otherProps} onUpdate={this.updateStatus}>
         {cloneElement(child, {
           style: {
+            ...this.defaultStyle,
             ...this.transitionStyles[status],
             ...child.props.style
           }

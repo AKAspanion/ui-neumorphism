@@ -216,6 +216,7 @@ export const TOOLTIP_PROP_TYPES = {
   bottom: G_BOOL,
   visible: G_BOOL,
   ...DEFAULT_PROPS_TYPE,
+  transitionProps: G_OBJ,
   content: G_NODE.isRequired,
   ...CSS_DIMENSION_DEFAULT_PROPS
 }
