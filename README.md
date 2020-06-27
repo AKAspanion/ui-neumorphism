@@ -1,12 +1,20 @@
-# ui-neumorphism
+# [ui-neumorphism](https://akaspanion.github.io/ui-neumorphism/)
+
+[![NPM](https://img.shields.io/npm/v/ui-neumorphism.svg)](https://www.npmjs.com/package/ui-neumorphism)  [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/AKAspanion/ui-neumorphism/blob/master/LICENSE) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 > React component library designed on the "new skeuomorphism" or "neumorphism" UI/UX trend.
 
-[![NPM](https://img.shields.io/npm/v/ui-neumorphism.svg)](https://www.npmjs.com/package/ui-neumorphism) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+All the components are designed according to the neumorphic design trend.
+Library features more than 50 individual components.
 
+## Demo
 ![Fitness App by Jray](https://firebasestorage.googleapis.com/v0/b/spanion-portfolio.appspot.com/o/fitness--theme.jpg?alt=media&token=df27927a-bfcf-4b54-85e7-bde8a72d3947)
 
-Live demo and documentation [here](https://akaspanion.github.io/ui-neumorphism/).
+View examples [here](https://akaspanion.github.io/ui-neumorphism/examples).
+
+## Documentation
+Each component, and its API is well documented, with various examples along with their code and preview.
+Check out the documentation [here](https://akaspanion.github.io/ui-neumorphism/).
 
 ## Install
 
@@ -32,9 +40,7 @@ class Example extends Component {
 ## Theming
 
 In neumorphism UI, theming is dead simple.
-
 It is accomplished by using and modifying root css variables for colors.
-
 To change the theme, you modify the root css variables directly or with the help of `overrideThemeVariables()` function, like this.
 
 ```javascript
@@ -68,7 +74,6 @@ Here `--light-bg` and `--dark-bg` are css variables that hold specific values of
 Using this power of CSS variables, you can change the app theme from anywhere in the entire application.
 
 All the css variable definition is present in root tag of [index.css](/src/components/styles.css).
-
 These variables are used to theme the library and its available for you to modify.
 
 ## License
