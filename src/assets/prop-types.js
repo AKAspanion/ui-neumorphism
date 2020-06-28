@@ -243,7 +243,6 @@ export const CHIP_PROP_TYPES = {
 export const CAROUSEL_DEFAULT_PROPS = {
   height: 400,
   interval: 5000,
-  showArrows: true,
   continuous: true,
   ...DEFAULT_PROPS
 }
@@ -263,5 +262,6 @@ export const CAROUSEL_PROP_TYPES = {
   delimiterIcon: G_NODE,
   ...DEFAULT_PROPS_TYPE,
   hideDelimiters: G_BOOL,
-  showArrowsOnHover: G_BOOL
+  showArrowsOnHover: G_BOOL,
+  activeDelimiterIcon: G_NODE
 }

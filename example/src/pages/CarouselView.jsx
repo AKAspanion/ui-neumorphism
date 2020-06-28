@@ -1,16 +1,31 @@
 import React from 'react'
 
+import Icon from '@mdi/react'
 import {
-  H2,
+  mdiEmoticonHappyOutline,
+  mdiEmoticonCoolOutline,
+  mdiArrowRightBoldBox,
+  mdiArrowLeftBoldBox
+} from '@mdi/js'
+import {
+  H3,
   H4,
+  H5,
   H6,
   Card,
   Divider,
   Carousel,
+  Subtitle1,
   CarouselItem
 } from 'ui-neumorphism'
 
-import { carouselApi, carouselItemApi } from '../docs/'
+import {
+  carouselApi,
+  customArrows,
+  simpleCarousel,
+  customCarousel,
+  carouselItemApi
+} from '../docs/'
 
 import DocCard from '../containers/DocCard.jsx'
 import ApiCard from '../containers/ApiCard.jsx'
@@ -32,28 +47,223 @@ class CarouselView extends React.Component {
           content on a rotating timer.
         </H6>
         <DocCard
-          url={url}
+          className='mt-12'
+          url={url + '#L65-L78'}
+          title={<H5>Cycle</H5>}
+          subtitle={
+            <Subtitle1>
+              With the <code>cycle</code> the given slides automatically
+              transitions to the next, with a default <code>interval</code> of
+              5s.
+            </Subtitle1>
+          }
           content={
             <Card
               flat
               className='d-flex align-center justify-center flex-wrap fill-width'
             >
-              <Carousel cycle value={1} onChange={(e) => console.log(e)}>
-                <CarouselItem dark style={{ background: 'var(--info)' }}>
-                  <H2>Slide 1</H2>
+              <Carousel cycle>
+                <CarouselItem style={{ background: 'var(--info)' }}>
+                  <H3>Slide 1</H3>
                 </CarouselItem>
                 <CarouselItem style={{ background: 'var(--error)' }}>
-                  <H2>Slide 2</H2>
+                  <H3>Slide 2</H3>
                 </CarouselItem>
                 <CarouselItem style={{ background: 'var(--success)' }}>
-                  <H2>Slide 3</H2>
+                  <H3>Slide 3</H3>
                 </CarouselItem>
                 <CarouselItem style={{ background: 'var(--warning)' }}>
-                  <H2>Slide 4</H2>
+                  <H3>Slide 4</H3>
                 </CarouselItem>
               </Carousel>
             </Card>
           }
+          code={[simpleCarousel, dark, ['cycle']]}
+        />
+        <DocCard
+          className='mt-12'
+          url={url + '#L98-L111'}
+          title={<H5>Show arrows</H5>}
+          subtitle={
+            <Subtitle1>
+              Using the <code>showArrows</code> prop, you can show the arrow
+              icon buttons.
+            </Subtitle1>
+          }
+          content={
+            <Card
+              flat
+              className='d-flex align-center justify-center flex-wrap fill-width'
+            >
+              <Carousel cycle showArrows>
+                <CarouselItem style={{ background: 'var(--info)' }}>
+                  <H3>Slide 1</H3>
+                </CarouselItem>
+                <CarouselItem style={{ background: 'var(--error)' }}>
+                  <H3>Slide 2</H3>
+                </CarouselItem>
+                <CarouselItem style={{ background: 'var(--success)' }}>
+                  <H3>Slide 3</H3>
+                </CarouselItem>
+                <CarouselItem style={{ background: 'var(--warning)' }}>
+                  <H3>Slide 4</H3>
+                </CarouselItem>
+              </Carousel>
+            </Card>
+          }
+          code={[simpleCarousel, dark, ['cycle showArrows']]}
+        />
+        <DocCard
+          className='mt-12'
+          url={url + '#L131-L144'}
+          title={<H5>Show arrows on hover</H5>}
+          subtitle={
+            <Subtitle1>
+              Using the <code>showArrowsOnHover</code> prop, the arrow icon
+              buttons appear on hover.
+            </Subtitle1>
+          }
+          content={
+            <Card
+              flat
+              className='d-flex align-center justify-center flex-wrap fill-width'
+            >
+              <Carousel cycle showArrows showArrowsOnHover>
+                <CarouselItem style={{ background: 'var(--info)' }}>
+                  <H3>Slide 1</H3>
+                </CarouselItem>
+                <CarouselItem style={{ background: 'var(--error)' }}>
+                  <H3>Slide 2</H3>
+                </CarouselItem>
+                <CarouselItem style={{ background: 'var(--success)' }}>
+                  <H3>Slide 3</H3>
+                </CarouselItem>
+                <CarouselItem style={{ background: 'var(--warning)' }}>
+                  <H3>Slide 4</H3>
+                </CarouselItem>
+              </Carousel>
+            </Card>
+          }
+          code={[simpleCarousel, dark, ['cycle showArrows showArrowsOnHover']]}
+        />
+        <DocCard
+          className='mt-12'
+          url={url + '#L163-L176'}
+          title={<H5>Hide delimiters</H5>}
+          subtitle={
+            <Subtitle1>
+              Hide the bottom controls using <code>hideDelimiters</code> prop.
+            </Subtitle1>
+          }
+          content={
+            <Card
+              flat
+              className='d-flex align-center justify-center flex-wrap fill-width'
+            >
+              <Carousel cycle showArrows hideDelimiters>
+                <CarouselItem style={{ background: 'var(--info)' }}>
+                  <H3>Slide 1</H3>
+                </CarouselItem>
+                <CarouselItem style={{ background: 'var(--error)' }}>
+                  <H3>Slide 2</H3>
+                </CarouselItem>
+                <CarouselItem style={{ background: 'var(--success)' }}>
+                  <H3>Slide 3</H3>
+                </CarouselItem>
+                <CarouselItem style={{ background: 'var(--warning)' }}>
+                  <H3>Slide 4</H3>
+                </CarouselItem>
+              </Carousel>
+            </Card>
+          }
+          code={[simpleCarousel, dark, ['cycle showArrows hideDelimiters']]}
+        />
+        <DocCard
+          className='mt-12'
+          url={url + '#L193-L216'}
+          title={<H5>Custom arrow icons</H5>}
+          subtitle={
+            <Subtitle1>
+              You can customize the arrow icons using <code>nextIcon</code>
+              &nbsp; for "next" arrow and <code>prevIcon</code> for "prev"
+              arrow.
+            </Subtitle1>
+          }
+          content={
+            <Card
+              flat
+              className='d-flex align-center justify-center flex-wrap fill-width'
+            >
+              <Carousel
+                cycle
+                showArrows
+                nextIcon={<Icon path={mdiArrowRightBoldBox} size={1} />}
+                prevIcon={<Icon path={mdiArrowLeftBoldBox} size={1} />}
+              >
+                <CarouselItem style={{ background: 'var(--info)' }}>
+                  <H3>Slide 1</H3>
+                </CarouselItem>
+                <CarouselItem style={{ background: 'var(--error)' }}>
+                  <H3>Slide 2</H3>
+                </CarouselItem>
+                <CarouselItem style={{ background: 'var(--success)' }}>
+                  <H3>Slide 3</H3>
+                </CarouselItem>
+                <CarouselItem style={{ background: 'var(--warning)' }}>
+                  <H3>Slide 4</H3>
+                </CarouselItem>
+              </Carousel>
+            </Card>
+          }
+          code={[customArrows, dark]}
+        />
+        <DocCard
+          className='mt-12'
+          url={url + '#L234-L263'}
+          title={<H5>Custom delimiters</H5>}
+          subtitle={
+            <Subtitle1>
+              You can use anything as the carousel's delimiter icon.
+            </Subtitle1>
+          }
+          content={
+            <Card
+              flat
+              className='d-flex align-center justify-center flex-wrap fill-width'
+            >
+              <Carousel
+                cycle
+                activeDelimiterIcon={
+                  <Icon
+                    path={mdiEmoticonCoolOutline}
+                    className='c-pointer ma-3'
+                    size={1}
+                  />
+                }
+                delimiterIcon={
+                  <Icon
+                    path={mdiEmoticonHappyOutline}
+                    className='c-pointer ma-3'
+                    size={1}
+                  />
+                }
+              >
+                <CarouselItem style={{ background: 'var(--info)' }}>
+                  <H3>Slide 1</H3>
+                </CarouselItem>
+                <CarouselItem style={{ background: 'var(--error)' }}>
+                  <H3>Slide 2</H3>
+                </CarouselItem>
+                <CarouselItem style={{ background: 'var(--success)' }}>
+                  <H3>Slide 3</H3>
+                </CarouselItem>
+                <CarouselItem style={{ background: 'var(--warning)' }}>
+                  <H3>Slide 4</H3>
+                </CarouselItem>
+              </Carousel>
+            </Card>
+          }
+          code={[customCarousel, dark]}
         />
         <Divider dense className='mt-6' />
         <H4 className='mt-12'>

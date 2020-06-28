@@ -102,7 +102,7 @@ class Carousel extends React.Component {
 
   getDelimiters(items) {
     const { active } = this.state
-    const { delimiterIcon } = this.props
+    const { delimiterIcon, activeDelimiterIcon } = this.props
     return items.map((item, index) => {
       return (
         <div
@@ -116,7 +116,9 @@ class Carousel extends React.Component {
           }`}
           onClick={(e) => this.handleDelimiterClick(e, index)}
         >
-          {delimiterIcon}
+          {active === index
+            ? activeDelimiterIcon || delimiterIcon
+            : delimiterIcon}
         </div>
       )
     })

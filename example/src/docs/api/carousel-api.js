@@ -37,6 +37,7 @@ export const carouselApi = (dark) => {
     icon(dark, 'next'),
     icon(dark, 'prev'),
     icon(dark, 'delimiter'),
+    icon(dark, 'activeDelimiter'),
     createApiDoc(
       dark,
       'vertical',

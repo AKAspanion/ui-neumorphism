@@ -80,10 +80,11 @@
   line-height: 48px;
   border-radius: 50%;
   position: absolute;
-  top: calc(50% - 36px);
+  top: calc(50% - 28px);
   color: var(--text-color);
   transition: transform 0.3s;
   transform-origin: center center;
+  -webkit-tap-highlight-color: transparent !important;
 }
 
 .nu-carousel-arrow.nu-carousel-arrow--prev {

@@ -1102,6 +1102,10 @@ code {
   position: relative;
 }
 
+.c-pointer {
+  cursor: pointer;
+}
+
 .theme--light {
   --code-bg: #f5f2f0;
   --bg-color: var(--light-bg);
