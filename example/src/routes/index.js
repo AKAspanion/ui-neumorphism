@@ -20,7 +20,8 @@ import {
   SwitchView,
   DividerView,
   TooltipView,
-  // CarouselView,
+  // TooltipView,
+  CarouselView,
   // SnackbarView,
   TextareaView,
   CheckboxView,
@@ -90,12 +91,12 @@ const routes = [
     name: 'Card',
     component: CardView
   },
-  // {
-  //   id: 26,
-  //   path: '/carousel',
-  //   name: 'Carousel',
-  //   component: CarouselView
-  // },
+  {
+    id: 26,
+    path: '/carousel',
+    name: 'Carousel',
+    component: CarouselView
+  },
   {
     id: 8,
     path: '/checkbox',

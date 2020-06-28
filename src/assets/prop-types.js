@@ -239,3 +239,27 @@ export const CHIP_PROP_TYPES = {
   ...DEFAULT_PROPS_TYPE,
   type: CONTEXT_COLOR_TYPES
 }
+
+export const CAROUSEL_DEFAULT_PROPS = {
+  height: 400,
+  interval: 5000,
+  showArrows: true,
+  continuous: true,
+  ...DEFAULT_PROPS
+}
+
+export const CAROUSEL_PROP_TYPES = {
+  value: G_NUM,
+  cycle: G_BOOL,
+  height: G_NUM,
+  reverse: G_BOOL,
+  interval: G_NUM,
+  nextIcon: G_NODE,
+  prevIcon: G_NODE,
+  vertical: G_BOOL,
+  showArrows: G_BOOL,
+  continuous: G_BOOL,
+  ...DEFAULT_PROPS_TYPE,
+  hideDelimiters: G_BOOL,
+  showArrowsOnHover: G_BOOL
+}

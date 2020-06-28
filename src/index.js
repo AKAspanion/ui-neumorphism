@@ -1,6 +1,6 @@
 export { overrideThemeVariables, detectElementInDOM } from './util/'
 export { withImage, withResize, withClickOutside } from './hocs/'
-export { Grow, Fade, Slide } from './transitions'
+export { Grow, Fade, Slide, SlideCarousel } from './transitions'
 
 export {
   Typography,
@@ -30,6 +30,8 @@ export {
   Fab,
   ProgressCircular,
   ProgressLinear,
+  CarouselItem,
+  Carousel,
   Parallax,
   Tooltip,
   Divider,

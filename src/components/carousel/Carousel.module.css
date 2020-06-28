@@ -1,0 +1,114 @@
+.nu-carousel {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.nu-carousel.nu-carousel--light {
+  --text-color: var(--g-text-color-light);
+}
+
+.nu-carousel.nu-carousel--dark {
+  --text-color: var(--g-text-color-dark);
+}
+
+.nu-carousel-container {
+  height: inherit;
+  overflow: inherit;
+  position: inherit;
+}
+
+.nu-carousel-controls {
+  bottom: 0;
+  z-index: 1;
+  width: 100%;
+  height: 48px;
+  display: flex;
+  margin: 0px auto;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+}
+
+.nu-carousel-delimiter {
+  margin: 8px;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 0.3s;
+  border: 2px solid var(--text-color);
+}
+
+.nu-carousel-delimiter:after {
+  top: 50%;
+  width: 0%;
+  height: 0%;
+  content: '';
+  margin: auto;
+  display: block;
+  border-radius: 50%;
+  position: relative;
+  transition: all 0.3s;
+  background: var(--text-color);
+  transform: translateY(-50%);
+}
+
+.nu-carousel-delimiter.nu-carousel-delimiter--active {
+  border: none;
+}
+
+.nu-carousel-delimiter.nu-carousel-delimiter--active:after {
+  height: 100%;
+  width: 100%;
+}
+
+.nu-carousel:hover .nu-carousel-arrow.nu-carousel-arrow--prev {
+  transform: scale(1.5) rotate(180deg) translate(0px);
+}
+.nu-carousel:hover .nu-carousel-arrow.nu-carousel-arrow--next {
+  transform: scale(1.5) translate(0px);
+}
+
+.nu-carousel-arrow {
+  z-index: 2;
+  font-size: 48px;
+  cursor: pointer;
+  margin: 0px 16px;
+  user-select: none;
+  padding: 0px 16px;
+  line-height: 48px;
+  border-radius: 50%;
+  position: absolute;
+  top: calc(50% - 36px);
+  color: var(--text-color);
+  transition: transform 0.3s;
+  transform-origin: center center;
+}
+
+.nu-carousel-arrow.nu-carousel-arrow--prev {
+  padding-bottom: 8px;
+  transform: scale(1.5) rotate(180deg) translate(150%);
+}
+
+.nu-carousel-arrow.nu-carousel-arrow--next {
+  right: 0;
+  transform: scale(1.5) translate(150%);
+}
+
+.nu-carousel-arrow.nu-carousel-arrow--prev.nu-carousel-arrow--always {
+  transform: scale(1.5) rotate(180deg) translate(0px) !important;
+}
+
+.nu-carousel-arrow.nu-carousel-arrow--next.nu-carousel-arrow--always {
+  transform: scale(1.5) translate(0px) !important;
+}
+
+.nu-carousel-item {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  contain: strict;
+  align-items: center;
+  justify-content: center;
+}

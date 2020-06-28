@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Card, H4, H6 } from 'ui-neumorphism'
+import { Card, H2, H4, H6, Carousel, CarouselItem } from 'ui-neumorphism'
 
 // import { toggle, toggleLabel, switchApi } from '../docs/'
 
@@ -20,13 +20,30 @@ class CarouselView extends React.Component {
           </a>
         </H4>
         <H6>
-          The Carousel component is used to display large numbers of visual content on a rotating timer.
+          The Carousel component is used to display large numbers of visual
+          content on a rotating timer.
         </H6>
         <DocCard
           url={url}
           content={
-            <Card flat className='d-flex align-center justify-center flex-wrap'>
-              Coming soon..
+            <Card
+              flat
+              className='d-flex align-center justify-center flex-wrap fill-width'
+            >
+              <Carousel continuous cycle value={2}>
+                <CarouselItem dark style={{ background: 'var(--info)' }}>
+                  <H2>Slide 1</H2>
+                </CarouselItem>
+                <CarouselItem style={{ background: 'var(--error)' }}>
+                  <H2>Slide 2</H2>
+                </CarouselItem>
+                <CarouselItem style={{ background: 'var(--success)' }}>
+                  <H2>Slide 3</H2>
+                </CarouselItem>
+                <CarouselItem style={{ background: 'var(--warning)' }}>
+                  <H2>Slide 4</H2>
+                </CarouselItem>
+              </Carousel>
             </Card>
           }
         />
