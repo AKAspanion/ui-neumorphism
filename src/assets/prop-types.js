@@ -257,8 +257,10 @@ export const CAROUSEL_PROP_TYPES = {
   nextIcon: G_NODE,
   prevIcon: G_NODE,
   vertical: G_BOOL,
+  onChange: G_FUNC,
   showArrows: G_BOOL,
   continuous: G_BOOL,
+  delimiterIcon: G_NODE,
   ...DEFAULT_PROPS_TYPE,
   hideDelimiters: G_BOOL,
   showArrowsOnHover: G_BOOL

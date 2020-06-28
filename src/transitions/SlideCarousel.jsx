@@ -9,7 +9,7 @@ class SlideCarousel extends React.Component {
 
   static defaultProps = {
     axis: 'Y',
-    duration: 300,
+    duration: 250,
     reverse: false,
     origin: 'center center'
   }

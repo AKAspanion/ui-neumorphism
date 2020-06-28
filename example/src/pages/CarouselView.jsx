@@ -1,11 +1,19 @@
 import React from 'react'
 
-import { Card, H2, H4, H6, Carousel, CarouselItem } from 'ui-neumorphism'
+import {
+  H2,
+  H4,
+  H6,
+  Card,
+  Divider,
+  Carousel,
+  CarouselItem
+} from 'ui-neumorphism'
 
-// import { toggle, toggleLabel, switchApi } from '../docs/'
+import { carouselApi, carouselItemApi } from '../docs/'
 
 import DocCard from '../containers/DocCard.jsx'
-// import ApiCard from '../containers/ApiCard.jsx'
+import ApiCard from '../containers/ApiCard.jsx'
 
 const url =
   'https://github.com/AKAspanion/ui-neumorphism/blob/master/example/src/pages/CarouselView.jsx'
@@ -30,7 +38,7 @@ class CarouselView extends React.Component {
               flat
               className='d-flex align-center justify-center flex-wrap fill-width'
             >
-              <Carousel continuous cycle value={2}>
+              <Carousel cycle value={1} onChange={(e) => console.log(e)}>
                 <CarouselItem dark style={{ background: 'var(--info)' }}>
                   <H2>Slide 1</H2>
                 </CarouselItem>
@@ -47,12 +55,15 @@ class CarouselView extends React.Component {
             </Card>
           }
         />
+        <Divider dense className='mt-6' />
         <H4 className='mt-12'>
           <a href='#api' name='api'>
             API
           </a>
         </H4>
-        Coming soon..
+        <ApiCard entity='Carousel' data={carouselApi(dark)} />
+        <div className='mt-12'></div>
+        <ApiCard entity='CarouselItem' data={carouselItemApi(dark)} />
       </Card>
     )
   }

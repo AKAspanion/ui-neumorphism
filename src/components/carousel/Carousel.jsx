@@ -102,17 +102,22 @@ class Carousel extends React.Component {
 
   getDelimiters(items) {
     const { active } = this.state
+    const { delimiterIcon } = this.props
     return items.map((item, index) => {
       return (
         <div
           key={index}
-          className={`${this.getClasses('nu-carousel-delimiter')} ${
-            active === index
+          className={`${
+            !delimiterIcon ? this.getClasses('nu-carousel-delimiter') : ''
+          } ${
+            active === index && !delimiterIcon
               ? this.getClasses('nu-carousel-delimiter--active')
               : ''
           }`}
           onClick={(e) => this.handleDelimiterClick(e, index)}
-        />
+        >
+          {delimiterIcon}
+        </div>
       )
     })
   }
@@ -156,20 +161,33 @@ class Carousel extends React.Component {
   startTimer() {
     if (this.props.cycle) {
       this.timer = setInterval(() => {
+        this.stopTimeout()
         this.nextSlide()
+        this.startTimeout()
       }, this.props.interval)
     }
-    this.setState({ disabled: true })
-    this.disabledTimeout = setTimeout(() => {
-      this.setState({ disabled: false })
-    }, 350)
   }
 
   stopTimer() {
     if (this.props.cycle) {
       clearInterval(this.timer)
     }
+  }
+
+  startTimeout() {
+    this.setState({ disabled: true })
+    this.disabledTimeout = setTimeout(() => {
+      this.setState({ disabled: false })
+    }, 300)
+  }
+
+  stopTimeout() {
     clearTimeout(this.disabledTimeout)
+  }
+
+  toggleClocks(action = 'stop') {
+    this[`${action}Timer`]()
+    this[`${action}Timeout`]()
   }
 
   updateActiveState(active, prevActive) {
@@ -178,17 +196,17 @@ class Carousel extends React.Component {
   }
 
   handleIconClick(direction) {
-    this.stopTimer()
+    this.toggleClocks()
     this[`${direction}Slide`]()
-    this.startTimer()
+    this.toggleClocks('start')
   }
 
   handleDelimiterClick(e, active) {
     const { onDelimiterClick } = this.props
 
-    this.stopTimer()
+    this.toggleClocks()
     this.updateActiveState(active, this.state.active)
-    this.startTimer()
+    this.toggleClocks('start')
 
     callCallback(onDelimiterClick, e)
   }
@@ -196,6 +214,13 @@ class Carousel extends React.Component {
   componentDidMount() {
     if (this.props.cycle) {
       this.startTimer()
+    }
+  }
+
+  componentDidUpdate(props, state) {
+    const { active } = this.state
+    if (JSON.stringify(state.active) !== JSON.stringify(active)) {
+      callCallback(props.onChange, { active })
     }
   }
 

@@ -1,5 +1,5 @@
 :root {
-  --light-bg: #E4EBF5;
+  --light-bg: #e4ebf5;
   --light-bg-dark-shadow: #bec8e4;
   --light-bg-light-shadow: #ffffff;
 
@@ -14,18 +14,18 @@
   --primary-dark: #2962ff;
   --primary-light: #82b1ff;
 
-  --error: #FF5252;
-  --info: #2196F3;
-  --success: #4CAF50;
-  --warning: #DFA700;
+  --error: #ff5252;
+  --info: #2196f3;
+  --success: #4caf50;
+  --warning: #dfa700;
 
   --g-text-color-light: rgba(0, 0, 0, 0.93);
   --g-text-color-disabled-light: rgba(0, 0, 0, 0.45);
-  --g-text-color-secondary-light: rgba(0, 0, 0, 0.70);
+  --g-text-color-secondary-light: rgba(0, 0, 0, 0.7);
 
   --g-text-color-dark: rgba(255, 255, 255, 0.93);
   --g-text-color-disabled-dark: rgba(255, 255, 255, 0.45);
-  --g-text-color-secondary-dark: rgba(255, 255, 255, 0.70);
+  --g-text-color-secondary-dark: rgba(255, 255, 255, 0.7);
 
   --g-bg-color-disabled-light: #dee5e8;
   --g-bg-color-disabled-dark: #727272;
@@ -36,7 +36,6 @@
   padding: 0;
   box-sizing: inherit;
 }
-
 
 input,
 label,
@@ -55,7 +54,6 @@ a {
 a:hover {
   text-decoration: underline;
 }
-
 
 body {
   margin: 0;

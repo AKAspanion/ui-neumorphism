@@ -36,7 +36,7 @@
   height: 16px;
   cursor: pointer;
   border-radius: 50%;
-  transition: all 0.3s;
+  transition: all 250ms ease-in-out;
   border: 2px solid var(--text-color);
 }
 
@@ -49,9 +49,9 @@
   display: block;
   border-radius: 50%;
   position: relative;
-  transition: all 0.3s;
-  background: var(--text-color);
   transform: translateY(-50%);
+  background: var(--text-color);
+  transition: all 250ms ease-in-out;
 }
 
 .nu-carousel-delimiter.nu-carousel-delimiter--active {
