@@ -19,7 +19,8 @@ export const customCarousel = (dark) => {
   const darkProp = dark ? '\n  dark' : ''
   return `// Icon component is from '@mdi/react' and is not bundled with this library
 <Carousel${darkProp}
-  cycle
+  showArrows
+  showArrowsOnHover
   activeDelimiterIcon={
     <Icon
       path={mdiEmoticonCoolOutline}
@@ -51,7 +52,6 @@ export const customArrows = (dark) => {
   const darkProp = dark ? '\n  dark' : ''
   return `// Icon component is from '@mdi/react' and is not bundled with this library
 <Carousel${darkProp}
-  cycle
   showArrows
   nextIcon={<Icon path={mdiArrowRightBoldBox} size={1} />}
   prevIcon={<Icon path={mdiArrowLeftBoldBox} size={1} />}

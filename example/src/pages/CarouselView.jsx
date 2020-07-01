@@ -82,12 +82,11 @@ class CarouselView extends React.Component {
         />
         <DocCard
           className='mt-12'
-          url={url + '#L98-L111'}
-          title={<H5>Show arrows</H5>}
+          url={url + '#L65-L78'}
+          title={<H5>Reverse</H5>}
           subtitle={
             <Subtitle1>
-              Using the <code>showArrows</code> prop, you can show the arrow
-              icon buttons.
+              With the <code>reverse</code> prop, transtion is reversed.
             </Subtitle1>
           }
           content={
@@ -95,7 +94,7 @@ class CarouselView extends React.Component {
               flat
               className='d-flex align-center justify-center flex-wrap fill-width'
             >
-              <Carousel cycle showArrows>
+              <Carousel cycle reverse>
                 <CarouselItem style={{ background: 'var(--info)' }}>
                   <H3>Slide 1</H3>
                 </CarouselItem>
@@ -111,7 +110,40 @@ class CarouselView extends React.Component {
               </Carousel>
             </Card>
           }
-          code={[simpleCarousel, dark, ['cycle showArrows']]}
+          code={[simpleCarousel, dark, ['cycle reverse']]}
+        />
+        <DocCard
+          className='mt-12'
+          url={url + '#L98-L111'}
+          title={<H5>Show arrows</H5>}
+          subtitle={
+            <Subtitle1>
+              Using the <code>showArrows</code> prop, you can show the arrow
+              icon buttons.
+            </Subtitle1>
+          }
+          content={
+            <Card
+              flat
+              className='d-flex align-center justify-center flex-wrap fill-width'
+            >
+              <Carousel showArrows>
+                <CarouselItem style={{ background: 'var(--info)' }}>
+                  <H3>Slide 1</H3>
+                </CarouselItem>
+                <CarouselItem style={{ background: 'var(--error)' }}>
+                  <H3>Slide 2</H3>
+                </CarouselItem>
+                <CarouselItem style={{ background: 'var(--success)' }}>
+                  <H3>Slide 3</H3>
+                </CarouselItem>
+                <CarouselItem style={{ background: 'var(--warning)' }}>
+                  <H3>Slide 4</H3>
+                </CarouselItem>
+              </Carousel>
+            </Card>
+          }
+          code={[simpleCarousel, dark, ['showArrows']]}
         />
         <DocCard
           className='mt-12'
@@ -128,7 +160,7 @@ class CarouselView extends React.Component {
               flat
               className='d-flex align-center justify-center flex-wrap fill-width'
             >
-              <Carousel cycle showArrows showArrowsOnHover>
+              <Carousel showArrows showArrowsOnHover>
                 <CarouselItem style={{ background: 'var(--info)' }}>
                   <H3>Slide 1</H3>
                 </CarouselItem>
@@ -144,7 +176,7 @@ class CarouselView extends React.Component {
               </Carousel>
             </Card>
           }
-          code={[simpleCarousel, dark, ['cycle showArrows showArrowsOnHover']]}
+          code={[simpleCarousel, dark, ['showArrows showArrowsOnHover']]}
         />
         <DocCard
           className='mt-12'
@@ -160,7 +192,7 @@ class CarouselView extends React.Component {
               flat
               className='d-flex align-center justify-center flex-wrap fill-width'
             >
-              <Carousel cycle showArrows hideDelimiters>
+              <Carousel showArrows hideDelimiters>
                 <CarouselItem style={{ background: 'var(--info)' }}>
                   <H3>Slide 1</H3>
                 </CarouselItem>
@@ -176,7 +208,7 @@ class CarouselView extends React.Component {
               </Carousel>
             </Card>
           }
-          code={[simpleCarousel, dark, ['cycle showArrows hideDelimiters']]}
+          code={[simpleCarousel, dark, ['showArrows hideDelimiters']]}
         />
         <DocCard
           className='mt-12'
@@ -195,7 +227,6 @@ class CarouselView extends React.Component {
               className='d-flex align-center justify-center flex-wrap fill-width'
             >
               <Carousel
-                cycle
                 showArrows
                 nextIcon={<Icon path={mdiArrowRightBoldBox} size={1} />}
                 prevIcon={<Icon path={mdiArrowLeftBoldBox} size={1} />}
@@ -232,7 +263,8 @@ class CarouselView extends React.Component {
               className='d-flex align-center justify-center flex-wrap fill-width'
             >
               <Carousel
-                cycle
+                showArrows
+                showArrowsOnHover
                 activeDelimiterIcon={
                   <Icon
                     path={mdiEmoticonCoolOutline}

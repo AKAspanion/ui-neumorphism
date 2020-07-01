@@ -226,6 +226,11 @@ class Carousel extends React.Component {
     }
   }
 
+  componentWillUnmount() {
+    this.stopTimer()
+    this.stopTimeout()
+  }
+
   render() {
     const items = this.carouselItems
     const { style, className, hideDelimiters } = this.props

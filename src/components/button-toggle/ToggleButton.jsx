@@ -49,12 +49,12 @@ class ToggleButton extends React.Component {
     if (!this.state.isActive) {
       this.setState({ color: '' })
     }
-    callCallback(this.props.mouseOut, e)
+    callCallback(this.props.onMouseOut, e)
   }
 
   handleMouseOver(e) {
     this.setState({ color: this.props.color })
-    callCallback(this.props.mouseOver, e)
+    callCallback(this.props.onMouseOver, e)
   }
 
   render() {
@@ -69,8 +69,8 @@ class ToggleButton extends React.Component {
         color={this.state.color}
         active={this.state.isActive}
         onClick={(e) => this.handleClick(e)}
-        mouseOut={(e) => this.handleMouseOut(e)}
-        mouseOver={(e) => this.handleMouseOver(e)}
+        onMouseOut={(e) => this.handleMouseOut(e)}
+        onMouseOver={(e) => this.handleMouseOver(e)}
       >
         {children}
       </Button>

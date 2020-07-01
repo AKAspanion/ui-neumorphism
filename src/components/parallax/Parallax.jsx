@@ -78,7 +78,6 @@ class Parallax extends React.Component {
       percentScrolled = scrollTop / (windowScrollHeight - windowHeight)
     }
     parallax = Math.round(parallaxDist * percentScrolled * speed)
-    console.log(parallax)
     this.setState({ parallax })
   }
 

@@ -56,46 +56,48 @@ class ChipView extends React.Component {
               <Chip label className='ma-3'>
                 label
               </Chip>
-              <Chip type='info' className='ma-3'>
+              <Chip key='1' type='info' className='ma-3'>
                 info
               </Chip>
-              <Chip type='error' className='ma-3'>
+              <Chip key='2' type='error' className='ma-3'>
                 error
               </Chip>
-              <Chip type='success' className='ma-3'>
+              <Chip key='3' type='success' className='ma-3'>
                 success
               </Chip>
-              <Chip type='warning' className='ma-3'>
+              <Chip key='4' type='warning' className='ma-3'>
                 warning
               </Chip>
               <Chip
+                key='5'
                 className='ma-3'
-                append={<Icon path={mdiAccount} size={0.68} />}
+                append={<Icon key='1' path={mdiAccount} size={0.68} />}
               >
                 Append
               </Chip>
               <Chip
+                key='6'
                 className='ma-3'
-                prepend={<Icon path={mdiAccount} size={0.68} />}
+                prepend={<Icon key='2' path={mdiAccount} size={0.68} />}
               >
                 Prepend
               </Chip>
               <Chip
                 type='info'
                 className='ma-3'
-                append={<Icon path={mdiCake} size={0.6} />}
-                prepend={<Icon path={mdiAccountCircle} size={0.68} />}
+                append={<Icon key='1' path={mdiCake} size={0.6} />}
+                prepend={<Icon key='2' path={mdiAccountCircle} size={0.68} />}
               >
                 Happy Birthday
               </Chip>
-              <Chip type='error' className='ma-3' closable>
+              <Chip key='34' type='error' className='ma-3' closable>
                 Closable
               </Chip>
               <Chip
                 type='warning'
                 className='ma-3'
-                append={<Icon path={mdiStar} size={0.68} />}
-                action={<Icon path={mdiCloseOutline} size={0.68} />}
+                append={<Icon key='7' path={mdiStar} size={0.68} />}
+                action={<Icon key='8' path={mdiCloseOutline} size={0.68} />}
               >
                 Append & Action
               </Chip>
@@ -103,8 +105,8 @@ class ChipView extends React.Component {
                 outlined
                 type='success'
                 className='ma-3'
-                append={<Icon path={mdiStar} size={0.68} />}
-                action={<Icon path={mdiCloseOutline} size={0.68} />}
+                append={<Icon key='9' path={mdiStar} size={0.68} />}
+                action={<Icon key='10' path={mdiCloseOutline} size={0.68} />}
               >
                 Outlined
               </Chip>
@@ -112,8 +114,8 @@ class ChipView extends React.Component {
                 bordered
                 type='error'
                 className='ma-3'
-                append={<Icon path={mdiStar} size={0.68} />}
-                action={<Icon path={mdiCloseOutline} size={0.68} />}
+                append={<Icon key='11' path={mdiStar} size={0.68} />}
+                action={<Icon key='22' path={mdiCloseOutline} size={0.68} />}
               >
                 Bordered
               </Chip>
@@ -121,8 +123,8 @@ class ChipView extends React.Component {
                 flat
                 type='warning'
                 className='ma-3'
-                append={<Icon path={mdiStar} size={0.68} />}
-                action={<Icon path={mdiCloseOutline} size={0.68} />}
+                append={<Icon key='13' path={mdiStar} size={0.68} />}
+                action={<Icon key='14' path={mdiCloseOutline} size={0.68} />}
               >
                 Flat
               </Chip>
@@ -132,8 +134,8 @@ class ChipView extends React.Component {
                 bordered
                 className='ma-3'
                 onAction={() => console.log('close clicked')}
-                append={<Icon path={mdiStar} size={0.68} />}
-                action={<Icon path={mdiCloseOutline} size={0.68} />}
+                append={<Icon key='17' path={mdiStar} size={0.68} />}
+                action={<Icon key='16' path={mdiCloseOutline} size={0.68} />}
               >
                 Flat & Bordered
               </Chip>

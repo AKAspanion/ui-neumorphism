@@ -115,10 +115,10 @@ export const BUTTON_PROP_TYPES = {
   outlined: G_BOOL,
   bordered: G_BOOL,
   disabled: G_BOOL,
-  mouseOut: G_FUNC,
+  onMouseOut: G_FUNC,
   bgColor: G_STRING,
   depressed: G_BOOL,
-  mouseOver: G_FUNC,
+  onMouseOver: G_FUNC,
   className: G_STRING,
   ...DEFAULT_PROPS_TYPE,
   type: BUTTON_ALTERNATE_TYPES
@@ -223,12 +223,12 @@ export const TOOLTIP_PROP_TYPES = {
 
 export const CHIP_PROP_TYPES = {
   flat: G_BOOL,
+  label: G_BOOL,
   active: G_BOOL,
   link: G_STRING,
   append: G_NODE,
   action: G_NODE,
   prepend: G_NODE,
-  label: G_STRING,
   color: G_STRING,
   size: SIZE_PROP,
   closable: G_BOOL,

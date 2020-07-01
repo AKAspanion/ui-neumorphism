@@ -20,7 +20,6 @@ class Chip extends React.Component {
   constructor(props) {
     super(props)
     this.state = { id: uid() }
-    this.handleActionClick = this.handleActionClick.bind(this)
   }
 
   get size() {
@@ -52,21 +51,24 @@ class Chip extends React.Component {
 
     if (action) {
       actionItem = cloneElement(action, {
+        key: uid(),
         className: this.getClasses('nu-action'),
-        onClick: this.handleActionClick()
+        onClick: (e) => this.handleActionClick(e)
       })
     }
 
     if (closable) {
       closableItem = closeIcon ? (
         cloneElement(action, {
+          key: uid(),
           className: this.getClasses('nu-action'),
-          onClick: this.handleActionClick()
+          onClick: (e) => this.handleActionClick(e)
         })
       ) : (
         <span
+          key={uid()}
           className={this.getClasses('nu-action nu-action--close')}
-          onClick={this.handleActionClick()}
+          onClick={(e) => this.handleActionClick(e)}
         >
           ×
         </span>
@@ -125,6 +127,7 @@ class Chip extends React.Component {
       tag,
       {
         style,
+        key: uid(),
         ...linkProps,
         id: this.state.id,
         className: `${this.getClasses('chip')} ${className}`
