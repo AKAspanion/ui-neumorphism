@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Card, Tabs, Tab, H4, H6 } from 'ui-neumorphism'
+import { Card, Tabs, Tab, H4, H6, TabItems, TabItem } from 'ui-neumorphism'
 
 // import { toggle, toggleLabel, switchApi } from '../docs/'
 
@@ -13,11 +13,12 @@ class TabView extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      value: 0
+      active: 0
     }
   }
   render() {
     const { dark } = this.props
+    const { active } = this.state
     return (
       <Card flat dark={dark}>
         <H4>
@@ -33,11 +34,43 @@ class TabView extends React.Component {
           url={url}
           content={
             <Card flat className='px-4 fill-width'>
-              <Tabs value={0}>
-                <Tab>Item 1</Tab>
-                <Tab>Item 2</Tab>
-                <Tab>Item 3</Tab>
-              </Tabs>
+              <Card className='pa-4'>
+                <Tabs
+                  raised
+                  value={active}
+                  onChange={({ active }) => this.setState({ active })}
+                >
+                  <Tab>Item 1</Tab>
+                  <Tab>Item 2</Tab>
+                  <Tab>Item 3</Tab>
+                </Tabs>
+                <TabItems value={active}>
+                  <TabItem>
+                    <div>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </div>
+                  </TabItem>
+                  <TabItem>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </TabItem>
+                  <TabItem>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </TabItem>
+                </TabItems>
+              </Card>
             </Card>
           }
         />

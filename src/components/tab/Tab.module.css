@@ -11,7 +11,8 @@
   border-radius: 4px;
   position: absolute;
   pointer-events: none;
-  transition: all 0.3s ease-in-out;
+  box-sizing: border-box;
+  transition: all 250ms ease-in-out;
   box-shadow: var(--box-shadow-inset);
 }
 
@@ -19,13 +20,41 @@
   border-radius: 18px;
 }
 
+.nu-tabs-wrapper--outlined .nu-tab-selector {
+  box-shadow: none !important;
+  border: 1px solid var(--selector-bg);
+}
+
+.nu-tabs-wrapper--underlined .nu-tab-selector {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-radius: 0px;
+  box-shadow: none !important;
+  border-bottom: 2px solid var(--selector-bg);
+}
+
+.nu-tab-items-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.nu-tab-items-container {
+  height: inherit;
+  overflow: inherit;
+  position: relative;
+}
+
+.nu-tab-item {
+  width: 100%;
+  padding-top: 12px;
+}
+
 .nu-tab.nu-tab--light,
-.nu-tabs-wrapper.nu-tabs-wrapper--light {
-  --bg-color: var(--light-bg);
-  --border-color: var(--text-color);
-  --text-color: var(--g-text-color-light);
-  --light-border-color: var(--light-bg-dark-shadow);
-  --text-color-disabled: var(--g-text-color-disabled-light);
+.nu-tabs-wrapper.nu-tabs-wrapper--light,
+.nu-tab-items-wrapper.nu-tab-items-wrapper--light {
+  --selector-bg: var(--primary);
   --box-shadow: 3px 3px 6px var(--light-bg-dark-shadow),
     -3px -3px 6px var(--light-bg-light-shadow);
   --box-shadow-inset: inset -2px -2px 5px var(--light-bg-light-shadow),
@@ -33,20 +62,11 @@
 }
 
 .nu-tab.nu-tab--dark,
-.nu-tabs-wrapper.nu-tabs-wrapper--dark {
-  --bg-color: var(--dark-bg);
-  --border-color: var(--text-color);
-  --text-color: var(--g-text-color-dark);
-  --light-border-color: var(--dark-bg-light-shadow);
-  --text-color-disabled: var(--g-text-color-disabled-dark);
-  --box-shadow: 5px 5px 12px var(--dark-bg-dark-shadow),
-    -4px -4px 10px var(--dark-bg-light-shadow);
-  --box-shadow-hover: 2px 2px 5px var(--dark-bg-dark-shadow),
-    -2px -2px 5px var(--dark-bg-light-shadow);
+.nu-tabs-wrapper.nu-tabs-wrapper--dark,
+.nu-tab-items-wrapper.nu-tab-items-wrapper--dark {
+  --selector-bg: var(--primary);
+  --box-shadow: 3px 3px 6px var(--dark-bg-dark-shadow),
+    -3px -3px 6px var(--dark-bg-light-shadow);
   --box-shadow-inset: inset -2px -2px 5px var(--dark-bg-light-shadow),
     inset 2px 2px 5px var(--dark-bg-dark-shadow);
-  --box-shadow-inset-low: inset -1px -1px 3px var(--dark-bg-light-shadow),
-    inset 1px 1px 3px var(--dark-bg-dark-shadow);
-  --box-shadow-fab: 10px 10px 20px var(--dark-bg-dark-shadow),
-    -7px -7px 16px var(--dark-bg-light-shadow);
 }

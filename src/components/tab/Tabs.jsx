@@ -60,7 +60,7 @@ class Tabs extends React.Component {
   }
 
   getClasses(elem) {
-    const { dark, rounded } = this.props
+    const { dark, rounded, outlined, underlined } = this.props
     if (elem === 'container') {
       return getModuleClasses(
         styles,
@@ -68,6 +68,8 @@ class Tabs extends React.Component {
           nu-tabs-wrapper
           nu-tabs-wrapper--${dark ? 'dark' : 'light'}
           ${rounded ? 'nu-tabs-wrapper--rounded' : ''}
+          ${outlined ? 'nu-tabs-wrapper--outlined' : ''}
+          ${underlined ? 'nu-tabs-wrapper--underlined' : ''}
         `
       )
     } else {
