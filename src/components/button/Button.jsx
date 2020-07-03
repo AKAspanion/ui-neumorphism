@@ -32,6 +32,7 @@ class Button extends React.Component {
       text,
       block,
       active,
+      noPress,
       rounded,
       disabled,
       bordered,
@@ -52,6 +53,7 @@ class Button extends React.Component {
             nu-button--${this.getValidSize(size)}
             nu-button--${dark ? 'dark' : 'light'}
             ${rounded ? 'nu-button--rounded' : ''}
+            ${noPress ? 'nu-button--no-press' : ''}
             ${outlined ? 'nu-button--outlined' : ''}
             ${bordered ? 'nu-button--bordered' : ''}
             ${disabled ? 'nu-button--disabled' : ''}

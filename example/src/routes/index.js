@@ -2,7 +2,7 @@ import {
   Home,
   Example,
   FabView,
-  // TabView,
+  TabView,
   ChipView,
   // ListView,
   // MenuView,
@@ -205,12 +205,12 @@ const routes = [
     name: 'Table',
     component: TableView
   },
-  // {
-  //   id: 19,
-  //   path: '/tab',
-  //   name: 'Tab',
-  //   component: TabView
-  // },
+  {
+    id: 19,
+    path: '/tabs',
+    name: 'Tabs',
+    component: TabView
+  },
   {
     id: 27,
     path: '/text-area',

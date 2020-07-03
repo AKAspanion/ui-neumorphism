@@ -28,6 +28,8 @@ export {
   Avatar,
   Chip,
   Fab,
+  Tabs,
+  Tab,
   ProgressCircular,
   ProgressLinear,
   CarouselItem,

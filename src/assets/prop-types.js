@@ -112,6 +112,7 @@ export const BUTTON_PROP_TYPES = {
   size: SIZE_PROP,
   color: G_STRING,
   onClick: G_FUNC,
+  noPress: G_BOOL,
   outlined: G_BOOL,
   bordered: G_BOOL,
   disabled: G_BOOL,
