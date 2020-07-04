@@ -6,16 +6,16 @@ import { SlideCarousel } from '../../index'
 import styles from './Tab.module.css'
 
 import { DEFAULT_PROPS, DEFAULT_PROPS_TYPE } from '../../assets/index'
-import { getModuleClasses, passDownProp } from '../../util'
+import { passDownProp, callCallback, getModuleClasses } from '../../util'
 
 class TabItems extends React.Component {
-  prev = 0
   timeout
+  prev = 0
 
   static displayName = 'NuTabItems'
 
   static defaultProps = {
-    height: 200,
+    height: 0,
     ...DEFAULT_PROPS
   }
 
@@ -38,7 +38,13 @@ class TabItems extends React.Component {
     return passDownProp(
       Children.map(children, (child, index) => {
         return (
-          <SlideCarousel appear axis='X' reverse={reverse} in={index === value}>
+          <SlideCarousel
+            appear
+            axis='X'
+            duration={200}
+            reverse={reverse}
+            in={index === value}
+          >
             {cloneElement(child, {
               ref: (ref) => this.handleRef(ref, index === value)
             })}
@@ -65,11 +71,17 @@ class TabItems extends React.Component {
     }
   }
 
+  clearHeightTimeout() {
+    clearTimeout(this.timeout)
+  }
+
   handleRef(item, check = false) {
     if (!check) return
     const tabItem = findDOMNode(item)
 
     if (!tabItem) return
+
+    this.clearHeightTimeout()
 
     this.timeout = setTimeout(() => {
       const { height: stateHeight } = this.state
@@ -78,15 +90,19 @@ class TabItems extends React.Component {
       if (height === stateHeight) return
 
       this.setState({ height })
-    }, 100)
+    }, 250)
   }
 
-  componentDidUpdate() {
-    this.prev = this.props.value || 0
+  componentDidUpdate({ value }) {
+    const { value: active, onChange } = this.props
+    this.prev = active || 0
+    if (active !== value) {
+      callCallback(onChange, { active })
+    }
   }
 
   componentWillUnmount() {
-    clearTimeout(this.timeout)
+    this.clearHeightTimeout()
   }
 
   render() {

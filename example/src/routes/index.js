@@ -20,7 +20,6 @@ import {
   SwitchView,
   DividerView,
   TooltipView,
-  // TooltipView,
   CarouselView,
   // SnackbarView,
   TextareaView,

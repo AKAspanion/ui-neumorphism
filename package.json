@@ -64,5 +64,8 @@
   ],
   "dependencies": {
     "react-transition-group": "^4.4.1"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   }
 }

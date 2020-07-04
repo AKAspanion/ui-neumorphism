@@ -33,3 +33,10 @@ export const pickKeys = (obj, keys) => {
 export const uid = () => {
   return `_${(((1 + Math.random()) * 0x10000) | 0).toString(8).substring(1)}_`
 }
+
+export const clearAllTimeout = () => {
+  let timeoutId = setTimeout(() => {})
+  while (timeoutId--) {
+    clearTimeout(timeoutId)
+  }
+}

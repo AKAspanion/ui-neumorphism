@@ -6,9 +6,11 @@ import { Tab } from '../../index'
 import styles from './Tab.module.css'
 
 import { DEFAULT_PROPS, DEFAULT_PROPS_TYPE } from '../../assets/index'
-import { getModuleClasses, passDownProp, callCallback } from '../../util'
+import { passDownProp, callCallback, getModuleClasses } from '../../util'
 
 class Tabs extends React.Component {
+  wait = false
+
   static displayName = 'NuTabs'
 
   static defaultProps = {
@@ -17,6 +19,10 @@ class Tabs extends React.Component {
   }
 
   static propTypes = DEFAULT_PROPS_TYPE
+
+  static getDerivedStateFromProps({ value: active }) {
+    return { active }
+  }
 
   constructor(props) {
     super(props)
@@ -83,7 +89,14 @@ class Tabs extends React.Component {
     return width
   }
 
+  pauseClick() {
+    this.wait = true
+    setTimeout(() => (this.wait = false), 250)
+  }
+
   handleClick(event, active, click) {
+    if (this.wait) return
+
     const { onClick, onChange } = this.props
 
     this.setState({ active })
@@ -91,6 +104,8 @@ class Tabs extends React.Component {
     callCallback(click, event)
     callCallback(onChange, { active })
     callCallback(onClick, { event, active })
+
+    this.pauseClick()
   }
 
   handleRef(ref, index) {

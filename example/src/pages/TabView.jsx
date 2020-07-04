@@ -19,6 +19,31 @@ class TabView extends React.Component {
   render() {
     const { dark } = this.props
     const { active } = this.state
+
+    const tabItems = (
+      <TabItems value={active}>
+        <TabItem>
+          <div>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </div>
+        </TabItem>
+        <TabItem>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
+        </TabItem>
+        <TabItem>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
+        </TabItem>
+      </TabItems>
+    )
     return (
       <Card flat dark={dark}>
         <H4>
@@ -32,11 +57,11 @@ class TabView extends React.Component {
         </H6>
         <DocCard
           url={url}
+          className='mt-12'
           content={
             <Card flat className='px-4 fill-width'>
               <Card className='pa-4'>
                 <Tabs
-                  raised
                   value={active}
                   onChange={({ active }) => this.setState({ active })}
                 >
@@ -44,32 +69,43 @@ class TabView extends React.Component {
                   <Tab>Item 2</Tab>
                   <Tab>Item 3</Tab>
                 </Tabs>
-                <TabItems value={active}>
-                  <TabItem>
-                    <div>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </div>
-                  </TabItem>
-                  <TabItem>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </TabItem>
-                  <TabItem>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </TabItem>
-                </TabItems>
+                {tabItems}
+              </Card>
+              <Card rounded className='pa-4 mt-12'>
+                <Tabs
+                  rounded
+                  value={active}
+                  onChange={({ active }) => this.setState({ active })}
+                >
+                  <Tab>Item 1</Tab>
+                  <Tab>Item 2</Tab>
+                  <Tab>Item 3</Tab>
+                </Tabs>
+                {tabItems}
+              </Card>
+              <Card outlined className='pa-4 mt-12'>
+                <Tabs
+                  outlined
+                  value={active}
+                  onChange={({ active }) => this.setState({ active })}
+                >
+                  <Tab>Item 1</Tab>
+                  <Tab>Item 2</Tab>
+                  <Tab>Item 3</Tab>
+                </Tabs>
+                {tabItems}
+              </Card>
+              <Card flat className='pa-4 mt-12'>
+                <Tabs
+                  underlined
+                  value={active}
+                  onChange={({ active }) => this.setState({ active })}
+                >
+                  <Tab>Item 1</Tab>
+                  <Tab>Item 2</Tab>
+                  <Tab>Item 3</Tab>
+                </Tabs>
+                {tabItems}
               </Card>
             </Card>
           }

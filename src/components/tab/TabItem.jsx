@@ -10,9 +10,7 @@ import { getModuleClasses } from '../../util'
 class TabItem extends React.Component {
   static displayName = 'NuTabItem'
 
-  static defaultProps = {
-    ...DEFAULT_PROPS
-  }
+  static defaultProps = DEFAULT_PROPS
 
   static propTypes = DEFAULT_PROPS_TYPE
 
