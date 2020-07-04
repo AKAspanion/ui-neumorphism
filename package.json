@@ -1,6 +1,6 @@
 {
   "name": "ui-neumorphism",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": " React components library for neumorphism UI/UX trend.",
   "author": "AKAspanion",
   "license": "MIT",
@@ -64,8 +64,5 @@
   ],
   "dependencies": {
     "react-transition-group": "^4.4.1"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
   }
 }
