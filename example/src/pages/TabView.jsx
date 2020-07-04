@@ -1,11 +1,20 @@
 import React from 'react'
 
-import { Card, Tabs, Tab, H4, H6, TabItems, TabItem } from 'ui-neumorphism'
+import {
+  H4,
+  H6,
+  Tab,
+  Card,
+  Tabs,
+  Divider,
+  TabItem,
+  TabItems
+} from 'ui-neumorphism'
 
-// import { toggle, toggleLabel, switchApi } from '../docs/'
+import { tabApi, tabsApi, tabItemsApi, tabItemApi } from '../docs/'
 
 import DocCard from '../containers/DocCard.jsx'
-// import ApiCard from '../containers/ApiCard.jsx'
+import ApiCard from '../containers/ApiCard.jsx'
 
 const url =
   'https://github.com/AKAspanion/ui-neumorphism/blob/master/example/src/pages/TabView.jsx'
@@ -21,7 +30,7 @@ class TabView extends React.Component {
     const { active } = this.state
 
     const tabItems = (
-      <TabItems value={active}>
+      <TabItems value={active} >
         <TabItem>
           <div>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -107,15 +116,34 @@ class TabView extends React.Component {
                 </Tabs>
                 {tabItems}
               </Card>
+              <Card flat className='pa-4 mt-12'>
+                <Tabs
+                  disabled
+                  value={active}
+                  onChange={({ active }) => this.setState({ active })}
+                >
+                  <Tab>Item 1</Tab>
+                  <Tab>Item 2</Tab>
+                  <Tab>Item 3</Tab>
+                </Tabs>
+                {tabItems}
+              </Card>
             </Card>
           }
         />
+        <Divider dense className='mt-6' />
         <H4 className='mt-12'>
           <a href='#api' name='api'>
             API
           </a>
         </H4>
-        Coming soon..
+        <ApiCard entity='Tabs' data={tabsApi(dark)} />
+        <div className='mt-12'></div>
+        <ApiCard entity='Tab' data={tabApi(dark)} />
+        <div className='mt-12'></div>
+        <ApiCard entity='TabItems' data={tabItemsApi(dark)} />
+        <div className='mt-12'></div>
+        <ApiCard entity='TabItem' data={tabItemApi(dark)} />
       </Card>
     )
   }

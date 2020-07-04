@@ -21,20 +21,23 @@ class TabItems extends React.Component {
 
   static propTypes = DEFAULT_PROPS_TYPE
 
+  static getDerivedStateFromProps({ height }) {
+    if (height) {
+      return { height }
+    } else {
+      return {}
+    }
+  }
+
   constructor(props) {
     super(props)
     this.state = { color: '', height: props.height }
   }
 
-  get color() {
-    const { color } = this.state
-    const { active, color: propColor } = this.props
-    return active ? propColor : color
-  }
-
   get tabItems() {
-    const { children, value } = this.props
-    const reverse = this.prev < value
+    const { children, reverse: propReverse, value } = this.props
+    let reverse = this.prev < value
+    reverse = propReverse ? !reverse : reverse
     return passDownProp(
       Children.map(children, (child, index) => {
         return (

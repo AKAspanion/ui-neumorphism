@@ -1,3 +1,4 @@
+export * from './tab-api'
 export * from './chip-api'
 export * from './card-api'
 export * from './input-api'

@@ -266,3 +266,30 @@ export const CAROUSEL_PROP_TYPES = {
   showArrowsOnHover: G_BOOL,
   activeDelimiterIcon: G_NODE
 }
+
+export const TABS_PROP_TYPES = {
+  value: G_NUM,
+  rounded: G_BOOL,
+  color: G_STRING,
+  onClick: G_FUNC,
+  onChange: G_FUNC,
+  disabled: G_BOOL,
+  outlined: G_BOOL,
+  ...DEFAULT_PROPS,
+  underlined: G_BOOL
+}
+
+export const TAB_PROP_TYPES = {
+  onClick: G_FUNC,
+  ...DEFAULT_PROPS,
+  onMouseOut: G_FUNC,
+  onMouseOver: G_FUNC
+}
+
+export const TABITEMS_PROP_TYPES = {
+  value: G_NUM,
+  height: G_NUM,
+  reverse: G_BOOL,
+  onChange: G_FUNC,
+  ...DEFAULT_PROPS
+}

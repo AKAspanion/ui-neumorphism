@@ -5,7 +5,7 @@ import { Tab } from '../../index'
 
 import styles from './Tab.module.css'
 
-import { DEFAULT_PROPS, DEFAULT_PROPS_TYPE } from '../../assets/index'
+import { DEFAULT_PROPS, TABS_PROP_TYPES } from '../../assets/index'
 import { passDownProp, callCallback, getModuleClasses } from '../../util'
 
 class Tabs extends React.Component {
@@ -18,7 +18,7 @@ class Tabs extends React.Component {
     color: 'var(--primary)'
   }
 
-  static propTypes = DEFAULT_PROPS_TYPE
+  static propTypes = TABS_PROP_TYPES
 
   static getDerivedStateFromProps({ value: active }) {
     return { active }
