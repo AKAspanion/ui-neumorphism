@@ -1,6 +1,6 @@
 # [ui-neumorphism](https://akaspanion.github.io/ui-neumorphism/)
 
-[![NPM](https://img.shields.io/npm/v/ui-neumorphism.svg)](https://www.npmjs.com/package/ui-neumorphism) [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/AKAspanion/ui-neumorphism/blob/master/LICENSE) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/ui-neumorphism.svg)](https://www.npmjs.com/package/ui-neumorphism) [![Build Status](https://travis-ci.org/AKAspanion/ui-neumorphism.svg?branch=master)](https://travis-ci.org/AKAspanion/ui-neumorphism) [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/AKAspanion/ui-neumorphism/blob/master/LICENSE) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 > React component library designed on the "new skeuomorphism" or "neumorphism" UI/UX trend.
 
