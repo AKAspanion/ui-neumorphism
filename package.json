@@ -17,14 +17,16 @@
     "neumorphism-ui"
   ],
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "module": "dist/index.modern.js",
   "source": "src/index.js",
   "engines": {
     "node": ">=10"
   },
   "scripts": {
-    "build": "microbundle-crl --no-compress --format modern,cjs",
-    "start": "microbundle-crl watch --no-compress --format modern,cjs",
+    "build": "microbundle-crl --no-compress --format modern,cjs && npm run build:types",
+    "start": "microbundle-crl watch --no-compress --format modern,cjs && npm run build:types",
+    "build:types": "copyfiles -f ./src/index.d.ts dist",
     "prepublish": "run-s build",
     "test": "run-s test:unit test:lint test:build",
     "test:build": "run-s build",
@@ -40,6 +42,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",
+    "copyfiles": "^2.3.0",
     "cross-env": "^7.0.2",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.7.0",
