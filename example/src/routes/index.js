@@ -4,7 +4,7 @@ import {
   FabView,
   TabView,
   ChipView,
-  // ListView,
+  ListView,
   // MenuView,
   // FormView,
   CardView,
@@ -132,12 +132,12 @@ const routes = [
   //   name: 'Form',
   //   component: FormView
   // },
-  // {
-  //   id: 31,
-  //   path: '/list',
-  //   name: 'List',
-  //   component: ListView
-  // },
+  {
+    id: 31,
+    path: '/list',
+    name: 'List',
+    component: ListView
+  },
   // {
   //   id: 30,
   //   path: '/menu',
