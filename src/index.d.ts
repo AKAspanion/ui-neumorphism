@@ -33,8 +33,8 @@ declare module 'ui-neumorphism' {
   export import TabItem = __UINeumorphism.TabItem
   export import Tabs = __UINeumorphism.Tabs
   export import Tab = __UINeumorphism.Tab
-  // export import ProgressCircular = __UINeumorphism.ProgressCircular
-  // export import ProgressLinear = __UINeumorphism.ProgressLinear
+  export import ProgressCircular = __UINeumorphism.ProgressCircular
+  export import ProgressLinear = __UINeumorphism.ProgressLinear
   // export import CarouselItem = __UINeumorphism.CarouselItem
   // export import Carousel = __UINeumorphism.Carousel
   // export import Parallax = __UINeumorphism.Parallax
@@ -316,6 +316,37 @@ declare namespace __UINeumorphism {
     onChange?: Function
   }
   export class TabItems extends React.Component<TabItemsProps> {}
-  
+
   export class TabItem extends React.Component<DefaultProps> {}
+
+  // Progress
+  interface CommonProgressProps {
+    value?: Number
+    color?: String
+    indeterminate?: Boolean
+  }
+  export interface ProgressCircularProps
+    extends DefaultProps,
+      CommonProgressProps {
+    size?: Number
+    flat?: Boolean
+    width?: Number
+    rotate?: Number
+    label?: String
+    elevated?: Boolean
+  }
+  export class ProgressCircular extends React.Component<
+    ProgressCircularProps
+  > {}
+
+  export interface ProgressLinearProps
+    extends DefaultProps,
+      CommonProgressProps {
+    height?: Number
+    active?: Boolean
+    striped?: Boolean
+    bordered?: Boolean
+    fillHeight?: Boolean
+  }
+  export class ProgressLinear extends React.Component<ProgressLinearProps> {}
 }
