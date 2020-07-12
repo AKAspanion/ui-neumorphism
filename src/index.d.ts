@@ -37,12 +37,12 @@ declare module 'ui-neumorphism' {
   export import ProgressLinear = __UINeumorphism.ProgressLinear
   export import CarouselItem = __UINeumorphism.CarouselItem
   export import Carousel = __UINeumorphism.Carousel
-  // export import Parallax = __UINeumorphism.Parallax
-  // export import Tooltip = __UINeumorphism.Tooltip
-  // export import Divider = __UINeumorphism.Divider
-  // export import Spacer = __UINeumorphism.Spacer
-  // export import Dialog = __UINeumorphism.Dialog
-  // export import Table = __UINeumorphism.Table
+  export import Parallax = __UINeumorphism.Parallax
+  export import Tooltip = __UINeumorphism.Tooltip
+  export import Divider = __UINeumorphism.Divider
+  export import Spacer = __UINeumorphism.Spacer
+  export import Dialog = __UINeumorphism.Dialog
+  export import Table = __UINeumorphism.Table
   // export import Form = __UINeumorphism.Form
   // export import Radio = __UINeumorphism.Radio
   // export import RadioGroup = __UINeumorphism.RadioGroup
@@ -369,4 +369,58 @@ declare namespace __UINeumorphism {
   }
   export class Carousel extends React.Component<CarouselProps> {}
   export class CarouselItem extends React.Component<DefaultProps> {}
+
+  //Parallax
+  export interface ParallaxProps extends DefaultProps {
+    alt?: String
+    src?: String
+    speed?: Number
+    height?: Number
+    containerId?: String
+  }
+  export class Parallax extends React.Component<ParallaxProps> {}
+
+  //Tooltip
+  export interface TooltipProps extends DefaultProps, DefaultDimensionProps {
+    top?: Boolean
+    left?: Boolean
+    inset?: Boolean
+    right?: Boolean
+    bottom?: Boolean
+    visible?: Boolean
+    transitionProps?: Object
+    content: React.ReactNode
+  }
+  export class Tooltip extends React.Component<TooltipProps> {}
+
+  //Divider
+  export interface DividerProps extends DefaultProps {
+    dense?: Boolean
+    elevated?: Boolean
+  }
+  export class Divider extends React.Component<DividerProps> {}
+
+  //Spacer
+  export class Spacer extends React.Component<DefaultProps> {}
+
+  //Dialog
+  export interface DialogProps extends DefaultProps, DefaultDimensionProps {
+    visible?: Boolean
+    onClose?: Function
+    persistent?: Boolean
+  }
+  export class Dialog extends React.Component<DialogProps> {}
+
+  //Table
+  export interface TableProps extends DefaultProps {
+    flat?: Boolean
+    items?: Array
+    dense?: Boolean
+    headers?: Array
+    outlined?: Boolean
+    noHeaders?: Boolean
+    actions?: React.ReactNode
+    description?: React.ReactNode
+  }
+  export class Table extends React.Component<TableProps> {}
 }

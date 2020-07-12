@@ -1,9 +1,9 @@
 import React from 'react'
 
-import { ProgressLinear } from 'ui-neumorphism';
+import { Dialog } from 'ui-neumorphism';
 
 export class Abc extends React.Component {
   render() {
-    return <div><ProgressLinear  ></ProgressLinear></div>
+    return <div><Dialog  ></Dialog></div>
   }
 }
