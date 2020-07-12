@@ -29,10 +29,10 @@ declare module 'ui-neumorphism' {
   // export import ListItem = __UINeumorphism.ListItem
   // export import ListItemGroup = __UINeumorphism.ListItemGroup
   export import Chip = __UINeumorphism.Chip
-  // export import TabItems = __UINeumorphism.TabItems
-  // export import TabItem = __UINeumorphism.TabItem
-  // export import Tabs = __UINeumorphism.Tabs
-  // export import Tab = __UINeumorphism.Tab
+  export import TabItems = __UINeumorphism.TabItems
+  export import TabItem = __UINeumorphism.TabItem
+  export import Tabs = __UINeumorphism.Tabs
+  export import Tab = __UINeumorphism.Tab
   // export import ProgressCircular = __UINeumorphism.ProgressCircular
   // export import ProgressLinear = __UINeumorphism.ProgressLinear
   // export import CarouselItem = __UINeumorphism.CarouselItem
@@ -177,13 +177,13 @@ declare namespace __UINeumorphism {
 
   // Alert
   export interface AlertProps extends DefaultProps, CommonCardProps {
-    dense: Boolean
-    color: String
-    closable: Boolean
-    icon: React.ReactNode
-    closeIcon: React.ReactNode
-    border: propTypes.position
-    type: propTypes.context_color
+    dense?: Boolean
+    color?: String
+    closable?: Boolean
+    icon?: React.ReactNode
+    closeIcon?: React.ReactNode
+    border?: propTypes.position
+    type?: propTypes.context_color
   }
   export class Alert extends React.Component<AlertProps> {}
 
@@ -288,4 +288,34 @@ declare namespace __UINeumorphism {
   export class ToggleButtonGroup extends React.Component<
     ToggleButtonGroupProps
   > {}
+
+  // Tabs
+  export interface TabsProps extends DefaultProps {
+    value?: Number
+    color?: String
+    rounded?: Boolean
+    disabled?: Boolean
+    outlined?: Boolean
+    onClick?: Function
+    onChange?: Function
+    underlined?: Boolean
+  }
+  export class Tabs extends React.Component<TabsProps> {}
+
+  export interface TabProps extends DefaultProps {
+    onClick?: Function
+    onMouseOut?: Function
+    onMouseOver?: Function
+  }
+  export class Tab extends React.Component<TabProps> {}
+
+  export interface TabItemsProps extends DefaultProps {
+    value?: Number
+    height?: Number
+    reverse?: Boolean
+    onChange?: Function
+  }
+  export class TabItems extends React.Component<TabItemsProps> {}
+  
+  export class TabItem extends React.Component<DefaultProps> {}
 }

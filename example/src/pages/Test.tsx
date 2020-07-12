@@ -1,9 +1,9 @@
 import React from 'react'
 
-import { ToggleButtonGroup } from 'ui-neumorphism';
+import { Tabs } from 'ui-neumorphism';
 
 export class Abc extends React.Component {
   render() {
-    return <div><ToggleButtonGroup ></ToggleButtonGroup></div>
+    return <div><Tabs color="red" ></Tabs></div>
   }
 }
