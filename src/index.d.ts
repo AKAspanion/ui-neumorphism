@@ -46,8 +46,8 @@ declare module 'ui-neumorphism' {
   // export import Form = __UINeumorphism.Form
   export import Radio = __UINeumorphism.Radio
   export import RadioGroup = __UINeumorphism.RadioGroup
-  // export import TextField = __UINeumorphism.TextField
-  // export import TextArea = __UINeumorphism.TextArea
+  export import TextField = __UINeumorphism.TextField
+  export import TextArea = __UINeumorphism.TextArea
   export import Switch = __UINeumorphism.Switch
   // export import Slider = __UINeumorphism.Slider
   export import Checkbox = __UINeumorphism.Checkbox
@@ -430,7 +430,7 @@ declare namespace __UINeumorphism {
     id?: String
     color?: String
     disabled?: Boolean
-    onChange: Function
+    onChange?: Function
   }
 
   interface SelectionControlProps
@@ -450,9 +450,9 @@ declare namespace __UINeumorphism {
   export interface RadioGroupProps
     extends DefaultProps,
       CommonSelectionControlProps {
-    vertical: G_BOOL
-    onChange: G_FUNC
-    children: G_NODE.isRequired
+    vertical?: Boolean
+    onChange?: Function
+    children: React.ReactNode
   }
   export class RadioGroup extends React.Component<RadioGroupProps> {}
 
@@ -463,4 +463,45 @@ declare namespace __UINeumorphism {
   //Checkbox
   export interface CheckboxProps extends DefaultProps, SelectionControlProps {}
   export class Checkbox extends React.Component<CheckboxProps> {}
+
+  //TextField
+  export interface TextFieldProps extends DefaultProps {
+    id?: String
+    name?: String
+    type?: String
+    hint?: String
+    rules?: Array
+    value?: String
+    width?: Number
+    dense?: Boolean
+    height?: Number
+    counter?: Number
+    rounded?: Boolean
+    loading?: Boolean
+    readonly?: Boolean
+    disabled?: Boolean
+    outlined?: Boolean
+    bordered?: Boolean
+    autofocus?: Boolean
+    clearable?: Boolean
+    hideExtra?: Boolean
+    placeholder?: String
+    onBlur?: Function
+    onFocus?: Function
+    onInput?: Function
+    onKeyUp?: Function
+    onChange?: Function
+    onKeyDown?: Function
+    label?: React.ReactNode
+    append?: React.ReactNode
+    prepend?: React.ReactNode
+    inputStyles?: React.CSSProperties
+  }
+  export class TextField extends React.Component<TextFieldProps> {}
+
+  //TextArea
+  export interface TextAreaProps extends TextFieldProps {
+    autoExpand?: Boolean
+  }
+  export class TextArea extends React.Component<TextAreaProps> {}
 }
