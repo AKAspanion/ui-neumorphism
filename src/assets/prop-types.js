@@ -35,7 +35,6 @@ export const SIZE_PROP_WITH_NUM = PropTypes.oneOfType([SIZE_PROP, G_NUM])
 export const SELECTION_CONTROL_TYPES = PropTypes.oneOf(SELECTION_CONTROLS)
 
 export const TYPOGRAPHY_PROP_TYPES = {
-  dark: G_BOOL,
   disabled: G_BOOL,
   secondary: G_BOOL,
   component: G_STRING,
@@ -103,8 +102,6 @@ export const CARD_PROP_TYPES = {
 }
 
 export const BUTTON_PROP_TYPES = {
-  style: G_OBJ,
-  dark: G_BOOL,
   text: G_BOOL,
   block: G_BOOL,
   active: G_BOOL,
@@ -120,7 +117,6 @@ export const BUTTON_PROP_TYPES = {
   bgColor: G_STRING,
   depressed: G_BOOL,
   onMouseOver: G_FUNC,
-  className: G_STRING,
   ...DEFAULT_PROPS_TYPE,
   type: BUTTON_ALTERNATE_TYPES
 }
