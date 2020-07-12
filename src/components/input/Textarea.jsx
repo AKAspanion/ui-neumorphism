@@ -30,7 +30,7 @@ class TextArea extends React.Component {
   }
 
   render() {
-    const { tag, autoExpand, inputStyles, ...others } = this.props
+    const { autoExpand, inputStyles, ...others } = this.props
     return (
       <TextField
         tag='textarea'

@@ -14,6 +14,7 @@ import {
   uid
 } from '../../util'
 import {
+  MOUSE_EVENTS,
   DEFAULT_PROPS,
   SELECTION_CONTROL_TYPES,
   SELECTION_CONTROL_PROP_TYPES
@@ -109,16 +110,7 @@ class SelectionControl extends React.Component {
       'required',
       'disabled'
     ])
-    const events = pickKeys(this.props, [
-      'onClick',
-      'onMouseUp',
-      'onMouseOut',
-      'onMouseMove',
-      'onMouseDown',
-      'onMouseOver',
-      'onMouseEnter',
-      'onMouseLeave'
-    ])
+    const events = pickKeys(this.props, MOUSE_EVENTS)
     return (
       <div
         style={style}
