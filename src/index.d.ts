@@ -44,13 +44,13 @@ declare module 'ui-neumorphism' {
   export import Dialog = __UINeumorphism.Dialog
   export import Table = __UINeumorphism.Table
   // export import Form = __UINeumorphism.Form
-  // export import Radio = __UINeumorphism.Radio
-  // export import RadioGroup = __UINeumorphism.RadioGroup
+  export import Radio = __UINeumorphism.Radio
+  export import RadioGroup = __UINeumorphism.RadioGroup
   // export import TextField = __UINeumorphism.TextField
   // export import TextArea = __UINeumorphism.TextArea
-  // export import Switch = __UINeumorphism.Switch
+  export import Switch = __UINeumorphism.Switch
   // export import Slider = __UINeumorphism.Slider
-  // export import Checkbox = __UINeumorphism.Checkbox
+  export import Checkbox = __UINeumorphism.Checkbox
 }
 
 declare namespace __UINeumorphism {
@@ -75,7 +75,7 @@ declare namespace __UINeumorphism {
     maxHeight?: Number
   }
 
-  export interface ButtonEvents {
+  export interface MouseEvents {
     onClick?: Function
     onMouseUp?: Function
     onMouseOut?: Function
@@ -232,7 +232,7 @@ declare namespace __UINeumorphism {
 
   export interface ButtonProps
     extends DefaultProps,
-      ButtonEvents,
+      MouseEvents,
       CommonButtonProps {
     text?: Boolean
     block?: Boolean
@@ -245,7 +245,7 @@ declare namespace __UINeumorphism {
   // Fab
   export interface FabProps
     extends DefaultProps,
-      ButtonEvents,
+      MouseEvents,
       CommonButtonProps {
     top?: Boolean
     left?: Boolean
@@ -260,7 +260,7 @@ declare namespace __UINeumorphism {
   // IconButton
   export interface IconButtonProps
     extends DefaultProps,
-      ButtonEvents,
+      MouseEvents,
       CommonButtonProps {
     text?: Boolean
     active?: Boolean
@@ -271,7 +271,7 @@ declare namespace __UINeumorphism {
   // ToggleButton
   export interface ToggleButtonProps
     extends DefaultProps,
-      ButtonEvents,
+      MouseEvents,
       CommonButtonProps {
     value?: any
     text?: Boolean
@@ -423,4 +423,44 @@ declare namespace __UINeumorphism {
     description?: React.ReactNode
   }
   export class Table extends React.Component<TableProps> {}
+
+  //SelectionControl
+  interface CommonSelectionControlProps {
+    value?: any
+    id?: String
+    color?: String
+    disabled?: Boolean
+    onChange: Function
+  }
+
+  interface SelectionControlProps
+    extends MouseEvents,
+      CommonSelectionControlProps {
+    name?: String
+    label?: String
+    checked?: Boolean
+    required?: Boolean
+  }
+
+  //Radio
+  export interface RadioProps extends DefaultProps, SelectionControlProps {}
+  export class Radio extends React.Component<RadioProps> {}
+
+  //RadioGroup
+  export interface RadioGroupProps
+    extends DefaultProps,
+      CommonSelectionControlProps {
+    vertical: G_BOOL
+    onChange: G_FUNC
+    children: G_NODE.isRequired
+  }
+  export class RadioGroup extends React.Component<RadioGroupProps> {}
+
+  //Switch
+  export interface SwitchProps extends DefaultProps, SelectionControlProps {}
+  export class Switch extends React.Component<SwitchProps> {}
+
+  //Checkbox
+  export interface CheckboxProps extends DefaultProps, SelectionControlProps {}
+  export class Checkbox extends React.Component<CheckboxProps> {}
 }
