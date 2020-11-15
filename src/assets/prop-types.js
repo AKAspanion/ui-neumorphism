@@ -271,15 +271,15 @@ export const TABS_PROP_TYPES = {
   onChange: G_FUNC,
   disabled: G_BOOL,
   outlined: G_BOOL,
-  ...DEFAULT_PROPS,
-  underlined: G_BOOL
+  underlined: G_BOOL,
+  ...DEFAULT_PROPS_TYPE
 }
 
 export const TAB_PROP_TYPES = {
   onClick: G_FUNC,
-  ...DEFAULT_PROPS,
   onMouseOut: G_FUNC,
-  onMouseOver: G_FUNC
+  onMouseOver: G_FUNC,
+  ...DEFAULT_PROPS_TYPE
 }
 
 export const TABITEMS_PROP_TYPES = {
@@ -287,5 +287,5 @@ export const TABITEMS_PROP_TYPES = {
   height: G_NUM,
   reverse: G_BOOL,
   onChange: G_FUNC,
-  ...DEFAULT_PROPS
+  ...DEFAULT_PROPS_TYPE
 }
