@@ -485,6 +485,7 @@ declare namespace __UINeumorphism {
     autofocus?: Boolean
     clearable?: Boolean
     hideExtra?: Boolean
+    uncontrolled?: Boolean
     placeholder?: String
     onBlur?: Function
     onFocus?: Function
