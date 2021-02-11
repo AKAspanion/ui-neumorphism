@@ -155,6 +155,7 @@ export const TEXT_FIELD_PROP_TYPES = {
   autofocus: G_BOOL,
   clearable: G_BOOL,
   hideExtra: G_BOOL,
+  uncontrolled: G_BOOL,
   placeholder: G_STRING
 }
 

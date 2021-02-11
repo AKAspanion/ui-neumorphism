@@ -114,7 +114,7 @@ class TextField extends React.Component {
 
   handleChange(event) {
     const { id, valid } = this.state
-    const { onChange, hideExtra } = this.props
+    const { onChange, hideExtra, uncontrolled } = this.props
     const value = event.target.value
     const count = value.length
 
@@ -122,7 +122,9 @@ class TextField extends React.Component {
       this.validate(value)
     }
 
-    this.setState({ value })
+    if (!uncontrolled) {
+      this.setState({ value })
+    }
     this.setState({ count })
     callCallback(onChange, { event, id, value, valid })
   }
@@ -181,6 +183,13 @@ class TextField extends React.Component {
       )
     } else {
       return getModuleClasses(styles, `nu-text-field-${classType}`)
+    }
+  }
+
+  componentWillUpdate(props, state) {
+    const { value, uncontrolled } = props
+    if (state.value !== value && uncontrolled) {
+      this.setState({ value })
     }
   }
 

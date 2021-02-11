@@ -51,6 +51,13 @@ export const inputApi = (dark, type) => {
     ),
     createApiDoc(
       dark,
+      'uncontrolled',
+      'Boolean',
+      'false',
+      'Changes the behaviour of input to uncontrolled.'
+    ),
+    createApiDoc(
+      dark,
       'hideExtra',
       'Boolean',
       'false',
