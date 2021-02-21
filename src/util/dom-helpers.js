@@ -46,7 +46,7 @@ export const getDefaultThemeVariables = () => {
 export const overrideThemeVariables = (themeObject) => {
   const root = document.querySelector(':root')
   const themeVariables = Object.keys(themeObject)
-  if (root) {
+  if (root && themeObject) {
     themeVariables.forEach((themeVar) => {
       const varValue = themeObject[themeVar]
       if (varValue && themeVar.startsWith('--')) {
