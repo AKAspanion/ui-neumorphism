@@ -51,6 +51,11 @@ declare module 'ui-neumorphism' {
   export import Switch = __UINeumorphism.Switch
   // export import Slider = __UINeumorphism.Slider
   export import Checkbox = __UINeumorphism.Checkbox
+  export import Checkbox = __UINeumorphism.Grow
+  export import Checkbox = __UINeumorphism.Fade
+  export import Checkbox = __UINeumorphism.Slide
+  export import Checkbox = __UINeumorphism.SlideCarousel
+  export import overrideThemeVariables = __UINeumorphism.overrideThemeVariables
 }
 
 declare namespace __UINeumorphism {
@@ -505,4 +510,27 @@ declare namespace __UINeumorphism {
     autoExpand?: Boolean
   }
   export class TextArea extends React.Component<TextAreaProps> {}
+
+  // Transitions
+  export interface TransitionProps {
+    duration?: Number
+  }
+
+  export class Fade extends React.Component<TransitionProps> {}
+
+  export interface GrowProps extends TransitionProps {
+    origin?: Number
+  }
+  export class Grow extends React.Component<GrowProps> {}
+
+  export interface SlideProps extends GrowProps {
+    axis?: String
+    reverse?: Boolean
+  }
+  export class Slide extends React.Component<SlideProps> {}
+
+  export class SlideCarousel extends React.Component<SlideProps> {}
+
+  // Functions
+  export function overrideThemeVariables(themeObject: Object) {}
 }
