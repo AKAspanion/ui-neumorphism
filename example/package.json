@@ -6,7 +6,7 @@
   "dependencies": {
     "@mdi/js": "^5.2.45",
     "@mdi/react": "^1.4.0",
-    "@types/react": "^16.9.43",
+    "@types/react": "^17.0.52",
     "react": "file:../node_modules/react",
     "react-dom": "file:../node_modules/react-dom",
     "react-router-dom": "^5.2.0",
