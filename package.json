@@ -37,9 +37,9 @@
     "deploy": "gh-pages -d example/build"
   },
   "peerDependencies": {
-    "@types/react": "^17.0.52",
-    "react": "^17",
-    "react-dom": "^17"
+    "@types/react": "^18.0.26",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",
@@ -49,7 +49,7 @@
     "eslint-config-prettier": "^6.15.0",
     "eslint-config-standard": "^14.1.1",
     "eslint-config-standard-react": "^9.2.0",
-    "eslint-plugin-import": "^2.27.2",
+    "eslint-plugin-import": "^2.27.4",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.4.1",
     "eslint-plugin-promise": "^4.3.1",
@@ -59,8 +59,8 @@
     "microbundle-crl": "^0.13.11",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.8.2",
-    "react": "^17",
-    "react-dom": "^17.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-scripts": "^3.4.4"
   },
   "files": [
