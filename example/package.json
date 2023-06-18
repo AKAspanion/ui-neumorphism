@@ -6,13 +6,15 @@
   "dependencies": {
     "@mdi/js": "^5.2.45",
     "@mdi/react": "^1.4.0",
-    "@types/react": "^16.9.43",
     "react": "file:../node_modules/react",
     "react-dom": "file:../node_modules/react-dom",
     "react-router-dom": "^5.2.0",
     "react-scripts": "file:../node_modules/react-scripts",
     "react-syntax-highlighter": "^12.2.1",
     "ui-neumorphism": "file:.."
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.43"
   },
   "scripts": {
     "start": "node ../node_modules/react-scripts/bin/react-scripts.js start",
