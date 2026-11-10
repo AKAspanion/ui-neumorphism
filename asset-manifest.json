@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/ui-neumorphism/static/css/main.6f5469f8.css",
-    "main.js": "/ui-neumorphism/static/js/main.42cacd7a.js",
+    "main.js": "/ui-neumorphism/static/js/main.4b72d646.js",
     "index.html": "/ui-neumorphism/index.html",
     "main.6f5469f8.css.map": "/ui-neumorphism/static/css/main.6f5469f8.css.map",
-    "main.42cacd7a.js.map": "/ui-neumorphism/static/js/main.42cacd7a.js.map"
+    "main.4b72d646.js.map": "/ui-neumorphism/static/js/main.4b72d646.js.map"
   },
   "entrypoints": [
     "static/css/main.6f5469f8.css",
-    "static/js/main.42cacd7a.js"
+    "static/js/main.4b72d646.js"
   ]
 }
