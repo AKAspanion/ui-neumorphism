@@ -1,10 +1,17 @@
-import React from 'react'
+import React, { createRef } from 'react'
 
 import { Typography } from '../../index'
 import { DEFAULT_PROPS, TYPOGRAPHY_PROP_TYPES } from '../../../assets/index'
+import { getDOMNode } from '../../../util'
 
 class H1 extends React.Component {
   static displayName = 'NuH1'
+
+  domRef = createRef()
+
+  get domNode() {
+    return getDOMNode(this.domRef.current)
+  }
 
   static defaultProps = DEFAULT_PROPS
 
@@ -12,7 +19,7 @@ class H1 extends React.Component {
 
   render() {
     return (
-      <Typography {...this.props} type='h1'>
+      <Typography ref={this.domRef} {...this.props} type='h1'>
         {this.props.children}
       </Typography>
     )

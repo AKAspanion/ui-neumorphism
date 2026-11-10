@@ -1,11 +1,17 @@
-import React, { cloneElement } from 'react'
+import React, { cloneElement, createRef } from 'react'
 
 import TransitionWrapper from './TransitionWrapper'
 import { G_NUM, G_BOOL, G_STRING } from '../assets'
-import { callCallback } from '../util'
+import { callCallback, getDOMNode } from '../util'
 
 class SlideCarousel extends React.Component {
   static displayName = 'NuSlideCarousel'
+
+  domRef = createRef()
+
+  get domNode() {
+    return getDOMNode(this.domRef.current)
+  }
 
   static defaultProps = {
     axis: 'Y',
@@ -81,6 +87,7 @@ class SlideCarousel extends React.Component {
     const display = status ? (status === 'exited' ? 'none' : undefined) : 'none'
     return (
       <TransitionWrapper
+        ref={this.domRef}
         {...otherProps}
         timeout={{ exit: duration }}
         onUpdate={this.updateStatus}

@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { createRef } from 'react'
 
 import { withImage } from '../../index'
 
 import styles from '../parallax/Parallax.module.css'
-import { getModuleClasses } from '../../util'
+import { getModuleClasses, getDOMNode } from '../../util'
 import {
   DEFAULT_PROPS,
   DEFAULT_PROPS_TYPE,
@@ -13,6 +13,12 @@ import {
 
 class Parallax extends React.Component {
   static displayName = 'NuParallax'
+
+  domRef = createRef()
+
+  get domNode() {
+    return getDOMNode(this.domRef.current)
+  }
 
   static defaultProps = {
     speed: 1,
@@ -114,6 +120,7 @@ class Parallax extends React.Component {
     const { style, height, className } = this.props
     return (
       <div
+        ref={this.domRef}
         style={{ ...style, height: `${height}px` }}
         className={`${this.getClass('nu-parallax')} ${className}`}
       >

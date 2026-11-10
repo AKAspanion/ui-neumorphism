@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { createRef } from 'react'
 
 import styles from './Card.module.css'
-import { getModuleClasses, passDownProp } from '../../util'
+import { getModuleClasses, passDownProp, getDOMNode } from '../../util'
 import {
   G_BOOL,
   G_NODE,
@@ -13,6 +13,12 @@ import {
 
 class CardHeader extends React.Component {
   static displayName = 'NuCardHeader'
+
+  domRef = createRef()
+
+  get domNode() {
+    return getDOMNode(this.domRef.current)
+  }
 
   static defaultProps = DEFAULT_PROPS
 
@@ -70,7 +76,11 @@ class CardHeader extends React.Component {
       CARD_CHILD_PASS_DOWN
     )
     return (
-      <div style={style} className={`${this.getClass('wrapper')} ${className}`}>
+      <div
+        ref={this.domRef}
+        style={style}
+        className={`${this.getClass('wrapper')} ${className}`}
+      >
         {cardAvatar || cardTitle || cardSubTitle || cardAction ? (
           <div className={this.getClass('content')}>
             <div className={this.getClass('content-left')}>

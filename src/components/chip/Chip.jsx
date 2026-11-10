@@ -1,8 +1,14 @@
-import React, { cloneElement, createElement } from 'react'
+import React, { cloneElement, createElement, createRef } from 'react'
 
 import styles from './Chip.module.css'
 
-import { getModuleClasses, uid, callCallback, setCSSVariable } from '../../util'
+import {
+  getModuleClasses,
+  uid,
+  callCallback,
+  setCSSVariable,
+  getDOMNode
+} from '../../util'
 import {
   SIZES,
   DEFAULT_PROPS,
@@ -12,6 +18,12 @@ import {
 
 class Chip extends React.Component {
   static displayName = 'NuChip'
+
+  domRef = createRef()
+
+  get domNode() {
+    return getDOMNode(this.domRef.current)
+  }
 
   static defaultProps = DEFAULT_PROPS
 
@@ -128,6 +140,7 @@ class Chip extends React.Component {
       {
         style,
         key: uid(),
+        ref: this.domRef,
         ...linkProps,
         id: this.state.id,
         className: `${this.getClasses('chip')} ${className}`

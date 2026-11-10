@@ -1,11 +1,18 @@
-import React, { cloneElement } from 'react'
+import React, { cloneElement, createRef } from 'react'
 
 import TransitionWrapper from './TransitionWrapper'
+import { getDOMNode } from '../util'
 
 import { G_NUM } from '../assets'
 
 class Fade extends React.Component {
   static displayName = 'NuFade'
+
+  domRef = createRef()
+
+  get domNode() {
+    return getDOMNode(this.domRef.current)
+  }
 
   static defaultProps = {
     duration: 200
@@ -41,7 +48,11 @@ class Fade extends React.Component {
     const { status } = this.state
     const { children: child, ...otherProps } = this.props
     return (
-      <TransitionWrapper {...otherProps} onUpdate={this.updateStatus}>
+      <TransitionWrapper
+        ref={this.domRef}
+        {...otherProps}
+        onUpdate={this.updateStatus}
+      >
         {cloneElement(child, {
           style: {
             ...this.defaultStyle,

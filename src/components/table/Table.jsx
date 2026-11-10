@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { createRef } from 'react'
 
 import styles from './Table.module.css'
-import { getModuleClasses } from '../../util'
+import { getModuleClasses, getDOMNode } from '../../util'
 import {
   DEFAULT_PROPS_TYPE,
   DEFAULT_PROPS,
@@ -13,6 +13,12 @@ import { Spacer } from '../../index'
 
 class Table extends React.Component {
   static displayName = 'NuTable'
+
+  domRef = createRef()
+
+  get domNode() {
+    return getDOMNode(this.domRef.current)
+  }
 
   static defaultProps = {
     items: [],
@@ -155,6 +161,7 @@ class Table extends React.Component {
     } = this.props
     return (
       <div
+        ref={this.domRef}
         style={style}
         className={`${this.getClasses('wrapper')} ${className}`}
       >

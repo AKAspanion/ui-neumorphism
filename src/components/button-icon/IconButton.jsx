@@ -1,10 +1,17 @@
-import React from 'react'
+import React, { createRef } from 'react'
 
 import { Button } from '../index'
 
 import { BUTTON_PROP_TYPES, DEFAULT_PROPS } from '../../assets/index'
+import { getDOMNode } from '../../util'
 class IconButton extends React.Component {
   static displayName = 'NuIconButton'
+
+  domRef = createRef()
+
+  get domNode() {
+    return getDOMNode(this.domRef.current)
+  }
 
   static defaultProps = {
     text: true,
@@ -16,7 +23,13 @@ class IconButton extends React.Component {
   render() {
     const { children, ...otherProps } = this.props
     return (
-      <Button {...otherProps} type='icon' block={false} depressed={false}>
+      <Button
+        ref={this.domRef}
+        {...otherProps}
+        type='icon'
+        block={false}
+        depressed={false}
+      >
         {children}
       </Button>
     )

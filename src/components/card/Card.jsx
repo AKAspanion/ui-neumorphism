@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { createRef } from 'react'
 
 import { ProgressLinear } from '../../index'
 
 import styles from './Card.module.css'
-import { getModuleClasses, passDownProp, pickKeys } from '../../util'
+import {
+  getModuleClasses,
+  passDownProp,
+  pickKeys,
+  getDOMNode
+} from '../../util'
 import {
   DEFAULT_PROPS,
   CSS_DIMENSIONS,
@@ -14,6 +19,12 @@ import {
 
 class Card extends React.Component {
   static displayName = 'NuCard'
+
+  domRef = createRef()
+
+  get domNode() {
+    return getDOMNode(this.domRef.current)
+  }
 
   static defaultProps = {
     disabled: false,
@@ -54,11 +65,12 @@ class Card extends React.Component {
     const { id, dark, style, loading, children, className } = this.props
     const cardChildren = passDownProp(children, this.props, CARD_PASS_DOWN)
     const pickedStyles = pickKeys(this.props, CSS_DIMENSIONS)
-    Object.keys(pickedStyles).map((key) => {
+    Object.keys(pickedStyles).forEach((key) => {
       sizeStyles[key] = `${pickedStyles[key]}px`
     })
     return (
       <div
+        ref={this.domRef}
         id={id}
         style={{ ...style, ...sizeStyles }}
         className={`${this.getClass()} ${className}`}

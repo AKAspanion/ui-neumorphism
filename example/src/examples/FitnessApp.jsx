@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { createRef } from 'react'
 
 import Icon from '@mdi/react'
 import {
@@ -27,12 +27,24 @@ import {
   withResize,
   ToggleButton,
   ProgressCircular,
+  getDOMNode
 } from 'ui-neumorphism'
 class FitnessApp extends React.Component {
+  domRef = createRef()
+
+  get domNode() {
+    return getDOMNode(this.domRef.current)
+  }
+
   render() {
     const { dark, size } = this.props
     return (
-      <Card flat dark={dark} className='fitness-app-container'>
+      <Card
+        ref={this.domRef}
+        flat
+        dark={dark}
+        className='fitness-app-container'
+      >
         <Card flat className='fitness-app-wrapper overflow-hidden'>
           <Card
             rounded

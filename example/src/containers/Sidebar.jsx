@@ -1,11 +1,22 @@
-import React from 'react'
+import React, { createRef } from 'react'
 import { NavLink } from 'react-router-dom'
 
 import routes from '../routes/index.js'
 
-import { Card, withClickOutside, detectElementInDOM } from 'ui-neumorphism'
+import {
+  Card,
+  withClickOutside,
+  detectElementInDOM,
+  getDOMNode
+} from 'ui-neumorphism'
 
 class Sidebar extends React.Component {
+  domRef = createRef()
+
+  get domNode() {
+    return getDOMNode(this.domRef.current)
+  }
+
   get isSmall() {
     const { size } = this.props
     return size === 'sm' || size === 'xs'
@@ -31,6 +42,7 @@ class Sidebar extends React.Component {
     const { dark, open } = this.props
     return (
       <Card
+        ref={this.domRef}
         dark={dark}
         flat={!this.isSmall}
         className={`sidebar ${open ? 'sidebar--open' : ''} ${

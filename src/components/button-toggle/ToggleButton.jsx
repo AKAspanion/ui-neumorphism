@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { createRef } from 'react'
 
 import { Button } from '../index'
 
-import { callCallback } from '../../util'
+import { callCallback, getDOMNode } from '../../util'
 import {
   G_ANY,
   G_BOOL,
@@ -12,6 +12,12 @@ import {
 
 class ToggleButton extends React.Component {
   static displayName = 'NuToggleButton'
+
+  domRef = createRef()
+
+  get domNode() {
+    return getDOMNode(this.domRef.current)
+  }
 
   static defaultProps = {
     text: true,
@@ -61,6 +67,7 @@ class ToggleButton extends React.Component {
     const { children, ...otherProps } = this.props
     return (
       <Button
+        ref={this.domRef}
         {...otherProps}
         type='toggle'
         block={false}

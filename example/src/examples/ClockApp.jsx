@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { createRef } from 'react'
 
 import Icon from '@mdi/react'
 import {
@@ -22,9 +22,16 @@ import {
   IconButton,
   withResize,
   ToggleButton,
-  ToggleButtonGroup
+  ToggleButtonGroup,
+  getDOMNode
 } from 'ui-neumorphism'
 class ClockApp extends React.Component {
+  domRef = createRef()
+
+  get domNode() {
+    return getDOMNode(this.domRef.current)
+  }
+
   constructor(props) {
     super(props)
     this.state = {
@@ -171,7 +178,7 @@ class ClockApp extends React.Component {
     const { dark, size } = this.props
     const { timerActive } = this.state
     return (
-      <Card flat dark={dark}>
+      <Card ref={this.domRef} flat dark={dark}>
         <Card
           flat
           className='p-relative d-flex overflow-hidden flex-wrap align-center justify-center'

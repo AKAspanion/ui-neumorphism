@@ -1,13 +1,24 @@
-import React, { Children, cloneElement } from 'react'
+import React, { Children, cloneElement, createRef } from 'react'
 
 import { ListItem } from '../../index'
 
 import styles from './List.module.css'
-import { passDownProp, callCallback, getModuleClasses } from '../../util'
+import {
+  passDownProp,
+  callCallback,
+  getModuleClasses,
+  getDOMNode
+} from '../../util'
 import { DEFAULT_PROPS, DEFAULT_PROPS_TYPE } from '../../assets/index'
 
 class ListItemGroup extends React.Component {
   static displayName = 'NuListItemGroup'
+
+  domRef = createRef()
+
+  get domNode() {
+    return getDOMNode(this.domRef.current)
+  }
 
   static defaultProps = DEFAULT_PROPS
 
@@ -79,7 +90,11 @@ class ListItemGroup extends React.Component {
   render() {
     const { style, className } = this.props
     return (
-      <div style={style} className={`${this.getClasses('list')} ${className}`}>
+      <div
+        ref={this.domRef}
+        style={style}
+        className={`${this.getClasses('list')} ${className}`}
+      >
         {this.children}
       </div>
     )

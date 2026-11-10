@@ -1,12 +1,12 @@
-import React from 'react'
-import { findDOMNode } from 'react-dom'
+import React, { createRef } from 'react'
 import { Switch, Route, withRouter } from 'react-router-dom'
 
 import {
   Card,
   Divider,
   withResize,
-  overrideThemeVariables
+  overrideThemeVariables,
+  getDOMNode
 } from 'ui-neumorphism'
 import 'ui-neumorphism/dist/index.css'
 
@@ -17,6 +17,12 @@ import RightBar from '../containers/RightBar.jsx'
 import routes from '../routes/index.js'
 
 class MainContainer extends React.Component {
+  domRef = createRef()
+
+  get domNode() {
+    return this.domRef.current
+  }
+
   mainView = null
 
   constructor(props) {
@@ -70,7 +76,7 @@ class MainContainer extends React.Component {
     const { dark, open } = this.state
     const isSmall = size === 'sm' || size === 'xs'
     return (
-      <main className={`theme--${dark ? 'dark' : 'light'}`}>
+      <main ref={this.domRef} className={`theme--${dark ? 'dark' : 'light'}`}>
         <Card
           flat
           dark={dark}
@@ -95,7 +101,9 @@ class MainContainer extends React.Component {
               <Card
                 flat
                 id='mainView'
-                ref={(ref) => (this.mainView = findDOMNode(ref))}
+                ref={(ref) => {
+                  this.mainView = getDOMNode(ref)
+                }}
                 className={`main-view main-view--${
                   !isSmall ? 'large' : 'small'
                 } ${isHome ? 'main-view--home' : ''} ${

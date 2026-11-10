@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { createRef } from 'react'
 
 import { H6 } from '../../index'
 import styles from './Card.module.css'
-import { getModuleClasses } from '../../util'
+import { getModuleClasses, getDOMNode } from '../../util'
 import {
   DEFAULT_PROPS_TYPE,
   DEFAULT_PROPS,
@@ -13,6 +13,12 @@ import {
 
 class CardMedia extends React.Component {
   static displayName = 'NuCardMedia'
+
+  domRef = createRef()
+
+  get domNode() {
+    return getDOMNode(this.domRef.current)
+  }
 
   static defaultProps = {
     height: 160,
@@ -50,6 +56,7 @@ class CardMedia extends React.Component {
     const { src, dark, title, height, style, className } = this.props
     return (
       <div
+        ref={this.domRef}
         title={title}
         style={{
           ...style,

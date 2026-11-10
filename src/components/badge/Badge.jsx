@@ -1,8 +1,14 @@
-import React from 'react'
+import React, { createRef } from 'react'
 
 import styles from './Badge.module.css'
 
-import { getModuleClasses, setCSSVariable, uid, passDownProp } from '../../util'
+import {
+  getModuleClasses,
+  setCSSVariable,
+  uid,
+  passDownProp,
+  getDOMNode
+} from '../../util'
 import {
   DEFAULT_PROPS_TYPE,
   DEFAULT_PROPS,
@@ -14,6 +20,12 @@ import {
 
 class Badge extends React.Component {
   static displayName = 'NuBadge'
+
+  domRef = createRef()
+
+  get domNode() {
+    return getDOMNode(this.domRef.current)
+  }
 
   static defaultProps = {
     visible: true,
@@ -143,6 +155,7 @@ class Badge extends React.Component {
     const { style, className } = this.props
     return (
       <span
+        ref={this.domRef}
         style={style}
         id={this.state.id}
         className={`${this.getClasses('wrapper')} ${className}`}

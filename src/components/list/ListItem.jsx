@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { createRef } from 'react'
 
 import styles from './List.module.css'
-import { getModuleClasses, pickKeys } from '../../util'
+import { getModuleClasses, pickKeys, getDOMNode } from '../../util'
 import { DEFAULT_PROPS, DEFAULT_PROPS_TYPE } from '../../assets/index'
 
 class ListItem extends React.Component {
   static displayName = 'NuListItem'
+
+  domRef = createRef()
+
+  get domNode() {
+    return getDOMNode(this.domRef.current)
+  }
 
   static defaultProps = DEFAULT_PROPS
 
@@ -70,6 +76,7 @@ class ListItem extends React.Component {
     const events = pickKeys(this.props, ['onClick'])
     return (
       <div
+        ref={this.domRef}
         {...events}
         style={style}
         className={`${this.getClasses('list-item')} ${className}`}

@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { createRef } from 'react'
 
 import styles from './Progress.module.css'
-import { getModuleClasses, uid, setCSSVariable } from '../../util'
+import { getModuleClasses, uid, setCSSVariable, getDOMNode } from '../../util'
 import {
   PROGRESS_LINEAR_PROP_TYPES,
   PROGRESS_LINEAR_DEFAULT_PROPS
@@ -9,6 +9,12 @@ import {
 
 class ProgressLinear extends React.Component {
   static displayName = 'NuProgressLinear'
+
+  domRef = createRef()
+
+  get domNode() {
+    return getDOMNode(this.domRef.current)
+  }
 
   static defaultProps = PROGRESS_LINEAR_DEFAULT_PROPS
 
@@ -76,6 +82,7 @@ class ProgressLinear extends React.Component {
     const { style, height, className, fillHeight, indeterminate } = this.props
     return (
       <div
+        ref={this.domRef}
         aria-valuemin='0'
         role='progressbar'
         aria-valuemax='100'

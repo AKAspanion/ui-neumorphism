@@ -1,7 +1,7 @@
-import React, { createElement } from 'react'
+import React, { createElement, createRef } from 'react'
 
 import styles from './Typography.module.css'
-import { getModuleClasses } from '../../util'
+import { getModuleClasses, getDOMNode } from '../../util'
 import {
   G_STRING,
   DEFAULT_PROPS,
@@ -10,6 +10,12 @@ import {
 
 class Typography extends React.Component {
   static displayName = 'NuTypography'
+
+  domRef = createRef()
+
+  get domNode() {
+    return getDOMNode(this.domRef.current)
+  }
 
   static defaultProps = DEFAULT_PROPS
 
@@ -62,6 +68,7 @@ class Typography extends React.Component {
       this.getMapping(),
       {
         style,
+        ref: this.domRef,
         className: `${this.getClass()} ${className}`
       },
       this.props.children

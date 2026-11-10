@@ -1,9 +1,14 @@
-import React, { Children } from 'react'
+import React, { Children, createRef } from 'react'
 
 import { SlideCarousel } from '../../index'
 
 import styles from './Carousel.module.css'
-import { getModuleClasses, callCallback, passDownProp } from '../../util'
+import {
+  getModuleClasses,
+  callCallback,
+  passDownProp,
+  getDOMNode
+} from '../../util'
 import { CAROUSEL_PROP_TYPES, CAROUSEL_DEFAULT_PROPS } from '../../assets/index'
 
 class Carousel extends React.Component {
@@ -11,6 +16,12 @@ class Carousel extends React.Component {
   disabledTimeout
 
   static displayName = 'NuCarousel'
+
+  domRef = createRef()
+
+  get domNode() {
+    return getDOMNode(this.domRef.current)
+  }
 
   static defaultProps = CAROUSEL_DEFAULT_PROPS
 
@@ -236,6 +247,7 @@ class Carousel extends React.Component {
     const { style, className, hideDelimiters } = this.props
     return (
       <div
+        ref={this.domRef}
         style={{ ...this.styles, ...style }}
         className={`${this.getClasses('main')} ${className}`}
       >

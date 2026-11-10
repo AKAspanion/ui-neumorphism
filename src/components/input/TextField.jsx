@@ -1,4 +1,4 @@
-import React, { createElement } from 'react'
+import React, { createElement, createRef } from 'react'
 
 import styles from '../input/Input.module.css'
 import {
@@ -6,12 +6,24 @@ import {
   DEFAULT_PROPS_TYPE,
   DEFAULT_PROPS
 } from '../../assets/index'
-import { uid, getModuleClasses, callCallback, pickKeys } from '../../util'
+import {
+  uid,
+  getModuleClasses,
+  callCallback,
+  pickKeys,
+  getDOMNode
+} from '../../util'
 
 import { Subtitle1, Caption, ProgressLinear } from '../../index'
 
 class TextField extends React.Component {
   static displayName = 'NuTextField'
+
+  domRef = createRef()
+
+  get domNode() {
+    return getDOMNode(this.domRef.current)
+  }
 
   static defaultProps = {
     type: 'text',
@@ -56,14 +68,14 @@ class TextField extends React.Component {
     const events = pickKeys(this.props, ['onInput', 'onKeyUp', 'onKeyDown'])
 
     const inputProps = {
-      id: id,
+      id,
       className,
-      type: type,
-      name: name,
-      value: value,
+      type,
+      name,
+      value,
       readOnly: readonly,
       autoFocus: autofocus,
-      placeholder: placeholder,
+      placeholder,
       disabled: this.isDisabled,
       onBlur: (e) => this.handleBlur(e),
       onFocus: (e) => this.handleFocus(e),
@@ -186,9 +198,9 @@ class TextField extends React.Component {
     }
   }
 
-  componentWillUpdate(props, state) {
-    const { value, uncontrolled } = props
-    if (state.value !== value && uncontrolled) {
+  componentDidUpdate() {
+    const { value, uncontrolled } = this.props
+    if (this.state.value !== value && uncontrolled) {
       this.setState({ value })
     }
   }
@@ -210,6 +222,7 @@ class TextField extends React.Component {
     const { id, valid, count, errorMessage } = this.state
     return (
       <div
+        ref={this.domRef}
         style={style}
         className={`${this.getClasses('wrapper')} ${className}`}
       >

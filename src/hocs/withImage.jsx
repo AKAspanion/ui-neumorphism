@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { createRef } from 'react'
+
+import { getDOMNode } from '../util/'
 
 const withImage = (WrappedComponent, config = {}) => {
   return class withImage extends React.Component {
     image
+
+    domRef = createRef()
 
     static displayName = `WithImage(${
       WrappedComponent.displayName || WrappedComponent.name || 'Component'
@@ -39,7 +43,11 @@ const withImage = (WrappedComponent, config = {}) => {
       }
     }
 
-    componentWillMount() {
+    get domNode() {
+      return getDOMNode(this.domRef.current)
+    }
+
+    componentDidMount() {
       this.setLoaded()
     }
 
@@ -60,6 +68,7 @@ const withImage = (WrappedComponent, config = {}) => {
       const { loaded, width, height } = this.state
       return (
         <WrappedComponent
+          ref={this.domRef}
           {...this.props}
           loaded={loaded}
           imageWidth={width}

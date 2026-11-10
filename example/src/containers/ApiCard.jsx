@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { createRef } from 'react'
 
 import Icon from '@mdi/react'
 import { mdiMagnify } from '@mdi/js'
@@ -9,11 +9,18 @@ import {
   Card,
   Table,
   TextField,
-  withResize
+  withResize,
+  getDOMNode
 } from 'ui-neumorphism'
 import CodeBlock from '../containers/CodeBlock.jsx'
 
 class ApiCard extends React.Component {
+  domRef = createRef()
+
+  get domNode() {
+    return getDOMNode(this.domRef.current)
+  }
+
   static displayName = 'NuApiCard'
 
   constructor(props) {
@@ -65,7 +72,13 @@ class ApiCard extends React.Component {
       searchProps.description = null
     }
     return (
-      <Card flat dark={dark} style={style} className={`mb-3 ${className}`}>
+      <Card
+        ref={this.domRef}
+        flat
+        dark={dark}
+        style={style}
+        className={`mb-3 ${className}`}
+      >
         <H6>The API documentation of the {entity} component.</H6>
         <H5 className='mt-4 mb-3'>Import</H5>
         <CodeBlock lang='jsx' noCollapse>

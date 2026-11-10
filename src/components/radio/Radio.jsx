@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { createRef } from 'react'
 
 import { SelectionControl } from '../../index'
 
-import { callCallback } from '../../util'
+import { callCallback, getDOMNode } from '../../util'
 import { DEFAULT_PROPS, SELECTION_CONTROL_PROP_TYPES } from '../../assets/index'
 class Radio extends React.Component {
   static displayName = 'NuRadio'
+
+  domRef = createRef()
+
+  get domNode() {
+    return getDOMNode(this.domRef.current)
+  }
 
   static defaultProps = DEFAULT_PROPS
 
@@ -19,6 +25,7 @@ class Radio extends React.Component {
   render() {
     return (
       <SelectionControl
+        ref={this.domRef}
         type='radio'
         {...this.props}
         onChange={(e) => this.handleChange(e)}

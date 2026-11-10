@@ -1,14 +1,25 @@
-import React from 'react'
+import React, { createRef } from 'react'
 
 import { Button } from '../../index'
 
 import styles from './Tab.module.css'
 
 import { DEFAULT_PROPS, DEFAULT_PROPS_TYPE } from '../../assets/index'
-import { getModuleClasses, callCallback, pickKeys } from '../../util'
+import {
+  getModuleClasses,
+  callCallback,
+  pickKeys,
+  getDOMNode
+} from '../../util'
 
 class Tab extends React.Component {
   static displayName = 'NuTab'
+
+  domRef = createRef()
+
+  get domNode() {
+    return getDOMNode(this.domRef.current)
+  }
 
   static defaultProps = DEFAULT_PROPS
 
@@ -55,6 +66,7 @@ class Tab extends React.Component {
     const pickedProps = pickKeys(this.props, ['dark', 'onClick', 'disabled'])
     return (
       <Button
+        ref={this.domRef}
         text
         noPress
         style={style}

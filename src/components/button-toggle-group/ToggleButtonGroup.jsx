@@ -1,8 +1,8 @@
-import React, { Children, cloneElement } from 'react'
+import React, { Children, cloneElement, createRef } from 'react'
 
 import { ToggleButton } from '../index'
 
-import { callCallback, passDownProp } from '../../util'
+import { callCallback, passDownProp, getDOMNode } from '../../util'
 import {
   G_BOOL,
   DEFAULT_PROPS,
@@ -13,6 +13,12 @@ import {
 
 class ToggleButtonGroup extends React.Component {
   static displayName = 'NuToggleButtonGroup'
+
+  domRef = createRef()
+
+  get domNode() {
+    return getDOMNode(this.domRef.current)
+  }
 
   static defaultProps = DEFAULT_PROPS
 
@@ -97,7 +103,7 @@ class ToggleButtonGroup extends React.Component {
       ['size', 'color', ...CARD_PASS_DOWN]
     )
     return (
-      <div style={style} className={className}>
+      <div ref={this.domRef} style={style} className={className}>
         {buttons}
       </div>
     )
