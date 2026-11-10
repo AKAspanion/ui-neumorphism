@@ -1,11 +1,18 @@
-import React, { cloneElement } from 'react'
+import React, { cloneElement, createRef } from 'react'
 
 import TransitionWrapper from './TransitionWrapper'
+import { getDOMNode } from '../util'
 
 import { G_NUM, G_STRING } from '../assets'
 
 class Grow extends React.Component {
   static displayName = 'NuGrow'
+
+  domRef = createRef()
+
+  get domNode() {
+    return getDOMNode(this.domRef.current)
+  }
 
   static defaultProps = {
     duration: 200,
@@ -45,6 +52,7 @@ class Grow extends React.Component {
     const { origin, duration, children: child, ...otherProps } = this.props
     return (
       <TransitionWrapper
+        ref={this.domRef}
         onUpdate={this.updateStatus}
         timeout={{ exit: duration }}
         {...otherProps}

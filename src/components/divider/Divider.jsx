@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { createRef } from 'react'
 
 import styles from './Divider.module.css'
-import { getModuleClasses } from '../../util'
+import { getModuleClasses, getDOMNode } from '../../util'
 import { G_BOOL, DEFAULT_PROPS, DEFAULT_PROPS_TYPE } from '../../assets/index'
 
 class Divider extends React.Component {
   static displayName = 'NuDivider'
+
+  domRef = createRef()
+
+  get domNode() {
+    return getDOMNode(this.domRef.current)
+  }
 
   static defaultProps = DEFAULT_PROPS
 
@@ -30,7 +36,13 @@ class Divider extends React.Component {
 
   render() {
     const { style, className } = this.props
-    return <hr style={style} className={`${this.getClasses()} ${className}`} />
+    return (
+      <hr
+        ref={this.domRef}
+        style={style}
+        className={`${this.getClasses()} ${className}`}
+      />
+    )
   }
 }
 

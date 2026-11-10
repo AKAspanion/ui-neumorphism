@@ -1,10 +1,17 @@
-import React, { cloneElement } from 'react'
+import React, { cloneElement, createRef } from 'react'
 
 import TransitionWrapper from './TransitionWrapper'
+import { getDOMNode } from '../util'
 import { G_NUM, G_BOOL, G_STRING } from '../assets'
 
 class Slide extends React.Component {
   static displayName = 'NuSlide'
+
+  domRef = createRef()
+
+  get domNode() {
+    return getDOMNode(this.domRef.current)
+  }
 
   static defaultProps = {
     axis: 'Y',
@@ -73,7 +80,11 @@ class Slide extends React.Component {
     const { status } = this.state
     const { origin, children: child, ...otherProps } = this.props
     return (
-      <TransitionWrapper {...otherProps} onUpdate={this.updateStatus}>
+      <TransitionWrapper
+        ref={this.domRef}
+        {...otherProps}
+        onUpdate={this.updateStatus}
+      >
         {cloneElement(child, {
           style: {
             opacity: 0,

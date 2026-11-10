@@ -1,10 +1,17 @@
-import React from 'react'
+import React, { createRef } from 'react'
 
 import { Typography } from '../../index'
 import { DEFAULT_PROPS, TYPOGRAPHY_PROP_TYPES } from '../../../assets/index'
+import { getDOMNode } from '../../../util'
 
 class Overline extends React.Component {
   static displayName = 'NuOverline'
+
+  domRef = createRef()
+
+  get domNode() {
+    return getDOMNode(this.domRef.current)
+  }
 
   static defaultProps = DEFAULT_PROPS
 
@@ -12,7 +19,7 @@ class Overline extends React.Component {
 
   render() {
     return (
-      <Typography {...this.props} type='overline'>
+      <Typography ref={this.domRef} {...this.props} type='overline'>
         {this.props.children}
       </Typography>
     )

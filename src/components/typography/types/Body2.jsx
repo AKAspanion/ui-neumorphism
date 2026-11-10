@@ -1,10 +1,17 @@
-import React from 'react'
+import React, { createRef } from 'react'
 
 import { Typography } from '../../index'
 import { DEFAULT_PROPS, TYPOGRAPHY_PROP_TYPES } from '../../../assets/index'
+import { getDOMNode } from '../../../util'
 
 class Body2 extends React.Component {
   static displayName = 'NuBody2'
+
+  domRef = createRef()
+
+  get domNode() {
+    return getDOMNode(this.domRef.current)
+  }
 
   static defaultProps = DEFAULT_PROPS
 
@@ -12,7 +19,7 @@ class Body2 extends React.Component {
 
   render() {
     return (
-      <Typography {...this.props} type='body-2'>
+      <Typography ref={this.domRef} {...this.props} type='body-2'>
         {this.props.children}
       </Typography>
     )

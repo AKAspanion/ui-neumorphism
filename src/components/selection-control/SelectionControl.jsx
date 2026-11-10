@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { createRef } from 'react'
 
 import { Body1 } from '../../index'
 
@@ -11,7 +11,8 @@ import {
   setCSSVariable,
   callCallback,
   pickKeys,
-  uid
+  uid,
+  getDOMNode
 } from '../../util'
 import {
   MOUSE_EVENTS,
@@ -22,6 +23,12 @@ import {
 
 class SelectionControl extends React.Component {
   static displayName = 'NuSelectionControl'
+
+  domRef = createRef()
+
+  get domNode() {
+    return getDOMNode(this.domRef.current)
+  }
 
   static defaultProps = DEFAULT_PROPS
 
@@ -113,6 +120,7 @@ class SelectionControl extends React.Component {
     const events = pickKeys(this.props, MOUSE_EVENTS)
     return (
       <div
+        ref={this.domRef}
         style={style}
         className={`${this.getClasses('container')} ${className}`}
       >

@@ -5,16 +5,16 @@
   "private": true,
   "dependencies": {
     "@mdi/js": "^5.2.45",
-    "@mdi/react": "^1.4.0",
+    "@mdi/react": "^1.6.1",
     "react": "file:../node_modules/react",
     "react-dom": "file:../node_modules/react-dom",
-    "react-router-dom": "^5.2.0",
+    "react-router-dom": "^5.3.4",
     "react-scripts": "file:../node_modules/react-scripts",
     "react-syntax-highlighter": "^12.2.1",
     "ui-neumorphism": "file:.."
   },
   "devDependencies": {
-    "@types/react": "^16.9.43"
+    "@types/react": "^19.0.0"
   },
   "scripts": {
     "start": "node ../node_modules/react-scripts/bin/react-scripts.js start",
@@ -30,5 +30,10 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "jest": {
+    "transformIgnorePatterns": [
+      "node_modules/(?!react-syntax-highlighter)"
+    ]
+  }
 }

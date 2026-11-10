@@ -1,18 +1,28 @@
-import React, { Children, cloneElement } from 'react'
-import { findDOMNode } from 'react-dom'
+import React, { Children, cloneElement, createRef } from 'react'
 
 import { SlideCarousel } from '../../index'
 
 import styles from './Tab.module.css'
 
 import { DEFAULT_PROPS, DEFAULT_PROPS_TYPE } from '../../assets/index'
-import { passDownProp, callCallback, getModuleClasses } from '../../util'
+import {
+  passDownProp,
+  callCallback,
+  getModuleClasses,
+  getDOMNode
+} from '../../util'
 
 class TabItems extends React.Component {
   timeout
   prev = 0
 
   static displayName = 'NuTabItems'
+
+  domRef = createRef()
+
+  get domNode() {
+    return getDOMNode(this.domRef.current)
+  }
 
   static defaultProps = {
     height: 0,
@@ -80,7 +90,7 @@ class TabItems extends React.Component {
 
   handleRef(item, check = false) {
     if (!check) return
-    const tabItem = findDOMNode(item)
+    const tabItem = getDOMNode(item)
 
     if (!tabItem) return
 
@@ -113,6 +123,7 @@ class TabItems extends React.Component {
     const { style, className } = this.props
     return (
       <div
+        ref={this.domRef}
         style={{ height: `${height}px`, ...style }}
         className={`${this.getClasses('container')} ${className}`}
       >

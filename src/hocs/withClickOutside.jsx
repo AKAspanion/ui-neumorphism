@@ -1,7 +1,5 @@
 import React from 'react'
-import { findDOMNode } from 'react-dom'
-
-import { findClickInside } from '../util/'
+import { findClickInside, getDOMNode, warnNoDOMNode } from '../util/'
 
 const withClickOutside = (WrappedComponent) => {
   const componentName =
@@ -16,6 +14,7 @@ const withClickOutside = (WrappedComponent) => {
     }
 
     componentDidMount() {
+      if (!this.domNode) warnNoDOMNode(WithClickOutside.displayName)
       document.addEventListener('click', this.handleClick)
     }
 
@@ -24,7 +23,7 @@ const withClickOutside = (WrappedComponent) => {
     }
 
     handleClick = (e) => {
-      const parentNode = findDOMNode(this.node)
+      const parentNode = getDOMNode(this.node)
       const isClickInside = findClickInside(e, parentNode)
       if (isClickInside) {
         this.clickHandler(e, 'Inside')
@@ -33,13 +32,17 @@ const withClickOutside = (WrappedComponent) => {
       }
     }
 
+    get domNode() {
+      return getDOMNode(this.node)
+    }
+
     clickHandler(e, type = 'Outside') {
-      if (typeof this.node.props[`handleClick${type}`] === 'function') {
-        this.node.props[`handleClick${type}`](e)
+      if (typeof this.props[`handleClick${type}`] === 'function') {
+        this.props[`handleClick${type}`](e)
         return
       }
 
-      if (typeof this.node[`handleClick${type}`] === 'function') {
+      if (this.node && typeof this.node[`handleClick${type}`] === 'function') {
         this.node[`handleClick${type}`](e)
         return
       }
@@ -52,7 +55,12 @@ const withClickOutside = (WrappedComponent) => {
 
     render() {
       return (
-        <WrappedComponent ref={(ref) => (this.node = ref)} {...this.props} />
+        <WrappedComponent
+          ref={(ref) => {
+            this.node = ref
+          }}
+          {...this.props}
+        />
       )
     }
   }

@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { createRef } from 'react'
 
 import { TextField } from '../../index'
-import { callCallback } from '../../util'
+import { callCallback, getDOMNode } from '../../util'
 
 class TextArea extends React.Component {
   static displayName = 'NuTextarea'
+
+  domRef = createRef()
+
+  get domNode() {
+    return getDOMNode(this.domRef.current)
+  }
 
   constructor(props) {
     super(props)
@@ -33,6 +39,7 @@ class TextArea extends React.Component {
     const { autoExpand, inputStyles, ...others } = this.props
     return (
       <TextField
+        ref={this.domRef}
         tag='textarea'
         onInput={(e) => this.onInput(e, 'onInput')}
         onKeyDown={(e) => this.onInput(e, 'onKeyDown')}

@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { createRef } from 'react'
 
 import { withImage } from '../../index'
 
 import styles from './Avatar.module.css'
 
-import { getModuleClasses, uid, setCSSVariable } from '../../util'
+import { getModuleClasses, uid, setCSSVariable, getDOMNode } from '../../util'
 import {
   SIZE_PROP_WITH_NUM,
   DEFAULT_PROPS_TYPE,
@@ -16,6 +16,12 @@ import {
 
 class Avatar extends React.Component {
   static displayName = 'NuAvatar'
+
+  domRef = createRef()
+
+  get domNode() {
+    return getDOMNode(this.domRef.current)
+  }
 
   static defaultProps = {
     size: 'medium',
@@ -108,6 +114,7 @@ class Avatar extends React.Component {
     }
     return (
       <div
+        ref={this.domRef}
         id={this.state.id}
         style={{ ...style, ...sizeStyles }}
         className={`${this.getClasses('avatar')} ${className}`}

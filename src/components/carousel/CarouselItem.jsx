@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { createRef } from 'react'
 
 import styles from './Carousel.module.css'
-import { getModuleClasses, passDownProp } from '../../util'
+import { getModuleClasses, passDownProp, getDOMNode } from '../../util'
 import { DEFAULT_PROPS, DEFAULT_PROPS_TYPE } from '../../assets/index'
 
 class CarouselItem extends React.Component {
   static displayName = 'NuCarouselItem'
+
+  domRef = createRef()
+
+  get domNode() {
+    return getDOMNode(this.domRef.current)
+  }
 
   static defaultProps = DEFAULT_PROPS
 
@@ -19,6 +25,7 @@ class CarouselItem extends React.Component {
     const { style, className, children } = this.props
     return (
       <div
+        ref={this.domRef}
         style={style}
         className={`${this.getClasses('nu-carousel-item')} ${className}`}
       >

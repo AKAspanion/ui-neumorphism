@@ -1,4 +1,8 @@
-export { overrideThemeVariables, detectElementInDOM } from './util/'
+export {
+  overrideThemeVariables,
+  detectElementInDOM,
+  getDOMNode
+} from './util/'
 export { withImage, withResize, withClickOutside } from './hocs/'
 export { Grow, Fade, Slide, SlideCarousel } from './transitions'
 

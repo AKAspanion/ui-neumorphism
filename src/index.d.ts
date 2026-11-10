@@ -56,6 +56,7 @@ declare module 'ui-neumorphism' {
   export import Checkbox = __UINeumorphism.Slide
   export import Checkbox = __UINeumorphism.SlideCarousel
   export import overrideThemeVariables = __UINeumorphism.overrideThemeVariables
+  export import getDOMNode = __UINeumorphism.getDOMNode
 }
 
 declare namespace __UINeumorphism {
@@ -533,4 +534,5 @@ declare namespace __UINeumorphism {
 
   // Functions
   export function overrideThemeVariables(themeObject: Object) {}
+  export function getDOMNode(target: any): Element | Text | null
 }

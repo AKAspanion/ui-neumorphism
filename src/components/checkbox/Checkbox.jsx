@@ -1,12 +1,18 @@
-import React from 'react'
+import React, { createRef } from 'react'
 
 import { SelectionControl } from '../../index'
 
 import { DEFAULT_PROPS, SELECTION_CONTROL_PROP_TYPES } from '../../assets/index'
-import { callCallback } from '../../util'
+import { callCallback, getDOMNode } from '../../util'
 
 class Checkbox extends React.Component {
   static displayName = 'NuCheckbox'
+
+  domRef = createRef()
+
+  get domNode() {
+    return getDOMNode(this.domRef.current)
+  }
 
   static defaultProps = DEFAULT_PROPS
 
@@ -20,6 +26,7 @@ class Checkbox extends React.Component {
   render() {
     return (
       <SelectionControl
+        ref={this.domRef}
         {...this.props}
         type='checkbox'
         onChange={(e) => this.handleChange(e)}

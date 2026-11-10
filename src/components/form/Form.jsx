@@ -1,6 +1,13 @@
-import React, { Children, cloneElement } from 'react'
+import React, { Children, cloneElement, createRef } from 'react'
+import { getDOMNode } from '../../util'
 
 class Form extends React.Component {
+  domRef = createRef()
+
+  get domNode() {
+    return getDOMNode(this.domRef.current)
+  }
+
   constructor(props) {
     super(props)
     this.state = {}
@@ -29,7 +36,11 @@ class Form extends React.Component {
       })
     })
     return (
-      <form onSubmit={this.handleSubmit} onChange={this.handleFormChange}>
+      <form
+        ref={this.domRef}
+        onSubmit={this.handleSubmit}
+        onChange={this.handleFormChange}
+      >
         {formChildren}
       </form>
     )

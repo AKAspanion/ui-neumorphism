@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { createRef } from 'react'
 import { createPortal } from 'react-dom'
 
 import { Grow } from '../../index'
@@ -10,7 +10,8 @@ import {
   findClickInside,
   passDownProp,
   callCallback,
-  pickKeys
+  pickKeys,
+  getDOMNode
 } from '../../util'
 import {
   DEFAULT_PROPS,
@@ -20,6 +21,12 @@ import {
 
 class Dialog extends React.Component {
   static displayName = 'NuDialog'
+
+  domRef = createRef()
+
+  get domNode() {
+    return getDOMNode(this.domRef.current)
+  }
 
   static defaultProps = {
     visible: false,
@@ -45,6 +52,7 @@ class Dialog extends React.Component {
 
     return createPortal(
       <div
+        ref={this.domRef}
         role='dialog'
         onClick={this.handleClickInside}
         className={this.getClasses('dialog')}

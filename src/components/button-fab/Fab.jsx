@@ -1,13 +1,19 @@
-import React from 'react'
+import React, { createRef } from 'react'
 
 import { Button } from '../index'
 
 import styles from './Fab.module.css'
-import { getModuleClasses } from '../../util'
+import { getModuleClasses, getDOMNode } from '../../util'
 import { FAB_BUTTON_PROP_TYPES, DEFAULT_PROPS } from '../../assets/index'
 
 class Fab extends React.Component {
   static displayName = 'NuFab'
+
+  domRef = createRef()
+
+  get domNode() {
+    return getDOMNode(this.domRef.current)
+  }
 
   static defaultProps = {
     animation: true,
@@ -36,7 +42,11 @@ class Fab extends React.Component {
   render() {
     const { children, style, className, ...otherProps } = this.props
     return (
-      <div style={style} className={`${this.getClasses()} ${className}`}>
+      <div
+        ref={this.domRef}
+        style={style}
+        className={`${this.getClasses()} ${className}`}
+      >
         <Button
           {...otherProps}
           rounded

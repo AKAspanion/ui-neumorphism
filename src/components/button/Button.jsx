@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { createRef } from 'react'
 
 import styles from './Button.module.css'
 
-import { getModuleClasses, passDownProp, pickKeys } from '../../util'
+import {
+  getModuleClasses,
+  passDownProp,
+  pickKeys,
+  getDOMNode
+} from '../../util'
 import {
   BUTTON_PROP_TYPES,
   DEFAULT_PROPS,
@@ -12,6 +17,12 @@ import {
 
 class Button extends React.Component {
   static displayName = 'NuButton'
+
+  domRef = createRef()
+
+  get domNode() {
+    return getDOMNode(this.domRef.current)
+  }
 
   static defaultProps = {
     size: 'medium',
@@ -82,6 +93,7 @@ class Button extends React.Component {
     const btnChildren = passDownProp(children, this.props, 'dark')
     return (
       <div
+        ref={this.domRef}
         id={id}
         {...pickKeys(this.props, MOUSE_EVENTS)}
         className={`${this.getClasses('container')} ${className}`}

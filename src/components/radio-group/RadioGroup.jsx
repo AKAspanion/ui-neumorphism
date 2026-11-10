@@ -1,9 +1,15 @@
-import React, { Children, cloneElement } from 'react'
+import React, { Children, cloneElement, createRef } from 'react'
 
-import { Radio } from '../index/'
+import { Radio } from '../index'
 
 import radioStyles from './RadioGroup.module.css'
-import { callCallback, getModuleClasses, uid, passDownProp } from '../../util'
+import {
+  callCallback,
+  getModuleClasses,
+  uid,
+  passDownProp,
+  getDOMNode
+} from '../../util'
 import {
   DEFAULT_PROPS_TYPE,
   DEFAULT_PROPS,
@@ -15,6 +21,12 @@ import {
 } from '../../assets/index'
 class RadioGroup extends React.Component {
   static displayName = 'NuRadioGroup'
+
+  domRef = createRef()
+
+  get domNode() {
+    return getDOMNode(this.domRef.current)
+  }
 
   static defaultProps = {
     vertical: false,
@@ -79,6 +91,7 @@ class RadioGroup extends React.Component {
     )
     return (
       <div
+        ref={this.domRef}
         style={style}
         key={this.state.key}
         className={`${this.getClasses()} ${className}`}

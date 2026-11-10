@@ -1,17 +1,27 @@
-import React, { Children, cloneElement } from 'react'
-import { findDOMNode } from 'react-dom'
+import React, { Children, cloneElement, createRef } from 'react'
 
 import { Tab } from '../../index'
 
 import styles from './Tab.module.css'
 
 import { DEFAULT_PROPS, TABS_PROP_TYPES } from '../../assets/index'
-import { passDownProp, callCallback, getModuleClasses } from '../../util'
+import {
+  passDownProp,
+  callCallback,
+  getModuleClasses,
+  getDOMNode
+} from '../../util'
 
 class Tabs extends React.Component {
   wait = false
 
   static displayName = 'NuTabs'
+
+  domRef = createRef()
+
+  get domNode() {
+    return getDOMNode(this.domRef.current)
+  }
 
   static defaultProps = {
     ...DEFAULT_PROPS,
@@ -109,22 +119,24 @@ class Tabs extends React.Component {
   }
 
   handleRef(ref, index) {
-    const tab = findDOMNode(ref)
+    const tab = getDOMNode(ref)
 
     if (!tab) return
 
-    const { tabsMeta } = this.state
     const { width } = tab.getBoundingClientRect()
 
-    if (tabsMeta[index] === width) return
-
-    this.setState({ tabsMeta: { ...tabsMeta, [index]: width } })
+    this.setState(({ tabsMeta }) =>
+      tabsMeta[index] === width
+        ? null
+        : { tabsMeta: { ...tabsMeta, [index]: width } }
+    )
   }
 
   render() {
     const { style, className } = this.props
     return (
       <div
+        ref={this.domRef}
         style={style}
         className={`${this.getClasses('container')} ${className}`}
       >

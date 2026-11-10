@@ -1,5 +1,5 @@
-import React, { cloneElement, Children, createElement } from 'react'
-import { createPortal, findDOMNode } from 'react-dom'
+import React, { cloneElement, Children, createElement, createRef } from 'react'
+import { createPortal } from 'react-dom'
 
 import { Card, Grow } from '../../index'
 
@@ -9,7 +9,8 @@ import {
   callCallback,
   passDownProp,
   pickKeys,
-  uid
+  uid,
+  getDOMNode
 } from '../../util'
 import {
   TOOLTIP_PROP_TYPES,
@@ -18,9 +19,13 @@ import {
 } from '../../assets/index'
 
 class Tooltip extends React.Component {
-  node
-
   static displayName = 'NuTooltip'
+
+  domRef = createRef()
+
+  get domNode() {
+    return getDOMNode(this.domRef.current)
+  }
 
   static defaultProps = {
     bottom: true,
@@ -44,6 +49,11 @@ class Tooltip extends React.Component {
     this.controlled = props.visible !== undefined
     this.calcPosition = this.calcPosition.bind(this)
     this.handleMouseOnToolTip = this.handleMouseOnToolTip.bind(this)
+  }
+
+  // The trigger is the wrapper's only element child; the tooltip is portaled
+  get node() {
+    return this.domRef.current && this.domRef.current.firstElementChild
   }
 
   get canView() {
@@ -108,7 +118,6 @@ class Tooltip extends React.Component {
         const newProps = {
           ...child.props,
           className: cls,
-          ref: (ref) => (this.node = findDOMNode(ref)),
           onMouseEnter: (e) => this.handleMouseOnToolTip(e, onMouseOver),
           onMouseLeave: (e) => this.handleMouseOnToolTip(e, onMouseLeave)
         }
@@ -190,7 +199,7 @@ class Tooltip extends React.Component {
     const { style, className } = this.props
     const children = passDownProp(this.tooltipChildren, this.props, ['dark'])
     return (
-      <div style={style} className={className}>
+      <div ref={this.domRef} style={style} className={className}>
         {children}
         {this.tooltip}
       </div>

@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { createRef } from 'react'
 
 import styles from './Progress.module.css'
-import { uid, setCSSVariable, getModuleClasses } from '../../util'
+import { uid, setCSSVariable, getModuleClasses, getDOMNode } from '../../util'
 import {
   PROGRESS_CIRCULAR_PROP_TYPES,
   PROGRESS_CIRCULAR_DEFAULT_PROPS
@@ -9,6 +9,12 @@ import {
 
 class ProgressCircular extends React.Component {
   static displayName = 'NuProgressCircular'
+
+  domRef = createRef()
+
+  get domNode() {
+    return getDOMNode(this.domRef.current)
+  }
 
   static defaultProps = PROGRESS_CIRCULAR_DEFAULT_PROPS
 
@@ -96,6 +102,7 @@ class ProgressCircular extends React.Component {
     } = this.props
     return (
       <div
+        ref={this.domRef}
         id={this.state.id}
         aria-valuemin='0'
         role='progressbar'

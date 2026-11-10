@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { createRef } from 'react'
 
 import { Card, Spacer, IconButton } from '../../index'
 import styles from './Alert.module.css'
 
-import { getModuleClasses, uid, setCSSVariable, callCallback } from '../../util'
+import {
+  getModuleClasses,
+  uid,
+  setCSSVariable,
+  callCallback,
+  getDOMNode
+} from '../../util'
 import {
   POSITIONS,
   DEFAULT_PROPS,
@@ -13,6 +19,12 @@ import {
 
 class Alert extends React.Component {
   static displayName = 'NuAlert'
+
+  domRef = createRef()
+
+  get domNode() {
+    return getDOMNode(this.domRef.current)
+  }
 
   static defaultProps = {
     visible: true,
@@ -106,6 +118,7 @@ class Alert extends React.Component {
     const { style, visible, className, ...otherProps } = this.props
     return visible ? (
       <Card
+        ref={this.domRef}
         style={style}
         {...otherProps}
         id={this.state.id}

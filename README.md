@@ -26,6 +26,35 @@ Check out the documentation [here](https://akaspanion.github.io/ui-neumorphism/)
 npm install --save ui-neumorphism
 ```
 
+Requires React 19 (`react` and `react-dom` `^19.0.0`).
+
+### Upgrading to React 19
+
+React 19 removed `ReactDOM.findDOMNode`, so components that need the DOM node of something you pass in (`withResize`, `withClickOutside`, and the `Fade`, `Grow`, `Slide` and `SlideCarousel` transitions) now find it through `ref`. Pass them one of:
+
+- a DOM element (`<div>`)
+- a ui-neumorphism component (each one exposes its root element as `domNode`)
+- a component that passes its `ref` prop to a DOM element
+- a class component with a `domNode` getter:
+
+```jsx
+class Panel extends React.Component {
+  domRef = React.createRef()
+
+  get domNode() {
+    return this.domRef.current
+  }
+
+  render() {
+    return <div ref={this.domRef}>...</div>
+  }
+}
+
+export default withResize(Panel)
+```
+
+`getDOMNode(refValue)` is exported if you need the same lookup yourself. In development, a warning is logged when no DOM node can be found.
+
 ## Usage
 
 ```jsx

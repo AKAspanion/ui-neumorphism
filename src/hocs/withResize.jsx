@@ -1,5 +1,6 @@
 import React from 'react'
-import { findDOMNode } from 'react-dom'
+
+import { getDOMNode, warnNoDOMNode } from '../util/'
 
 const withResize = (WrappedComponent, config = {}) => {
   return class withResize extends React.Component {
@@ -40,7 +41,11 @@ const withResize = (WrappedComponent, config = {}) => {
         })
       })
 
-      this.resizeObserver.observe(this.node)
+      if (this.node) {
+        this.resizeObserver.observe(this.node)
+      } else {
+        warnNoDOMNode(withResize.displayName)
+      }
     }
 
     componentWillUnmount() {
@@ -50,7 +55,11 @@ const withResize = (WrappedComponent, config = {}) => {
     }
 
     updateDimensions = (dimensions) => {
-      this.setState({ ...this.state, ...dimensions })
+      this.setState(dimensions)
+    }
+
+    get domNode() {
+      return this.node
     }
 
     getCurrentSize() {
@@ -70,7 +79,9 @@ const withResize = (WrappedComponent, config = {}) => {
       const { width, height } = this.state
       return (
         <WrappedComponent
-          ref={(ref) => (this.node = findDOMNode(ref))}
+          ref={(ref) => {
+            this.node = getDOMNode(ref)
+          }}
           dimensions={{ width, height }}
           size={this.getCurrentSize()}
           {...this.props}
